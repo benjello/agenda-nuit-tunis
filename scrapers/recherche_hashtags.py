@@ -30,6 +30,28 @@ HASHTAGS = ["gammarth", "lamarsa", "hammametnightlife", "hammamet", "tunisnightl
 PAR_HASHTAG = 40     # publications lues par hashtag (coût Apify : environ 0,2 centime l'une)
 SOIREE = re.compile(r"(?i)\bparty\b|\bsoir[ée]e\b|\bnight\b|\btonight\b|\bce soir\b|\bdj\b|\bclub|\bline ?up\b|\bguest\b"
                     r"|\bresa\b|\br[ée]servation|\btable\b|\bentr[ée]e\b|سهرة|حفل")
+# Préfiltre : comptes qui utilisent les hashtags sans organiser de soirées (immobilier, voyages, hôtels, boutiques…)
+HORS_NUIT = re.compile(r"(?i)immo|remax|voyage|travel|tours?(?![a-z])|trip|wakacj|suitcase|h[ôo]tel|thalasso|residence|palace"
+                       r"|beds\b|perfume|parfum|\bmode\b|store|coupon|salon de th|coffee|caf[ée]|magazine|news|booklover"
+                       r"|totebag|smartlab|smart-lab|univers\.a\.i")
+JOURS_MAX = 120      # un compte qui n'a rien publié depuis 4 mois n'est pas proposé
+EXCLUS = RACINE / "_data" / "comptes_exclus.yml"  # faux positifs cochés dans le ticket de tri (scrapers/tri_comptes.py)
+
+
+def exclus() -> set[str]:
+    return {str(c).lower().lstrip("@") for c in (yaml.safe_load(EXCLUS.read_text()) or [])} if EXCLUS.exists() else set()
+
+
+def prefiltre(c: dict, ecartes: set[str], aujourd_hui: dt.date | None = None) -> str:
+    """Raison d'écarter un compte avant le tri à la main ("" s'il reste proposé)."""
+    aujourd_hui = aujourd_hui or dt.date.today()
+    if c["compte"] in ecartes:
+        return "faux positif"
+    if HORS_NUIT.search(f"{c['compte']} {c['nom']}"):
+        return "hors nuit"
+    if not c["derniere"] or (aujourd_hui - dt.date.fromisoformat(c["derniere"])).days > JOURS_MAX:
+        return "inactif"
+    return ""
 
 
 def deja_suivis() -> set[str]:
@@ -90,7 +112,13 @@ def main(argv=None) -> int:
         for i in items:
             i["_hashtag"] = h
         publications += items
-    comptes = classer(publications, deja_suivis())
+    comptes, ecartes = [], exclus()
+    for c in classer(publications, deja_suivis()):
+        raison = "" if c["suivi"] else prefiltre(c, ecartes)
+        if raison:
+            print(f"  écarté ({raison}) : @{c['compte']} {c['nom']}")
+        else:
+            comptes.append(c)
     FICHIER.write_text(json.dumps({"lu_le": dt.date.today().isoformat(), "hashtags": hashtags, "comptes": comptes},
                                   ensure_ascii=False, indent=1))
     lignes = ["| Compte | Nom | Affiches de soirée | Hashtags | Dernière | Déjà suivi |", "|---|---|---|---|---|---|"]

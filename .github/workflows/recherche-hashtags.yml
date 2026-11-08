@@ -2,7 +2,8 @@ name: Recherche de comptes par hashtags
 
 # Chaque lundi, et à la main (Actions → Recherche de comptes par hashtags → Run workflow).
 # Lit les hashtags de la nuit sur Instagram et classe les comptes qui publient des affiches de soirée.
-# Résultat : tableau dans le résumé de l'exécution et _data/comptes_proposes.json (page Contribuer).
+# Résultat : tableau dans le résumé de l'exécution, _data/comptes_proposes.json (page Contribuer)
+# et le ticket « tri-comptes », où l'on coche les faux positifs (voir tri-comptes.yml).
 on:
   schedule:
     - cron: "37 6 * * 1"
@@ -15,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: scrapers
@@ -30,6 +32,10 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Faux positifs déjà cochés
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -m scrapers.tri_comptes lire
       - name: Chercher
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -37,12 +43,16 @@ jobs:
         run: |
           IFS=',' read -ra liste <<< "$HASHTAGS"
           python3 -m scrapers.recherche_hashtags "${liste[@]}"
+      - name: Ticket de tri
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -m scrapers.tri_comptes ecrire
       - name: Enregistrer
         if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
-          git add _data/comptes_proposes.json
+          git add _data/comptes_proposes.json _data/comptes_exclus.yml
           git diff --cached --quiet && exit 0
           git commit -m "Comptes proposés par les hashtags"
           for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && exit 0; sleep 5; done

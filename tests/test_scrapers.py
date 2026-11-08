@@ -290,6 +290,26 @@ class RechercheHashtags(unittest.TestCase):
         self.assertEqual((c[0]["soirees"], c[0]["derniere"], c[0]["exemple"]), (2, "2026-11-07", "https://www.instagram.com/p/2/"))
         self.assertTrue(c[1]["suivi"])
 
+    def test_prefiltre(self):
+        from scrapers.recherche_hashtags import prefiltre
+        auj = dt.date(2026, 11, 8)
+        c = lambda compte, nom="", derniere="2026-11-01": {"compte": compte, "nom": nom, "derniere": derniere}  # noqa: E731
+        self.assertEqual(prefiltre(c("moods.gammarth", "Moods Lounge"), set(), auj), "")
+        self.assertEqual(prefiltre(c("lucky_tours_tunisia"), set(), auj), "hors nuit")
+        self.assertEqual(prefiltre(c("x", "JDIDI IMMOBILIERE"), set(), auj), "hors nuit")
+        self.assertEqual(prefiltre(c("x", "Hotel Soussana"), set(), auj), "hors nuit")
+        self.assertEqual(prefiltre(c("djschool.tn", derniere="2017-12-26"), set(), auj), "inactif")
+        self.assertEqual(prefiltre(c("joia"), {"joia"}, auj), "faux positif")
+
+    def test_ticket_de_tri(self):
+        from scrapers import tri_comptes
+        corps = tri_comptes.corps_du_ticket([{"compte": "moods.gammarth", "nom": "Moods", "soirees": 16,
+                                              "derniere": "2026-11-08", "exemple": "https://www.instagram.com/p/1/"}], "2026-11-08")
+        self.assertIn("- [ ] @moods.gammarth · Moods · 16 affiche(s)", corps)
+        self.assertEqual(tri_comptes.cochees(corps), set())
+        coche = corps.replace("- [ ] @moods", "- [x] @moods") + "- [X] @Joia.Indoor_Restaurant · Joïa\n"
+        self.assertEqual(tri_comptes.cochees(coche), {"moods.gammarth", "joia.indoor_restaurant"})
+
 
 if __name__ == "__main__":
     unittest.main()

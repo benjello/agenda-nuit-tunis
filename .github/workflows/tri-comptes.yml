@@ -1,0 +1,40 @@
+name: Tri des comptes proposés
+
+# Quand on coche des faux positifs dans le ticket « tri-comptes », ils partent dans _data/comptes_exclus.yml
+# et disparaissent de la page Contribuer.
+on:
+  issues:
+    types: [edited]
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: scrapers
+  cancel-in-progress: false
+
+jobs:
+  trier:
+    if: contains(github.event.issue.labels.*.name, 'tri-comptes')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Lire les cases cochées
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -m scrapers.tri_comptes lire
+      - name: Enregistrer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
+          git add _data/comptes_proposes.json _data/comptes_exclus.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Faux positifs retirés des comptes proposés"
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && exit 0; sleep 5; done
+          exit 1
