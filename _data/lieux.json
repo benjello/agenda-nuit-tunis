@@ -1,23 +1,11 @@
 {
  "index": {
   "Dar Ziqua, Zaghouan": "dar-ziqua-zaghouan",
-  "One Resort, Monastir": "one-resort-monastir",
   "Habibi Downtown, Tunis": "habibi-downtown-tunis",
-  "Quechlet El Attarine": "quechlet-el-attarine",
   "One Resort": "one-resort",
-  "B7L9 Art Centre": "b7l9-art-centre",
-  "UTICA UNION TUN. THE IND. TRADE & ART": "utica-union-tun-the-ind-trade-art"
+  "B7L9 Art Centre": "b7l9-art-centre"
  },
  "carte": [
-  {
-   "slug": "one-resort-monastir",
-   "nom": "One Resort, Monastir",
-   "type": "club",
-   "ville": "monastir",
-   "lat": 35.76372,
-   "lon": 10.7399,
-   "n": 1
-  },
   {
    "slug": "one-resort",
    "nom": "One Resort",
