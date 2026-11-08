@@ -30,18 +30,7 @@
  },
  "festivals": {},
  "films": {},
- "lieux": {
-  "cite-de-la-culture-av-mohamed-5-tunis": {
-   "source": "Wikipédia",
-   "texte": "La Cité de la culture ou cité de la culture Chedli-Klibi est un complexe culturel tunisien de neuf hectares situé en plein centre de la ville de Tunis, à l'emplacement de l'ancienne Foire internationale de Tunis sur l'avenue Mohammed-V.",
-   "url": "https://fr.wikipedia.org/wiki/Cit%C3%A9_de_la_culture_(Tunisie)"
-  },
-  "insat-tunis-tunisia": {
-   "source": "Wikipédia",
-   "texte": "L'Institut national des sciences appliquées et de technologie ou INSAT est un établissement universitaire tunisien rattaché à l'université de Carthage.",
-   "url": "https://fr.wikipedia.org/wiki/Institut_national_des_sciences_appliqu%C3%A9es_et_de_technologie"
-  }
- },
+ "lieux": {},
  "musees": {},
  "pages": {},
  "recherches": {
@@ -357,11 +346,19 @@
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },
+  "collectifs:osiris-club-djerba": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
   "collectifs:rock-n-rolla-la-goulette": {
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },
   "collectifs:steppers-sound-system": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:techno-tunisia": {
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },
@@ -376,6 +373,14 @@
    "source": "site officiel",
    "texte": "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA",
    "url": "https://tunis.events/nightlife",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:tunisia-comedy-festival": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:tunisian-techno-community": {
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },

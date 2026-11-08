@@ -22,8 +22,76 @@
   "lu_le": "2026-11-08",
   "photo": "assets/clubs/calypso-club-hammamet/profil.jpg"
  },
+ "Cercle Club": {
+  "abonnes": 6399,
+  "affiches": [
+   {
+    "date": "2025-07-17",
+    "image": "assets/clubs/cercle-club/DMOh_AvIRWP.jpg",
+    "lien": "https://www.instagram.com/p/DMOh_AvIRWP/"
+   },
+   {
+    "date": "2025-07-15",
+    "image": "assets/clubs/cercle-club/DMImN6XIVa3.jpg",
+    "lien": "https://www.instagram.com/p/DMImN6XIVa3/"
+   },
+   {
+    "date": "2025-07-14",
+    "image": "assets/clubs/cercle-club/DMFnssbop0h.jpg",
+    "lien": "https://www.instagram.com/p/DMFnssbop0h/"
+   }
+  ],
+  "lu_le": "2026-11-08",
+  "photo": "assets/clubs/cercle-club/profil.jpg"
+ },
  "Grand Italia": {
   "lu_le": "2026-11-08"
+ },
+ "Osiris Club Djerba": {
+  "abonnes": 7621,
+  "affiches": [
+   {
+    "date": "2026-11-07",
+    "image": "assets/clubs/osiris-club-djerba/Dfck0nnEl9d.jpg",
+    "lien": "https://www.instagram.com/p/Dfck0nnEl9d/"
+   },
+   {
+    "date": "2026-11-06",
+    "image": "assets/clubs/osiris-club-djerba/DfZxPUrDN_G.jpg",
+    "lien": "https://www.instagram.com/p/DfZxPUrDN_G/"
+   },
+   {
+    "date": "2026-11-05",
+    "image": "assets/clubs/osiris-club-djerba/DfYBmLwEQtu.jpg",
+    "lien": "https://www.instagram.com/p/DfYBmLwEQtu/"
+   }
+  ],
+  "bio": "OSIRIS CLUB – Djerba\n✨ Nights to remember • Soirées inoubliables\n🎧 DJ Live | 🍸 Lounge & Cocktails | 💃 Ambiance unique\n🌙 أسطورة الليل في جربة",
+  "lu_le": "2026-11-08",
+  "photo": "assets/clubs/osiris-club-djerba/profil.jpg"
+ },
+ "The Moon Club Djerba": {
+  "abonnes": 478,
+  "affiches": [
+   {
+    "date": "2026-11-08",
+    "image": "assets/clubs/the-moon-club-djerba/DfeWoZCAFTR.jpg",
+    "lien": "https://www.instagram.com/p/DfeWoZCAFTR/"
+   },
+   {
+    "date": "2026-11-07",
+    "image": "assets/clubs/the-moon-club-djerba/Dfccv03ktTV.jpg",
+    "lien": "https://www.instagram.com/p/Dfccv03ktTV/"
+   },
+   {
+    "date": "2026-11-07",
+    "image": "assets/clubs/the-moon-club-djerba/DfcRvZQj2Vf.jpg",
+    "lien": "https://www.instagram.com/p/DfcRvZQj2Vf/"
+   }
+  ],
+  "bio": "La page officielle",
+  "lu_le": "2026-11-08",
+  "photo": "assets/clubs/the-moon-club-djerba/profil.jpg"
  },
  "Unidos Club by El Pacha": {
   "abonnes": 8282,

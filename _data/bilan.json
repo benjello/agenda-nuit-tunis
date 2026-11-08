@@ -2,11 +2,12 @@
  {
   "semaine": "2026-S45",
   "date": "2026-11-08",
-  "a_venir": 19,
-  "sept_jours": 7,
-  "sources_actives": 16,
-  "sources_avec_evenements": 5,
+  "a_venir": 8,
+  "sept_jours": 4,
+  "sources_actives": 20,
+  "sources_avec_evenements": 4,
   "sources_muettes": [
+   "fb-recherche-soirees",
    "ig-calypso-hammamet",
    "ig-downtown-vibes",
    "ig-echos-electrik",
@@ -14,30 +15,31 @@
    "ig-hamdi-ryder",
    "ig-jaou-tunis",
    "ig-kadhem",
+   "ig-osiris-djerba",
    "ig-rock-n-rolla",
+   "ig-techno-tunisia",
+   "ig-tn-techno-community",
+   "ig-tunisia-comedy-festival",
    "teskerti",
    "tn-agenda-du-jour",
    "tunis-events"
   ],
   "par_ville": {
-   "tunis": 4,
    "monastir": 2,
-   "autres": 1
+   "autres": 1,
+   "tunis": 1
   },
   "par_categorie": {
    "club": 2,
-   "autre": 2,
-   "festival": 2,
-   "concert": 1
+   "festival": 2
   },
   "par_genre": {
-   "agenda": 4,
    "collectif": 1,
    "festival": 1,
-   "lieu": 1
+   "lieu": 1,
+   "agenda": 1
   },
   "par_source": {
-   "fb-recherche-soirees": 3,
    "fb-61595612945174": 1,
    "ig-fabrika": 1,
    "ig-habibi-downtown": 1,

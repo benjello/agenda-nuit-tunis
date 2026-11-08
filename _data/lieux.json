@@ -1,11 +1,6 @@
 {
  "index": {
   "Dar Ziqua, Zaghouan": "dar-ziqua-zaghouan",
-  "Cité de la Culture, Av. Mohamed 5, Tunis": "cite-de-la-culture-av-mohamed-5-tunis",
-  "INSAT, Tunis, Tunisia": "insat-tunis-tunisia",
-  "NLP BOOST 8 avenue de l'université, Tunis 2092, 2092 Tunis, Tunisia": "nlp-boost-8-avenue-de-l-universite-tunis-2092-2092-tunis-tun",
-  "American Legion Michael Steiner Post 411": "american-legion-michael-steiner-post-411",
-  "Montréal": "montreal",
   "One Resort, Monastir": "one-resort-monastir",
   "Habibi Downtown, Tunis": "habibi-downtown-tunis",
   "Quechlet El Attarine": "quechlet-el-attarine",
@@ -14,33 +9,6 @@
   "UTICA UNION TUN. THE IND. TRADE & ART": "utica-union-tun-the-ind-trade-art"
  },
  "carte": [
-  {
-   "slug": "cite-de-la-culture-av-mohamed-5-tunis",
-   "nom": "Cité de la Culture, Av. Mohamed 5, Tunis",
-   "type": "centre",
-   "ville": "tunis",
-   "lat": 36.8109,
-   "lon": 10.18608,
-   "n": 1
-  },
-  {
-   "slug": "insat-tunis-tunisia",
-   "nom": "INSAT, Tunis, Tunisia",
-   "type": "autre",
-   "ville": "tunis",
-   "lat": 36.8428,
-   "lon": 10.19692,
-   "n": 1
-  },
-  {
-   "slug": "montreal",
-   "nom": "Montréal",
-   "type": "autre",
-   "ville": "tunis",
-   "lat": 37.28135,
-   "lon": 9.85719,
-   "n": 1
-  },
   {
    "slug": "one-resort-monastir",
    "nom": "One Resort, Monastir",
