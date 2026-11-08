@@ -1,0 +1,49 @@
+name: Recherche de comptes par hashtags
+
+# Chaque lundi, et à la main (Actions → Recherche de comptes par hashtags → Run workflow).
+# Lit les hashtags de la nuit sur Instagram et classe les comptes qui publient des affiches de soirée.
+# Résultat : tableau dans le résumé de l'exécution et _data/comptes_proposes.json (page Contribuer).
+on:
+  schedule:
+    - cron: "37 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      hashtags:
+        description: "Hashtags séparés par des virgules (vide = la liste par défaut)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrapers
+  cancel-in-progress: false
+
+jobs:
+  chercher:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Chercher
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          HASHTAGS: ${{ inputs.hashtags }}
+        run: |
+          IFS=',' read -ra liste <<< "$HASHTAGS"
+          python3 -m scrapers.recherche_hashtags "${liste[@]}"
+      - name: Enregistrer
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
+          git add _data/comptes_proposes.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Comptes proposés par les hashtags"
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push && exit 0; sleep 5; done
+          exit 1

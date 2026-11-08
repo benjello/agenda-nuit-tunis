@@ -484,3 +484,9 @@ clubs.g2: { ar: "من 20 إلى 60 د.ت", en: "20 to 60 TND" }
 clubs.g3: { ar: "أكثر من 60 د.ت", en: "Over 60 TND" }
 apropos.installer: { ar: "<li><strong>أندرويد (كروم)</strong>: القائمة ⋮، ثم « تثبيت التطبيق » أو « إضافة إلى الشاشة الرئيسية ».</li><li><strong>آيفون (سفاري)</strong>: زر المشاركة، ثم « إضافة إلى الشاشة الرئيسية ».</li>", en: "<li><strong>Android (Chrome)</strong>: menu ⋮, then “Install app” or “Add to Home screen”.</li><li><strong>iPhone (Safari)</strong>: Share button, then “Add to Home Screen”.</li>" }
 apropos.p7: { ar: "التعريفات القصيرة مأخوذة من الإعلان الأصلي ومن <a href=\"https://ar.wikipedia.org\">ويكيبيديا</a> (رخصة CC BY-SA، مع رابط نحو المقال في كل مرة).", en: "The short descriptions come from the original announcement and from <a href=\"https://en.wikipedia.org\">Wikipedia</a> (CC BY-SA licence, with a link to the article each time)." }
+contrib.a_verifier: { ar: "حسابات للتحقق منها", en: "Accounts to check" }
+contrib.a_verifier_intro: { ar: "تنشر هذه الحسابات على إنستغرام ملصقات سهرات تحت وسوم الليل (#gammarth، #hammamet…). هل هو نادٍ أو مجموعة أو منظم؟ إن كان يعلن عن سهراته، اقترحه كمصدر.", en: "These Instagram accounts post party posters under the nightlife hashtags (#gammarth, #hammamet…). Is it a club, a collective, a promoter? If it announces its nights, suggest it as a source." }
+contrib.affiches: { ar: "ملصق", en: "poster(s)" }
+contrib.exemple: { ar: "آخر منشور", en: "latest post" }
+contrib.brancher: { ar: "هذا مصدر سهرات", en: "It's a source of nights out" }
+contrib.lu_le: { ar: "تُحدَّث القائمة كل إثنين.", en: "List updated every Monday." }

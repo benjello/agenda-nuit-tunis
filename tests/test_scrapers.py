@@ -276,6 +276,21 @@ class Nettoyage(unittest.TestCase):
             self.assertFalse(hors_sujet(nom), nom)
 
 
+class RechercheHashtags(unittest.TestCase):
+    def test_classer(self):
+        from scrapers.recherche_hashtags import classer
+        pubs = [{"ownerUsername": "clubx", "caption": "Ce soir DJ set 🔥 résa en DM", "timestamp": "2026-11-06T20:00:00Z",
+                 "url": "https://www.instagram.com/p/1/", "_hashtag": "gammarth"},
+                {"ownerUsername": "clubx", "caption": "Saturday night party", "timestamp": "2026-11-07T20:00:00Z",
+                 "url": "https://www.instagram.com/p/2/", "_hashtag": "lamarsa"},
+                {"ownerUsername": "plage", "caption": "Coucher de soleil", "timestamp": "2026-11-07T18:00:00Z", "_hashtag": "gammarth"},
+                {"ownerUsername": "suivi", "caption": "Afro night", "timestamp": "2026-11-05T20:00:00Z", "_hashtag": "gammarth"}]
+        c = classer(pubs, {"suivi"})
+        self.assertEqual([x["compte"] for x in c], ["clubx", "suivi"])  # la plage n'annonce pas de soirée
+        self.assertEqual((c[0]["soirees"], c[0]["derniere"], c[0]["exemple"]), (2, "2026-11-07", "https://www.instagram.com/p/2/"))
+        self.assertTrue(c[1]["suivi"])
+
+
 if __name__ == "__main__":
     unittest.main()
 

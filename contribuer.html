@@ -38,6 +38,23 @@ description: "Les lieux et les pages que l'agenda ne sait pas encore lire : aide
 {%- endfor %}
 </ul>
 
+{%- assign proposes = site.data.comptes_proposes.comptes | where: "suivi", false -%}
+{%- if proposes.size > 0 %}
+<h2 id="a-verifier" data-t="contrib.a_verifier">Comptes à vérifier</h2>
+<p data-t="contrib.a_verifier_intro">Ces comptes Instagram publient des affiches de soirée sous les hashtags de la nuit (#gammarth, #hammamet…). Est-ce un club, un collectif, un organisateur ? S'il annonce ses soirées, proposez-le comme source.</p>
+<ul class="recherchees">
+{%- for c in proposes limit: 30 %}
+  <li>
+    <strong><a href="https://www.instagram.com/{{ c.compte }}/" rel="noopener">@{{ c.compte }}</a></strong>{% if c.nom != "" %} · {{ c.nom }}{% endif %}
+    <small class="etat pause">{{ c.soirees }} <span data-t="contrib.affiches">affiche(s)</span></small>
+    <p><small>{% for h in c.hashtags %}#{{ h }} {% endfor %}{% if c.exemple != "" %}· <a href="{{ c.exemple }}" rel="noopener" data-t="contrib.exemple">dernière publication</a> ({{ c.derniere | date: "%d/%m" }}){% endif %}</small></p>
+    <a class="bouton" rel="noopener" href="{{ nouvelle }}&title={{ 'Source : @' | append: c.compte | url_encode }}&nom={{ c.compte | prepend: 'https://www.instagram.com/' | url_encode }}" data-t="contrib.brancher">C'est une source de soirées</a>
+  </li>
+{%- endfor %}
+</ul>
+<p class="updated"><span data-t="contrib.lu_le">Liste mise à jour chaque lundi.</span> {{ site.data.comptes_proposes.lu_le | date: "%d/%m/%Y" }}</p>
+{%- endif %}
+
 <h2 id="a-reparer" data-t="contrib.reparer">Sources à réparer</h2>
 <p data-t="contrib.reparer_intro">Ces sources sont connues, mais la page ne marche plus, n'a rien publié depuis plus d'un mois, ou n'est pas encore branchée. Une adresse plus à jour (une autre page, un compte Instagram, un site) suffit souvent.</p>
 <table class="sources">
