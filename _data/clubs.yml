@@ -22,4 +22,18 @@
 #   facebook   adresse de la page
 #   site       adresse du site
 #   cacher     true pour retirer un lieu d'OpenStreetMap fermé ou hors sujet
-[]
+
+- nom: Calypso Club Hammamet
+  type: discotheque
+  ville: nabeul
+  adresse: Hammamet
+  instagram: calypsotunisiaofficial
+  reservation: conseillée (message Instagram)
+  # vérifié le 8 nov. 2026 : compte « Calypso Club Hammamet », « Since 1971 », 77 000 abonnés, « DM for Reservations »
+
+- nom: Unidos Club by El Pacha
+  type: club
+  ville: nabeul
+  adresse: Hammamet
+  instagram: unidos_by_elpacha
+  # vérifié le 8 nov. 2026 : « Ancien Havana Club, toujours en fête depuis '71 », dernière publication en décembre 2024

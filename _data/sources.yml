@@ -299,3 +299,18 @@
     max: 80
     filtre_strict: true
   note: "Recherche par mots-clés dans les événements publics de Facebook (Apify, environ 1 centime l'événement, un passage sur deux jours). La catégorie vient du titre ; films, expos et conférences sont écartés. Sert aussi à repérer les pages d'organisateurs à brancher."
+
+- id: ig-calypso-hammamet
+  nom: Calypso Club Hammamet (Instagram)
+  url: https://www.instagram.com/calypsotunisiaofficial/
+  type: lieu
+  genre: lieu
+  scraper: instagram
+  categorie: discotheque
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: calypsotunisiaofficial
+    lieu: Calypso Club Hammamet
+    resultats: 8
+  note: "Discothèque historique de Hammamet (depuis 1971). Surtout l'été. Trouvé par la recherche Instagram le 8 nov. 2026."

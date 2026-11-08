@@ -602,6 +602,23 @@
    "osm": "https://www.openstreetmap.org/node/6169391616"
   },
   {
+   "nom": "Unidos Club by El Pacha",
+   "type": "club",
+   "ville": "nabeul",
+   "adresse": "Hammamet",
+   "instagram": "unidos_by_elpacha",
+   "manuel": true
+  },
+  {
+   "nom": "Calypso Club Hammamet",
+   "type": "discotheque",
+   "ville": "nabeul",
+   "adresse": "Hammamet",
+   "instagram": "calypsotunisiaofficial",
+   "reservation": "conseillée (message Instagram)",
+   "manuel": true
+  },
+  {
    "nom": "Café De Tunis",
    "type": "bar",
    "ville": "sfax",
