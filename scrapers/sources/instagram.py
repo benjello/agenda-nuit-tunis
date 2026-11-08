@@ -47,7 +47,7 @@ def lire_publications(source: dict) -> list[Publication]:
         "onlyPostsNewerThan": f"{fenetre(source)} days"}, cle)
     if not isinstance(items, list):
         raise RuntimeError(f"réponse Apify inattendue : {str(items)[:200]}")
-    erreurs = [i for i in items if i.get("error")]
+    erreurs = [i for i in items if i.get("error") and i.get("error") != "no_items"]  # no_items : rien de récent, pas une panne
     avec_image = [i for i in items if not i.get("error") and images_de(i)]
     print(f"  {source['id']} : {len(items)} publication(s) lue(s), {len(avec_image)} avec image")
     if erreurs and not avec_image:

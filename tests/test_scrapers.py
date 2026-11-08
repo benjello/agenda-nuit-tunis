@@ -960,6 +960,21 @@ class Instagram(unittest.TestCase):
         self.assertEqual(evts[0].categorie, "musique")
         self.assertEqual(evts[0].lieu, "Le Bar")
 
+    def test_compte_sans_publication_recente(self):
+        """Apify répond « no_items » quand le compte n'a rien publié dans la fenêtre : zéro, pas une panne."""
+        from scrapers.sources import instagram
+        for items, panne in (([{"error": "no_items", "errorDescription": "Empty or private data"}], False),
+                             ([{"error": "not_found", "errorDescription": "Page not found"}], True)):
+            with tempfile.TemporaryDirectory() as d, \
+                 mock.patch.dict("os.environ", {"APIFY_TOKEN": "x"}), \
+                 mock.patch.object(instagram, "appeler_apify", return_value=items), \
+                 mock.patch.object(instagram, "DOSSIER_IMAGES", Path(d)):
+                source = {"id": "t", "nom": "Bar", "url": "bar", "options": {"compte": "bar"}}
+                if panne:
+                    self.assertRaises(RuntimeError, instagram.recuperer, source)
+                else:
+                    self.assertEqual(instagram.recuperer(source), [])
+
 
 class Propositions(unittest.TestCase):
     def test_issue_vers_evenement(self):

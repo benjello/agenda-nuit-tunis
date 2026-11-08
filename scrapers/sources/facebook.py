@@ -100,7 +100,7 @@ def recuperer(source: dict) -> list[Evenement]:
         if not convertir(i, source) and not i.get("error"):
             print(f"    écarté : {i.get('name')!r} début={i.get('utcStartDate') or i.get('startISO') or i.get('startTime')} "
                   f"passé={i.get('isPast')} annulé={i.get('isCanceled')}")
-    erreurs = [i for i in items if i.get("error")]
+    erreurs = [i for i in items if i.get("error") and i.get("error") != "no_items"]  # no_items : rien de récent, pas une panne
     if erreurs and not evenements:
         raise RuntimeError(f"Apify : {str(erreurs[0])[:250]}")
     return evenements
