@@ -13,6 +13,9 @@ compte Facebook, depuis ses propres adresses, et nous renvoie du JSON.
 
 Options :
   page        nom de la page (facebook.com/<page>) ou URL complète d'un groupe
+  recherche   à la place de page : liste de mots-clés (« soirée Tunis », « party Gammarth »)
+              cherchés dans les événements publics de Facebook ; trouve aussi des organisateurs
+              à brancher comme sources (leur nom est dans le lieu ou le lien de l'événement)
   max         nombre maximum d'événements lus par passage (défaut 30)
   acteur      acteur Apify (défaut apify/facebook-events-scraper)
 """
@@ -83,8 +86,11 @@ def recuperer(source: dict) -> list[Evenement]:
     if not cle:
         raise EnAttente("clé APIFY_TOKEN pas encore configurée")
     o = source.get("options", {})
-    entree = {"startUrls": [url_evenements(o.get("page") or source["url"])],
-              "maxEvents": o.get("max", 30)}
+    if o.get("recherche"):
+        entree = {"searchQueries": list(o["recherche"]), "maxEvents": o.get("max", 30)}
+    else:
+        entree = {"startUrls": [url_evenements(o.get("page") or source["url"])],
+                  "maxEvents": o.get("max", 30)}
     items = appeler_apify(o.get("acteur", ACTEUR), entree, cle)
     if not isinstance(items, list):
         raise RuntimeError(f"réponse Apify inattendue : {str(items)[:200]}")

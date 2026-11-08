@@ -275,3 +275,26 @@
     lieu: Jaou Tunis
     resultats: 8
   note: Festival et soirées Jaou Nights (Fondation Kamel Lazaar).
+
+- id: fb-recherche-soirees
+  nom: Événements Facebook (recherche « soirées »)
+  url: https://www.facebook.com/events/
+  type: agenda
+  genre: agenda
+  scraper: facebook
+  categorie: autre
+  actif: true
+  tous_les_jours: 2
+  options:
+    recherche:
+      - soirée Tunis
+      - party Tunis
+      - party Gammarth
+      - soirée La Marsa
+      - soirée Hammamet
+      - soirée Sousse
+      - karaoké Tunis
+      - stand up Tunis
+      - cabaret Tunis
+    max: 80
+  note: "Recherche par mots-clés dans les événements publics de Facebook (Apify, environ 1 centime l'événement, un passage sur deux jours). La catégorie vient du titre ; films, expos et conférences sont écartés. Sert aussi à repérer les pages d'organisateurs à brancher."
