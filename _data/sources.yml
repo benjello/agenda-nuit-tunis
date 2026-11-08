@@ -314,3 +314,78 @@
     lieu: Calypso Club Hammamet
     resultats: 8
   note: "Discothèque historique de Hammamet (depuis 1971). Surtout l'été. Trouvé par la recherche Instagram le 8 nov. 2026."
+
+- id: ig-osiris-djerba
+  nom: Osiris Club Djerba (Instagram)
+  url: https://www.instagram.com/osirisclubdjerba/
+  type: lieu
+  genre: lieu
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: osirisclubdjerba
+    lieu: "Osiris Club, Djerba"
+    resultats: 8
+  note: "Club de Djerba, DJ live. Trouvé par la recherche Instagram le 8 nov. 2026."
+
+- id: ig-tn-techno-community
+  nom: Tunisian Techno Community (Instagram)
+  url: https://www.instagram.com/tn.techno.community/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: tn.techno.community
+    lieu: "Lieu à préciser"
+    resultats: 8
+  note: "« Covering all techno events in Tunisia », 2 800 abonnés. Trouvé par la recherche Instagram le 8 nov. 2026."
+
+- id: ig-techno-tunisia
+  nom: Techno Tunisia (Instagram)
+  url: https://www.instagram.com/technotunisia/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: technotunisia
+    lieu: "Lieu à préciser"
+    resultats: 8
+  note: "Techno et house en Tunisie : affiches de soirées. Trouvé par la recherche Instagram le 8 nov. 2026."
+
+- id: ig-tunisia-comedy-festival
+  nom: Tunisia Comedy Festival (Instagram)
+  url: https://www.instagram.com/tunisia_comedy_festival/
+  type: lieu
+  genre: festival
+  scraper: instagram
+  categorie: humour
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: tunisia_comedy_festival
+    lieu: "Tunis, voir l'annonce"
+    resultats: 8
+  note: "Festival de stand-up. Trouvé par la recherche Instagram le 8 nov. 2026."
+
+- id: ig-halo-tunisia
+  nom: Halo Melodic Techno (Instagram)
+  url: https://www.instagram.com/halo_tunisia/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: false
+  tous_les_jours: 3
+  options:
+    compte: halo_tunisia
+    lieu: "Lieu à préciser"
+    resultats: 8
+  note: "Soirées melodic techno avec DJ internationaux ; dernière publication en août 2024, en pause."

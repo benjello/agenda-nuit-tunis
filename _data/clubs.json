@@ -898,6 +898,15 @@
    "osm": "https://www.openstreetmap.org/node/8557626921"
   },
   {
+   "nom": "Osiris Club Djerba",
+   "type": "club",
+   "ville": "sud",
+   "adresse": "Djerba",
+   "instagram": "osirisclubdjerba",
+   "ambiance": "DJ live, lounge et cocktails",
+   "manuel": true
+  },
+  {
    "nom": "Salsa Disco Djerba",
    "type": "club",
    "ville": "sud",
@@ -905,6 +914,14 @@
    "lat": 33.8385512,
    "lon": 10.9945849,
    "osm": "https://www.openstreetmap.org/node/3834384561"
+  },
+  {
+   "nom": "The Moon Club Djerba",
+   "type": "club",
+   "ville": "sud",
+   "adresse": "Djerba",
+   "instagram": "the_moon_club_djerba",
+   "manuel": true
   },
   {
    "nom": "117 Tunis",
@@ -1395,7 +1412,9 @@
    "ville": "tunis",
    "lat": 36.9264237,
    "lon": 10.2780708,
-   "osm": "https://www.openstreetmap.org/node/10901588496"
+   "osm": "https://www.openstreetmap.org/node/10901588496",
+   "instagram": "cercle.club",
+   "manuel": true
   },
   {
    "nom": "Club Gingembre",
