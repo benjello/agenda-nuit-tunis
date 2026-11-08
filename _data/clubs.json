@@ -1,1 +1,1468 @@
-{}
+{
+ "lu_le": "2026-11-08",
+ "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
+ "lieux": [
+  {
+   "nom": "Hôtel Caribbean World Nabeul",
+   "type": "bar",
+   "ville": "nabeul",
+   "lat": 36.4424648,
+   "lon": 10.7458516,
+   "osm": "https://www.openstreetmap.org/node/1859404265"
+  },
+  {
+   "nom": "Jobi Beach Hammamet",
+   "type": "bar",
+   "ville": "nabeul",
+   "lat": 36.398087,
+   "lon": 10.5759323,
+   "osm": "https://www.openstreetmap.org/node/6287074376"
+  },
+  {
+   "nom": "Jus de fruits frais Nabeul",
+   "type": "bar",
+   "ville": "nabeul",
+   "lat": 36.4539528,
+   "lon": 10.7342307,
+   "osm": "https://www.openstreetmap.org/node/6223222752"
+  },
+  {
+   "nom": "Pachuca Beach Hammamet",
+   "type": "bar",
+   "ville": "nabeul",
+   "lat": 36.3880158,
+   "lon": 10.5592575,
+   "osm": "https://www.openstreetmap.org/node/2452281517"
+  },
+  {
+   "nom": "Pool Party Club Hammamet",
+   "type": "bar",
+   "ville": "nabeul",
+   "lat": 36.3869745,
+   "lon": 10.5578742,
+   "osm": "https://www.openstreetmap.org/node/6323176139"
+  },
+  {
+   "nom": "Yasmine Hammamet Bar",
+   "type": "bar",
+   "ville": "nabeul",
+   "lat": 36.3770365,
+   "lon": 10.5476109,
+   "osm": "https://www.openstreetmap.org/node/6306915887"
+  },
+  {
+   "nom": "Platinum Metalika Sousse",
+   "type": "club",
+   "ville": "sousse",
+   "telephone": "+21626101112",
+   "lat": 35.8896115,
+   "lon": 10.5938294,
+   "osm": "https://www.openstreetmap.org/node/1187745179"
+  },
+  {
+   "nom": "Sunset Beach Bar Djerba",
+   "type": "bar",
+   "ville": "sud",
+   "lat": 33.8635366,
+   "lon": 10.9746574,
+   "osm": "https://www.openstreetmap.org/node/6396807485"
+  },
+  {
+   "nom": "Tozeur",
+   "type": "bar",
+   "ville": "sud",
+   "lat": 33.9185562,
+   "lon": 8.1255928,
+   "osm": "https://www.openstreetmap.org/node/8557626921"
+  },
+  {
+   "nom": "Salsa Disco Djerba",
+   "type": "club",
+   "ville": "sud",
+   "site": "https://www.facebook.com/SalsaDiscoDjerba",
+   "lat": 33.8385512,
+   "lon": 10.9945849,
+   "osm": "https://www.openstreetmap.org/node/3834384561"
+  },
+  {
+   "nom": "117 Tunis",
+   "type": "bar",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/117tunis/",
+   "telephone": "+216 54 117 117",
+   "lat": 36.9246445,
+   "lon": 10.2856976,
+   "osm": "https://www.openstreetmap.org/node/7222250732"
+  },
+  {
+   "nom": "3 Dauphins",
+   "type": "bar",
+   "ville": "tunis",
+   "horaires": "tous les jours, 24 h/24",
+   "lat": 35.8485357,
+   "lon": 10.6177656,
+   "osm": "https://www.openstreetmap.org/node/1228007226"
+  },
+  {
+   "nom": "Babylone",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "32 نهج المعز, تونس",
+   "lat": 36.8382351,
+   "lon": 10.1762128,
+   "osm": "https://www.openstreetmap.org/node/7474213710"
+  },
+  {
+   "nom": "Bar Jasmin",
+   "type": "bar",
+   "ville": "tunis",
+   "horaires": "tous les jours, 24 h/24",
+   "lat": 36.4002513,
+   "lon": 10.5767993,
+   "osm": "https://www.openstreetmap.org/node/12002676494"
+  },
+  {
+   "nom": "Bar L'Avenue",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.7989287,
+   "lon": 10.1823523,
+   "osm": "https://www.openstreetmap.org/node/6302251655"
+  },
+  {
+   "nom": "Bar La Rosa",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "المنستير",
+   "lat": 35.7690742,
+   "lon": 10.7645228,
+   "osm": "https://www.openstreetmap.org/node/1418273303"
+  },
+  {
+   "nom": "Bar Lounge SAADI",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.845184,
+   "lon": 10.1834243,
+   "osm": "https://www.openstreetmap.org/node/5199797657"
+  },
+  {
+   "nom": "Bar piscine Sultan",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.404463,
+   "lon": 10.647665,
+   "osm": "https://www.openstreetmap.org/way/128935653"
+  },
+  {
+   "nom": "Bar Plage Bao Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4039473,
+   "lon": 10.5694656,
+   "osm": "https://www.openstreetmap.org/node/6287074343"
+  },
+  {
+   "nom": "Bar Restaurant",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4614441,
+   "lon": 10.7293097,
+   "osm": "https://www.openstreetmap.org/node/6302382981"
+  },
+  {
+   "nom": "Bar Semi Ramis",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4004668,
+   "lon": 10.5772707,
+   "osm": "https://www.openstreetmap.org/node/12002676493"
+  },
+  {
+   "nom": "Barberousse Beach Club",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3788485,
+   "lon": 10.5490785,
+   "osm": "https://www.openstreetmap.org/node/6323176086"
+  },
+  {
+   "nom": "Bariolo Juices - Tunisia Mall",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8475802,
+   "lon": 10.2793058,
+   "osm": "https://www.openstreetmap.org/node/6303297979"
+  },
+  {
+   "nom": "Barrio",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9240749,
+   "lon": 10.2855997,
+   "osm": "https://www.openstreetmap.org/node/10901588478"
+  },
+  {
+   "nom": "Beach Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.42306,
+   "lon": 10.6780884,
+   "osm": "https://www.openstreetmap.org/way/601682627"
+  },
+  {
+   "nom": "Beb Bhar",
+   "type": "bar",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/bebbhargammarth/",
+   "telephone": "+216 55 551 900",
+   "lat": 36.9245791,
+   "lon": 10.2860302,
+   "osm": "https://www.openstreetmap.org/node/7222250731"
+  },
+  {
+   "nom": "Bistro 66Kif",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.5986629,
+   "lon": 10.5003814,
+   "osm": "https://www.openstreetmap.org/node/6349731962"
+  },
+  {
+   "nom": "Bolivar Beach Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3707735,
+   "lon": 10.5420067,
+   "osm": "https://www.openstreetmap.org/node/6306915915"
+  },
+  {
+   "nom": "Breeze on Pool",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3795056,
+   "lon": 10.5485084,
+   "osm": "https://www.openstreetmap.org/node/6323176085"
+  },
+  {
+   "nom": "Bräuhaus 209",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9217319,
+   "lon": 10.2903191,
+   "osm": "https://www.openstreetmap.org/way/128232727"
+  },
+  {
+   "nom": "Bubbles Hooka & Club",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4473822,
+   "lon": 10.7205298,
+   "osm": "https://www.openstreetmap.org/node/6088859386"
+  },
+  {
+   "nom": "Cafe de Paris",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8317645,
+   "lon": 10.6407243,
+   "osm": "https://www.openstreetmap.org/node/12343256701"
+  },
+  {
+   "nom": "Café Bar de la Lyre",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8009023,
+   "lon": 10.1782534,
+   "osm": "https://www.openstreetmap.org/node/6300053852"
+  },
+  {
+   "nom": "Café Bar Palace",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.799189,
+   "lon": 10.1826743,
+   "osm": "https://www.openstreetmap.org/node/6302251637"
+  },
+  {
+   "nom": "Café De Tunis",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "صفاقس",
+   "lat": 34.7326938,
+   "lon": 10.7641539,
+   "osm": "https://www.openstreetmap.org/node/4639995433"
+  },
+  {
+   "nom": "Captain's bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3581533,
+   "lon": 10.5320517,
+   "osm": "https://www.openstreetmap.org/node/1843328514"
+  },
+  {
+   "nom": "Carpe Diem",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8712718,
+   "lon": 10.310882,
+   "osm": "https://www.openstreetmap.org/node/5939869216"
+  },
+  {
+   "nom": "Caruso",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "شارع هدي شاكر",
+   "horaires": "lun-dim 9h-0h",
+   "lat": 35.8362934,
+   "lon": 10.6367263,
+   "osm": "https://www.openstreetmap.org/node/5847201685"
+  },
+  {
+   "nom": "Cassette",
+   "type": "bar",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/Cassette-Tunis-124428895626016/",
+   "telephone": "+216 22 784 784",
+   "lat": 36.923732,
+   "lon": 10.2883422,
+   "osm": "https://www.openstreetmap.org/node/7222250729"
+  },
+  {
+   "nom": "Chez Vous",
+   "type": "bar",
+   "ville": "tunis",
+   "horaires": "lun-sam 12h-2h30",
+   "lat": 36.800357,
+   "lon": 10.1824403,
+   "osm": "https://www.openstreetmap.org/node/11504046285"
+  },
+  {
+   "nom": "Chez Zak",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8376804,
+   "lon": 11.1096709,
+   "osm": "https://www.openstreetmap.org/node/6321849256"
+  },
+  {
+   "nom": "Club 55",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.5182947,
+   "lon": 11.043899,
+   "osm": "https://www.openstreetmap.org/node/7236953869"
+  },
+  {
+   "nom": "Club 71",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8658302,
+   "lon": 10.2183992,
+   "osm": "https://www.openstreetmap.org/node/6498956076"
+  },
+  {
+   "nom": "Club Ali Baba",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4056146,
+   "lon": 10.6005624,
+   "osm": "https://www.openstreetmap.org/node/6297472074"
+  },
+  {
+   "nom": "Cohibar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9264859,
+   "lon": 10.2782371,
+   "osm": "https://www.openstreetmap.org/node/10901588485"
+  },
+  {
+   "nom": "Cozy bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3688549,
+   "lon": 10.5322375,
+   "osm": "https://www.openstreetmap.org/node/6306915907"
+  },
+  {
+   "nom": "Dar Ali",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 33.8683262,
+   "lon": 10.9612276,
+   "osm": "https://www.openstreetmap.org/node/5533981411",
+   "ambiance": "terrasse"
+  },
+  {
+   "nom": "Edge Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8543843,
+   "lon": 10.6160499,
+   "osm": "https://www.openstreetmap.org/node/3268965066"
+  },
+  {
+   "nom": "El Catador Tapis Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "نهج علي باشا, حلق الوادي",
+   "lat": 36.8157371,
+   "lon": 10.3057968,
+   "osm": "https://www.openstreetmap.org/node/4863926423"
+  },
+  {
+   "nom": "El Guitoune",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4021516,
+   "lon": 10.5679908,
+   "osm": "https://www.openstreetmap.org/node/6287074645"
+  },
+  {
+   "nom": "El Menchia Hôtel Restaurant & Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8676013,
+   "lon": 10.6106909,
+   "osm": "https://www.openstreetmap.org/node/1277096779"
+  },
+  {
+   "nom": "El Pacha Club",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3986818,
+   "lon": 10.5603944,
+   "osm": "https://www.openstreetmap.org/way/697596852"
+  },
+  {
+   "nom": "Espace Meziana",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "شارع السلوم, القصرين",
+   "lat": 35.164063,
+   "lon": 8.8327802,
+   "osm": "https://www.openstreetmap.org/node/9823537977"
+  },
+  {
+   "nom": "Evening bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.5365689,
+   "lon": 11.0318133,
+   "osm": "https://www.openstreetmap.org/node/11978027069"
+  },
+  {
+   "nom": "Family Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4241824,
+   "lon": 10.6794355,
+   "osm": "https://www.openstreetmap.org/node/5814721739"
+  },
+  {
+   "nom": "Ferik",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.7684984,
+   "lon": 10.8433474,
+   "osm": "https://www.openstreetmap.org/node/2306836074"
+  },
+  {
+   "nom": "First TV",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.7951655,
+   "lon": 10.0985233,
+   "osm": "https://www.openstreetmap.org/node/4425166289"
+  },
+  {
+   "nom": "FRESHKATY",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3990969,
+   "lon": 10.5793109,
+   "osm": "https://www.openstreetmap.org/node/6287074290"
+  },
+  {
+   "nom": "Frida Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.7990874,
+   "lon": 10.1838912,
+   "osm": "https://www.openstreetmap.org/node/6302251631"
+  },
+  {
+   "nom": "Garrison",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9243193,
+   "lon": 10.2859041,
+   "osm": "https://www.openstreetmap.org/node/10901588483"
+  },
+  {
+   "nom": "Gentlemen",
+   "type": "bar",
+   "ville": "tunis",
+   "horaires": "lun-sam 15h-1h",
+   "lat": 36.8227077,
+   "lon": 10.1933627,
+   "osm": "https://www.openstreetmap.org/node/6819154487"
+  },
+  {
+   "nom": "Go CAfé",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.6775875,
+   "lon": 10.1024618,
+   "osm": "https://www.openstreetmap.org/node/11830495170"
+  },
+  {
+   "nom": "Goa Private Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3936731,
+   "lon": 10.5670553,
+   "osm": "https://www.openstreetmap.org/node/6323176136"
+  },
+  {
+   "nom": "Golf Braü",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4249253,
+   "lon": 10.5466847,
+   "osm": "https://www.openstreetmap.org/node/6612311378"
+  },
+  {
+   "nom": "Golf Bräu",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8899477,
+   "lon": 10.5944142,
+   "osm": "https://www.openstreetmap.org/node/918687398"
+  },
+  {
+   "nom": "Golfbar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3589194,
+   "lon": 10.5306432,
+   "osm": "https://www.openstreetmap.org/node/6742582776"
+  },
+  {
+   "nom": "Grand Italia",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "03 شارع الولايات المتحدة الأمريكية",
+   "site": "http://www.darismailhotels.com",
+   "lat": 36.815429,
+   "lon": 10.1787807,
+   "osm": "https://www.openstreetmap.org/node/4587009091"
+  },
+  {
+   "nom": "Habibi",
+   "type": "bar",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/Habibi-Tunis-1579917178797578/",
+   "lat": 36.9242752,
+   "lon": 10.2853823,
+   "osm": "https://www.openstreetmap.org/way/762794824"
+  },
+  {
+   "nom": "Havana Club",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.39846,
+   "lon": 10.5606345,
+   "osm": "https://www.openstreetmap.org/node/1734545070"
+  },
+  {
+   "nom": "Hotel beach drinks hut",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4189565,
+   "lon": 10.6710263,
+   "osm": "https://www.openstreetmap.org/node/6268842900"
+  },
+  {
+   "nom": "Iberostar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3693827,
+   "lon": 10.5409169,
+   "osm": "https://www.openstreetmap.org/node/6473296323",
+   "ambiance": "terrasse"
+  },
+  {
+   "nom": "Il Forno",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.445427,
+   "lon": 10.7250128,
+   "osm": "https://www.openstreetmap.org/node/6335865946"
+  },
+  {
+   "nom": "Java Café",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4443134,
+   "lon": 10.7245087,
+   "osm": "https://www.openstreetmap.org/node/6343247606"
+  },
+  {
+   "nom": "Jobi",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9243986,
+   "lon": 10.2861563,
+   "osm": "https://www.openstreetmap.org/node/7222250730"
+  },
+  {
+   "nom": "Kino Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8171419,
+   "lon": 10.3053582,
+   "osm": "https://www.openstreetmap.org/node/7222250728"
+  },
+  {
+   "nom": "L'ahbab",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 34.7322025,
+   "lon": 10.7617577,
+   "osm": "https://www.openstreetmap.org/node/4629644308"
+  },
+  {
+   "nom": "L'ancora The Blue",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3635152,
+   "lon": 10.5364316,
+   "osm": "https://www.openstreetmap.org/node/6322936986"
+  },
+  {
+   "nom": "L'Aquarium",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4506772,
+   "lon": 10.7224942,
+   "osm": "https://www.openstreetmap.org/node/6470493945"
+  },
+  {
+   "nom": "La Perla Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3641053,
+   "lon": 10.5369081,
+   "osm": "https://www.openstreetmap.org/node/6322936985"
+  },
+  {
+   "nom": "La Piñata",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9257933,
+   "lon": 10.2726567,
+   "osm": "https://www.openstreetmap.org/node/10901588494"
+  },
+  {
+   "nom": "La Playa Lounge",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4219223,
+   "lon": 10.6728977,
+   "osm": "https://www.openstreetmap.org/node/6262815079"
+  },
+  {
+   "nom": "La Régence",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "صفاقس",
+   "lat": 34.7330239,
+   "lon": 10.7637088,
+   "osm": "https://www.openstreetmap.org/way/392053115"
+  },
+  {
+   "nom": "La Villa Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9233341,
+   "lon": 10.2896134,
+   "osm": "https://www.openstreetmap.org/node/10901634406"
+  },
+  {
+   "nom": "Laroussi & Stacy Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3998646,
+   "lon": 10.5815094,
+   "osm": "https://www.openstreetmap.org/node/6287074291"
+  },
+  {
+   "nom": "Le Before",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4309514,
+   "lon": 10.6918404,
+   "osm": "https://www.openstreetmap.org/node/6309100827"
+  },
+  {
+   "nom": "Le Bleuet",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8025723,
+   "lon": 10.1818786,
+   "osm": "https://www.openstreetmap.org/node/6580422459"
+  },
+  {
+   "nom": "Le Boeuf sur le Toit",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "Avenue Fattouma Bourguiba",
+   "lat": 36.8759262,
+   "lon": 10.2459237,
+   "osm": "https://www.openstreetmap.org/node/6070891785"
+  },
+  {
+   "nom": "Le Bristol",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8035516,
+   "lon": 10.179361,
+   "osm": "https://www.openstreetmap.org/node/6561719406"
+  },
+  {
+   "nom": "Le Duplex",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8188336,
+   "lon": 10.1838125,
+   "osm": "https://www.openstreetmap.org/way/525859842"
+  },
+  {
+   "nom": "Le JOBI",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.857529,
+   "lon": 10.3186728,
+   "osm": "https://www.openstreetmap.org/node/5339769721"
+  },
+  {
+   "nom": "Le Lido",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 34.7295036,
+   "lon": 10.7648325,
+   "osm": "https://www.openstreetmap.org/node/4639983076"
+  },
+  {
+   "nom": "Le Madison",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8176055,
+   "lon": 10.1839729,
+   "osm": "https://www.openstreetmap.org/node/6550115446"
+  },
+  {
+   "nom": "Le Must",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "شارع الحبيب بورقيبة",
+   "lat": 35.8308832,
+   "lon": 10.6423925,
+   "osm": "https://www.openstreetmap.org/node/5847201785"
+  },
+  {
+   "nom": "Le Pub Gentleman",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8004153,
+   "lon": 10.1840751,
+   "osm": "https://www.openstreetmap.org/node/6300053841"
+  },
+  {
+   "nom": "Le Roi",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.802785,
+   "lon": 10.1815773,
+   "osm": "https://www.openstreetmap.org/node/6580422460"
+  },
+  {
+   "nom": "Le Vieux Port",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8006937,
+   "lon": 10.1817314,
+   "osm": "https://www.openstreetmap.org/node/6300053836"
+  },
+  {
+   "nom": "les indécis",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "4",
+   "horaires": "lun-sam 0h-24h",
+   "telephone": "+216 56 574 949",
+   "lat": 36.8491605,
+   "lon": 10.3272792,
+   "osm": "https://www.openstreetmap.org/node/11005563005"
+  },
+  {
+   "nom": "Lobby bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.5367627,
+   "lon": 11.0316851,
+   "osm": "https://www.openstreetmap.org/node/11978056469"
+  },
+  {
+   "nom": "Lounge",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4406792,
+   "lon": 10.7231907,
+   "osm": "https://www.openstreetmap.org/node/7214412226"
+  },
+  {
+   "nom": "Maison Bleue",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "141 شارع الحرية, تونس",
+   "lat": 36.8196696,
+   "lon": 10.1784665,
+   "osm": "https://www.openstreetmap.org/node/7959921022"
+  },
+  {
+   "nom": "Marius",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.7972306,
+   "lon": 10.1794679,
+   "osm": "https://www.openstreetmap.org/node/6515253881"
+  },
+  {
+   "nom": "Mayasi",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4583832,
+   "lon": 10.7210027,
+   "osm": "https://www.openstreetmap.org/node/5663615524"
+  },
+  {
+   "nom": "Membressa",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.6482751,
+   "lon": 9.6054671,
+   "osm": "https://www.openstreetmap.org/node/2981834046"
+  },
+  {
+   "nom": "Miam's",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "Route de la Plage",
+   "lat": 35.8635864,
+   "lon": 10.6063657,
+   "osm": "https://www.openstreetmap.org/node/5829799813"
+  },
+  {
+   "nom": "My Way",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8882214,
+   "lon": 10.5954142,
+   "osm": "https://www.openstreetmap.org/node/3328613520"
+  },
+  {
+   "nom": "Next Door",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3985291,
+   "lon": 10.5607525,
+   "osm": "https://www.openstreetmap.org/node/1735454220"
+  },
+  {
+   "nom": "Night Club",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4237085,
+   "lon": 10.6754042,
+   "osm": "https://www.openstreetmap.org/node/6493268307"
+  },
+  {
+   "nom": "Noura Benmahmoud",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4653346,
+   "lon": 10.803739,
+   "osm": "https://www.openstreetmap.org/node/6339857701"
+  },
+  {
+   "nom": "Novelty Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9542433,
+   "lon": 8.7575446,
+   "osm": "https://www.openstreetmap.org/way/1430352404"
+  },
+  {
+   "nom": "O`Conners",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8663028,
+   "lon": 10.6092911,
+   "osm": "https://www.openstreetmap.org/way/319666446"
+  },
+  {
+   "nom": "Oulalaa !",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9244244,
+   "lon": 10.2855726,
+   "osm": "https://www.openstreetmap.org/node/10901634420"
+  },
+  {
+   "nom": "Papaya Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3926407,
+   "lon": 10.5555593,
+   "osm": "https://www.openstreetmap.org/node/2452281953"
+  },
+  {
+   "nom": "Pazuzu",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9260154,
+   "lon": 10.2721243,
+   "osm": "https://www.openstreetmap.org/node/10901588475"
+  },
+  {
+   "nom": "Pinky Bistro",
+   "type": "bar",
+   "ville": "tunis",
+   "horaires": "lun-dim 7h-21h30",
+   "lat": 36.4444415,
+   "lon": 10.7340346,
+   "osm": "https://www.openstreetmap.org/node/6201364015"
+  },
+  {
+   "nom": "Pool Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.5400199,
+   "lon": 11.0319232,
+   "osm": "https://www.openstreetmap.org/way/1088021199"
+  },
+  {
+   "nom": "Popeye Lounge",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4452904,
+   "lon": 10.7247939,
+   "osm": "https://www.openstreetmap.org/node/6171980535"
+  },
+  {
+   "nom": "publinet",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8363907,
+   "lon": 10.1138694,
+   "osm": "https://www.openstreetmap.org/way/386101708"
+  },
+  {
+   "nom": "Puca Irish Pub",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 35.8949038,
+   "lon": 10.5935638,
+   "osm": "https://www.openstreetmap.org/way/104607685"
+  },
+  {
+   "nom": "Pupput le bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4229669,
+   "lon": 10.6745579,
+   "osm": "https://www.openstreetmap.org/node/6268842901"
+  },
+  {
+   "nom": "Puput le Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4216403,
+   "lon": 10.6746694,
+   "osm": "https://www.openstreetmap.org/node/6262815076"
+  },
+  {
+   "nom": "Restaurant Sidi Ali Chez Adel",
+   "type": "bar",
+   "ville": "tunis",
+   "horaires": "lun-dim 12h-22h",
+   "telephone": "+216 21 805 506",
+   "lat": 33.7735804,
+   "lon": 11.0374506,
+   "osm": "https://www.openstreetmap.org/node/4271404389"
+  },
+  {
+   "nom": "Rock'n'Rolla",
+   "type": "bar",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/rocknrollalagoulette/",
+   "telephone": "+216 20 077 078",
+   "lat": 36.8159706,
+   "lon": 10.3059711,
+   "osm": "https://www.openstreetmap.org/node/7222250727"
+  },
+  {
+   "nom": "Rosamel",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9203267,
+   "lon": 10.2896402,
+   "osm": "https://www.openstreetmap.org/node/10901588490"
+  },
+  {
+   "nom": "Rossini palace",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.7994742,
+   "lon": 10.1822842,
+   "osm": "https://www.openstreetmap.org/node/6302251638"
+  },
+  {
+   "nom": "SALON VIP (DEPARTURES LOUNGE)",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8458648,
+   "lon": 10.2189655,
+   "osm": "https://www.openstreetmap.org/node/6234564338"
+  },
+  {
+   "nom": "Schilling",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "93 شارع محمد الخامس, تونس",
+   "lat": 36.821285,
+   "lon": 10.1799328,
+   "osm": "https://www.openstreetmap.org/node/7470853144"
+  },
+  {
+   "nom": "Secret Room",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9204221,
+   "lon": 10.2895104,
+   "osm": "https://www.openstreetmap.org/node/10901588460"
+  },
+  {
+   "nom": "Selimo's Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "نهج صور, menzah 8",
+   "horaires": "19h-4h",
+   "lat": 36.8572521,
+   "lon": 10.1729297,
+   "osm": "https://www.openstreetmap.org/node/9635030202",
+   "ambiance": "terrasse",
+   "age_min": "15"
+  },
+  {
+   "nom": "Seven Swag",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.446399,
+   "lon": 10.7246908,
+   "osm": "https://www.openstreetmap.org/node/6088858381"
+  },
+  {
+   "nom": "Show Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4238974,
+   "lon": 10.6773005,
+   "osm": "https://www.openstreetmap.org/node/5814721722"
+  },
+  {
+   "nom": "Sinbad Resto Lounge",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9018592,
+   "lon": 10.3163995,
+   "osm": "https://www.openstreetmap.org/node/6517766685"
+  },
+  {
+   "nom": "Sun Beach",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3619984,
+   "lon": 10.5355594,
+   "osm": "https://www.openstreetmap.org/node/6322935084"
+  },
+  {
+   "nom": "Sundae's",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.7348889,
+   "lon": 10.3316001,
+   "osm": "https://www.openstreetmap.org/node/6879419987"
+  },
+  {
+   "nom": "Tangerine Rooftop",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9204361,
+   "lon": 10.2899607,
+   "osm": "https://www.openstreetmap.org/node/10901588463"
+  },
+  {
+   "nom": "The Famous",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4056956,
+   "lon": 10.5859948,
+   "osm": "https://www.openstreetmap.org/node/6287074337"
+  },
+  {
+   "nom": "The Palm Garden Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 37.2795148,
+   "lon": 9.8811704,
+   "osm": "https://www.openstreetmap.org/node/6448702033",
+   "ambiance": "terrasse"
+  },
+  {
+   "nom": "The Secret Garden",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.92595,
+   "lon": 10.2723791,
+   "osm": "https://www.openstreetmap.org/node/10901634412"
+  },
+  {
+   "nom": "Tiki Bar",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.9267133,
+   "lon": 10.2815765,
+   "osm": "https://www.openstreetmap.org/node/10901634407"
+  },
+  {
+   "nom": "Trois Cent Soixante",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8841572,
+   "lon": 10.3320003,
+   "osm": "https://www.openstreetmap.org/node/6359054486"
+  },
+  {
+   "nom": "Twist Tunisia",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3976025,
+   "lon": 10.5598324,
+   "osm": "https://www.openstreetmap.org/node/6585265551"
+  },
+  {
+   "nom": "Vape - Store",
+   "type": "bar",
+   "ville": "tunis",
+   "adresse": "Rue Baghdad",
+   "lat": 35.8009806,
+   "lon": 10.5973106,
+   "osm": "https://www.openstreetmap.org/node/7099580085"
+  },
+  {
+   "nom": "wet flamingo",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.8218898,
+   "lon": 10.3110748,
+   "osm": "https://www.openstreetmap.org/node/13352808601",
+   "ambiance": "terrasse"
+  },
+  {
+   "nom": "Yassmine Beach Club",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.3684293,
+   "lon": 10.5400634,
+   "osm": "https://www.openstreetmap.org/node/6473296324",
+   "ambiance": "terrasse"
+  },
+  {
+   "nom": "Yüka Tunis",
+   "type": "bar",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/yuka.tunis/",
+   "lat": 36.9247749,
+   "lon": 10.2851665,
+   "osm": "https://www.openstreetmap.org/node/7222250734"
+  },
+  {
+   "nom": "Ô'PUB",
+   "type": "bar",
+   "ville": "tunis",
+   "lat": 36.4058087,
+   "lon": 10.6038162,
+   "osm": "https://www.openstreetmap.org/node/6297475986"
+  },
+  {
+   "nom": "After work",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.4427951,
+   "lon": 10.7417993,
+   "osm": "https://www.openstreetmap.org/node/6171980548"
+  },
+  {
+   "nom": "Bananas",
+   "type": "club",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/pages/bananaslivingvanilla-sousse-page-oficielle/162641787123526",
+   "lat": 35.8436035,
+   "lon": 10.6236317,
+   "osm": "https://www.openstreetmap.org/node/3268621924"
+  },
+  {
+   "nom": "Billions Club",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.3950301,
+   "lon": 10.5637138,
+   "osm": "https://www.openstreetmap.org/node/6337932814"
+  },
+  {
+   "nom": "BORA BORA Disco",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8518136,
+   "lon": 10.6179346,
+   "osm": "https://www.openstreetmap.org/node/1216559460"
+  },
+  {
+   "nom": "Bosphore",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8669085,
+   "lon": 10.6054001,
+   "osm": "https://www.openstreetmap.org/node/2192806811"
+  },
+  {
+   "nom": "BSMNT",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.9205571,
+   "lon": 10.2894219,
+   "osm": "https://www.openstreetmap.org/node/10901588462"
+  },
+  {
+   "nom": "Calypso",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8841683,
+   "lon": 10.597779,
+   "osm": "https://www.openstreetmap.org/node/1239892691"
+  },
+  {
+   "nom": "Cercle Club",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.9264237,
+   "lon": 10.2780708,
+   "osm": "https://www.openstreetmap.org/node/10901588496"
+  },
+  {
+   "nom": "Chichane",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8879607,
+   "lon": 10.5951377,
+   "osm": "https://www.openstreetmap.org/node/3328613519"
+  },
+  {
+   "nom": "Club Gingembre",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.9205443,
+   "lon": 10.2897478,
+   "osm": "https://www.openstreetmap.org/node/10901588493"
+  },
+  {
+   "nom": "Disco Galaxy",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.396586,
+   "lon": 10.6134485,
+   "osm": "https://www.openstreetmap.org/node/6256539411"
+  },
+  {
+   "nom": "Disco Queen Night Club",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.4254848,
+   "lon": 10.6746997,
+   "osm": "https://www.openstreetmap.org/node/6262815208"
+  },
+  {
+   "nom": "Discotheque",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 33.8488191,
+   "lon": 10.9893317,
+   "osm": "https://www.openstreetmap.org/way/321027318"
+  },
+  {
+   "nom": "Discotheque Odeon",
+   "type": "club",
+   "ville": "tunis",
+   "adresse": "Route Touristique, Côtes de Carthage, قمرت",
+   "lat": 36.9263979,
+   "lon": 10.2784585,
+   "osm": "https://www.openstreetmap.org/way/90480811"
+  },
+  {
+   "nom": "El Borj",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.8427722,
+   "lon": 11.0962206,
+   "osm": "https://www.openstreetmap.org/node/6321849273"
+  },
+  {
+   "nom": "El Torito",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.866021,
+   "lon": 10.6063944,
+   "osm": "https://www.openstreetmap.org/node/2192806812"
+  },
+  {
+   "nom": "Gaïa",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.4431884,
+   "lon": 10.7284752,
+   "osm": "https://www.openstreetmap.org/node/6171980536"
+  },
+  {
+   "nom": "Las Perlas",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8876574,
+   "lon": 10.5952429,
+   "osm": "https://www.openstreetmap.org/node/1187745172"
+  },
+  {
+   "nom": "Le Lagoon",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.9223329,
+   "lon": 10.2898398,
+   "osm": "https://www.openstreetmap.org/way/128242949"
+  },
+  {
+   "nom": "Living",
+   "type": "club",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/pages/bananaslivingvanilla-sousse-page-oficielle/162641787123526",
+   "lat": 35.843589,
+   "lon": 10.6235619,
+   "osm": "https://www.openstreetmap.org/node/3268621927"
+  },
+  {
+   "nom": "L’opium",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.3962866,
+   "lon": 10.5591581,
+   "osm": "https://www.openstreetmap.org/node/11360494669"
+  },
+  {
+   "nom": "Malaga",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8675294,
+   "lon": 10.605519,
+   "osm": "https://www.openstreetmap.org/node/2184304269"
+  },
+  {
+   "nom": "Maya Club",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8993864,
+   "lon": 10.5855739,
+   "osm": "https://www.openstreetmap.org/node/5614578963"
+  },
+  {
+   "nom": "Panorama",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.4430401,
+   "lon": 10.7425599,
+   "osm": "https://www.openstreetmap.org/node/6169391616"
+  },
+  {
+   "nom": "Salon Des Fêtes Honey Moon",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.1663251,
+   "lon": 8.8516961,
+   "osm": "https://www.openstreetmap.org/node/6189973655"
+  },
+  {
+   "nom": "Saloon",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 35.8429271,
+   "lon": 10.6254808,
+   "osm": "https://www.openstreetmap.org/node/3268621928"
+  },
+  {
+   "nom": "The Globe Discotheque",
+   "type": "club",
+   "ville": "tunis",
+   "adresse": "Route Touristique, Côtes de Carthage, قمرت",
+   "telephone": "+216 71 910 910",
+   "lat": 36.9260566,
+   "lon": 10.2791046,
+   "osm": "https://www.openstreetmap.org/way/90480820"
+  },
+  {
+   "nom": "Tunetana",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.835547,
+   "lon": 10.2382133,
+   "osm": "https://www.openstreetmap.org/way/671908678"
+  },
+  {
+   "nom": "Vanilla",
+   "type": "club",
+   "ville": "tunis",
+   "site": "https://www.facebook.com/pages/bananaslivingvanilla-sousse-page-oficielle/162641787123526",
+   "lat": 35.8435716,
+   "lon": 10.6234724,
+   "osm": "https://www.openstreetmap.org/node/3268621932"
+  },
+  {
+   "nom": "Zebra",
+   "type": "club",
+   "ville": "tunis",
+   "lat": 36.9208714,
+   "lon": 10.2897153,
+   "osm": "https://www.openstreetmap.org/node/10901634417"
+  },
+  {
+   "nom": "ملهى ليلي",
+   "type": "club",
+   "ville": "tunis",
+   "adresse": "المنستير",
+   "lat": 35.7646659,
+   "lon": 10.7450456,
+   "osm": "https://www.openstreetmap.org/way/728162626"
+  }
+ ]
+}
