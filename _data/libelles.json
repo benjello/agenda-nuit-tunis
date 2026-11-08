@@ -1,1 +1,777 @@
-{}
+{
+ "Adema": {
+  "de": "fr",
+  "ar": "Adema",
+  "en": "Adema"
+ },
+ "Agendas et billetteries": {
+  "de": "fr",
+  "ar": "جداول الأعمال والتذاكر",
+  "en": "Agendas and ticketing"
+ },
+ "Alexander Skancke": {
+  "de": "fr",
+  "ar": "Alexander Skancke",
+  "en": "Alexander Skancke"
+ },
+ "Aline Umber": {
+  "de": "fr",
+  "ar": "Aline Umber",
+  "en": "Aline Umber"
+ },
+ "Always Late": {
+  "de": "fr",
+  "ar": "دائماً متأخر",
+  "en": "Always Late"
+ },
+ "Amin": {
+  "de": "fr",
+  "ar": "Amin",
+  "en": "Amin"
+ },
+ "Atef": {
+  "de": "fr",
+  "ar": "Atef",
+  "en": "Atef"
+ },
+ "Automatic Writing": {
+  "de": "fr",
+  "ar": "الكتابة الآلية",
+  "en": "Automatic Writing"
+ },
+ "Autre soirée": {
+  "de": "fr",
+  "ar": "مساء آخر",
+  "en": "Other evening"
+ },
+ "Autres lieux": {
+  "de": "fr",
+  "ar": "مواقع أخرى",
+  "en": "Other locations"
+ },
+ "Autres régions": {
+  "de": "fr",
+  "ar": "مناطق أخرى",
+  "en": "Other regions"
+ },
+ "B7L9 Art Centre": {
+  "de": "fr",
+  "ar": "B7L9 مركز الفنون",
+  "en": "B7L9 Art Centre"
+ },
+ "BILA": {
+  "de": "fr",
+  "ar": "BILA",
+  "en": "BILA"
+ },
+ "Baban": {
+  "de": "fr",
+  "ar": "بابان",
+  "en": "Baban"
+ },
+ "Baloo": {
+  "de": "fr",
+  "ar": "بابو",
+  "en": "Baloo"
+ },
+ "Bar & lounge": {
+  "de": "fr",
+  "ar": "Bar &apos; lounge",
+  "en": "Bar & lounge"
+ },
+ "Bars musicaux, pubs, lounges, rooftops, afterworks": {
+  "de": "fr",
+  "ar": "حانات الموسيقى، حانات، صقور، أسطح، بعد الألعاب",
+  "en": "Music bars, pubs, lounges, rooftops, afterworks"
+ },
+ "Ben Arous": {
+  "de": "fr",
+  "ar": "بن آروس",
+  "en": "Ben Arous"
+ },
+ "Bizerte": {
+  "de": "fr",
+  "ar": "Bizerte",
+  "en": "Bizerte"
+ },
+ "Boîtes de nuit généralistes, soirées à thème, hôtels et resorts": {
+  "de": "fr",
+  "ar": "الملاهي الليلية العامة، مساءات المواضيع، الفنادق والمنتجعات",
+  "en": "General nightclubs, theme evenings, hotels and resorts"
+ },
+ "Cabanne": {
+  "de": "fr",
+  "ar": "Cabanne",
+  "en": "Cabanne"
+ },
+ "Cabaret": {
+  "de": "fr",
+  "ar": "Cabaret",
+  "en": "Cabaret"
+ },
+ "Cabarets, dîners-spectacles, soirées orientales, revues": {
+  "de": "fr",
+  "ar": "مهرجانات، عروض عشاء، مساءات أونائية، مجلات",
+  "en": "Cabarets, dinner-shows, oriental evenings, magazines"
+ },
+ "Centre culturel": {
+  "de": "fr",
+  "ar": "المركز الثقافي",
+  "en": "Cultural Centre"
+ },
+ "Centre d'art": {
+  "de": "fr",
+  "ar": "مركز الفنون",
+  "en": "Art centre"
+ },
+ "Centres culturels et instituts": {
+  "de": "fr",
+  "ar": "المراكز والمعاهد الثقافية",
+  "en": "Cultural centres and institutes"
+ },
+ "Centres d'art": {
+  "de": "fr",
+  "ar": "مراكز الفنون",
+  "en": "Art centres"
+ },
+ "Cinéma": {
+  "de": "fr",
+  "ar": "سينما",
+  "en": "Cinema"
+ },
+ "Cinémas": {
+  "de": "fr",
+  "ar": "Cinemas",
+  "en": "Cinemas"
+ },
+ "Club": {
+  "de": "fr",
+  "ar": "نادي",
+  "en": "Club"
+ },
+ "Club, bar": {
+  "de": "fr",
+  "ar": "نادي، حانة",
+  "en": "Club, bar"
+ },
+ "Clubs, bars et cafés": {
+  "de": "fr",
+  "ar": "نوادي وحانات ومقاهي",
+  "en": "Clubs, bars and cafes"
+ },
+ "Collectifs, associations, DJ et artistes": {
+  "de": "fr",
+  "ar": "التجمعات والجمعيات ورجال الدين والفنانين",
+  "en": "Collectives, associations, DJs and artists"
+ },
+ "Concert live": {
+  "de": "en",
+  "fr": "Concert en direct",
+  "ar": "Concert live"
+ },
+ "Concerts du soir, groupes et live en bar": {
+  "de": "fr",
+  "ar": "حفلات موسيقية وفرق موسيقية و حانة حية",
+  "en": "Evening concerts, bands and live bar"
+ },
+ "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.": {
+  "de": "fr",
+  "ar": "قراصنة، مهرجانات، معارض، ألعاب رياضية كتاب أماكنكم على تيسكيرتي! التذكرة الإلكترونية في تونس - 100% مؤمنة",
+  "en": "Concerts, Festivals, Exhibitions, Sport 的 Book your places on Teskerti! The #1 E-ticket in Tunisia - 100% secure payment."
+ },
+ "Cristi Cons": {
+  "de": "fr",
+  "ar": "Cristi Cons",
+  "en": "Cristi Cons"
+ },
+ "DJ Senc": {
+  "de": "fr",
+  "ar": "DJ Senc",
+  "en": "DJ Senc"
+ },
+ "Daox": {
+  "de": "fr",
+  "ar": "Daox",
+  "en": "Daox"
+ },
+ "Dar Sébastien, Hammamet": {
+  "de": "fr",
+  "ar": "دار سيباستيان، حمممت",
+  "en": "Dar Sébastien, Hammamet"
+ },
+ "Discothèque": {
+  "de": "fr",
+  "ar": "الرمز",
+  "en": "Discotheque"
+ },
+ "Downtown Vibes (Instagram)": {
+  "de": "fr",
+  "ar": "فيبيز وسط المدينة (Instagram)",
+  "en": "Downtown Vibes (Instagram)"
+ },
+ "Délégations régionales de la culture": {
+  "de": "fr",
+  "ar": "الوفود الإقليمية للثقافة",
+  "en": "Regional delegations of culture"
+ },
+ "Eddisco Records (Instagram)": {
+  "de": "fr",
+  "ar": "سجلات اديسكو (Instagram)",
+  "en": "Eddisco Records (Instagram)"
+ },
+ "Elena Moroder": {
+  "de": "fr",
+  "ar": "إلينا مورودر",
+  "en": "Elena Moroder"
+ },
+ "Elise Jilian": {
+  "de": "fr",
+  "ar": "Elise Jilian",
+  "en": "Elise Jilian"
+ },
+ "Fabrika Festival 14": {
+  "de": "en",
+  "fr": "Fabrika Festival 14",
+  "ar": "مهرجان فابريكا 14"
+ },
+ "Fabrika festival (Instagram)": {
+  "de": "en",
+  "fr": "Fabrika festival (Instagram)",
+  "ar": "مهرجان فابريكا (Instagram)"
+ },
+ "Festival & open air": {
+  "de": "en",
+  "fr": "Festival & plein air",
+  "ar": "المهرجان &quot; الهواء المفتوح &quot;"
+ },
+ "Festival de la Médina": {
+  "de": "fr",
+  "ar": "مهرجان ميدينا",
+  "en": "Medina Festival"
+ },
+ "Festival de la Médina de Kairouan": {
+  "de": "fr",
+  "ar": "مهرجان ميدينا في كيروان",
+  "en": "Festival of the Medina of Kairouan"
+ },
+ "Festivals": {
+  "de": "fr",
+  "ar": "Festivals",
+  "en": "Festivals"
+ },
+ "Festivals électro, open air, day parties": {
+  "de": "fr",
+  "ar": "المهرجانات الكهربائية، الهواء المفتوح، حفلات يومية",
+  "en": "Festivals electro, open air, day parties"
+ },
+ "Foehn & Jerome": {
+  "de": "fr",
+  "ar": "Foehn &apos; Jerome",
+  "en": "Foehn & Jerome"
+ },
+ "Galerie": {
+  "de": "fr",
+  "ar": "معرض",
+  "en": "Gallery"
+ },
+ "Galeries": {
+  "de": "fr",
+  "ar": "Galleries",
+  "en": "Galleries"
+ },
+ "Grand Tunis": {
+  "de": "fr",
+  "ar": "تونس العاصمة الكبرى",
+  "en": "Greater Tunis"
+ },
+ "Grand Tunis (Bardo, El Ouardia, El Omrane, El Mourouj…)": {
+  "de": "fr",
+  "ar": "تونس الكبرى (باردو، الوردية، العمران، الموروج)",
+  "en": "Greater Tunis (Bardo, El Ouardia, El Omrane, El Mourouj...)"
+ },
+ "Habibi Downtown (Instagram)": {
+  "de": "fr",
+  "ar": "Habi Downtown, Instagram",
+  "en": "Habibi Downtown, Instagram"
+ },
+ "Hamdi RydEr (Instagram)": {
+  "de": "fr",
+  "ar": "حمدي ريدير (Instagram)",
+  "en": "Hamdi RydEr (Instagram)"
+ },
+ "Hamdi Ryder": {
+  "de": "fr",
+  "ar": "Hamdi Ryder",
+  "en": "Hamdi Ryder"
+ },
+ "HearThug": {
+  "de": "fr",
+  "ar": "Hearthug",
+  "en": "HearThug"
+ },
+ "Hitsh": {
+  "de": "fr",
+  "ar": "Hitsh",
+  "en": "Hitsh"
+ },
+ "Houz": {
+  "de": "fr",
+  "ar": "Houz",
+  "en": "Houz"
+ },
+ "Hugo Martinez": {
+  "de": "fr",
+  "ar": "Hugo Martinez",
+  "en": "Hugo Martinez"
+ },
+ "Hugo Rafael Martínez Poveda, né en 1941 à Moniquirá et mort le 22 mars 2020 à Bogota, est un policier colombien, directeur de l’unité spéciale Bloc de recherche, créée à la fin des années 80 pour abattre le narcotrafiquant colombien Pablo Escobar.": {
+  "de": "fr",
+  "ar": "Hugo Rafael Martínez Poveda, born in 1941 in Moniqirá and died on 22 March 2020 in Bogota, is a Colombian police officer, director of the special unit Bloc de recherche, created in the late 1980s to shoot down Colombian drug dealer Pablo Escobar.",
+  "en": "Hugo Rafael Martínez Poveda, born in 1941 in Moniqirá and died on 22 March 2020 in Bogota, is a Colombian police officer, director of the special unit Bloc de recherche, created in the late 1980s to shoot down Colombian drug dealer Pablo Escobar."
+ },
+ "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA": {
+  "de": "en",
+  "fr": "C'est le VENDREDI 13ème IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10h - 4H ÉTAPES SOUVENT LES TIQUETS LIEN DANS BIO ARTVORK NXOITXA",
+  "ar": "اليوم الثالث عشر من حركاتي في (بيو آرتوك نكسواتيكسا)"
+ },
+ "Instituts et centres culturels": {
+  "de": "fr",
+  "ar": "المعاهد والمراكز الثقافية",
+  "en": "Cultural institutes and centres"
+ },
+ "Ion Ludwig": {
+  "de": "fr",
+  "ar": "Ion Ludwig",
+  "en": "Ion Ludwig"
+ },
+ "James Creed": {
+  "de": "fr",
+  "ar": "جيمس كريد",
+  "en": "James Creed"
+ },
+ "Jaou Tunis (Instagram)": {
+  "de": "fr",
+  "ar": "Jaou Tunis (Instagram)",
+  "en": "Jaou Tunis (Instagram)"
+ },
+ "Jonn": {
+  "de": "fr",
+  "ar": "(جون)",
+  "en": "Jonn"
+ },
+ "Journaux": {
+  "de": "fr",
+  "ar": "الصحف",
+  "en": "Newspapers"
+ },
+ "Kadhem (Instagram)": {
+  "de": "fr",
+  "ar": "كادهيم (Instagram)",
+  "en": "Kadhem (Instagram)"
+ },
+ "Kairouan": {
+  "de": "fr",
+  "ar": "Kairouan",
+  "en": "Kairouan"
+ },
+ "Karaoké": {
+  "de": "fr",
+  "ar": "كاراوكي",
+  "en": "Karaoke"
+ },
+ "Kian OK": {
+  "de": "fr",
+  "ar": "حسناً",
+  "en": "Kian OK"
+ },
+ "Kpop Universe Edition 7": {
+  "de": "fr",
+  "ar": "Kpop Universe Edition 7",
+  "en": "Kpop Universe Edition 7"
+ },
+ "Krol": {
+  "de": "fr",
+  "ar": "Krol",
+  "en": "Krol"
+ },
+ "La Marsa": {
+  "de": "fr",
+  "ar": "La Marsa",
+  "en": "La Marsa"
+ },
+ "La Marsa, La Marsa": {
+  "de": "fr",
+  "ar": "La Marsa, La Marsa",
+  "en": "La Marsa, La Marsa"
+ },
+ "Layali el Qamar": {
+  "de": "fr",
+  "ar": "ليالي القمار",
+  "en": "Layali el Qamar"
+ },
+ "Lieu": {
+  "de": "fr",
+  "ar": "الموقع",
+  "en": "Location"
+ },
+ "Lieu à préciser": {
+  "de": "fr",
+  "ar": "المكان المحدد",
+  "en": "Place to be specified"
+ },
+ "Lieux": {
+  "de": "fr",
+  "ar": "الأماكن",
+  "en": "Places"
+ },
+ "Lil Jack": {
+  "de": "fr",
+  "ar": "ليل جاك",
+  "en": "Lil Jack"
+ },
+ "Lowris": {
+  "de": "fr",
+  "ar": "Lowris",
+  "en": "Lowris"
+ },
+ "Maher Daniel": {
+  "de": "fr",
+  "ar": "Maher Daniel",
+  "en": "Maher Daniel"
+ },
+ "Maiora": {
+  "de": "fr",
+  "ar": "مايورا",
+  "en": "Maiora"
+ },
+ "Majid": {
+  "de": "fr",
+  "ar": "ماجد",
+  "en": "Majid"
+ },
+ "Maks": {
+  "de": "fr",
+  "ar": "Maks",
+  "en": "Maks"
+ },
+ "Manon": {
+  "de": "fr",
+  "ar": "Manon",
+  "en": "Manon"
+ },
+ "Markus Nikolai": {
+  "de": "fr",
+  "ar": "ماركوس نيكولاي",
+  "en": "Markus Nikolai"
+ },
+ "Mihnea Rog": {
+  "de": "fr",
+  "ar": "Mihnea Rog",
+  "en": "Mihnea Rog"
+ },
+ "Miller": {
+  "de": "fr",
+  "ar": "ميلر",
+  "en": "Miller"
+ },
+ "Moez": {
+  "de": "fr",
+  "ar": "مويز",
+  "en": "Moez"
+ },
+ "Monastir": {
+  "de": "fr",
+  "ar": "الدير",
+  "en": "Monastir"
+ },
+ "Musée": {
+  "de": "fr",
+  "ar": "المتحف",
+  "en": "Museum"
+ },
+ "Musées": {
+  "de": "fr",
+  "ar": "المتاحف",
+  "en": "Museums"
+ },
+ "Médenine, El Hamma, Le Kef": {
+  "de": "fr",
+  "ar": "Medenine, El Hamma, Le Kef",
+  "en": "Medenine, El Hamma, Le Kef"
+ },
+ "Médiathèque": {
+  "de": "fr",
+  "ar": "مكتبة وسائط الإعلام",
+  "en": "Media Library"
+ },
+ "Médiathèques et librairies": {
+  "de": "fr",
+  "ar": "وسائط الإعلام والكتب",
+  "en": "Media and bookstores"
+ },
+ "Médina de Tunis": {
+  "de": "fr",
+  "ar": "Medina de Tunis",
+  "en": "Medina de Tunis"
+ },
+ "Nabeul et Hammamet": {
+  "de": "fr",
+  "ar": "نابول وحمممت",
+  "en": "Nabeul and Hammamet"
+ },
+ "Nuits Abou Loubaba": {
+  "de": "fr",
+  "ar": "ليالي أبو لبابا",
+  "en": "Nights Abu Lubaba"
+ },
+ "Nuits Wajd": {
+  "de": "fr",
+  "ar": "ليالي واجد",
+  "en": "Nights Wajd"
+ },
+ "Nuits de Ramadan des maisons de la culture": {
+  "de": "fr",
+  "ar": "ليالي رمضان من بيوت الثقافة",
+  "en": "Ramadan nights of the houses of culture"
+ },
+ "Nuits de la Médina": {
+  "de": "fr",
+  "ar": "ليالي في المدينة",
+  "en": "Nights in the Medina"
+ },
+ "Nōmad Man Festival 2026": {
+  "de": "en",
+  "fr": "Nōmad Man Festival 2026",
+  "ar": "Nmad Man Festival 2026"
+ },
+ "OMAR (UY)": {
+  "de": "fr",
+  "ar": "OMAR (UY)",
+  "en": "OMAR (UY)"
+ },
+ "Olivier Romero": {
+  "de": "fr",
+  "ar": "Olivier Romero",
+  "en": "Olivier Romero"
+ },
+ "Omar Fayyad": {
+  "de": "fr",
+  "ar": "عمر فاياد",
+  "en": "Omar Fayyad"
+ },
+ "One Resort": {
+  "de": "fr",
+  "ar": "إعادة واحدة",
+  "en": "One Resort"
+ },
+ "Picasso": {
+  "de": "fr",
+  "ar": "Picasso",
+  "en": "Picasso"
+ },
+ "Prichindel": {
+  "de": "fr",
+  "ar": "Prichindel",
+  "en": "Prichindel"
+ },
+ "Qanadil Ramadan": {
+  "de": "fr",
+  "ar": "قناديل رمضان",
+  "en": "Qanadil Ramadan"
+ },
+ "Ramadan du Beït ech-chaâr": {
+  "de": "fr",
+  "ar": "Ramadan of the Beitech-chaar",
+  "en": "Ramadan of the Beitech-chaar"
+ },
+ "Raphael Merheb": {
+  "de": "fr",
+  "ar": "رافائيل ميرهيب",
+  "en": "Raphael Merheb"
+ },
+ "Resident Advisor (Tunisie)": {
+  "de": "fr",
+  "ar": "مستشار مقيم (تونس)",
+  "en": "Resident Advisor (Tunisia)"
+ },
+ "Rock'n'Rolla La Goulette (Instagram)": {
+  "de": "fr",
+  "ar": "روك أن رولا لا غوليت (Instagram)",
+  "en": "Rock'n'Rolla La Goulette (Instagram)"
+ },
+ "Rome (IT)": {
+  "de": "fr",
+  "ar": "روما (IT)",
+  "en": "Rome (IT)"
+ },
+ "Route Touristique": {
+  "de": "fr",
+  "ar": "مسار السياحة",
+  "en": "Tourist route"
+ },
+ "Route Touristique, Monastir 5029": {
+  "de": "fr",
+  "ar": "طريق السياحة، موناستر 5029",
+  "en": "Tourist Route, Monastir 5029"
+ },
+ "Rslane": {
+  "de": "fr",
+  "ar": "Rslane",
+  "en": "Rslane"
+ },
+ "Rue Ferjani Belhaj Ammar n°4 Cité Elkhadhra Tunis tunis": {
+  "de": "fr",
+  "ar": "Rue Ferjani Belhaj Ammar n°4 Cité Elkhadhra Tunis tunis",
+  "en": "Rue Ferjani Belhaj Ammar n°4 Cité Elkhadhra Tunis tunis"
+ },
+ "Rue Ferjani Belhaj Ammar n°4 Cité Elkhadhra Tunis tunis, Tunis 1003, Tunis": {
+  "de": "fr",
+  "ar": "Rue Ferjani Belhaj Ammar n°4 Cité Elkhadhra Tunis tunis, Tunis 1003, Tunis",
+  "en": "Rue Ferjani Belhaj Ammar n°4 Cité Elkhadhra Tunis tunis, Tunis 1003, Tunis"
+ },
+ "Saadoon": {
+  "de": "fr",
+  "ar": "Saadoon",
+  "en": "Saadoon"
+ },
+ "Serenne": {
+  "de": "fr",
+  "ar": "Serenne",
+  "en": "Serenne"
+ },
+ "Sfax": {
+  "de": "fr",
+  "ar": "Sfax",
+  "en": "Sfax"
+ },
+ "Sidi Bouzid": {
+  "de": "fr",
+  "ar": "سيدي بوزيد",
+  "en": "Sidi Bouzid"
+ },
+ "Sir James Creed was an English merchant and politician.": {
+  "de": "en",
+  "fr": "Sir James Creed était un marchand et un politicien anglais.",
+  "ar": "السير (جيمس كريد) كان تاجراً وسياسياً إنجليزياً"
+ },
+ "Soirées DJ : électro, house, techno, afro, hip-hop…": {
+  "de": "fr",
+  "ar": "مساءات دي جي: الكهرو، المنزل، التكنولوجيا، الفرو، الهيب هوب...",
+  "en": "DJ evenings: electro, house, techno, Afro, hip-hop..."
+ },
+ "Soirées de Raqqada": {
+  "de": "fr",
+  "ar": "مساءات الرقة",
+  "en": "Evenings of Raqqada"
+ },
+ "Soirées karaoké et open mic chanté": {
+  "de": "fr",
+  "ar": "مساءات الكاريوكي وفتح ميك سونغ",
+  "en": "Karaoke evenings and open mic sung"
+ },
+ "Sousse": {
+  "de": "fr",
+  "ar": "Foam",
+  "en": "Foam"
+ },
+ "Stand-up": {
+  "de": "fr",
+  "ar": "الاستعداد",
+  "en": "Stand-up"
+ },
+ "Stand-up et comédie en soirée": {
+  "de": "fr",
+  "ar": "الوقوف والكوميديا في المساء",
+  "en": "Stand-up and comedy in the evening"
+ },
+ "Steppers Sound System": {
+  "de": "fr",
+  "ar": "النظام الصوتي",
+  "en": "Steppers Sound System"
+ },
+ "Sud (Djerba, Gabès, Tozeur…)": {
+  "de": "fr",
+  "ar": "جنوب (ديربا، غابس، توزور)",
+  "en": "South (Djerba, Gabes, Tozeur...)"
+ },
+ "Suivez l'actualité en Tunisie en direct . Tunisie Numérique couvre toute l'info politique, économique, sociale et sportive en temps réel.": {
+  "de": "fr",
+  "ar": "إتبع الأخبار في تونس مباشرة وتغطي رقم تونس جميع المعلومات السياسية والاقتصادية والاجتماعية والرياضية في الوقت الحقيقي.",
+  "en": "Follow the news in Tunisia live . Tunisia Digital covers all the political, economic, social and sporting information in real time."
+ },
+ "Sweed": {
+  "de": "fr",
+  "ar": "سويد",
+  "en": "Sweed"
+ },
+ "Taieb Chékir": {
+  "de": "fr",
+  "ar": "Taieb Chekir",
+  "en": "Taieb Chekir"
+ },
+ "Tatler": {
+  "de": "fr",
+  "ar": "Tatler",
+  "en": "Tatler"
+ },
+ "Teskerti": {
+  "de": "fr",
+  "ar": "Teskerti",
+  "en": "Teskerti"
+ },
+ "Théâtre": {
+  "de": "fr",
+  "ar": "المسرح",
+  "en": "Theatre"
+ },
+ "Théâtres et opéra": {
+  "de": "fr",
+  "ar": "مسرحيات وأوبرا",
+  "en": "Theatres and operas"
+ },
+ "Trent Voyage": {
+  "de": "fr",
+  "ar": "السفر عبر الخط",
+  "en": "Trent Travel"
+ },
+ "Tunis": {
+  "de": "fr",
+  "ar": "تونس",
+  "en": "Tunis"
+ },
+ "Tunisie Numérique (agenda du jour)": {
+  "de": "fr",
+  "ar": "رقم تونس (جدول أعمال اليوم)",
+  "en": "Tunisia Digital (agenda of the day)"
+ },
+ "UTICA UNION TUN. THE IND. TRADE & ART": {
+  "de": "en",
+  "fr": "UNION UTICA TUN. L'Inde. COMMERCE ET ART",
+  "ar": "(تيكا يون تون) الرقم. TRADE"
+ },
+ "Yasmin Sun": {
+  "de": "fr",
+  "ar": "Yasmin Sun",
+  "en": "Yasmin Sun"
+ },
+ "Zaida": {
+  "de": "fr",
+  "ar": "Zaida",
+  "en": "Zaida"
+ },
+ "harrison guyett": {
+  "de": "fr",
+  "ar": "هاريسون ماينت",
+  "en": "harrison guyett"
+ },
+ "tunis.events (agenda)": {
+  "de": "fr",
+  "ar": "المناسبات (البند من جدول الأعمال)",
+  "en": "tunis.events (agenda)"
+ },
+ "Échos Électrik (Instagram)": {
+  "de": "fr",
+  "ar": "Echos Electrok (Instagram)",
+  "en": "Echos Electrok (Instagram)"
+ }
+}

@@ -1,1 +1,37 @@
-[]
+[
+ {
+  "semaine": "2026-S45",
+  "date": "2026-11-08",
+  "a_venir": 4,
+  "sept_jours": 1,
+  "sources_actives": 14,
+  "sources_avec_evenements": 1,
+  "sources_muettes": [
+   "fb-61595612945174",
+   "ig-downtown-vibes",
+   "ig-echos-electrik",
+   "ig-eddisco",
+   "ig-fabrika",
+   "ig-habibi-downtown",
+   "ig-hamdi-ryder",
+   "ig-jaou-tunis",
+   "ig-kadhem",
+   "ig-rock-n-rolla",
+   "teskerti",
+   "tn-agenda-du-jour",
+   "tunis-events"
+  ],
+  "par_ville": {
+   "monastir": 1
+  },
+  "par_categorie": {
+   "festival": 1
+  },
+  "par_genre": {
+   "agenda": 1
+  },
+  "par_source": {
+   "resident-advisor": 1
+  }
+ }
+]

@@ -1,1 +1,383 @@
-{}
+{
+ "artistes": {
+  "hugo-martinez": {
+   "source": "Wikipédia",
+   "texte": "Hugo Rafael Martínez Poveda, né en 1941 à Moniquirá et mort le 22 mars 2020 à Bogota, est un policier colombien, directeur de l’unité spéciale Bloc de recherche, créée à la fin des années 80 pour abattre le narcotrafiquant colombien Pablo Escobar.",
+   "url": "https://fr.wikipedia.org/wiki/Hugo_Mart%C3%ADnez_(policier)"
+  },
+  "james-creed": {
+   "source": "Wikipédia",
+   "texte": "Sir James Creed was an English merchant and politician.",
+   "url": "https://en.wikipedia.org/wiki/James_Creed"
+  }
+ },
+ "collectifs": {
+  "teskerti": {
+   "source": "site officiel",
+   "texte": "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.",
+   "url": "https://teskerti.tn/"
+  },
+  "tn-agenda-du-jour": {
+   "source": "site officiel",
+   "texte": "Suivez l'actualité en Tunisie en direct . Tunisie Numérique couvre toute l'info politique, économique, sociale et sportive en temps réel.",
+   "url": "https://www.tunisienumerique.com"
+  },
+  "tunis-events": {
+   "source": "site officiel",
+   "texte": "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA",
+   "url": "https://tunis.events/nightlife"
+  }
+ },
+ "festivals": {},
+ "films": {},
+ "lieux": {},
+ "musees": {},
+ "pages": {},
+ "recherches": {
+  "artistes:adema": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:alexander-skancke": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:aline-umber": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:always-late": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:amin": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:atef": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:automatic-writing": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:baban": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:baloo": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:bila": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:cabanne": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:cap": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:chedy": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:cristi-cons": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:daox": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:dj-senc": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:elena-moroder": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:elise-jilian": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:emine-2": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:fares-a": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:foehn-jerome": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:formiq": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:gojnea76": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:hamdi-ryder": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:harrison-guyett": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:hearthug": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:hitsh": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:houz": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:hugo-martinez": {
+   "langue": "fr",
+   "source": "Wikipédia",
+   "texte": "Hugo Rafael Martínez Poveda, né en 1941 à Moniquirá et mort le 22 mars 2020 à Bogota, est un policier colombien, directeur de l’unité spéciale Bloc de recherche, créée à la fin des années 80 pour abattre le narcotrafiquant colombien Pablo Escobar.",
+   "url": "https://fr.wikipedia.org/wiki/Hugo_Mart%C3%ADnez_(policier)",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:ion-ludwig": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:james-creed": {
+   "langue": "en",
+   "source": "Wikipédia",
+   "texte": "Sir James Creed was an English merchant and politician.",
+   "url": "https://en.wikipedia.org/wiki/James_Creed",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:jonn": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:kby": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:kian-ok": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:krol": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:lil-jack": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:lowris": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:maher-daniel": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:maiora": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:majid": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:maks": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:manon": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:markus-nikolai": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:mihnea-rog": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:miller": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:min8": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:moez": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:n4bz": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:olivier-romero": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:omar-c": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:omar-fayyad": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:omar-uy": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:pan-j": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:picasso": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:prichindel": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:raphael-merheb": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:rome-it": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:rslane": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:saadoon": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:serenne": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:sweed": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:taieb-chekir": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:tatler": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:trent-voyage": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:yasmin-sun": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "artistes:zaida": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:downtown-vibes": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:echos-electrik": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:eddisco-records": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:fabrika-festival": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:habibi-downtown": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:hamdi-ryder": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:jaou-tunis": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:kadhem": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:rock-n-rolla-la-goulette": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:steppers-sound-system": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:teskerti": {
+   "source": "site officiel",
+   "texte": "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.",
+   "url": "https://teskerti.tn/",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:tunis-events": {
+   "source": "site officiel",
+   "texte": "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA",
+   "url": "https://tunis.events/nightlife",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "collectifs:tunisie-numerique": {
+   "source": "site officiel",
+   "texte": "Suivez l'actualité en Tunisie en direct . Tunisie Numérique couvre toute l'info politique, économique, sociale et sportive en temps réel.",
+   "url": "https://www.tunisienumerique.com",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:b7l9-art-centre": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:one-resort": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:utica-union-tun-the-ind-trade-art": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  }
+ }
+}
