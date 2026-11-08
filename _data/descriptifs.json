@@ -30,7 +30,18 @@
  },
  "festivals": {},
  "films": {},
- "lieux": {},
+ "lieux": {
+  "cite-de-la-culture-av-mohamed-5-tunis": {
+   "source": "Wikipédia",
+   "texte": "La Cité de la culture ou cité de la culture Chedli-Klibi est un complexe culturel tunisien de neuf hectares situé en plein centre de la ville de Tunis, à l'emplacement de l'ancienne Foire internationale de Tunis sur l'avenue Mohammed-V.",
+   "url": "https://fr.wikipedia.org/wiki/Cit%C3%A9_de_la_culture_(Tunisie)"
+  },
+  "insat-tunis-tunisia": {
+   "source": "Wikipédia",
+   "texte": "L'Institut national des sciences appliquées et de technologie ou INSAT est un établissement universitaire tunisien rattaché à l'université de Carthage.",
+   "url": "https://fr.wikipedia.org/wiki/Institut_national_des_sciences_appliqu%C3%A9es_et_de_technologie"
+  }
+ },
  "musees": {},
  "pages": {},
  "recherches": {
@@ -318,6 +329,10 @@
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },
+  "collectifs:evenements-facebook": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
   "collectifs:fabrika-festival": {
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
@@ -367,11 +382,51 @@
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },
+  "lieux:american-legion-michael-steiner-post-411": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
   "lieux:b7l9-art-centre": {
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },
+  "lieux:cite-de-la-culture": {
+   "langue": "fr",
+   "source": "Wikipédia",
+   "texte": "La Cité de la culture ou cité de la culture Chedli-Klibi est un complexe culturel tunisien de neuf hectares situé en plein centre de la ville de Tunis, à l'emplacement de l'ancienne Foire internationale de Tunis sur l'avenue Mohammed-V.",
+   "url": "https://fr.wikipedia.org/wiki/Cit%C3%A9_de_la_culture_(Tunisie)",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:dar-ziqua": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:habibi-downtown": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:insat": {
+   "langue": "fr",
+   "source": "Wikipédia",
+   "texte": "L'Institut national des sciences appliquées et de technologie ou INSAT est un établissement universitaire tunisien rattaché à l'université de Carthage.",
+   "url": "https://fr.wikipedia.org/wiki/Institut_national_des_sciences_appliqu%C3%A9es_et_de_technologie",
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:montreal": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:nlp-boost-8-avenue-de-l-universite": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
   "lieux:one-resort": {
+   "verifie": "2026-11-08",
+   "vu": "2026-11-08"
+  },
+  "lieux:quechlet-el-attarine": {
    "verifie": "2026-11-08",
    "vu": "2026-11-08"
   },

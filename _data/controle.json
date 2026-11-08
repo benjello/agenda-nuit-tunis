@@ -1,9 +1,96 @@
 {
  "date": "2026-11-08",
  "corriges": 0,
- "a_verifier": [],
+ "a_verifier": [
+  {
+   "fichier": "fb-recherche-soirees/2027-02-11-make-friends-blabla-language-exchange-tunis-every-other-thur.md",
+   "source": "fb-recherche-soirees",
+   "titre": "Make friends & BlaBla Language Exchange Tunis - Every other Thursday - Recurrent event",
+   "date": "2027-02-11",
+   "lien": "https://www.facebook.com/events/1300921580977272/",
+   "problemes": [
+    "titre trop long (début d'une légende ?)"
+   ]
+  }
+ ],
  "granularite": {
   "sources": {
+   "fb-61595612945174": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
+   },
+   "fb-recherche-soirees": {
+    "n": 11,
+    "precis": 9,
+    "pourcent": 82,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 2,
+      "exemple": "Adam Impex au Salon du Chocolat & de la Pâtisserie 2026 – Stand 42"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 2
+     },
+     {
+      "code": "sans_image",
+      "texte": "image",
+      "n": 11
+     },
+     {
+      "code": "sans_notice",
+      "texte": "notice",
+      "n": 11
+     }
+    ]
+   },
+   "ig-fabrika": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
+     }
+    ]
+   },
+   "ig-habibi-downtown": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
+     }
+    ]
+   },
+   "ig-jaou-tunis": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
+     }
+    ]
+   },
    "resident-advisor": {
     "n": 2,
     "precis": 1,
@@ -41,9 +128,59 @@
     ],
     "manques": []
    },
+   "facebook": {
+    "n": 11,
+    "precis": 9,
+    "pourcent": 82,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 2,
+      "exemple": "Adam Impex au Salon du Chocolat & de la Pâtisserie 2026 – Stand 42"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 2
+     },
+     {
+      "code": "sans_image",
+      "texte": "image",
+      "n": 11
+     },
+     {
+      "code": "sans_notice",
+      "texte": "notice",
+      "n": 11
+     }
+    ]
+   },
+   "instagram": {
+    "n": 3,
+    "precis": 3,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 3
+     }
+    ]
+   },
    "tunis_events": {
     "n": 2,
     "precis": 2,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
+   },
+   "facebook_programmes": {
+    "n": 1,
+    "precis": 1,
     "pourcent": 100,
     "defauts": [],
     "manques": []
