@@ -14,6 +14,8 @@ Les points restants sont suivis en issues GitHub : [liste des issues](https://gi
 Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées de ce fichier aux issues ouvertes
 (`scrapers/synchro_tickets.py`) et signale les écarts dans son résumé.
 
+- [ ] Trier les comptes repérés par les hashtags : cocher les faux positifs dans #1 (ticket permanent, refait chaque lundi ; `scrapers/tri_comptes.py`).
+
 ## Fait (8 novembre 2026)
 
 - [x] Reprise du moteur de l'agenda culturel (Jekyll, scrapers, page Sources, carte, ICS, API), données culturelles vidées.
