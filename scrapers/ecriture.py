@@ -14,7 +14,7 @@ import json
 import re
 import shutil
 
-from .commun import RACINE, Evenement, Publication, categorie_nuit, est_discret, est_famille, horaire_du_texte, pas_un_evenement, retours_ligne_casses, slug, titre_film
+from .commun import RACINE, Evenement, Publication, categorie_du_titre, categorie_nuit, est_discret, est_famille, horaire_du_texte, pas_un_evenement, retours_ligne_casses, slug, titre_film
 from .pages import _cle, faux_lieux
 from .villes import mention, ville
 
@@ -70,6 +70,19 @@ def completer_horaire(e: Evenement) -> str | None:
     return None
 
 
+_TUNISIE = re.compile(r"tunisi|tunis\b|gammarth|marsa|goulette|carthage|sidi bou|\blac\b|ariana|ben arous|"
+                      r"hammamet|nabeul|sousse|monastir|mahdia|sfax|djerba|bizerte|tabarka|kantaoui|yasmine|tozeur", re.I)
+
+
+def soiree_sure(e: Evenement) -> bool:
+    """Pour une source large : titre de soirée reconnu, début après 17 h (ou heure inconnue), lieu en Tunisie."""
+    if not categorie_du_titre(e.titre):
+        return False
+    if e.debut.hour and 6 <= e.debut.hour < 17 and e.categorie != "festival":
+        return False
+    return bool(_TUNISIE.search(f"{e.lieu} {e.adresse}"))
+
+
 def ecrire(source: dict, resultat: list) -> int:
     """Range le résultat d'un scraper : événements et programmes (affiches)."""
     evenements = [x for x in resultat if isinstance(x, Evenement)]
@@ -94,6 +107,10 @@ def ecrire_evenements(source: dict, evenements: list[Evenement]) -> int:
     for e in a_venir:
         e.categorie = categorie_nuit(e.categorie or source.get("categorie") or "autre", e.titre)
     a_venir = [e for e in a_venir if e.categorie and not e.film]
+    # Sources larges (recherche Facebook par mots-clés) : le titre doit dire la soirée, l'heure être le soir,
+    # et le lieu être en Tunisie. Sinon on récolte des formations, des salons ou des fêtes à Montréal.
+    if (source.get("options") or {}).get("filtre_strict"):
+        a_venir = [e for e in a_venir if soiree_sure(e)]
     for e in a_venir:
         if e.film or e.categorie == "cinema":
             e.titre = titre_film(e.titre)

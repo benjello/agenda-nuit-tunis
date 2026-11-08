@@ -254,7 +254,8 @@ _CATEGORIES_DU_TITRE = [
 # Ce qui n'est pas une sortie de nuit : écarté même si la rubrique de la source est « soirées ».
 _PAS_LA_NUIT = re.compile(
     r"movie night|cin[ée][- ]?club|\bprojection\b|\bvernissage\b|\bexposition\b|\bconf[ée]rence\b|table ronde"
-    r"|\batelier\b|\bworkshop\b|\bmasterclass\b|\bd[ée]dicace\b|\bmarionnettes?\b|\bvisite guid[ée]e\b|\bmus[ée]e\b", re.I)
+    r"|\bateliers?\b|\bworkshops?\b|\bmasterclass\b|\bformations?\b|\bsalon\b|\bcybercamp\b|\bhackathon\b|\bcoaching\b"
+    r"|\bd[ée]dicace\b|\bmarionnettes?\b|\bvisite guid[ée]e\b|\bmus[ée]e\b", re.I)
 
 # Catégories de l'agenda culturel encore produites par certains scrapers, ramenées à celles de la nuit.
 ANCIENNES_CATEGORIES = {"musique": "concert", "clubbing": "club", "danse": "club", "spectacle": "cabaret",

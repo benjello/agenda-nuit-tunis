@@ -297,4 +297,5 @@
       - stand up Tunis
       - cabaret Tunis
     max: 80
+    filtre_strict: true
   note: "Recherche par mots-clés dans les événements publics de Facebook (Apify, environ 1 centime l'événement, un passage sur deux jours). La catégorie vient du titre ; films, expos et conférences sont écartés. Sert aussi à repérer les pages d'organisateurs à brancher."

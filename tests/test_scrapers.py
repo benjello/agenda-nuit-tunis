@@ -196,6 +196,22 @@ class Ecriture(unittest.TestCase):
             self.assertIn('category: "cabaret"', texte)
 
 
+class RechercheLarge(unittest.TestCase):
+    """Recherche Facebook par mots-clés : seules les vraies soirées en Tunisie passent."""
+
+    def test_soiree_sure(self):
+        from scrapers.ecriture import soiree_sure
+        def ev(titre, heure, lieu):
+            return commun.Evenement(titre=titre, debut=dt.datetime(FUTUR, 11, 20, heure, 0), lien="x", lieu=lieu,
+                                    categorie=commun.categorie_nuit("autre", titre))
+        self.assertTrue(soiree_sure(ev("Afro night DJ set", 23, "Gammarth")))
+        self.assertTrue(soiree_sure(ev("Karaoké night", 21, "Le Lac, Tunis")))
+        self.assertFalse(soiree_sure(ev("soirée Noël", 0, "Lieu à préciser")))            # titre trop vague
+        self.assertFalse(soiree_sure(ev("Soirée Mezwed live", 22, "Montréal")))            # hors Tunisie
+        self.assertFalse(soiree_sure(ev("Concert jazz", 11, "Tunis")))                     # le matin
+        self.assertEqual(commun.categorie_nuit("autre", "Ateliers de bibliothérapie - Tunis Blues"), "")
+
+
 if __name__ == "__main__":
     unittest.main()
 
