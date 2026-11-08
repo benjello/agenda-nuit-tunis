@@ -15,9 +15,9 @@ description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent 
   {%- for c in site.data.categories %}{% assign n = site.data.clubs.lieux | where: "type", c[0] %}{% if n.size > 0 %}
   <button data-type="{{ c[0] }}" data-t="cat.{{ c[0] }}">{{ c[1].label }}</button>{% endif %}{% endfor %}
   <button data-type="horaires" data-t="clubs_avec_horaires">Avec horaires</button>
-  <button data-type="$" title="Moins de 20 DT la soirée">$</button>
-  <button data-type="$$" title="20 à 60 DT">$$</button>
-  <button data-type="$$$" title="Plus de 60 DT">$$$</button>
+  <button data-type="$" title="Moins de 20 DT la soirée" data-t-title="clubs.g1">$</button>
+  <button data-type="$$" title="20 à 60 DT" data-t-title="clubs.g2">$$</button>
+  <button data-type="$$$" title="Plus de 60 DT" data-t-title="clubs.g3">$$$</button>
 </div>
 {%- assign tous = site.events | where_exp: "e", "e.doublon != true" -%}
 {%- assign today = site.time | date: "%Y-%m-%d" -%}
@@ -51,29 +51,29 @@ description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent 
       {%- if m.adresse %}<small>{{ m.adresse }}</small>{% endif %}
       {%- if fi.bio %}<p class="club-bio">{{ fi.bio | escape | newline_to_br }}</p>{% endif %}
       <dl class="club-infos">
-        {%- if m.horaires %}<dt data-t="clubs.horaires">Horaires</dt><dd>{{ m.horaires }}</dd>{% elsif fi.horaires_site %}<dt data-t="clubs.horaires">Horaires</dt><dd>{{ fi.horaires_site }} <small>(site du lieu)</small></dd>{% endif %}
+        {%- if m.horaires %}<dt data-t="clubs.horaires">Horaires</dt><dd{% if m.horaires_en %} data-tr-en="{{ m.horaires_en | escape }}"{% endif %}{% if m.horaires_ar %} data-tr-ar="{{ m.horaires_ar | escape }}"{% endif %}>{{ m.horaires }}</dd>{% elsif fi.horaires_site %}<dt data-t="clubs.horaires">Horaires</dt><dd>{{ fi.horaires_site }} <small data-t="clubs.du_site">(site du lieu)</small></dd>{% endif %}
         {%- if m.ambiance %}<dt data-t="clubs.ambiance">Ambiance</dt><dd>{{ m.ambiance }}</dd>{% endif %}
-        {%- if m.public or m.age_min %}<dt data-t="clubs.public">Public</dt><dd>{{ m.public }}{% if m.age_min %}{% if m.public %} · {% endif %}{{ m.age_min }} ans et plus{% endif %}</dd>{% endif %}
+        {%- if m.public or m.age_min %}<dt data-t="clubs.public">Public</dt><dd>{{ m.public }}{% if m.age_min %}{% if m.public %} · {% endif %}{{ m.age_min }} <span data-t="clubs.ans_plus">ans et plus</span>{% endif %}</dd>{% endif %}
         {%- assign prix_vus = evts | map: "price" | compact | uniq -%}
-        {%- if m.gamme == nil and fi.prix_site %}<dt data-t="clubs.gamme">Prix</dt><dd><span class="gamme">{{ fi.prix_site }}</span> <small>(site du lieu)</small></dd>{% endif %}
-        {%- if m.gamme %}<dt data-t="clubs.gamme">Prix</dt><dd><span class="gamme" title="$ moins de 20 DT · $$ 20 à 60 DT · $$$ plus de 60 DT">{{ m.gamme }}</span></dd>{% endif %}
+        {%- if m.gamme == nil and fi.prix_site %}<dt data-t="clubs.gamme">Prix</dt><dd><span class="gamme">{{ fi.prix_site }}</span> <small data-t="clubs.du_site">(site du lieu)</small></dd>{% endif %}
+        {%- if m.gamme %}<dt data-t="clubs.gamme">Prix</dt><dd><span class="gamme" title="$ moins de 20 DT · $$ 20 à 60 DT · $$$ plus de 60 DT" data-t-title="clubs.gamme_aide">{{ m.gamme }}</span></dd>{% endif %}
         {%- if m.entree %}<dt data-t="clubs.entree">Entrée</dt><dd>{{ m.entree }}</dd>{% endif %}
         {%- if m.conso %}<dt data-t="clubs.conso">Conso</dt><dd>{{ m.conso }}</dd>{% endif %}
         {%- if m.table %}<dt data-t="clubs.table">Table</dt><dd>{{ m.table }}</dd>{% endif %}
         {%- if prix_vus.size > 0 %}<dt data-t="clubs.prix_annonces">Dans les annonces</dt><dd>{{ prix_vus | join: " · " }}</dd>{% endif %}
         {%- if m.dress_code %}<dt data-t="clubs.dress_code">Dress code</dt><dd>{{ m.dress_code }}</dd>{% endif %}
-        {%- if m.reservation %}<dt data-t="clubs.reservation">Réservation</dt><dd>{% if m.reservation contains "http" %}<a href="{{ m.reservation }}" rel="noopener">réserver</a>{% else %}{{ m.reservation }}{% endif %}</dd>{% endif %}
+        {%- if m.reservation %}<dt data-t="clubs.reservation">Réservation</dt><dd>{% if m.reservation contains "http" %}<a href="{{ m.reservation }}" rel="noopener" data-t="clubs.reserver">réserver</a>{% else %}{{ m.reservation }}{% endif %}</dd>{% endif %}
       </dl>
       <small class="club-liens">
         {%- if m.instagram %}<a href="https://www.instagram.com/{{ m.instagram }}/" rel="noopener">Instagram</a> {% endif %}
         {%- if m.facebook %}<a href="{% if m.facebook contains 'http' %}{{ m.facebook }}{% else %}https://www.facebook.com/{{ m.facebook }}{% endif %}" rel="noopener">Facebook</a> {% endif %}
         {%- assign site_l = m.site | default: fi.site_insta -%}
-        {%- if site_l %}<a href="{{ site_l }}" rel="noopener">Site</a> {% endif %}
+        {%- if site_l %}<a href="{{ site_l }}" rel="noopener" data-t="site_web">Site</a> {% endif %}
         {%- if m.telephone %}<span>{{ m.telephone }}</span> {% endif %}
-        {%- if m.osm %}<a href="{{ m.osm }}" rel="noopener" title="Corriger les horaires sur OpenStreetMap">OSM</a>{% endif %}
+        {%- if m.osm %}<a href="{{ m.osm }}" rel="noopener" title="Corriger les horaires sur OpenStreetMap" data-t-title="clubs.corriger_osm">OSM</a>{% endif %}
       </small>
       {%- if fi.affiches.size > 0 %}
-      <div class="club-affiches">{% for a in fi.affiches %}<a href="{{ a.lien }}" rel="noopener" title="Publication du {{ a.date | date: '%d/%m' }} sur Instagram"><img src="{{ a.image | prepend: '/' | relative_url }}" alt="Affiche publiée par {{ m.nom | escape }}" loading="lazy"></a>{% endfor %}</div>
+      <div class="club-affiches">{% for a in fi.affiches %}<a href="{{ a.lien }}" rel="noopener" title="Instagram, {{ a.date | date: '%d/%m' }}"><img src="{{ a.image | prepend: '/' | relative_url }}" alt="Affiche publiée par {{ m.nom | escape }}" loading="lazy"></a>{% endfor %}</div>
       {%- endif %}
       {%- if evts.size > 0 %}
       <p class="club-soirees"><span data-t="clubs_soirees">Soirées annoncées :</span> {% for e in evts limit: 3 %}<a href="{{ e.url | relative_url }}">{{ e.title }}</a> ({{ e.date | date: "%d/%m" }}){% unless forloop.last %} · {% endunless %}{% endfor %}</p>
@@ -84,7 +84,10 @@ description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent 
 </section>
 {%- endif %}
 {%- endfor %}
-<p class="updated" data-th="clubs_note">Liste tirée d'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> (ODbL), lue chaque semaine{% if site.data.clubs.lu_le %} (dernière lecture le {{ site.data.clubs.lu_le | date: "%d/%m/%Y" }}){% endif %}, et complétée à la main (<code>_data/clubs.yml</code>). Photos, bios et affiches : publiées par chaque lieu sur son compte Instagram ou son site, avec un lien vers l'original. Un lieu manque, ses horaires sont faux ? <a href="{{ '/proposer/#fiche' | relative_url }}">Dites-le-nous</a>, ou corrigez-le directement sur OpenStreetMap.</p>
+<p class="updated" data-th="clubs_note">Liste tirée d'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> (ODbL), relue chaque semaine, et complétée à la main (<code>_data/clubs.yml</code>). Photos, bios et affiches : publiées par chaque lieu sur son compte Instagram ou son site, avec un lien vers l'original. Un lieu manque, ses horaires sont faux ? <a href="{{ '/proposer/#fiche' | relative_url }}">Dites-le-nous</a>, ou corrigez-le directement sur OpenStreetMap.</p>
+{%- if site.data.clubs.lu_le %}
+<p class="updated"><span data-t="clubs.lu_le">Dernière lecture d'OpenStreetMap :</span> <span data-date="{{ site.data.clubs.lu_le }}">{{ site.data.clubs.lu_le | date: "%d/%m/%Y" }}</span></p>
+{%- endif %}
 <script>
 (function () {
   var type = 'tous';

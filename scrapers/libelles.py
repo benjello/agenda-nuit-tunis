@@ -30,11 +30,15 @@ MAX_SECONDES = 15 * 60
 MAX_LONGUEUR = 1500
 # clés dont le contenu n'est pas du texte affiché (motifs, identifiants, liens…)
 IGNORER = {"mots", "motifs", "regex", "id", "slug", "lien", "url", "image", "source", "sources", "noms",
-           "type", "genre", "ville", "date", "debut", "fin", "licence", "cle", "alias"}
+           "type", "genre", "ville", "date", "debut", "fin", "licence", "cle", "alias",
+           # page Clubs : liens, coordonnées et champs déjà traduits par scrapers/clubs.py
+           "instagram", "facebook", "site", "site_insta", "osm", "telephone", "telephone_site", "photo", "image_site",
+           "affiches", "lat", "lon", "lu_le", "abonnes", "manuel", "gamme", "horaires", "horaires_en", "horaires_ar",
+           "horaires_site", "prix_site", "reservation", "cacher"}
 FICHIERS_DATA = ["festivals.yml", "musees.yml", "types_lieux.yml", "categories.yml", "villes.yml",
                  "ramadan.yml", "series.yml", "genres.yml", "artistes.yml", "descriptifs_manuels.yml",
-                 "films_infos.yml", "lieux_references.yml"]
-JSON_DATA = ["descriptifs.json", "films.json", "lieux.json", "presse.json", "enrichi.json"]
+                 "films_infos.yml", "lieux_references.yml", "clubs.yml"]
+JSON_DATA = ["descriptifs.json", "films.json", "lieux.json", "presse.json", "enrichi.json", "clubs.json", "fiches_clubs.json"]
 CHAMPS_EVENT = ("venue", "address", "price", "source_name", "festival")
 CHAMPS_PAGE = ("title", "adresse", "nom", "description")
 

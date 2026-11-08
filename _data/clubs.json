@@ -67,7 +67,9 @@
    "horaires": "tous les jours, 24 h/24",
    "lat": 36.4002513,
    "lon": 10.5767993,
-   "osm": "https://www.openstreetmap.org/node/12002676494"
+   "osm": "https://www.openstreetmap.org/node/12002676494",
+   "horaires_en": "every day, 24/7",
+   "horaires_ar": "كل يوم، 24/24"
   },
   {
    "nom": "Bar piscine Sultan",
@@ -373,7 +375,9 @@
    "horaires": "lun-dim 7h-21h30",
    "lat": 36.4444415,
    "lon": 10.7340346,
-   "osm": "https://www.openstreetmap.org/node/6201364015"
+   "osm": "https://www.openstreetmap.org/node/6201364015",
+   "horaires_en": "Mon-Sun 07:00-21:30",
+   "horaires_ar": "الإثنين-الأحد 07:00-21:30"
   },
   {
    "nom": "Pool Party Club Hammamet",
@@ -577,7 +581,9 @@
    "horaires": "tous les jours, 24 h/24",
    "lat": 35.8485357,
    "lon": 10.6177656,
-   "osm": "https://www.openstreetmap.org/node/1228007226"
+   "osm": "https://www.openstreetmap.org/node/1228007226",
+   "horaires_en": "every day, 24/7",
+   "horaires_ar": "كل يوم، 24/24"
   },
   {
    "nom": "Caruso",
@@ -587,7 +593,9 @@
    "horaires": "lun-dim 9h-0h",
    "lat": 35.8362934,
    "lon": 10.6367263,
-   "osm": "https://www.openstreetmap.org/node/5847201685"
+   "osm": "https://www.openstreetmap.org/node/5847201685",
+   "horaires_en": "Mon-Sun 09:00-00:00",
+   "horaires_ar": "الإثنين-الأحد 09:00-00:00"
   },
   {
    "nom": "Edge Bar",
@@ -917,7 +925,9 @@
    "horaires": "lun-sam 12h-2h30",
    "lat": 36.800357,
    "lon": 10.1824403,
-   "osm": "https://www.openstreetmap.org/node/11504046285"
+   "osm": "https://www.openstreetmap.org/node/11504046285",
+   "horaires_en": "Mon-Sat 12:00-02:30",
+   "horaires_ar": "الإثنين-السبت 12:00-02:30"
   },
   {
    "nom": "Club 71",
@@ -975,7 +985,9 @@
    "horaires": "lun-sam 15h-1h",
    "lat": 36.8227077,
    "lon": 10.1933627,
-   "osm": "https://www.openstreetmap.org/node/6819154487"
+   "osm": "https://www.openstreetmap.org/node/6819154487",
+   "horaires_en": "Mon-Sat 15:00-01:00",
+   "horaires_ar": "الإثنين-السبت 15:00-01:00"
   },
   {
    "nom": "Grand Italia",
@@ -1110,7 +1122,9 @@
    "telephone": "+216 56 574 949",
    "lat": 36.8491605,
    "lon": 10.3272792,
-   "osm": "https://www.openstreetmap.org/node/11005563005"
+   "osm": "https://www.openstreetmap.org/node/11005563005",
+   "horaires_en": "Mon-Sat 00:00-24:00",
+   "horaires_ar": "الإثنين-السبت 00:00-24:00"
   },
   {
    "nom": "Maison Bleue",
@@ -1206,7 +1220,9 @@
    "lon": 10.1729297,
    "osm": "https://www.openstreetmap.org/node/9635030202",
    "ambiance": "terrasse",
-   "age_min": "15"
+   "age_min": "15",
+   "horaires_en": "19:00-04:00",
+   "horaires_ar": "19:00-04:00"
   },
   {
    "nom": "Sinbad Resto Lounge",

@@ -49,17 +49,29 @@ def hors_sujet(nom: str) -> bool:
     return bool(HORS_SUJET.search(nom))
 
 
-_JOURS = {"Mo": "lun", "Tu": "mar", "We": "mer", "Th": "jeu", "Fr": "ven", "Sa": "sam", "Su": "dim", "PH": "fériés"}
+_JOURS = {
+    "fr": {"Mo": "lun", "Tu": "mar", "We": "mer", "Th": "jeu", "Fr": "ven", "Sa": "sam", "Su": "dim", "PH": "fériés"},
+    "en": {"Mo": "Mon", "Tu": "Tue", "We": "Wed", "Th": "Thu", "Fr": "Fri", "Sa": "Sat", "Su": "Sun", "PH": "holidays"},
+    "ar": {"Mo": "الإثنين", "Tu": "الثلاثاء", "We": "الأربعاء", "Th": "الخميس", "Fr": "الجمعة", "Sa": "السبت", "Su": "الأحد", "PH": "الأعياد"},
+}
+_MOTS = {
+    "fr": {"24/7": "tous les jours, 24 h/24", "off": "fermé"},
+    "en": {"24/7": "every day, 24/7", "off": "closed"},
+    "ar": {"24/7": "كل يوم، 24/24", "off": "مغلق"},
+}
 
 
-def horaires_fr(oh: str) -> str:
-    """« Th-Sa 23:00-05:00; Su off » → « jeu-sam 23h-5h ; dim fermé ». Le reste est gardé tel quel."""
+def horaires_fr(oh: str, langue: str = "fr") -> str:
+    """« Th-Sa 23:00-05:00; Su off » → « jeu-sam 23h-5h ; dim fermé » (ou en anglais, en arabe). Le reste est gardé."""
     if not oh:
         return ""
-    t = re.sub(r"\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\b", lambda m: _JOURS[m.group(1)], oh)
-    t = re.sub(r"\b(\d{1,2}):(\d{2})\b", lambda m: f"{int(m.group(1))}h" + ("" if m.group(2) == "00" else m.group(2)), t)
-    t = t.replace("24/7", "tous les jours, 24 h/24").replace(" off", " fermé").replace("off", "fermé")
-    return re.sub(r"\s*;\s*", " ; ", t).strip()
+    jours, mots = _JOURS[langue], _MOTS[langue]
+    t = oh.replace("24/7", mots["24/7"])
+    t = re.sub(r"\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\b", lambda m: jours[m.group(1)], t)
+    if langue == "fr":
+        t = re.sub(r"\b(\d{1,2}):(\d{2})\b", lambda m: f"{int(m.group(1))}h" + ("" if m.group(2) == "00" else m.group(2)), t)
+    t = re.sub(r"\boff\b", mots["off"], t)
+    return re.sub(r"\s*;\s*", " ; " if langue == "fr" else "; ", t).strip()
 
 
 # Régions de _data/villes.yml par coordonnées (plus sûr que le nom : sans adresse, ville() répond « tunis »).
@@ -101,6 +113,8 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
             "ville": region(centre.get("lat"), centre.get("lon"), nom, adresse, t.get("addr:city", "")),
             "adresse": adresse,
             "horaires": horaires_fr(t.get("opening_hours", "")),
+            "horaires_en": horaires_fr(t.get("opening_hours", ""), "en"),
+            "horaires_ar": horaires_fr(t.get("opening_hours", ""), "ar"),
             "site": t.get("website") or t.get("contact:website") or "",
             "instagram": insta.rstrip("/").split("/")[-1].lstrip("@") if insta else "",
             "facebook": t.get("contact:facebook") or t.get("facebook") or "",

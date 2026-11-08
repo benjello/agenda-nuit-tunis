@@ -61,3 +61,4 @@ Chaque événement garde le lien vers sa source d'origine.
 
 Les courts descriptifs viennent de l'annonce d'origine, de [Wikipédia](https://fr.wikipedia.org)
 (licence CC BY-SA, lien vers l'article à chaque fois).
+{: data-th="apropos.p7"}
