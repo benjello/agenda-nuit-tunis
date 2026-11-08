@@ -4,9 +4,10 @@
   "date": "2026-11-08",
   "a_venir": 19,
   "sept_jours": 7,
-  "sources_actives": 15,
+  "sources_actives": 16,
   "sources_avec_evenements": 5,
   "sources_muettes": [
+   "ig-calypso-hammamet",
    "ig-downtown-vibes",
    "ig-echos-electrik",
    "ig-eddisco",

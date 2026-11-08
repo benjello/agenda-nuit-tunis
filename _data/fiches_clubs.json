@@ -1,1 +1,51 @@
-{}
+{
+ "Calypso Club Hammamet": {
+  "abonnes": 77531,
+  "affiches": [
+   {
+    "date": "2026-09-19",
+    "image": "assets/clubs/calypso-club-hammamet/DdeVYItop1o.jpg",
+    "lien": "https://www.instagram.com/p/DdeVYItop1o/"
+   },
+   {
+    "date": "2026-09-01",
+    "image": "assets/clubs/calypso-club-hammamet/DcvrOdPo8xm.jpg",
+    "lien": "https://www.instagram.com/p/DcvrOdPo8xm/"
+   },
+   {
+    "date": "2026-08-31",
+    "image": "assets/clubs/calypso-club-hammamet/Dctr92lNP9T.jpg",
+    "lien": "https://www.instagram.com/p/Dctr92lNP9T/"
+   }
+  ],
+  "bio": "Since 1971 ✨\nWhere Else?\n📩 DM for Reservations",
+  "lu_le": "2026-11-08",
+  "photo": "assets/clubs/calypso-club-hammamet/profil.jpg"
+ },
+ "Grand Italia": {
+  "lu_le": "2026-11-08"
+ },
+ "Unidos Club by El Pacha": {
+  "abonnes": 8282,
+  "affiches": [
+   {
+    "date": "2024-12-03",
+    "image": "assets/clubs/unidos-club-by-el-pacha/DDHhfX6I25f.jpg",
+    "lien": "https://www.instagram.com/p/DDHhfX6I25f/"
+   },
+   {
+    "date": "2024-11-28",
+    "image": "assets/clubs/unidos-club-by-el-pacha/DC671N1ItJc.jpg",
+    "lien": "https://www.instagram.com/p/DC671N1ItJc/"
+   },
+   {
+    "date": "2024-11-28",
+    "image": "assets/clubs/unidos-club-by-el-pacha/DC67iIwoMAb.jpg",
+    "lien": "https://www.instagram.com/p/DC67iIwoMAb/"
+   }
+  ],
+  "bio": "🎶 UNIDOS : Rythme & magie à Hammamet ✨ Ancien Havana Club, toujours en fête depuis '71 ! 🌟🍹\n BY : @el.pacha.hammamet  🌚",
+  "lu_le": "2026-11-08",
+  "photo": "assets/clubs/unidos-club-by-el-pacha/profil.jpg"
+ }
+}

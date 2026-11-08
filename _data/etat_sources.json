@@ -21,6 +21,12 @@
     "premier_passage": "2026-11-08T11:49:35",
     "sans_heure": 2
   },
+  "ig-calypso-hammamet": {
+    "dernier_passage": "2026-11-08T12:25:32",
+    "erreur": "RuntimeError: Apify : {'url': 'https://www.instagram.com/calypsotunisiaofficial/', 'inputUrl': 'https://www.instagram.com/calypsotunisiaofficial/', 'requestErrorMessages': [], 'error': 'no_items', 'errorDescription': 'Empty or private data for provided input'}",
+    "ok": false,
+    "premier_passage": "2026-11-08T12:25:32"
+  },
   "ig-downtown-vibes": {
     "attente": null,
     "dernier_passage": "2026-11-08T11:49:35",
