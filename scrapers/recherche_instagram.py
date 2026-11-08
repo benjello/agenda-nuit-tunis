@@ -13,7 +13,7 @@ from .sources.facebook import appeler_apify
 
 
 def main(mots: list[str]) -> int:
-    cle = os.environ.get("APIFY_TOKEN")
+    cle = (os.environ.get("APIFY_TOKEN") or "").strip()  # un secret collé finit souvent par un retour à la ligne
     if not cle:
         print("APIFY_TOKEN manquant")
         return 1

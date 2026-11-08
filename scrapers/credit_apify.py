@@ -46,7 +46,7 @@ def alerte(c: dict) -> str:
 
 
 def main() -> int:
-    token = os.environ.get("APIFY_TOKEN")
+    token = (os.environ.get("APIFY_TOKEN") or "").strip()  # un secret collé finit souvent par un retour à la ligne
     if not token:
         print("pas de APIFY_TOKEN", file=sys.stderr)
         return 0

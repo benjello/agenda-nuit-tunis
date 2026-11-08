@@ -36,7 +36,7 @@ def images_de(item: dict) -> list[str]:
 
 
 def lire_publications(source: dict) -> list[Publication]:
-    cle = os.environ.get("APIFY_TOKEN")
+    cle = (os.environ.get("APIFY_TOKEN") or "").strip()  # un secret collé finit souvent par un retour à la ligne
     if not cle:
         raise EnAttente("clé APIFY_TOKEN pas encore configurée")
     o = source.get("options", {})
