@@ -400,3 +400,15 @@ main:focus { outline: none; }
 /* Titre d'origine, à côté de sa traduction */
 .titre-orig { display: block; font-size: .78em; font-weight: 400; opacity: .7; }
 .titre-orig[hidden] { display: none; }
+
+/* Page Clubs & bars : une carte par lieu, horaires et ambiance en liste de définitions */
+.liste-clubs { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.liste-clubs .club { border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 10px 12px; min-width: 0; }
+.club-tete { display: flex; gap: 8px; align-items: baseline; justify-content: space-between; flex-wrap: wrap; }
+.pastille { font-size: .75rem; border-radius: 999px; padding: 1px 8px; border: 1px solid var(--c); color: var(--c); white-space: nowrap; }
+.club-infos { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 8px 0 6px; font-size: .9rem; }
+.club-infos dt { color: var(--muted); }
+.club-infos dd { margin: 0; }
+.club-liens { display: flex; gap: 10px; flex-wrap: wrap; color: var(--muted); }
+.club-soirees { margin: 6px 0 0; font-size: .9rem; }
+.gamme { font-weight: 700; letter-spacing: .05em; }

@@ -212,6 +212,24 @@ class RechercheLarge(unittest.TestCase):
         self.assertEqual(commun.categorie_nuit("autre", "Ateliers de bibliothérapie - Tunis Blues"), "")
 
 
+class Clubs(unittest.TestCase):
+    """Page Clubs & bars : lieux d'OpenStreetMap, horaires en français, corrections de clubs.yml."""
+
+    def test_horaires_et_fusion(self):
+        from scrapers import clubs
+        self.assertEqual(clubs.horaires_fr("Th-Sa 23:00-05:00; Su off"), "jeu-sam 23h-5h ; dim fermé")
+        osm = clubs.depuis_osm([{"type": "node", "id": 1, "lat": 36.9, "lon": 10.3, "tags": {
+            "amenity": "nightclub", "name": "Club X", "addr:city": "Hammamet", "opening_hours": "Fr,Sa 23:30-05:00",
+            "music:genre": "house;afro", "outdoor_seating": "yes", "contact:instagram": "https://instagram.com/clubx/"}}])
+        self.assertEqual((osm[0]["type"], osm[0]["ville"], osm[0]["instagram"]), ("club", "nabeul", "clubx"))
+        self.assertEqual(osm[0]["ambiance"], "house, afro, terrasse")
+        lieux = clubs.fusionner(osm, [{"nom": "Club X", "gamme": "$$", "dress_code": "chic"},
+                                      {"nom": "Bar Y", "type": "bar", "adresse": "La Marsa"}, {"nom": "Fermé", "cacher": True}])
+        x = next(l for l in lieux if l["nom"] == "Club X")
+        self.assertEqual((x["gamme"], x["horaires"], x["dress_code"]), ("$$", "ven,sam 23h30-5h", "chic"))
+        self.assertIn("Bar Y", [l["nom"] for l in lieux])
+
+
 if __name__ == "__main__":
     unittest.main()
 

@@ -49,6 +49,9 @@ jobs:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # pages Facebook ; facultatif
           SOURCES: ${{ github.event.schedule == '47 10 * * *' && 'tn-agenda-du-jour' || inputs.sources }}
         continue-on-error: true   # on enregistre quand même ce qui a marché et l'état des sources
+      - name: Clubs et bars (OpenStreetMap, une fois par semaine)
+        run: python3 -m scrapers.clubs
+        continue-on-error: true
       - name: Fiches lieux, organisateurs, artistes et carte
         run: |
           python3 -m scrapers.festivals
@@ -93,7 +96,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
-          git add -A _events _data/etat_sources.json _data/films.json _data/critiques.json _data/presse.json _data/wikidata.json _data/controle.json _data/traductions.json _data/libelles.json _data/bilan.json _data/apify.json _data/descriptifs.json _data/enrichi.json \
+          git add -A _events _data/etat_sources.json _data/films.json _data/critiques.json _data/presse.json _data/wikidata.json _data/controle.json _data/traductions.json _data/libelles.json _data/bilan.json _data/apify.json _data/descriptifs.json _data/enrichi.json _data/clubs.json \
             _lieux _collectifs _artistes _data/lieux.json _data/geo.json archives/donnees
           for d in _data/programmes _cache/publications assets/programmes; do
             if [ -d "$d" ]; then git add -A "$d"; fi

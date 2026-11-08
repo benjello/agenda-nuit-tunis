@@ -1,0 +1,101 @@
+---
+layout: default
+title: Clubs & bars
+permalink: /clubs/
+description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent chaque semaine : horaires, ambiance, public, prix et dress code."
+---
+<section class="intro">
+  <h1 data-t="clubs_titre">Clubs & bars</h1>
+  <p><span data-t="clubs_intro">Les lieux qui ouvrent chaque semaine, même sans soirée spéciale annoncée : horaires, ambiance, public, prix et conditions d'entrée.</span>
+  <small data-t="clubs_verifier">Horaires indicatifs : vérifiez sur le compte du lieu avant d'y aller.</small></p>
+</section>
+{% include choix-ville.html toutes=true %}
+<div class="filters" id="clubs-types" role="group" aria-label="Type de lieu">
+  <button class="active" data-type="tous" data-t="tout">Tout</button>
+  {%- for c in site.data.categories %}{% assign n = site.data.clubs.lieux | where: "type", c[0] %}{% if n.size > 0 %}
+  <button data-type="{{ c[0] }}" data-t="cat.{{ c[0] }}">{{ c[1].label }}</button>{% endif %}{% endfor %}
+  <button data-type="horaires" data-t="clubs_avec_horaires">Avec horaires</button>
+  <button data-type="$" title="Moins de 20 DT la soirée">$</button>
+  <button data-type="$$" title="20 à 60 DT">$$</button>
+  <button data-type="$$$" title="Plus de 60 DT">$$$</button>
+</div>
+{%- assign tous = site.events | where_exp: "e", "e.doublon != true" -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign lieux = site.data.clubs.lieux | default: empty -%}
+{%- if lieux.size == 0 %}
+<p class="empty" data-t="clubs_vide">La liste des lieux arrive au prochain passage des scrapers (OpenStreetMap, chaque semaine).</p>
+{%- endif %}
+{%- for v in site.data.villes %}
+{%- assign ls = lieux | where: "ville", v.id -%}
+{%- if ls.size > 0 %}
+<section class="month bloc-ville" data-ville-bloc="{{ v.id }}">
+  <h2 data-t="ville.{{ v.id }}">{{ v.nom }}</h2>
+  <ul class="liste-clubs">
+  {%- for m in ls %}
+    {%- assign cat = site.data.categories[m.type] | default: site.data.categories.autre -%}
+    {%- assign nom_bas = m.nom | downcase -%}
+    {%- assign evts = "" | split: "" -%}
+    {%- for e in tous -%}{%- assign jour = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+      {%- if jour >= today -%}{%- assign l = e.venue | append: " " | append: e.title | downcase -%}
+      {%- if l contains nom_bas -%}{%- assign evts = evts | push: e -%}{%- endif -%}{%- endif -%}
+    {%- endfor %}
+    <li class="club" data-type="{{ m.type }}" data-gamme="{{ m.gamme }}" data-horaires="{% if m.horaires %}oui{% endif %}">
+      <div class="club-tete">
+        <strong>{% if m.lat %}<a href="https://www.google.com/maps/search/?api=1&query={{ m.lat }},{{ m.lon }}" rel="noopener">{{ m.nom }}</a>{% else %}<a href="https://www.google.com/maps/search/?api=1&query={{ m.nom | append: ', ' | append: m.adresse | append: ', Tunisie' | url_encode }}" rel="noopener">{{ m.nom }}</a>{% endif %}</strong>
+        <span class="pastille" style="--c: {{ cat.color }}" data-t="cat.{{ m.type }}">{{ cat.label }}</span>
+      </div>
+      {%- if m.adresse %}<small>{{ m.adresse }}</small>{% endif %}
+      <dl class="club-infos">
+        {%- if m.horaires %}<dt data-t="clubs.horaires">Horaires</dt><dd>{{ m.horaires }}</dd>{% endif %}
+        {%- if m.ambiance %}<dt data-t="clubs.ambiance">Ambiance</dt><dd>{{ m.ambiance }}</dd>{% endif %}
+        {%- if m.public or m.age_min %}<dt data-t="clubs.public">Public</dt><dd>{{ m.public }}{% if m.age_min %}{% if m.public %} · {% endif %}{{ m.age_min }} ans et plus{% endif %}</dd>{% endif %}
+        {%- assign prix_vus = evts | map: "price" | compact | uniq -%}
+        {%- if m.gamme %}<dt data-t="clubs.gamme">Prix</dt><dd><span class="gamme" title="$ moins de 20 DT · $$ 20 à 60 DT · $$$ plus de 60 DT">{{ m.gamme }}</span></dd>{% endif %}
+        {%- if m.entree %}<dt data-t="clubs.entree">Entrée</dt><dd>{{ m.entree }}</dd>{% endif %}
+        {%- if m.conso %}<dt data-t="clubs.conso">Conso</dt><dd>{{ m.conso }}</dd>{% endif %}
+        {%- if m.table %}<dt data-t="clubs.table">Table</dt><dd>{{ m.table }}</dd>{% endif %}
+        {%- if prix_vus.size > 0 %}<dt data-t="clubs.prix_annonces">Dans les annonces</dt><dd>{{ prix_vus | join: " · " }}</dd>{% endif %}
+        {%- if m.dress_code %}<dt data-t="clubs.dress_code">Dress code</dt><dd>{{ m.dress_code }}</dd>{% endif %}
+        {%- if m.reservation %}<dt data-t="clubs.reservation">Réservation</dt><dd>{% if m.reservation contains "http" %}<a href="{{ m.reservation }}" rel="noopener">réserver</a>{% else %}{{ m.reservation }}{% endif %}</dd>{% endif %}
+      </dl>
+      <small class="club-liens">
+        {%- if m.instagram %}<a href="https://www.instagram.com/{{ m.instagram }}/" rel="noopener">Instagram</a> {% endif %}
+        {%- if m.facebook %}<a href="{% if m.facebook contains 'http' %}{{ m.facebook }}{% else %}https://www.facebook.com/{{ m.facebook }}{% endif %}" rel="noopener">Facebook</a> {% endif %}
+        {%- if m.site %}<a href="{{ m.site }}" rel="noopener">Site</a> {% endif %}
+        {%- if m.telephone %}<span>{{ m.telephone }}</span> {% endif %}
+        {%- if m.osm %}<a href="{{ m.osm }}" rel="noopener" title="Corriger les horaires sur OpenStreetMap">OSM</a>{% endif %}
+      </small>
+      {%- if evts.size > 0 %}
+      <p class="club-soirees"><span data-t="clubs_soirees">Soirées annoncées :</span> {% for e in evts limit: 3 %}<a href="{{ e.url | relative_url }}">{{ e.title }}</a> ({{ e.date | date: "%d/%m" }}){% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+      {%- endif %}
+    </li>
+  {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+{%- endfor %}
+<p class="updated" data-th="clubs_note">Liste tirée d'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> (ODbL), lue chaque semaine{% if site.data.clubs.lu_le %} (dernière lecture le {{ site.data.clubs.lu_le | date: "%d/%m/%Y" }}){% endif %}, et complétée à la main (<code>_data/clubs.yml</code>). Un lieu manque, ses horaires sont faux ? <a href="{{ '/proposer/#fiche' | relative_url }}">Dites-le-nous</a>, ou corrigez-le directement sur OpenStreetMap.</p>
+<script>
+(function () {
+  var type = 'tous';
+  function f() {
+    var v = document.documentElement.dataset.ville || 'toutes';
+    document.querySelectorAll('.bloc-ville').forEach(function (s) {
+      var n = 0;
+      s.querySelectorAll('.club').forEach(function (c) {
+        var ok = type === 'tous' || (type === 'horaires' ? c.dataset.horaires === 'oui' : type.charAt(0) === '$' ? c.dataset.gamme === type : c.dataset.type === type);
+        c.hidden = !ok; if (ok) n++;
+      });
+      s.hidden = (v !== 'toutes' && s.dataset.villeBloc !== v) || n === 0;
+    });
+  }
+  document.querySelectorAll('#clubs-types button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      type = b.dataset.type;
+      document.querySelectorAll('#clubs-types button').forEach(function (x) { x.classList.toggle('active', x === b); });
+      f();
+    });
+  });
+  document.addEventListener('ville', f); f();
+})();
+</script>

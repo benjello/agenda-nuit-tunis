@@ -1,0 +1,25 @@
+# Clubs, discothèques, bars et cabarets « habituels », pour la page /clubs/ (même sans soirée annoncée).
+# La liste de base vient d'OpenStreetMap (scrapers/clubs.py → _data/clubs.json, relue chaque semaine).
+# Ici, on corrige ou complète un lieu (même nom qu'OpenStreetMap) ou on en ajoute un qui manque.
+# Écrire seulement ce qu'on a vérifié (site du lieu, compte Instagram, visite) : mieux vaut un champ vide qu'un faux.
+#
+# Champs (tous facultatifs sauf nom) :
+#   nom        nom du lieu
+#   type       club | discotheque | cabaret | concert | bar | karaoke | humour (voir _data/categories.yml)
+#   ville      tunis | nabeul | sousse | monastir | sfax | bizerte | sud | autres (voir _data/villes.yml)
+#   adresse    quartier ou adresse (« Gammarth », « Berges du Lac 2 »)
+#   horaires   jours et heures habituels (« jeu-sam 23h-5h »)
+#   ambiance   style et musique (« house, afro, terrasse », « orientale, chanteurs live », « rock, pub »)
+#   public     à qui ça s'adresse (« 25 ans et plus », « étudiants », « tout public », « couples »)
+#   age_min    âge minimum à l'entrée (« 18 », « 21 »)
+#   entree     prix ou conditions (« gratuit avant minuit », « 30 DT avec conso », « sur liste »)
+#   gamme      ordre de prix : $ (moins de 20 DT la soirée) | $$ (20 à 60 DT) | $$$ (plus de 60 DT)
+#   conso      prix d'une consommation (« bière 12 DT, cocktail 25 DT »)
+#   table      prix d'une table ou d'une bouteille (« table 4 pers. dès 300 DT »)
+#   dress_code tenue demandée (« chic, pas de baskets »)
+#   reservation  « conseillée » | « obligatoire » | lien de réservation
+#   instagram  nom du compte, sans @
+#   facebook   adresse de la page
+#   site       adresse du site
+#   cacher     true pour retirer un lieu d'OpenStreetMap fermé ou hors sujet
+[]

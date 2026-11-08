@@ -454,3 +454,20 @@ installer.autre: { fr: "Dans le menu de votre navigateur, cherchez « Installer 
 programmes_facebook: { ar: "برامج منشورة على فيسبوك", en: "Programmes posted on Facebook" }
 publie_le: { ar: "نُشر في", en: "posted on" }
 voir_publication: { ar: "انظر المنشور على فيسبوك", en: "See the post on Facebook" }
+nav.clubs: { ar: "نوادٍ وحانات", en: "Clubs & bars" }
+clubs_titre: { ar: "نوادٍ وحانات", en: "Clubs & bars" }
+clubs_intro: { ar: "الأماكن التي تفتح كل أسبوع، حتى دون سهرة خاصة: المواعيد، الأجواء، الجمهور، الأسعار وشروط الدخول.", en: "Places that open every week, even with no special night announced: hours, vibe, crowd, prices and door policy." }
+clubs_verifier: { ar: "المواعيد تقريبية: تحقق من حساب المكان قبل الذهاب.", en: "Hours are a guide: check the venue's account before you go." }
+clubs_avec_horaires: { ar: "مع المواعيد", en: "With hours" }
+clubs_vide: { ar: "قائمة الأماكن تصل مع المرور القادم (أوبن ستريت ماب، كل أسبوع).", en: "The list of venues arrives with the next update (OpenStreetMap, weekly)." }
+clubs_soirees: { ar: "سهرات معلنة:", en: "Nights announced:" }
+clubs.horaires: { ar: "المواعيد", en: "Hours" }
+clubs.ambiance: { ar: "الأجواء", en: "Vibe" }
+clubs.public: { ar: "الجمهور", en: "Crowd" }
+clubs.gamme: { ar: "الأسعار", en: "Prices" }
+clubs.entree: { ar: "الدخول", en: "Entry" }
+clubs.conso: { ar: "المشروبات", en: "Drinks" }
+clubs.table: { ar: "طاولة", en: "Table" }
+clubs.prix_annonces: { ar: "في الإعلانات", en: "In the listings" }
+clubs.dress_code: { ar: "اللباس", en: "Dress code" }
+clubs.reservation: { ar: "الحجز", en: "Booking" }
