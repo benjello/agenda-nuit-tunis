@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /agenda.ics
+---
+{% include calendrier.ics %}

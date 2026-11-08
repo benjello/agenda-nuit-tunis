@@ -1,0 +1,21 @@
+# Annonces qui ne sont pas de la culture (santé, prévention, caritatif…) : elles ne sont pas publiées.
+# Chaque entrée est un mot ou une expression (casse et accents ignorés) cherchée dans le titre de
+# l'événement, pour toutes les sources. À compléter à la main ; un test vérifie que le fichier se lit.
+mots:
+  - action de sensibilisation
+  - prévention du
+  - prévention des
+  - dépistage
+  - diabète
+  - don d'organes
+  - don de sang
+  - don du sang
+  - transplantation
+  - insuffisants rénaux
+  - campagne de vaccination
+  - collecte de fonds
+  - vente caritative
+  - formation professionnelle
+  - full fest access
+  - pass festival
+  - pass illimité

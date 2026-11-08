@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- assign evts = site.events | where_exp: "e", "page.noms contains e.venue" | where_exp: "e", "e.doublon != true" -%}
+{%- assign v = site.data.villes | where: "id", page.ville | first -%}
+{%- assign tl = site.data.types_lieux.types | where: "id", page.type | first -%}
+<section class="intro fiche">
+  <p><a href="{{ '/lieux/' | relative_url }}" data-t="tous_lieux">← Tous les lieux</a></p>
+  <h1>{{ page.title }}</h1>
+  <p>{% if tl and tl.id != "autre" %}<a href="{{ '/lieux/' | relative_url }}" data-t="type_lieu_un.{{ tl.id }}">{{ tl.un }}</a> · {% endif %}{% if page.adresse %}{{ page.adresse }} · {% endif %}{{ v.nom }}
+  {%- capture q %}{{ page.title }}{% if page.adresse %}, {{ page.adresse }}{% endif %}, Tunisie{% endcapture %}
+  · <a class="carte" href="{% if page.lat %}https://www.openstreetmap.org/?mlat={{ page.lat }}&mlon={{ page.lon }}#map=17/{{ page.lat }}/{{ page.lon }}{% else %}https://www.openstreetmap.org/search?query={{ q | strip | url_encode }}{% endif %}" data-q="{% if page.lat %}{{ page.lat }},{{ page.lon }}{% else %}{{ q | strip | escape }}{% endif %}" rel="noopener">📍 <span data-t="voir_carte">Voir sur la carte</span></a></p>
+  {%- capture cle %}lieu:{{ page.slug }}{% endcapture %}{% include enrichi.html cle=cle nom=page.title %}
+  {%- assign d = site.data.descriptifs.lieux[page.slug] -%}{% include descriptif.html d=d %}
+</section>
+<h2 data-t="a_venir">À venir</h2>
+{% include liste-evenements.html evenements=evts %}
+{% include signaler-fiche.html nom=page.title %}

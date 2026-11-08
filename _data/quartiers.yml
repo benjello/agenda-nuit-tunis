@@ -1,0 +1,33 @@
+# Quartiers du Grand Tunis, pour le filtre « Quartier » du téléphone (index.html).
+# Le premier motif qui correspond gagne. Les motifs sont des expressions régulières sur le lieu et
+# l'adresse de l'événement, écrits sans accents ni majuscules (le texte est normalisé par le script).
+- id: sidi-bou-said
+  nom: Sidi Bou Saïd
+  motif: 'sidi bou said|ennejma|ennajma'
+- id: carthage
+  nom: Carthage
+  motif: 'carthage|byrsa|amilcar|salammbo|dermech|acropolium'
+- id: marsa
+  nom: La Marsa et Gammarth
+  motif: 'marsa|gammarth|sidi daoud|bhar lazreg|abdellia'
+- id: lac
+  nom: Lac et Berges du Lac
+  motif: 'berges du lac|\blac ?(1|2|i|ii)\b|les berges|soukra? lac|lac de tunis'
+- id: medina
+  nom: Médina
+  motif: 'medina|attarine|dar lasram|halfaouine|hafsia|kasbah|zitouna|bab souika|dar ben abdallah|dar hussein|tourbet el bey|dar bach hamba|bab menara'
+- id: centre-ville
+  nom: Centre-ville
+  motif: 'habib bourguiba|avenue de paris|av\. de paris|rue de greece|rue de damas|colisee|theatre municipal|\ble palace\b|institut francais de tunis|institut francais de tunisie|4eme art|quatrieme art|belvedere|mutuelleville|el hamra|cite de la culture|mohamed (v|5)|centre.?ville|rue de marseille|nelson mandela|lafayette|montplaisir|el teatro|chedli kallela|b7l9'
+- id: bardo
+  nom: Le Bardo
+  motif: 'bardo|ksar said|kasr said|manouba'
+- id: nord
+  nom: Menzah, Manar, Ariana
+  motif: 'menzah|manar|ariana|ennasr|soukra|raoued|cebalat|tunis city|mnihla|cite des sciences|ghazela'
+- id: goulette
+  nom: La Goulette et Le Kram
+  motif: 'goulette|\bkram\b'
+- id: sud
+  nom: Sud de Tunis (Radès, Ben Arous)
+  motif: 'rades|ben arous|azur city|mohamedia|mourouj|hammam lif|megrine|el mourouj'

@@ -1,0 +1,128 @@
+---
+layout: default
+title: Santé des sources
+permalink: /sante/
+description: "L'état de chaque source de l'agenda : à jour, silencieuse, en panne ou en pause."
+---
+{%- comment -%}
+  Pour les contributeurs : quelles sources marchent, depuis quand elles n'ont rien annoncé,
+  lesquelles sont en panne ou en pause. Données : _data/etat_sources.json (écrit par les scrapers)
+  et _data/sources.yml. Les âges sont calculés par le script (la page n'est reconstruite qu'une fois par jour).
+{%- endcomment -%}
+{%- assign etat = site.data.etat_sources | default: empty -%}
+{%- assign gran = site.data.controle.granularite -%}
+<section class="intro">
+  <h1 data-t="sante_titre">Santé des sources</h1>
+  <p data-t="sante_intro">Chaque source est relue automatiquement. Ici, on voit celles qui marchent, celles qui n'ont rien annoncé depuis longtemps (lieu fermé, compte changé ?) et celles qui sont en panne ou en pause. Toute aide pour réparer une source est bienvenue.</p>
+  <p><a href="{{ '/contribuer/' | relative_url }}" data-t="contrib.voir">Les sources qu'on cherche</a></p>
+  <p class="sante-resume" id="sante-resume"></p>
+  {%- if gran %}<p><a href="#granularite" data-t="sante.voir_granularite">Précision des entrées par type de source : ce qui manque</a></p>{% endif %}
+</section>
+
+<div class="filters" id="sante-filtres">
+  <button class="active" data-statut="tous" data-t="sante.toutes">Toutes</button>
+  <button data-statut="ko" data-t="sante.ko">En panne</button>
+  <button data-statut="silence" data-t="sante.silence">Silencieuses</button>
+  <button data-statut="vide" data-t="sante.vide">Rien à venir</button>
+  <button data-statut="ok" data-t="sante.ok">Avec événements</button>
+  <button data-statut="pause" data-t="sante.pause">En pause</button>
+</div>
+
+<table class="sources sante">
+  <thead><tr><th data-t="source">Source</th><th data-t="col.etat">État</th><th data-t="col.sur_site">Sur le site</th><th data-t="col.nouveaute">Dernière nouveauté</th><th data-t="col.lecture">Dernière lecture</th><th data-t="col.precision">Précision : ce qui manque</th></tr></thead>
+  <tbody id="sante-lignes">
+  {%- for s in site.data.sources %}
+    {%- assign e = etat[s.id] -%}
+    {%- assign n = site.events | where: "source", s.id | where_exp: "x", "x.doublon != true" | size -%}
+    {%- if s.actif == false %}{% assign st = "pause" %}
+    {%- elsif e == nil %}{% assign st = "attente" %}
+    {%- elsif e.ok != true and e.attente %}{% assign st = "attente" %}
+    {%- elsif e.ok != true %}{% assign st = "ko" %}
+    {%- elsif n > 0 %}{% assign st = "ok" %}
+    {%- else %}{% assign st = "vide" %}{% endif %}
+    <tr data-statut="{{ st }}" data-nouveau="{{ e.dernier_non_vide | default: e.premier_passage | slice: 0, 10 }}">
+      <td>{% if s.url != "" %}<a href="{{ s.url }}" rel="noopener">{{ s.nom }}</a>{% else %}{{ s.nom }}{% endif %}<br><small>{{ s.scraper }} · <code>{{ s.id }}</code></small></td>
+      <td>
+        {%- case st %}
+        {%- when "pause" %}<span class="etat pause" data-t="etat.en_pause">en pause</span>
+        {%- when "attente" %}<span class="etat attente">{% if e %}<span data-t="etat.en_attente">en attente</span>{% else %}<span data-t="etat.pas_lue">pas encore lue</span>{% endif %}</span>{% if e.attente %}<br><small>{{ e.attente }}</small>{% endif %}
+        {%- when "ko" %}<span class="etat ko" data-t="etat.en_panne">en panne</span><br><small>{{ e.erreur | truncate: 140 }}</small>
+        {%- when "vide" %}<span class="etat attente" data-t="etat.rien">rien à venir</span>
+        {%- else %}<span class="etat ok" data-t="etat.a_jour">à jour</span>
+        {%- endcase %}
+      </td>
+      <td>{{ n }}</td>
+      <td class="nouveau">{% if e.dernier_non_vide %}{{ e.dernier_non_vide | date: "%d/%m/%Y" }}{% else %}<span data-t="etat.jamais">jamais</span>{% endif %}</td>
+      <td>{% if e.dernier_passage %}{{ e.dernier_passage | date: "%d/%m/%Y" }}{% else %}—{% endif %}</td>
+      {%- assign gs = gran.sources[s.id] %}
+      <td class="precision">{% include granularite.html g=gs %}</td>
+    </tr>
+  {%- endfor %}
+  </tbody>
+</table>
+<p class="updated" data-th="sante_note">« Silencieuse » : la source se lit bien mais n'a rien annoncé depuis plus de 30 jours. Les sources en pause sont repérées mais pas encore branchées, ou leur adresse est à vérifier (voir <code>_data/sources.yml</code>).</p>
+
+{%- assign ctl = site.data.controle -%}
+{%- if ctl %}
+{%- assign ap = site.data.apify %}
+{%- if ap and ap.limite > 0 %}
+<p class="updated"><span data-t="sante.apify">Crédit Apify du mois (Instagram, Facebook) :</span> {{ ap.depense }} $ / {{ ap.limite }} $ ({{ ap.pourcent }} %){% if ap.fin_cycle != "" %} · <span data-t="sante.recharge">recharge le</span> {{ ap.fin_cycle | date: "%d/%m/%Y" }}{% endif %}{% if ap.pourcent >= 100 %} · ⚠️ <span data-t="sante.apify_epuise">épuisé : Instagram et Facebook ne sont plus lus</span>{% endif %}</p>
+{%- endif %}
+
+{%- if gran %}
+<h2 id="granularite" data-t="sante.granularite">Précision par type de source</h2>
+<p data-t="sante.granularite_intro">Une entrée est précise quand c'est un événement nommé (un film avec ses séances, une expo avec ses dates), avec un lien vers sa propre fiche et un lieu connu. Ce tableau montre, pour chaque façon de lire les sources, la part d'entrées précises et ce qui manque : c'est là qu'il faut améliorer le scraper.</p>
+<table class="sources granularite">
+  <thead><tr><th data-t="col.scraper">Type de source (scraper)</th><th data-t="col.sur_site">Sur le site</th><th data-t="col.precision">Précision : ce qui manque</th></tr></thead>
+  <tbody>
+  {%- for t in gran.scrapers %}
+    {%- assign gt = t[1] %}
+    <tr><td><code>{{ t[0] }}</code></td><td>{{ gt.n }}</td><td class="precision">{% include granularite.html g=gt exemples=true %}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{%- endif %}
+
+<h2 id="a-verifier" data-t="sante.a_verifier">Entrées à vérifier</h2>
+<p><span data-t="sante.controle">Après chaque passage, un contrôle relit tous les événements. Il corrige seul les lieux qui sont en fait le nom d'une source (journal, agenda, collectif).</span>{% if ctl.corriges > 0 %} {{ ctl.corriges }} <span data-t="sante.corriges">corrigé(s) au dernier passage.</span>{% endif %} <span data-t="sante.signale">Il signale ici le reste : titre vague ou trop long, date lointaine, même événement deux fois.</span></p>
+{%- if ctl.a_verifier.size > 0 %}
+<table class="sources">
+  <thead><tr><th data-t="col.evenement">Événement</th><th data-t="source">Source</th><th data-t="col.probleme">Problème</th></tr></thead>
+  <tbody>
+  {%- for x in ctl.a_verifier %}
+    <tr><td>{{ x.date | date: "%d/%m" }} · {% if x.lien %}<a href="{{ x.lien }}" rel="noopener">{{ x.titre }}</a>{% else %}{{ x.titre }}{% endif %}</td><td>{{ x.source }}</td><td>{{ x.problemes | join: " ; " }}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{%- else %}<p data-t="rien_signaler">Rien à signaler.</p>{% endif %}
+{%- endif %}
+
+<script>
+(function () {
+  var auj = new Date(), lignes = Array.prototype.slice.call(document.querySelectorAll('#sante-lignes tr'));
+  var limite = new Date(auj.getTime() - 30 * 864e5).toISOString().slice(0, 10);
+  var compte = { ok: 0, vide: 0, silence: 0, ko: 0, pause: 0, attente: 0 };
+  lignes.forEach(function (tr) {
+    var st = tr.dataset.statut;
+    if ((st === 'vide' || st === 'ok') && tr.dataset.nouveau && tr.dataset.nouveau < limite) {
+      st = 'silence';
+      tr.querySelector('td:nth-child(2)').insertAdjacentHTML('beforeend', ' <span class="etat attente" data-t="etat.silencieuse">silencieuse</span>');
+    }
+    tr.dataset.statut = st;
+    compte[st]++;
+  });
+  // Les problèmes d'abord
+  var ordre = { ko: 0, silence: 1, attente: 2, vide: 3, ok: 4, pause: 5 };
+  var corps = document.getElementById('sante-lignes');
+  lignes.sort(function (a, b) { return ordre[a.dataset.statut] - ordre[b.dataset.statut]; }).forEach(function (tr) { corps.appendChild(tr); });
+  function part(n, cle, fr) { return n + ' <span data-t="' + cle + '">' + fr + '</span>'; }
+  document.getElementById('sante-resume').innerHTML = [part(compte.ok, 'sante.r_ok', 'avec des événements'), part(compte.vide, 'sante.r_vide', 'sans rien à venir'),
+    part(compte.silence, 'sante.r_silence', 'silencieuses'), part(compte.ko, 'sante.r_ko', 'en panne'), part(compte.pause, 'sante.r_pause', 'en pause')]
+    .concat(compte.attente ? [part(compte.attente, 'sante.r_attente', 'en attente')] : []).join(' · ');
+  document.getElementById('sante-filtres').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    document.querySelectorAll('#sante-filtres button').forEach(function (x) { x.classList.toggle('active', x === b); });
+    lignes.forEach(function (tr) { tr.hidden = b.dataset.statut !== 'tous' && tr.dataset.statut !== b.dataset.statut; });
+  });
+})();
+</script>

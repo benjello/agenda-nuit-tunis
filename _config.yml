@@ -1,0 +1,61 @@
+title: ToNight Tunis
+description: Clubs, discothèques, cabarets, concerts, stand-up… toutes les sorties de la nuit à Tunis et en Tunisie, au même endroit.
+lang: fr
+timezone: Africa/Tunis
+
+# Indispensable : publier aussi les événements datés dans le futur.
+future: true
+
+# Chemin du site sur GitHub Pages : https://benjello.github.io/agenda-nuit-tunis/
+# Mettre baseurl: "" le jour où on passe sur un nom de domaine à soi.
+baseurl: "/agenda-nuit-tunis"
+url: "https://benjello.github.io"
+depot: "https://github.com/benjello/agenda-nuit-tunis"
+# Adresse e-mail pour proposer un événement ou signaler une erreur sans compte GitHub (vide : pas de bouton e-mail)
+contact_email: ""
+
+# Plan du site (sitemap.xml) généré par GitHub Pages
+plugins:
+  - jekyll-sitemap
+
+collections:
+  events:
+    output: true
+    permalink: /evenements/:path/
+  # Fiches écrites par scrapers/pages.py après chaque passage des scrapers
+  lieux:
+    output: true
+    permalink: /lieux/:name/
+  collectifs:
+    output: true
+    permalink: /collectifs/:name/
+  artistes:
+    output: true
+    permalink: /artistes/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
+  - scope: { path: "", type: lieux }
+    values: { layout: lieu }
+  - scope: { path: "", type: collectifs }
+    values: { layout: collectif }
+  - scope: { path: "", type: artistes }
+    values: { layout: artiste }
+
+exclude:
+  - README.md
+  - BACKLOG.md
+  - AGENTS.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - _events/auto/README.md
+  - scrapers
+  - tests
+  - requirements.txt
+  - debug

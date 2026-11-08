@@ -1,0 +1,23 @@
+# Annule un déploiement GitHub Pages resté « en cours » (erreur « due to in progress deployment »),
+# puis relance la publication du site. À lancer à la main avec l'identifiant (sha) indiqué dans l'erreur.
+name: Débloquer GitHub Pages
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: "sha du déploiement bloqué (donné dans le message d'erreur)"
+        required: true
+permissions:
+  pages: write
+  contents: read
+jobs:
+  debloquer:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ inputs.sha }}
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/deployments/$SHA/cancel" || true
+          sleep 5
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds"

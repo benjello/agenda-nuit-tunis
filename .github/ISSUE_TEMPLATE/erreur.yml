@@ -1,0 +1,24 @@
+name: Signaler une erreur
+description: Une date, un lieu, un prix ou une catégorie faux sur l'agenda ; un événement annulé.
+title: "Erreur : "
+labels: ["erreur"]
+body:
+  - type: input
+    id: lien
+    attributes:
+      label: Événement concerné
+      description: "Adresse de la fiche sur l'agenda (remplie toute seule depuis le bouton « Signaler une erreur »)."
+    validations:
+      required: true
+  - type: dropdown
+    id: probleme
+    attributes:
+      label: Ce qui ne va pas
+      options: [Date ou heure, Lieu, Prix, Catégorie, Titre, Événement annulé, Doublon, Pas un événement culturel, Autre]
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: La bonne information
+      description: "Et si possible, où vous l'avez vue (lien, affiche…)."

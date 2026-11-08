@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-autres.ics
+---
+{% include calendrier.ics ville="autres" nom="Autres régions" %}

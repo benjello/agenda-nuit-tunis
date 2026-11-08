@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-nabeul.ics
+---
+{% include calendrier.ics ville="nabeul" nom="Nabeul et Hammamet" %}

@@ -1,0 +1,7 @@
+# Lieux culturels importants, toujours listés sur la page Lieux, même sans événement à l'affiche.
+# (Retour d'une testeuse, 3 novembre 2026.) Les lieux qui ont des événements sont déjà ajoutés
+# automatiquement ; cette liste complète la couverture et rattache les variantes d'écriture.
+# nom : nom de la fiche · type : voir _data/types_lieux.yml · ville : voir _data/villes.yml
+# noms : autres écritures du lieu dans les annonces · adresse : aide la recherche sur OpenStreetMap
+# Les coordonnées (carte) sont cherchées sur OpenStreetMap au prochain passage, ou à placer dans
+# _data/lieux_coords.yml si le lieu n'y est pas trouvé.

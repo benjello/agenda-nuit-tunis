@@ -1,0 +1,37 @@
+---
+layout: default
+title: Sources
+permalink: /sources/
+---
+<section class="intro">
+  <h1 data-t="sources_titre">Nos sources</h1>
+  <p data-t="sources_intro">L'agenda relit chaque jour ces sites, où les lieux et billetteries annoncent leur programmation. Chaque événement renvoie vers sa source.</p>
+</section>
+
+{%- assign etat = site.data.etat_sources | default: empty %}
+<table class="sources">
+  <thead><tr><th data-t="source">Source</th><th data-t="col.genre">Genre</th><th data-t="col.etat">État</th></tr></thead>
+  <tbody>
+  {%- for s in site.data.sources %}
+    {%- assign e = etat[s.id] %}
+    <tr>
+      <td>{% if s.url != "" %}<a href="{{ s.url }}" rel="noopener">{{ s.nom }}</a>{% else %}{{ s.nom }}{% endif %}{% if s.note %}<br><small>{{ s.note }}</small>{% endif %}</td>
+      <td><span data-t="genre.{{ s.genre }}">{{ site.data.genres[s.genre] | default: s.type }}</span>{% if s.type == "billetterie" %} · <span data-t="billetterie">billetterie</span>{% endif %}</td>
+      <td>
+        {%- if s.actif == false %}<span class="etat pause" data-t="etat.a_etudier">à étudier</span>
+        {%- elsif e.ok != true and e.attente %}<span class="etat attente" data-t="etat.en_attente">en attente</span> <small>{{ e.attente }}</small>
+        {%- elsif e == nil %}<span class="etat attente" data-t="etat.pas_lue">pas encore lue</span>
+        {%- elsif e.ok %}<span class="etat ok" data-t="etat.a_jour">à jour</span> <small>{{ e.nb }} {% if s.type == "cinema" %}<span data-t="films">films</span>{% else %}<span data-t="evenements">événements</span>{% endif %}{% if e.sans_heure and e.sans_heure > 0 %} · {{ e.sans_heure }} <span data-t="sans_heure">sans heure</span>{% endif %}</small>
+        {%- else %}<span class="etat ko" data-t="etat.en_panne">en panne</span>{% if e.dernier_succes %} <small><span data-t="etat.dernier_succes">dernier succès le</span> {{ e.dernier_succes | date: "%d/%m/%Y" }}</small>{% endif %}
+        {%- endif %}
+      </td>
+    </tr>
+  {%- endfor %}
+  </tbody>
+</table>
+
+<p data-th="sources.p1">Le détail de chaque source (dernière nouveauté, erreurs, sources silencieuses) est sur la page <a href="{{ '/sante/' | relative_url }}">Santé des sources</a>.</p>
+
+<p data-th="sources.p2">Les données de l'agenda sont ouvertes : voir <a href="{{ '/a-propos/' | relative_url }}#donnees">Données ouvertes</a>.</p>
+
+<p data-th="sources.p3">Vous connaissez un site fiable qui annonce des événements à Tunis ? <a href="{{ '/a-propos/' | relative_url }}#proposer">Proposez-le</a>.</p>

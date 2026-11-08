@@ -1,0 +1,14 @@
+{%- comment -%}
+Liens vers les fiches d'un film : IMDb (identifiant tt…) et Letterboxd (identifiant Wikidata P6127).
+Paramètres : titre, imdb, letterboxd. Un lien sans identifiant n'est jamais affiché :
+une recherche sur le titre tombe souvent à côté.
+{%- endcomment -%}
+{%- assign tt = include.imdb | strip -%}
+{%- assign lb = include.letterboxd | strip -%}
+{%- if tt != "" and tt != nil -%}
+<span class="liens-film"><a href="https://www.imdb.com/title/{{ tt }}/" rel="noopener">IMDb</a></span>
+{%- endif -%}
+{%- if lb != "" and lb != nil -%}
+{%- if tt != "" and tt != nil %} · {% endif -%}
+<span class="liens-film"><a href="https://letterboxd.com/film/{{ lb }}/" rel="noopener">Letterboxd</a></span>
+{%- endif -%}

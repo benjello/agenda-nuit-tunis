@@ -1,0 +1,48 @@
+---
+layout: default
+title: API ouverte
+permalink: /api/
+description: Les données de l'agenda de la nuit en JSON et en calendrier, libres de réutilisation (CC BY 4.0).
+---
+<section class="intro">
+  <h1 data-t="api_titre">API ouverte</h1>
+  <p data-th="api_intro">Toutes les données de l'agenda sont libres (licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> : réutilisation libre, y compris commerciale, en citant « Agenda culturel Tunis »). Pas de clé, pas d'inscription : ce sont des fichiers mis à jour chaque jour, lisibles depuis n'importe quel site (CORS ouvert).</p>
+</section>
+<div class="doc-api">
+<h2 data-t="api.fichiers">Fichiers</h2>
+<table class="sources">
+  <tr><th data-t="api.adresse">Adresse</th><th data-t="api.contenu">Contenu</th></tr>
+  <tr><td><a href="{{ '/api/v1/evenements.json' | relative_url }}"><code>/api/v1/evenements.json</code></a></td><td data-t="api.f_evts">Tous les événements à venir, toute la Tunisie</td></tr>
+  <tr><td><a href="{{ '/api/v1/lieux.json' | relative_url }}"><code>/api/v1/lieux.json</code></a></td><td data-t="api.f_lieux">Les lieux, avec coordonnées quand on les connaît</td></tr>
+  <tr><td><a href="{{ '/api/v1/sources.json' | relative_url }}"><code>/api/v1/sources.json</code></a></td><td data-t="api.f_sources">Les sources lues et leur état</td></tr>
+  <tr><td><a href="{{ '/agenda.ics' | relative_url }}"><code>/agenda.ics</code></a></td><td data-t="api.f_ics">Le calendrier, à ajouter dans Google Agenda, Apple Calendrier ou Outlook</td></tr>
+  <tr><td><code>/calendriers/&lt;categorie&gt;.ics</code>, <code>/calendriers/ville-&lt;ville&gt;.ics</code></td><td><span data-t="api.f_ics_filtres">Le même calendrier, pour une catégorie ou une ville :</span> <a href="{{ '/abonnements/' | relative_url }}" data-t="nav.abonner">S'abonner</a></td></tr>
+  <tr><td><a href="{{ '/feed.xml' | relative_url }}"><code>/feed.xml</code></a></td><td data-t="api.f_rss">Fil RSS des derniers événements ajoutés</td></tr>
+</table>
+<p><span data-t="api.adresse_complete">Adresse complète :</span> <code>{{ '/api/v1/evenements.json' | absolute_url }}</code>. <span data-t="api.v1">Les champs de la version 1 ne changent pas ; une nouvelle version aura une nouvelle adresse.</span></p>
+
+<h2 data-t="api.un_evt">Un événement</h2>
+<table class="sources">
+  <tr><th data-t="api.champ">Champ</th><th data-t="api.description">Description</th></tr>
+  <tr><td><code>id</code></td><td data-t="api.c_id">Identifiant stable tant que le titre et la date ne changent pas</td></tr>
+  <tr><td><code>titre</code></td><td data-t="api.c_titre">Dans la langue de la source</td></tr>
+  <tr><td><code>debut</code></td><td><code>2026-11-21T20:30:00+01:00</code> <span data-t="api.si_heure">si l'heure est connue, sinon</span> <code>2026-11-21</code></td></tr>
+  <tr><td><code>fin</code></td><td><span data-t="api.c_fin">Dernier jour (expos, festivals), sinon</span> <code>null</code></td></tr>
+  <tr><td><code>categorie</code></td><td>{% for c in site.data.categories %}<code>{{ c[0] }}</code>{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>
+  <tr><td><code>lieu</code></td><td><code>nom</code>, <code>adresse</code>, <code>ville</code> ({% for v in site.data.villes %}<code>{{ v.id }}</code>{% unless forloop.last %}, {% endunless %}{% endfor %}), <code>fiche</code></td></tr>
+  <tr><td><code>prix</code>, <code>gratuit</code></td><td data-t="api.c_prix">Texte du prix (« 20 DT », « Gratuit ») et booléen</td></tr>
+  <tr><td><code>en_famille</code>, <code>commercial</code>, <code>film</code></td><td data-th="api.c_bool">Booléens. <code>commercial</code> : cours, yoga, brunch…</td></tr>
+  <tr><td><code>seances</code></td><td data-t="api.c_seances">Pour un film ou un spectacle joué plusieurs jours : les dates</td></tr>
+  <tr><td><code>fiche</code>, <code>lien</code></td><td data-t="api.c_fiche">Fiche sur l'agenda, page d'origine</td></tr>
+  <tr><td><code>source</code>, <code>autres_sources</code></td><td data-t="api.c_source">D'où vient l'événement ; s'il a été vu ailleurs (billetterie…)</td></tr>
+  <tr><td><code>image</code></td><td data-t="api.c_image">Affiche, si on en a une</td></tr>
+  <tr><td><code>ajoute_le</code></td><td data-t="api.c_ajoute">Date d'arrivée dans l'agenda</td></tr>
+</table>
+
+<h2 data-t="api.exemple">Exemple</h2>
+<pre><code>fetch('{{ '/api/v1/evenements.json' | absolute_url }}')
+  .then(r => r.json())
+  .then(d => d.evenements.filter(e => e.lieu.ville === 'sfax' && e.gratuit))
+  .then(console.log);</code></pre>
+<p data-th="api.fin">Le code et le registre des sources sont sur <a href="{{ site.depot }}">GitHub</a>. Une idée, un besoin ? Ouvrez une issue.</p>
+</div>

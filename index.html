@@ -1,0 +1,475 @@
+---
+layout: default
+---
+<section class="intro">
+  <h1 data-t="intro_titre">On sort où ce soir ?</h1>
+  <p data-t="intro_texte">{{ site.description }}</p>
+</section>
+
+{%- comment -%}
+  Sur ordinateur (écran large), les filtres forment une colonne à gauche qui reste visible
+  et l'agenda s'affiche sur plusieurs colonnes à droite. Sur téléphone, rien ne change.
+{%- endcomment -%}
+<div class="accueil">
+<aside class="panneau-filtres" aria-label="Filtres">
+<div class="tiroir" id="tiroir-ou">
+<p class="titre-filtre" data-t="filtre_ou">Où</p>
+{% include choix-ville.html %}
+{%- comment -%} Quartier : téléphone seulement (voir .mobile-seul). Rempli par le script d'après _data/quartiers.yml. {%- endcomment -%}
+<label class="quartier-choix mobile-seul"><span data-t="quartier_titre">Quartier</span>
+  <select id="quartier"><option value="" data-t="quartier_tous">Tous les quartiers</option></select></label>
+</div>
+<input type="search" id="recherche" class="recherche" placeholder="Chercher un DJ, un club, une soirée…" data-t-placeholder="recherche" aria-label="Chercher" autocomplete="off">
+<button type="button" class="bouton-filtres" id="bouton-filtres" aria-expanded="false" aria-controls="tiroir-ou tiroir-quoi"><span data-t="filtres_bouton">Filtres</span><span class="nb-filtres" id="nb-filtres" hidden></span></button>
+<p class="titre-filtre" data-t="filtre_quand">Quand</p>
+<div class="filters moments" id="moments" role="group" aria-label="Quand">
+  <button class="active" data-moment="tout" data-t="moment.tout">Tout moment</button>
+  <button data-moment="aujourdhui" data-t="moment.aujourdhui">Aujourd'hui</button>
+  <button data-moment="soir" data-t="moment.soir">Ce soir</button>
+  <button data-moment="demain" data-t="moment.demain">Demain</button>
+  <button data-moment="semaine" data-t="moment.semaine">Cette semaine</button>
+  <button data-moment="weekend" data-t="moment.weekend">Ce week-end</button>
+</div>
+<div class="tiroir" id="tiroir-quoi">
+<p class="titre-filtre" data-t="filtre_quoi">Quoi</p>
+<div class="filters" id="filters">
+  <button class="active" data-filter="all" data-t="tout">Tout</button>
+  {% for c in site.data.categories %}<button data-filter="{{ c[0] }}" data-t="cat.{{ c[0] }}"{% if c[1].aide %} title="{{ c[1].aide | escape }}"{% endif %}>{{ c[1].label }}</button>{% endfor %}
+</div>
+<div class="cases">
+  <label><input type="checkbox" id="gratuit"> <span data-t="seul_gratuit">Gratuit</span></label>
+  <label><input type="checkbox" id="famille"> <span data-t="seul_famille">En famille</span></label>
+  <label><input type="checkbox" id="favoris"> <span data-t="seul_favoris">Mes favoris</span></label>
+</div>
+</div>
+</aside>
+<div class="colonne-agenda">
+{%- comment -%} Téléphone seulement : vues rapides et bande de dates, collées en haut de la liste. {%- endcomment -%}
+<div class="bande-mobile mobile-seul" id="bande-mobile">
+  <div class="bande-rapide" id="bande-rapide" role="group" aria-label="Quand">
+    <button type="button" data-moment="soir"><span data-t="moment.soir">Ce soir</span> <span class="nb"></span></button>
+    <button type="button" data-moment="demain"><span data-t="moment.demain">Demain</span> <span class="nb"></span></button>
+    <button type="button" data-moment="weekend"><span data-t="moment.weekend">Ce week-end</span> <span class="nb"></span></button>
+  </div>
+  <div class="bande-dates" id="bande-dates" role="group" aria-label="Choisir un jour"></div>
+</div>
+<p class="compteur" id="compteur-zone"><span id="compteur" role="status" aria-live="polite"></span> <button type="button" class="effacer" id="effacer" hidden data-t="tout_effacer">Tout effacer</button></p>
+<section class="ce-soir" id="ce-soir" hidden aria-label="Ce soir">
+  <h2><span data-t="ce_soir_titre">Ce soir à Tunis</span></h2>
+  <ol class="frise" id="ce-soir-liste"></ol>
+</section>
+<a class="nouveautes" id="nouveautes" href="{{ '/nouveau/' | relative_url }}" hidden></a>
+{%- comment -%} Bandeau Ramadan : deux semaines avant le début et pendant le mois (dates dans _data/ramadan.yml) {%- endcomment -%}
+<a class="ramadan-bandeau" id="ramadan-bandeau" href="{{ '/ramadan/' | relative_url }}" data-debut="{{ site.data.ramadan.debut | date: '%Y-%m-%d' }}" data-fin="{{ site.data.ramadan.fin | date: '%Y-%m-%d' }}" hidden data-t="ramadan_bandeau">🌙 Soirées de Ramadan : le programme →</a>
+
+{%- comment -%}
+  Tous les événements sont générés, triés par date. Le petit script en bas masque
+  les événements passés côté navigateur, pour que la page reste juste même si le
+  site n'a pas été reconstruit depuis quelques jours.
+{%- endcomment -%}
+{%- assign tous = site.events | where_exp: "e", "e.doublon != true" | sort: "date" -%}
+{%- assign films = tous | where_exp: "e", "e.film == true" -%}
+{%- assign events = tous | where_exp: "e", "e.film != true" -%}
+{%- assign salles = films | group_by: "venue" | sort: "name" -%}
+
+{%- comment -%}
+  Les films à l'affiche sont des événements comme les autres (catégorie cinéma), mais la page
+  les montre par film : l'affiche, puis les salles qui le jouent le jour choisi.
+  _data/films.json est fait par scrapers/films.py, qui regroupe les salles d'un même film.
+{%- endcomment -%}
+{%- assign films_l = site.data.films | default: empty -%}
+{%- if films_l.size > 0 %}
+{%- assign noms_salles = films_l | map: "salles" | flatten | map: "nom" | uniq -%}
+<button type="button" class="resume-films" id="resume-films">
+  🎬 <strong data-t="au_cinema">Au cinéma</strong> : {{ films_l.size }} <span data-t="films_affiche_dans">films à l'affiche dans</span> {{ noms_salles.size }} <span data-t="salles_fleche">salles →</span>
+</button>
+<div id="cinema-salles" hidden>
+  <div class="jours-choix" id="jours-choix" role="group" aria-label="Jour"></div>
+  {%- comment -%} Typologie : film tunisien, jeune public, genres (Wikidata et _data/films_infos.yml) {%- endcomment -%}
+  {%- assign genres_films = films_l | map: "genres" | flatten | compact | uniq | sort -%}
+  <div class="types-films filters" id="types-films" role="group" aria-label="Type de film">
+    <button class="active" data-type="" data-t="films_tous">Tous les films</button>
+    {%- assign tun = films_l | where: "tunisien", true -%}{% if tun.size > 0 %}<button data-type="tunisien" data-t="films_tunisiens">Films tunisiens</button>{% endif %}
+    {%- assign jeunes = films_l | where: "jeune", true -%}{% if jeunes.size > 0 %}<button data-type="jeune" data-t="films_jeunes">Jeune public</button>{% endif %}
+    {%- for g in genres_films %}<button data-type="g:{{ g | downcase }}">{{ g }}</button>{% endfor %}
+  </div>
+  {%- for f in films_l %}
+  <article class="film-fiche" data-jours="{{ f.jours | join: ' ' }}" data-types="{% if f.tunisien %}tunisien {% endif %}{% if f.jeune %}jeune {% endif %}{% for g in f.genres %}g:{{ g | downcase | replace: ' ', '_' }} {% endfor %}">
+    {%- if f.image != "" %}{% if f.image contains "://" %}{% assign src = f.image %}{% else %}{% assign src = f.image | relative_url %}{% endif %}
+    <img class="affiche" src="{{ src }}" alt="Affiche de {{ f.titre | escape }}" loading="lazy">
+    {%- else %}<div class="affiche vide">🎬</div>{% endif %}
+    <div class="film-corps">
+      <h3>{{ f.titre }}</h3>
+      <p class="badges">
+        {%- if f.age != "" and f.age %}<span class="badge age">{{ f.age }}</span>{% endif -%}
+        {%- if f.tunisien %}<span class="badge tunisien">Film tunisien</span>{% endif -%}
+        {%- for g in f.genres %}<span class="badge">{{ g }}</span>{% endfor -%}
+      </p>
+      {%- capture duree %}{% if f.duree %}{% assign h = f.duree | divided_by: 60 %}{% assign mn = f.duree | modulo: 60 %}{{ h }}h{% if mn < 10 %}0{% endif %}{{ mn }}{% endif %}{% endcapture -%}
+      {%- capture lien_imdb %}{% include liens-film.html titre=f.titre imdb=f.imdb letterboxd=f.letterboxd %}{% endcapture -%}
+      {%- assign parts = "" | split: "" -%}
+      {%- if duree != "" %}{% assign parts = parts | push: duree %}{% endif -%}
+      {%- if lien_imdb != "" %}{% assign parts = parts | push: lien_imdb %}{% endif -%}
+      {%- if f.wikidata %}{% capture wd %}<a href="https://www.wikidata.org/wiki/{{ f.wikidata }}" rel="noopener">Wikidata</a>{% endcapture %}{% assign parts = parts | push: wd %}{% endif -%}
+      {%- if parts.size > 0 %}
+      <p class="meta">{{ parts | join: " · " }}</p>
+      {%- endif %}
+      {%- if f.synopsis %}
+      <details class="synopsis"><summary data-t="synopsis">Synopsis</summary><p>{{ f.synopsis | escape | newline_to_br }}{% if f.synopsis_source %} <small class="descriptif-source">· {% if f.synopsis_url %}<a href="{{ f.synopsis_url }}" rel="noopener">{{ f.synopsis_source }}</a>{% else %}{{ f.synopsis_source }}{% endif %}</small>{% endif %}</p></details>
+      {%- endif %}
+      <ul class="film-salles">
+        {%- for s in f.salles %}{% assign etat = site.data.etat_sources[s.source] %}
+        <li data-jours="{{ s.jours | join: ' ' }}" data-maj="{{ etat.dernier_succes | slice: 0, 10 }}">
+          <a href="{{ s.lien }}" rel="noopener">{{ s.nom }}</a>
+          <a class="carte seule" href="https://www.openstreetmap.org/search?query={{ s.nom | append: ', ' | append: s.adresse | append: ', Tunisie' | url_encode }}" data-q="{{ s.nom | append: ', ' | append: s.adresse | append: ', Tunisie' | escape }}" rel="noopener" title="Ouvrir sur une carte">📍</a>
+          {%- for h in s.heures %}<span class="heures" data-jour="{{ h.jour }}" hidden>{{ h.heures | join: " · " }}</span>{% endfor %}
+          <span class="perime-court" hidden title="Programme pas vérifié depuis plusieurs jours">⚠️ à vérifier</span>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- if f.presse.size > 0 %}
+      <p class="presse-film court"><span data-t="presse_film">Ce qu'en dit la presse</span> : {% for a in f.presse %}<a href="{{ a.lien }}" rel="noopener" title="{{ a.titre | escape }}">{{ a.source_nom }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+      {%- endif %}
+    </div>
+  </article>
+  {%- endfor %}
+  <p id="cinema-vide" class="empty" hidden>Aucun film annoncé ce jour-là.</p>
+  <p class="updated">Réservation et détails : cliquez sur la salle. Sources : tunis.events et les pages des salles.</p>
+  {%- assign programmes = site.data.programmes | default: empty -%}
+  {%- if programmes.size > 0 %}
+  <section class="programmes">
+    <h2 data-t="programmes_facebook">Programmes publiés sur Facebook</h2>
+    {%- for entry in programmes -%}{%- assign c = entry[1] -%}
+    {%- if c.publications.size > 0 %}{% assign p = c.publications[0] %}
+    <details class="programme" data-publie="{{ p.date }}">
+      <summary>{{ c.nom }} · <span data-t="publie_le">publié le</span> {% include date-fr.html date=p.date %}</summary>
+      <p><a href="{{ p.lien }}" rel="noopener" data-t="voir_publication">Voir la publication sur Facebook</a></p>
+      {%- for img in p.images %}<img class="programme-image" src="{{ img | relative_url }}" alt="Programme de {{ c.nom }}" loading="lazy">{% endfor %}
+      {%- if p.texte != "" %}<p class="programme-texte">{{ p.texte | escape | truncate: 600 | newline_to_br }}</p>{% endif %}
+    </details>
+    {%- endif -%}
+    {%- endfor %}
+  </section>
+  {%- endif %}
+</div>
+{%- endif %}
+
+{%- assign current_month = "" -%}
+{%- comment -%} Rempli par le script : ce qui a commencé avant aujourd'hui et continue (expos, festivals). {%- endcomment -%}
+<section class="month" id="en-cours" hidden>
+  <h2 data-t="en_ce_moment">En ce moment</h2>
+</section>
+<div id="agenda">
+{%- for e in events -%}
+  {%- assign month = e.date | date: "%Y-%m" -%}
+  {%- if month != current_month -%}
+    {%- unless forloop.first %}</section>{% endunless %}
+    {%- assign m = e.date | date: "%-m" | minus: 1 %}
+    <section class="month" data-month="{{ month }}">
+      <h2 data-mois="{{ month }}">{{ site.data.fr.mois[m] | capitalize }} {{ e.date | date: "%Y" }}</h2>
+    {%- assign current_month = month -%}
+  {%- endif %}
+  {% include event-card.html event=e %}
+  {%- if forloop.last %}</section>{% endif -%}
+{%- endfor %}
+</div>
+<p id="empty" class="empty" hidden data-t="aucun">Aucun événement à venir pour l'instant.</p>
+</div>
+</div>
+
+<script>
+(function () {
+  // Le site n'est reconstruit qu'une fois par jour et une source peut tomber en panne :
+  // on masque ici ce qui est passé, et on signale ce qui n'a pas été vérifié récemment.
+  function jour(decalage) {
+    var d = new Date(); d.setDate(d.getDate() + (decalage || 0));
+    return d.toISOString().slice(0, 10);
+  }
+  var today = jour();
+  // Une expo commencée en octobre et qui dure encore : on la met dans « En ce moment »,
+  // avec « jusqu'au … » à la place de sa date de début, pour ne pas faire croire que l'agenda est vieux.
+  var MOIS_C = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+  var enCours = document.getElementById('en-cours');
+  document.querySelectorAll('#agenda .event').forEach(function (el) {
+    if (el.dataset.debut < today && el.dataset.date >= today) {
+      var fin = el.dataset.date.split('-');
+      el.querySelector('.event-date').innerHTML = '<span class="jusqu" data-t="jusquau">jusqu’au</span><span class="day">' +
+        (+fin[2]) + '</span><span class="mon" data-mc="' + (+fin[1]) + '">' + MOIS_C[+fin[1] - 1] + '</span>';
+      el.classList.add('en-cours');
+      enCours.appendChild(el);
+    }
+  });
+  var rb = document.getElementById('ramadan-bandeau');
+  if (rb) rb.hidden = !(today <= rb.dataset.fin && jour(14) >= rb.dataset.debut);
+  var filter = 'all';
+  var salles = document.getElementById('cinema-salles');
+  var resume = document.getElementById('resume-films');
+  document.querySelectorAll('[data-jour]').forEach(function (el) { el.hidden = el.dataset.jour < today; });
+  document.querySelectorAll('.film-salles li').forEach(function (li) {
+    li.querySelector('.perime-court').hidden = !li.dataset.maj || li.dataset.maj >= jour(-4);
+  });
+  // Cinéma : choix du jour (aujourd'hui et les 6 suivants), puis les films de ce jour.
+  var JOURS = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+  var choixJour = today;
+  var choix = document.getElementById('jours-choix');
+  function etiquette(iso, i) {
+    if (i === 0) return "Aujourd'hui";
+    if (i === 1) return 'Demain';
+    var d = new Date(iso + 'T12:00:00');
+    return JOURS[d.getDay()] + ' ' + d.getDate();
+  }
+  var typeFilm = '';
+  var types = document.getElementById('types-films');
+  if (types) types.addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (!b) return;
+    typeFilm = b.dataset.type.replace(/ /g, '_');
+    types.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x === b); });
+    montrerFilms();
+  });
+  function montrerFilms() {
+    var n = 0;
+    var fam = document.getElementById('famille');
+    document.querySelectorAll('.film-fiche').forEach(function (f) {
+      var ty = f.dataset.types.split(' ');
+      var joue = f.dataset.jours.split(' ').indexOf(choixJour) >= 0 && correspond(f) &&
+        (!typeFilm || ty.indexOf(typeFilm) >= 0) && (!fam || !fam.checked || ty.indexOf('jeune') >= 0);
+      f.hidden = !joue;
+      if (joue) n++;
+      f.querySelectorAll('.film-salles li').forEach(function (li) {
+        var jours = li.dataset.jours.split(' ');
+        li.hidden = jours.indexOf(choixJour) < 0;
+        li.querySelectorAll('.heures').forEach(function (h) { h.hidden = h.dataset.jour !== choixJour; });
+      });
+    });
+    document.getElementById('cinema-vide').hidden = n > 0;
+    if (choix) choix.querySelectorAll('button').forEach(function (b) { b.classList.toggle('active', b.dataset.jour === choixJour); });
+    return n;
+  }
+  if (choix) {
+    for (var i = 0; i < 7; i++) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.dataset.jour = jour(i); b.textContent = etiquette(b.dataset.jour, i);
+      choix.appendChild(b);
+    }
+    choix.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button');
+      if (b) { choixJour = b.dataset.jour; montrerFilms(); }
+    });
+  }
+  document.querySelectorAll('.programme[data-publie]').forEach(function (p) {
+    p.hidden = p.dataset.publie < jour(-14);  // affiche de plus de deux semaines
+  });
+  // Recherche : tous les mots tapés doivent se trouver dans la carte (titre, lieu…) ou le nom de l'organisateur, sans tenir compte des accents.
+  var champ = document.getElementById('recherche'), mots = [];
+  function norme(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  function correspond(el) {
+    if (!mots.length) return true;
+    var t = el._texte || (el._texte = norme(el.textContent + ' ' + (el.dataset.org || '')));  // + l'organisateur
+    return mots.every(function (m) { return t.indexOf(m) >= 0; });
+  }
+  if (champ) champ.addEventListener('input', function () {
+    mots = norme(champ.value).split(/\s+/).filter(Boolean);
+    if (mots.length && filter === 'cinema') choisir('all');
+    refresh();
+  });
+  var caseGratuit = document.getElementById('gratuit');
+  var caseFamille = document.getElementById('famille');
+  var caseFavoris = document.getElementById('favoris');
+  [caseGratuit, caseFamille, caseFavoris].forEach(function (c) { if (c) c.addEventListener('change', function () { refresh(); }); });
+  document.addEventListener('favoris', function () { if (caseFavoris && caseFavoris.checked) refresh(); });
+  // Filtre par moment. Un événement va du jour de début (data-debut) au jour de fin (data-date).
+  var moment = 'tout';
+  var demain = jour(1), dans7 = jour(6);
+  var vendredi = (function () {
+    var d = new Date(), j = d.getDay();
+    d.setDate(d.getDate() + (j === 0 ? -2 : j === 6 ? -1 : 5 - j));
+    return d.toISOString().slice(0, 10);
+  })();
+  var dimanche = (function () { var d = new Date(vendredi + 'T12:00:00'); d.setDate(d.getDate() + 2); return d.toISOString().slice(0, 10); })();
+  function dansMoment(el, m) {
+    m = m || moment;
+    var a = el.dataset.debut, b = el.dataset.date, h = el.dataset.heure || '';
+    if (m.indexOf('jour:') === 0) return couvre(m.slice(5), m.slice(5));
+    function couvre(x, y) { return a <= y && b >= x; }
+    switch (m) {
+      case 'aujourdhui': return couvre(today, today);
+      // Ce soir : ce qui a lieu aujourd'hui à partir de 17 h (ou sans heure connue), pas les expos de plusieurs jours
+      case 'soir': return a <= today && b >= today && (a === b || a === today) && (!h || h >= '17:00');
+      case 'demain': return couvre(demain, demain);
+      case 'semaine': return couvre(today, dans7);
+      case 'weekend': return couvre(vendredi > today ? vendredi : today, dimanche);
+      default: return true;
+    }
+  }
+  var moments = document.getElementById('moments');
+  var bandeRapide = document.getElementById('bande-rapide'), bandeDates = document.getElementById('bande-dates');
+  // Un seul état « moment » pour la rangée de l'ordinateur et les bandes du téléphone
+  function choisirMoment(m) {
+    moment = m;
+    [moments, bandeRapide, bandeDates].forEach(function (g) {
+      if (g) g.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x.dataset.moment === m); });
+    });
+    if (m === 'demain') choixJour = choixJour === today ? demain : choixJour;
+    if (m === 'aujourdhui' || m === 'soir') choixJour = today;
+    if (m.indexOf('jour:') === 0) choixJour = m.slice(5);
+    // Le jour choisi reste visible dans la bande défilante
+    var actif = bandeDates && bandeDates.querySelector('button.active');
+    if (actif && bandeDates.scrollWidth > bandeDates.clientWidth) bandeDates.scrollLeft = actif.offsetLeft - (bandeDates.clientWidth - actif.offsetWidth) / 2;
+    refresh();
+  }
+  [moments, bandeRapide, bandeDates].forEach(function (g) {
+    if (g) g.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button');
+      if (!b) return;
+      // Retoucher le jour déjà choisi dans la bande de dates revient à tout afficher
+      choisirMoment(b.dataset.moment === moment && g === bandeDates ? 'tout' : b.dataset.moment);
+    });
+  });
+  // Bande de dates : « Tout », aujourd'hui, puis les 13 jours suivants (un bouton par jour)
+  if (bandeDates) {
+    var JS = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+    var bt = document.createElement('button');
+    bt.type = 'button'; bt.dataset.moment = 'tout'; bt.className = 'jour-tout active';
+    bt.innerHTML = '<span data-t="bande_tout">Tout</span>';
+    bandeDates.appendChild(bt);
+    for (var k = 0; k < 14; k++) {
+      var iso = jour(k), dd = new Date(iso + 'T12:00:00'), bj = document.createElement('button');
+      bj.type = 'button'; bj.dataset.moment = 'jour:' + iso; bj.dataset.jour = iso;
+      if (dd.getDay() === 5 || dd.getDay() === 6) bj.classList.add('we');
+      bj.innerHTML = '<span class="js">' + (k === 0 ? "auj." : JS[dd.getDay()]) + '</span><span class="jn">' + dd.getDate() + '</span>';
+      bandeDates.appendChild(bj);
+    }
+  }
+  // « Nouveau cette semaine » : ce qui est arrivé dans l'agenda ces 7 derniers jours
+  var lienNouveau = document.getElementById('nouveautes');
+  function compterNouveautes() {
+    var v = document.documentElement.dataset.ville || 'toutes', il7 = jour(-7), n = 0;
+    document.querySelectorAll('#agenda .event, #en-cours .event').forEach(function (el) {
+      if (el.dataset.date >= today && (el.dataset.ajoute || '') >= il7 && (v === 'toutes' || el.dataset.ville === v)) n++;
+    });
+    if (lienNouveau) {
+      lienNouveau.hidden = !n;
+      lienNouveau.textContent = (window.t ? window.t('nouveautes', '✨ {n} nouveautés cette semaine →') : '✨ {n} nouveautés cette semaine →').replace('{n}', n);
+    }
+  }
+  document.addEventListener('langue', compterNouveautes);
+  // Quartier (téléphone) : déduit du lieu et de l'adresse, d'après les motifs de _data/quartiers.yml
+  var QUARTIERS = {{ site.data.quartiers | jsonify }}.map(function (q) { return { id: q.id, nom: q.nom, re: new RegExp(q.motif) }; });
+  var choixQuartier = '', selQ = document.getElementById('quartier');
+  function quartierDe(el) {
+    if (el._quartier === undefined) {
+      var t = norme((el.dataset.lieu || '') + ' ' + (el.dataset.titre || ''));
+      el._quartier = '';
+      for (var i = 0; i < QUARTIERS.length; i++) if (QUARTIERS[i].re.test(t)) { el._quartier = QUARTIERS[i].id; break; }
+    }
+    return el._quartier;
+  }
+  if (selQ) {
+    var presents = {};
+    document.querySelectorAll('#agenda .event').forEach(function (el) { if (el.dataset.date >= today) presents[quartierDe(el)] = (presents[quartierDe(el)] || 0) + 1; });
+    QUARTIERS.forEach(function (q) {
+      if (!presents[q.id]) return;
+      var o = document.createElement('option'); o.value = q.id; o.textContent = q.nom + ' (' + presents[q.id] + ')'; selQ.appendChild(o);
+    });
+    selQ.addEventListener('change', function () { choixQuartier = selQ.value; refresh(); });
+  }
+  // Un événement passe-t-il tous les filtres sauf le moment ? (sert aussi aux compteurs des bandes)
+  function horsMoment(el, favs) {
+    var v = document.documentElement.dataset.ville || 'toutes';
+    return el.dataset.date >= today && (filter === 'all' || el.dataset.category === filter) &&
+      (v === 'toutes' || (el.dataset.ville || 'tunis') === v) && correspond(el) &&
+      (!choixQuartier || quartierDe(el) === choixQuartier) &&
+      (!caseGratuit || !caseGratuit.checked || el.hasAttribute('data-gratuit')) &&
+      (!caseFamille || !caseFamille.checked || el.hasAttribute('data-famille')) &&
+      (!caseFavoris || !caseFavoris.checked || favs.indexOf(el.dataset.id) >= 0);
+  }
+  function majBandes(evts, favs) {
+    if (!bandeRapide) return;
+    var n = {};
+    var ms = ['soir', 'demain', 'weekend'];
+    bandeDates.querySelectorAll('button[data-jour]').forEach(function (b) { ms.push(b.dataset.moment); });
+    ms.forEach(function (m) { n[m] = 0; });
+    evts.forEach(function (el) {
+      if (!horsMoment(el, favs)) return;
+      ms.forEach(function (m) { if (dansMoment(el, m)) n[m]++; });
+    });
+    bandeRapide.querySelectorAll('button').forEach(function (b) { b.querySelector('.nb').textContent = n[b.dataset.moment] ? n[b.dataset.moment] : ''; });
+    bandeDates.querySelectorAll('button[data-jour]').forEach(function (b) { b.classList.toggle('vide', !n[b.dataset.moment]); });
+  }
+  function refresh() {
+    var shown = 0;
+    var favs = window.lireFavoris ? window.lireFavoris() : [];
+    var evts = document.querySelectorAll('#agenda .event, #en-cours .event');
+    evts.forEach(function (el) {
+      var visible = horsMoment(el, favs) && dansMoment(el);
+      el.hidden = !visible;
+      if (visible) shown++;
+    });
+    majBandes(evts, favs);
+    if (salles) { var nf = montrerFilms(); if (filter === 'cinema') shown += nf || 1; }
+    document.querySelectorAll('.month').forEach(function (s) {
+      s.hidden = !s.querySelector('.event:not([hidden])');
+    });
+    if (salles) salles.hidden = filter !== 'cinema';
+    if (resume) resume.hidden = filter !== 'all';
+    document.getElementById('empty').hidden = shown > 0;
+    majAide(shown);
+  }
+  // Compteur de résultats, « Tout effacer », nombre de filtres du tiroir, états annoncés aux lecteurs d'écran
+  var cCompteur = document.getElementById('compteur'), bEffacer = document.getElementById('effacer');
+  var bTiroir = document.getElementById('bouton-filtres'), nbF = document.getElementById('nb-filtres');
+  var dernierN = 0;
+  function tt(k, d) { return window.t ? window.t(k, d) : d; }
+  function majAide(n) {
+    if (n !== undefined) dernierN = n;
+    var actifs = (filter !== 'all' ? 1 : 0) + (choixQuartier ? 1 : 0) + [caseGratuit, caseFamille, caseFavoris].filter(function (c) { return c && c.checked; }).length;
+    var aFiltre = actifs > 0 || moment !== 'tout' || mots.length > 0;
+    if (cCompteur) cCompteur.textContent = dernierN === 1 ? tt('compteur_un', '1 événement') : tt('compteur_n', '{n} événements').replace('{n}', dernierN);
+    if (bEffacer) bEffacer.hidden = !aFiltre;
+    if (nbF) { nbF.hidden = !actifs; nbF.textContent = actifs; }
+    document.querySelectorAll('#filters button, #moments button, #villes button, #bande-rapide button, #bande-dates button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('langue', function () { majAide(); });
+  if (bEffacer) bEffacer.addEventListener('click', function () {
+    mots = []; if (champ) champ.value = '';
+    choixQuartier = ''; if (selQ) selQ.value = '';
+    [caseGratuit, caseFamille, caseFavoris].forEach(function (c) { if (c) c.checked = false; });
+    filter = 'all';
+    document.querySelectorAll('#filters button').forEach(function (x) { x.classList.toggle('active', x.dataset.filter === 'all'); });
+    choisirMoment('tout');
+  });
+  if (bTiroir) bTiroir.addEventListener('click', function () {
+    var ouvert = document.querySelector('.panneau-filtres').classList.toggle('ouvert');
+    bTiroir.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+  });
+  function choisir(f) {
+    filter = f;
+    document.querySelectorAll('#filters button').forEach(function (x) { x.classList.toggle('active', x.dataset.filter === f); });
+    refresh();
+  }
+  document.addEventListener('ville', function () { refresh(); compterNouveautes(); });
+  compterNouveautes();
+  document.getElementById('filters').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (b) choisir(b.dataset.filter);
+  });
+  if (resume) resume.addEventListener('click', function () { choisir('cinema'); window.scrollTo(0, 0); });
+  // Lien direct vers un thème : …/#cinema, …/#theatre
+  var h = location.hash.slice(1);
+  choisir(document.querySelector('#filters button[data-filter="' + h + '"]') ? h : 'all');
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.title | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "inLanguage": ["fr", "ar", "en"]
+}
+</script>

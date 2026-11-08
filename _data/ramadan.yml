@@ -1,0 +1,22 @@
+# Ramadan : dates estimées (calendrier astronomique), à confirmer par l'annonce officielle du mufti.
+annee: 1448
+debut: 2027-02-08
+fin: 2027-03-09
+estime: true
+# Une soirée de Ramadan : après la rupture du jeûne (vers 18 h 30 en février-mars).
+heure_soiree: "20:00"
+# Mots qui signalent un événement de Ramadan dans un titre
+mots: [ramadan, رمضان, ramadhan, layali, ليالي, médina, medina, المدينة, soirées ramadanesques, سهرات]
+# Rendez-vous habituels (bilan-sources/ambassades-etudiants-associations.md)
+rendez_vous:
+  - { nom: "Festival de la Médina", lieu: "Médina de Tunis", festival: medina }
+  - { nom: "Festival de la Médina de Kairouan", lieu: "Kairouan" }
+  - { nom: "Soirées de Raqqada", lieu: "Kairouan" }
+  - { nom: "Nuits de Ramadan des maisons de la culture", lieu: "Grand Tunis (Bardo, El Ouardia, El Omrane, El Mourouj…)" }
+  - { nom: "Layali el Qamar", lieu: "Dar Sébastien, Hammamet" }
+  - { nom: "Nuits de la Médina", lieu: "Monastir" }
+  - { nom: "Festival de la Médina", lieu: "Médenine, El Hamma, Le Kef" }
+  - { nom: "Ramadan du Beït ech-chaâr", lieu: "Sidi Bouzid" }
+  - { nom: "Nuits Wajd", lieu: "Béja" }
+  - { nom: "Nuits Abou Loubaba", lieu: "Gabès" }
+  - { nom: "Qanadil Ramadan", lieu: "Ben Arous" }

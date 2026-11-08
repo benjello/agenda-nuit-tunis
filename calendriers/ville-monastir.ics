@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-monastir.ics
+---
+{% include calendrier.ics ville="monastir" nom="Monastir" %}

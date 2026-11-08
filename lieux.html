@@ -1,0 +1,60 @@
+---
+layout: default
+title: Lieux
+permalink: /lieux/
+description: Les clubs, discothèques, cabarets et bars de Tunisie et leurs prochaines soirées.
+---
+<section class="intro">
+  <h1 data-t="lieux_titre">Lieux</h1>
+  <p><span data-t="lieux_intro">Salles, galeries, cinémas et théâtres qui ont quelque chose à l'affiche.</span> <a href="{{ '/carte/' | relative_url }}" data-t="voir_carte_lieux">🗺 Voir la carte</a></p>
+</section>
+{% include choix-ville.html %}
+{%- comment -%} Types de lieux : _data/types_lieux.yml ; le type de chaque fiche est écrit par scrapers/pages.py. {%- endcomment -%}
+{%- assign types = site.data.types_lieux.types -%}
+{%- assign presents = site.lieux | map: "type" | uniq -%}
+<div class="filters types-lieux" id="types-lieux" role="group" aria-label="Type de lieu">
+  <button data-type="tous" class="active" data-t="tout">Tout</button>
+  {%- for t in types %}{% if presents contains t.id %}<button data-type="{{ t.id }}" data-t="type_lieu.{{ t.id }}">{{ t.nom }}</button>{% endif %}{% endfor %}
+</div>
+{%- for v in site.data.villes %}
+{%- assign ls = site.lieux | where: "ville", v.id | sort: "title" -%}
+{%- if ls.size > 0 %}
+<section class="month bloc-ville" data-ville-bloc="{{ v.id }}">
+  <h2 data-t="ville.{{ v.id }}">{{ v.nom }}</h2>
+  {%- for t in types %}
+  {%- assign lt = ls | where_exp: "l", "l.type == t.id" -%}
+  {%- if lt.size > 0 %}
+  <div class="bloc-type" data-type-bloc="{{ t.id }}">
+  <h3 data-t="type_lieu.{{ t.id }}">{{ t.nom }}</h3>
+  <ul class="liste-fiches">
+  {%- for l in lt %}{% assign n = site.events | where_exp: "e", "l.noms contains e.venue" | where_exp: "e", "e.doublon != true" | size %}
+    <li><a href="{{ l.url | relative_url }}">{{ l.title }}</a> <small>{{ n }}</small></li>
+  {%- endfor %}
+  </ul>
+  </div>
+  {%- endif %}
+  {%- endfor %}
+</section>
+{%- endif %}
+{%- endfor %}
+{% include signaler-fiche.html quoi="lieu" %}
+<script>
+(function () {
+  var type = 'tous';
+  function f() {
+    var v = document.documentElement.dataset.ville || 'toutes';
+    document.querySelectorAll('.bloc-type').forEach(function (b) { b.hidden = type !== 'tous' && b.dataset.typeBloc !== type; });
+    document.querySelectorAll('.bloc-ville').forEach(function (s) {
+      s.hidden = (v !== 'toutes' && s.dataset.villeBloc !== v) || !s.querySelector('.bloc-type:not([hidden])');
+    });
+  }
+  document.getElementById('types-lieux').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (!b) return;
+    type = b.dataset.type;
+    this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x === b); });
+    f();
+  });
+  document.addEventListener('ville', f); f();
+})();
+</script>

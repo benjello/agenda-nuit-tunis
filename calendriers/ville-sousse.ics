@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-sousse.ics
+---
+{% include calendrier.ics ville="sousse" nom="Sousse" %}

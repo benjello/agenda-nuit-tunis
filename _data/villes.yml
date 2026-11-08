@@ -1,0 +1,20 @@
+# Villes proposées dans le choix de ville du site. Le Grand Tunis est la ville par défaut.
+# Les motifs (scrapers/villes.py) rangent chaque événement d'après son lieu et son adresse.
+- id: tunis
+  nom: Grand Tunis
+- id: sousse
+  nom: Sousse
+- id: sfax
+  nom: Sfax
+- id: monastir
+  nom: Monastir
+- id: nabeul
+  nom: Nabeul et Hammamet
+- id: bizerte
+  nom: Bizerte
+- id: kairouan
+  nom: Kairouan
+- id: sud
+  nom: Sud (Djerba, Gabès, Tozeur…)
+- id: autres
+  nom: Autres régions

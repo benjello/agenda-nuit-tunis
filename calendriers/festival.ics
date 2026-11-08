@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/festival.ics
+---
+{% include calendrier.ics categorie="festival" nom="Festival & open air" %}

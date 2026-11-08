@@ -1,0 +1,47 @@
+name: Proposer une source
+description: Un site, une page Facebook ou Instagram, un flux où un lieu annonce régulièrement ses dates.
+title: "Source : "
+labels: ["source"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Collez simplement l'adresse de la page : on s'occupe du reste.
+        Liste des sources qu'on cherche : https://benjello.github.io/agenda-nuit-tunis/contribuer/
+  - type: input
+    id: nom
+    attributes:
+      label: Lieu, collectif ou organisateur
+      placeholder: "Maison de la culture Ibn Khaldoun"
+    validations:
+      required: true
+  - type: input
+    id: lien
+    attributes:
+      label: Adresse de la page
+      description: "Site, page Facebook, compte Instagram, flux RSS ou iCal, PDF du programme…"
+      placeholder: "https://www.facebook.com/…"
+    validations:
+      required: true
+  - type: dropdown
+    id: genre
+    attributes:
+      label: Quelle sorte de page ? (facultatif)
+      options: [Je ne sais pas, Site avec un agenda, Page Facebook, Compte Instagram, Flux RSS ou iCal, Programme en PDF, Autre]
+  - type: input
+    id: recherche
+    attributes:
+      label: Source recherchée ou à réparer (facultatif)
+      description: "Rempli tout seul depuis la page Contribuer."
+  - type: textarea
+    id: remarque
+    attributes:
+      label: Remarque (facultatif)
+      description: "À quelle fréquence la page publie-t-elle ? Les dates sont-elles dans le texte ou sur l'affiche ?"
+  - type: checkboxes
+    id: publique
+    attributes:
+      label: Vérification
+      options:
+        - label: La page est publique (on la voit sans se connecter) et annonce des événements culturels.
+          required: true

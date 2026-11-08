@@ -1,0 +1,12 @@
+{%- comment -%}
+  Liens vers le formulaire GitHub « Ajouter ou corriger une fiche » (.github/ISSUE_TEMPLATE/fiche.yml).
+  include.quoi : lieu, artiste… (texte du lien) ; include.nom : sur une fiche, le nom de la fiche.
+{%- endcomment -%}
+{%- assign formulaire = site.depot | append: "/issues/new?template=fiche.yml" -%}
+{%- if include.nom %}
+{%- capture sujet %}Fiche à corriger : {{ include.nom }}{% endcapture %}
+<p class="signaler"><a href="{{ formulaire }}&title={{ sujet | url_encode }}&nom={{ include.nom | url_encode }}&lien={{ page.url | absolute_url | url_encode }}" rel="noopener" data-t="fiche.corriger">✎ Compléter ou corriger cette fiche</a></p>
+{%- else %}
+<p class="signaler"><span data-t="fiche.manque_{{ include.quoi }}">{% case include.quoi %}{% when "lieu" %}Un lieu manque, ou une information est fausse ?{% else %}Un artiste, un conférencier ou un organisateur manque, ou une information est fausse ?{% endcase %}</span>
+  <a href="{{ '/proposer/#fiche' | relative_url }}" data-t="fiche.signaler">Le signaler</a></p>
+{%- endif %}

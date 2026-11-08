@@ -1,0 +1,67 @@
+---
+layout: default
+title: Ce week-end
+permalink: /week-end/
+description: Que faire à Tunis ce week-end ? Concerts, théâtre, conférences, expos et cinéma, du vendredi au dimanche.
+---
+{%- comment -%}
+  Le site est reconstruit une fois par jour : on met ici tout ce qui vient dans les 12 prochains
+  jours, et le script garde ce qui touche le prochain week-end (du vendredi au dimanche).
+{%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | where_exp: "e", "e.film != true" | sort: "date" -%}
+{%- assign films_l = site.data.films | default: empty -%}
+<section class="intro">
+  <h1 id="we-titre" data-t="nav.weekend">Ce week-end</h1>
+  <p data-t="we_intro">Ce qui se passe à Tunis du vendredi au dimanche. Le détail de chaque événement est sur sa source.</p>
+</section>
+{% include choix-ville.html %}
+
+{%- for jour in (0..2) %}
+<section class="month we-jour" data-decalage="{{ jour }}" hidden>
+  <h2></h2>
+</section>
+{%- endfor %}
+
+<div id="we-tous" hidden>
+{%- for e in events -%}
+  {%- assign fin = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+  {%- if fin >= today %}
+  <div class="we-evt" data-debut="{{ e.date | date: '%Y-%m-%d' }}" data-fin="{{ fin }}">{% include event-card.html event=e %}</div>
+  {%- endif -%}
+{%- endfor %}
+</div>
+<p id="we-vide" class="empty" hidden data-t="we_vide">Rien d'annoncé pour ce week-end pour l'instant.</p>
+
+{%- if films_l.size > 0 %}
+<a class="resume-films" href="{{ '/' | relative_url }}#cinema">🎬 <strong data-t="au_cinema">Au cinéma</strong> : {{ films_l.size }} <span data-t="films_choisir_jour">films à l'affiche, choisissez le jour →</span></a>
+{%- endif %}
+
+<script>
+(function () {
+  var JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  var MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  var auj = new Date(); auj.setHours(12, 0, 0, 0);
+  // Prochain vendredi (ou celui en cours si on est déjà vendredi, samedi ou dimanche).
+  var ven = new Date(auj), j = auj.getDay();
+  ven.setDate(auj.getDate() + (j === 0 ? -2 : j === 6 ? -1 : 5 - j));
+  var jours = [0, 1, 2].map(function (k) { var d = new Date(ven); d.setDate(ven.getDate() + k); return d; });
+  var dim = jours[2];
+  document.getElementById('we-titre').textContent = 'Ce week-end : ' + ven.getDate() +
+    (ven.getMonth() !== dim.getMonth() ? ' ' + MOIS[ven.getMonth()] : '') + ' – ' + dim.getDate() + ' ' + MOIS[dim.getMonth()];
+  var aujIso = iso(auj), n = 0;
+  document.querySelectorAll('.we-jour').forEach(function (s) {
+    var d = jours[+s.dataset.decalage], di = iso(d);
+    s.querySelector('h2').textContent = JOURS[d.getDay()].replace(/^./, function (c) { return c.toUpperCase(); }) + ' ' + d.getDate() + ' ' + MOIS[d.getMonth()];
+    if (di < aujIso) return;  // dimanche : vendredi et samedi sont passés
+    document.querySelectorAll('#we-tous .we-evt').forEach(function (e) {
+      // Un événement d'un jour va sous son jour ; une expo ou un festival, sous le premier jour du week-end où il a lieu.
+      var premier = e.dataset.debut > iso(jours[0]) ? e.dataset.debut : (aujIso > iso(jours[0]) ? aujIso : iso(jours[0]));
+      if (premier === di && e.dataset.fin >= di) { s.appendChild(e); n++; }
+    });
+    s.hidden = !s.querySelector('.we-evt');
+  });
+  document.getElementById('we-vide').hidden = n > 0;
+})();
+</script>

@@ -1,0 +1,402 @@
+:root {
+  --bg: #faf7f2; --fg: #222; --muted: #6b6b6b; --card: #fff; --line: #e6e0d6; --accent: #b5442f;
+  color-scheme: light;
+}
+/* Sombre : celui du téléphone par défaut, ou choisi avec le bouton 🌓 (data-theme) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #171614; --fg: #eee; --muted: #a09a90; --card: #22201d; --line: #36322c; --accent: #e57a5f; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #171614; --fg: #eee; --muted: #a09a90; --card: #22201d; --line: #36322c; --accent: #e57a5f; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--accent); }
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; max-width: 760px; margin: 0 auto; padding: 16px; }
+.brand { font-weight: 700; font-size: 1.15rem; color: var(--fg); text-decoration: none; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.site-header nav a { text-decoration: none; }
+.intro h1 { margin: 16px 0 4px; font-size: 1.8rem; }
+.intro p { margin: 0 0 16px; color: var(--muted); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.filters button { border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: .9rem; cursor: pointer; }
+.filters button.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.month h2 { font-size: 1.1rem; margin: 28px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.event { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+.event-date { flex: 0 0 48px; text-align: center; line-height: 1.1; }
+.event-date .day { display: block; font-size: 1.6rem; font-weight: 700; }
+.event-date .mon { font-size: .8rem; text-transform: uppercase; color: var(--muted); }
+.event-body h3 { margin: 4px 0 2px; font-size: 1.05rem; }
+.event-body h3 a { color: var(--fg); text-decoration: none; }
+.event-body h3 a:hover { text-decoration: underline; }
+.meta { margin: 0; color: var(--muted); font-size: .9rem; }
+.tag { display: inline-block; color: #fff; font-size: .72rem; font-weight: 600; padding: 1px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: .03em; }
+.empty { color: var(--muted); text-align: center; padding: 32px 0; }
+.event-page h1 { margin: 8px 0 16px; }
+.details { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; }
+.details dt { font-weight: 600; color: var(--muted); }
+.details dd { margin: 0; overflow-wrap: anywhere; }
+.description { margin-top: 24px; }
+.site-footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 24px 16px; border-top: 1px solid var(--line); }
+[hidden] { display: none !important; }
+.cinema h2 { font-size: 1.1rem; margin: 28px 0 8px; }
+.cinema h2 a { color: var(--fg); }
+.film .poster { flex: 0 0 64px; width: 64px; height: 96px; object-fit: cover; border-radius: 6px; }
+.days { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 0; }
+.updated { color: var(--muted); font-size: .85rem; margin-top: 24px; }
+.source { margin: 4px 0 0; font-size: .8rem; color: var(--muted); }
+table.sources { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .95rem; }
+table.sources th, table.sources td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.sources small { color: var(--muted); }
+.etat { font-size: .78rem; font-weight: 600; padding: 1px 8px; border-radius: 4px; white-space: nowrap; }
+.etat.ok { background: #d8efe0; color: #1d6b3a; }
+.etat.ko { background: #f6d6d2; color: #9b2c1f; }
+.etat.attente, .etat.pause { background: var(--line); color: var(--muted); }
+.programme-image { display: block; width: 100%; max-width: 640px; height: auto; margin: 8px 0; border-radius: 8px; }
+.programme-texte { white-space: normal; font-size: .9rem; }
+.programme details { margin: 8px 0; color: var(--muted); }
+.resume-films { display: block; text-decoration: none; width: 100%; text-align: left; font: inherit; cursor: pointer; background: var(--card); border: 1px solid var(--line); border-left: 4px solid #c0392b; border-radius: 10px; padding: 12px 14px; margin: 8px 0 16px; color: var(--fg); }
+.event.film .event-date { display: none; }
+.days span { display: inline-block; margin: 2px 4px 2px 0; padding: 1px 7px; border: 1px solid var(--line); border-radius: 999px; font-size: .8rem; }
+.perime { background: #fff4d6; color: #6b4b00; padding: 6px 10px; border-radius: 6px; font-size: .9rem; }
+.programme { margin: 8px 0; }
+.programme-image { display: block; width: 100%; max-width: 640px; height: auto; margin: 8px 0; border-radius: 8px; }
+.programme-texte { font-size: .9rem; }
+/* Cinéma : un film, son affiche, les salles du jour choisi */
+.jours-choix { display: flex; gap: 6px; overflow-x: auto; padding: 4px 0 12px; }
+.jours-choix button { flex: 0 0 auto; font: inherit; font-size: .9rem; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--fg); cursor: pointer; }
+.jours-choix button.active { background: #c0392b; border-color: #c0392b; color: #fff; }
+.film-fiche { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 10px 0; }
+.film-fiche .affiche { flex: 0 0 92px; width: 92px; height: 136px; object-fit: cover; border-radius: 6px; background: var(--line); }
+.film-fiche .affiche.vide { display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+.film-corps { min-width: 0; }
+.film-corps h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.film-salles { list-style: none; margin: 8px 0 0; padding: 0; }
+.film-salles li { padding: 3px 0; font-size: .95rem; }
+.presse-film { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--muted); border-radius: 8px; padding: 10px 14px; margin: 14px 0; }
+.presse-film h2 { font-size: 1rem; margin: 0 0 6px; }
+.presse-film ul { margin: 0; padding-left: 18px; }
+.presse-film li { margin: 4px 0; }
+.presse-film.court { background: none; border: 0; padding: 0; margin: 6px 0 0; font-size: .9rem; color: var(--muted); }
+[dir="rtl"] .presse-film { border-left: 1px solid var(--line); border-right: 4px solid var(--muted); }
+[dir="rtl"] .presse-film ul { padding-left: 0; padding-right: 18px; }
+.perime-court { font-size: .8rem; color: #6b4b00; }
+.badges { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0 4px; }
+.badges:empty { display: none; }
+.badge { font-size: .75rem; padding: 1px 7px; border-radius: 4px; background: var(--line); color: var(--fg); }
+.badge.age { background: #2c3e50; color: #fff; font-weight: 600; }
+.badge.tunisien { background: #c0392b; color: #fff; }
+.event-date .jusqu { display: block; font-size: .65rem; text-transform: uppercase; letter-spacing: .02em; }
+.actions { margin: 6px 0 0; font-size: .85rem; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; color: var(--muted); }
+.actions .billets { background: var(--accent, #c0392b); color: #fff; padding: 3px 10px; border-radius: 4px; text-decoration: none; font-weight: 600; }
+.actions .prix { font-weight: 600; }
+/* Cours et activités commerciales (yoga…) : en fin de mois ou de journée, en plus discret */
+.month { display: flex; flex-direction: column; }
+.event.discret { order: 1; opacity: .7; padding: 8px 12px; }
+.event.discret h3 { font-size: .95rem; }
+.month[hidden] { display: none; }
+.we-evt:has(.discret) { order: 1; }
+.film-salles .heures { margin-left: 8px; font-variant-numeric: tabular-nums; color: var(--fg); font-weight: 600; font-size: .9rem; }
+/* Page Festivals */
+.festival { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.festival h3 { margin: 6px 0 2px; }
+.festival .info { font-size: .85rem; color: var(--muted); margin: 4px 0; }
+.festival-tete { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.badge.statut { background: var(--line); color: var(--fg); }
+.badge.statut.en-cours { background: #d8efe0; color: #1d6b3a; }
+.badge.programme { background: #fdecc8; color: #7a5200; }
+.festival-evts summary { cursor: pointer; font-size: .9rem; }
+.festival-evts ul { margin: 6px 0 0; padding-left: 18px; font-size: .9rem; }
+.villes { margin-bottom: 4px; }
+a.carte { text-decoration: none; color: inherit; border-bottom: 1px dotted var(--muted); }
+a.carte.seule { border: 0; margin-left: 4px; }
+.recherche { width: 100%; box-sizing: border-box; margin: 6px 0 4px; padding: 9px 12px; font-size: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); }
+.sante-resume { font-weight: 600; }
+table.sante code { font-size: .75rem; }
+td.precision { font-size: .85rem; min-width: 12em; }
+td.precision ul.manques { margin: 4px 0 2px; padding-left: 1.1em; }
+td.precision small.manques { display: block; }
+@media (max-width: 640px) {
+  table.sante th:nth-child(4), table.sante td:nth-child(4), table.sante th:nth-child(5), table.sante td:nth-child(5) { display: none; }
+  td.precision { min-width: 0; }
+  table.sources td { overflow-wrap: anywhere; }
+}
+.prix.gratuit { color: #1d6b3a; }
+.seul-gratuit { display: inline-flex; gap: 6px; align-items: center; font-size: .9rem; margin: 2px 0 8px; color: var(--muted); }
+
+/* Réglages : langue, thème, affichage léger */
+.reglages { display: flex; gap: 6px; align-items: center; }
+.reglages button { font: inherit; font-size: .8rem; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 6px; padding: 2px 7px; cursor: pointer; }
+.reglages .langues { display: inline-flex; }
+.reglages .langues button { border-radius: 0; margin-inline-start: -1px; }
+.reglages .langues button:first-child { border-start-start-radius: 6px; border-end-start-radius: 6px; }
+.reglages .langues button:last-child { border-start-end-radius: 6px; border-end-end-radius: 6px; }
+.reglages button.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+/* Carte d'événement : vignette, outils (favori, agenda, partage) */
+.event-body { flex: 1; min-width: 0; }
+.vignette { flex: 0 0 76px; align-self: flex-start; }
+.vignette img { width: 76px; height: 96px; object-fit: cover; border-radius: 6px; background: var(--line); display: block; }
+.outils { margin-inline-start: auto; display: inline-flex; gap: 2px; }
+.outils button, .bouton { font: inherit; border: 1px solid transparent; background: none; color: var(--muted); cursor: pointer; border-radius: 6px; padding: 1px 6px; font-size: .95rem; line-height: 1.4; }
+.outils button:hover, .outils button:focus-visible { border-color: var(--line); color: var(--fg); }
+.fav.on { color: #d4a017; }
+.tag.famille { background: #1d6b3a; }
+.actions.grandes { gap: 8px; margin: 16px 0; font-size: .95rem; }
+.actions.grandes .bouton { border-color: var(--line); background: var(--card); color: var(--fg); padding: 5px 12px; text-decoration: none; }
+.affiche-grande { display: block; max-width: 100%; max-height: 70vh; border-radius: 10px; margin: 8px 0 14px; }
+.description { white-space: normal; overflow-wrap: anywhere; }
+.note-source { color: var(--muted); }
+.menu-partage { position: fixed; inset-inline: 16px; bottom: 16px; max-width: 420px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: flex; flex-wrap: wrap; gap: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.25); z-index: 1000; }
+.menu-partage a, .menu-partage button { font: inherit; font-size: .95rem; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); text-decoration: none; cursor: pointer; }
+/* Affichage léger : sans images, cartes compactes */
+.leger .vignette, .leger .affiche-grande, .leger .film-fiche .affiche, .leger .programme-image { display: none !important; }
+.leger .event { padding: 6px 10px; margin-bottom: 6px; gap: 10px; }
+.leger .event .actions .secondaire { display: none; }
+.leger .event-date .day { font-size: 1.2rem; }
+/* Filtres de l'accueil */
+.moments button { font-size: .85rem; }
+.cases { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 2px 0 8px; }
+.cases label { display: inline-flex; gap: 6px; align-items: center; font-size: .9rem; color: var(--muted); }
+.nouveautes { display: inline-block; margin: 0 0 8px; font-size: .9rem; text-decoration: none; }
+/* Fiches lieux, artistes */
+.liste-fiches { list-style: none; padding: 0; columns: 2 220px; }
+.liste-fiches li { padding: 3px 0; break-inside: avoid; }
+.liste-fiches small { color: var(--muted); }
+.fiche h1 { margin-bottom: 4px; }
+.carte-lieux { height: 70vh; min-height: 360px; border-radius: 10px; border: 1px solid var(--line); margin: 8px 0; }
+a.lieu { color: inherit; }
+/* Arabe : de droite à gauche */
+[dir="rtl"] .resume-films { text-align: right; border-left: 1px solid var(--line); border-right: 4px solid #c0392b; }
+[dir="rtl"] .film-salles .heures { margin-left: 0; margin-right: 8px; }
+.types-films { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 0 10px; }
+.event-page.event { display: block; background: none; border: 0; padding: 0; margin: 0; }
+.event-page .tag { margin-top: 4px; }
+/* Formulaire « Proposer un événement » */
+.formulaire { display: grid; gap: 10px; max-width: 560px; }
+.formulaire label { display: grid; gap: 4px; font-size: .9rem; color: var(--muted); }
+.formulaire input, .formulaire select, .formulaire textarea { font: inherit; font-size: 1rem; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); width: 100%; }
+.formulaire .deux { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.bouton.principal, a.bouton { display: inline-block; }
+.bouton.principal { background: var(--accent); color: #fff; border: 0; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; font: inherit; }
+a.bouton { border: 1px solid var(--line); padding: 6px 12px; border-radius: 8px; text-decoration: none; color: var(--fg); background: var(--card); }
+.signaler { font-size: .85rem; margin-top: 24px; }
+.signaler a { color: var(--muted); }
+.ramadan-bandeau { display: block; background: #1f3a5f; color: #fff; border-radius: 10px; padding: 10px 14px; margin: 8px 0 12px; text-decoration: none; }
+.doc-api pre { background: var(--card); border: 1px solid var(--line); padding: 10px; border-radius: 8px; overflow-x: auto; font-size: .85rem; }
+
+/* Page Enfants */
+.tag.age { background: #2f7d8c; }
+.enf-we { border: 2px solid #1d6b3a; border-radius: 10px; padding: .6rem 1rem; margin: 1rem 0; }
+.enf-we h2 { margin: .2rem 0 .4rem; font-size: 1.1rem; }
+.enf-we ul, .enf-festivals { margin: 0; padding-inline-start: 1.2rem; }
+.enf-musees { margin-top: .5rem; }
+
+/* Descriptifs (lieux, festivals, musées, synopsis des films) : discrets */
+.descriptif { color: var(--muted); font-size: .9rem; line-height: 1.45; max-width: 65ch; margin: 6px 0; }
+.descriptif-source, .descriptif-source a { color: var(--muted); }
+.synopsis, .descriptif-plie { margin: 4px 0 8px; font-size: .9rem; }
+.synopsis summary, .descriptif-plie summary { cursor: pointer; color: var(--muted); }
+.synopsis p { color: var(--fg); margin: 6px 0 0; max-width: 65ch; line-height: 1.45; }
+.descriptif-plie .descriptif { margin-top: 4px; }
+
+/* Photo et infos OpenStreetMap des fiches (scrapers/enrichir.py) */
+.photo-fiche { margin: .8rem 0; max-width: 400px; }
+.photo-fiche img { width: 100%; height: auto; border-radius: 8px; }
+.photo-fiche figcaption { font-size: .75rem; opacity: .7; }
+.infos-osm { font-size: .9rem; }
+.infos-osm code { font-size: .85rem; }
+.prix.complet { background: #8a1c1c; color: #fff; padding: 0 .4rem; border-radius: 4px; font-weight: 600; }
+.tag.langue { background: #5b4b8a; }
+/* Page Contribuer : sources recherchées */
+.recherchees { list-style: none; padding: 0; display: grid; gap: 10px; }
+.recherchees li { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.recherchees p { margin: 6px 0; }
+.recherchees small { color: var(--muted); }
+.recherchees li[hidden] { display: none; }
+.etat.niveau-facile { background: #d8efe0; color: #1d6b3a; }
+.etat.niveau-moyen { background: #f8e8c8; color: #8a5a00; }
+.etat.niveau-avance { background: #f6d6d2; color: #9b2c1f; }
+.etapes { margin: 0 0 16px; padding-left: 1.4em; } .etapes li { margin: 4px 0; }
+#pull-request { margin: 24px 0; } #pull-request summary { cursor: pointer; font-weight: 600; }
+
+/* ---- Grand écran (ordinateur, portable) : plus large, plus d'infos, moins de clics.
+   Le téléphone garde l'affichage d'une colonne : tout ce qui suit ne s'applique qu'au-delà de 1100 px. */
+.titre-filtre, .extrait { display: none; }
+@media (min-width: 1100px) {
+  main, .site-header { max-width: 1360px; padding-left: 24px; padding-right: 24px; }
+  .accueil { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 28px; align-items: start; }
+  /* Filtres toujours visibles à gauche */
+  .panneau-filtres { position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow-y: auto; display: flex; flex-direction: column;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .panneau-filtres .recherche { order: -1; margin-top: 0; }
+  .panneau-filtres .filters button { font-size: .85rem; padding: 3px 10px; }
+  .panneau-filtres .cases { flex-direction: column; margin-top: 6px; }
+  .titre-filtre { display: block; margin: 10px 0 4px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .colonne-agenda > .month:first-of-type h2, #en-cours h2 { margin-top: 8px; }
+  /* Cartes sur plusieurs colonnes */
+  /* Accueil, puis toute liste de cartes des autres pages (semaine, week-end, enfants…).
+     Une carte peut être dans un div intermédiaire (semaine, week-end) : ce div s'efface de la grille. */
+  #agenda .month, #en-cours, main section:has(> .event:not(.event-page), > div > .event) {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 12px; align-items: start; }
+  main section:has(> .event:not(.event-page), > div > .event) > div:has(> .event) { display: contents; }
+  main section:has(> .event:not(.event-page), > div > .event) > :not(.event):not(:has(> .event)) { grid-column: 1 / -1; margin-bottom: 0; }
+  main section[hidden] { display: none; }
+  main section .event:not(.event-page) { margin-bottom: 0; }
+  .vignette { flex-basis: 104px; }
+  .vignette img { width: 104px; height: 140px; }
+  .extrait { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    margin: 2px 0 6px; font-size: .88rem; line-height: 1.4; color: var(--muted); }
+  .event h3 a { cursor: pointer; }
+  .event.choisi { outline: 2px solid var(--accent); outline-offset: -1px; }
+  /* Films à l'affiche en grille */
+  #cinema-salles { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 0 12px; }
+  #cinema-salles > :not(.film-fiche) { grid-column: 1 / -1; }
+  .leger .extrait { display: none; }
+}
+/* Panneau d'aperçu : la fiche s'ouvre à droite sans quitter la liste (grand écran seulement, voir site.js) */
+.apercu { position: fixed; top: 0; bottom: 0; inset-inline-end: 0; width: min(500px, 42vw); z-index: 20; overflow-y: auto;
+  background: var(--bg); border-inline-start: 1px solid var(--line); box-shadow: -8px 0 24px rgba(0, 0, 0, .12); padding: 12px 22px 32px; }
+.apercu-barre { position: sticky; top: -12px; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  background: var(--bg); padding: 10px 0 8px; margin-top: -12px; border-bottom: 1px solid var(--line); }
+.apercu-barre button { font: inherit; font-size: 1.3rem; line-height: 1; border: 0; background: none; color: var(--fg); cursor: pointer; padding: 4px 8px; }
+.apercu .event-page { display: block !important; }
+.apercu .event-page > p:first-child { display: none; } /* « ← Retour à l'agenda » */
+.apercu .affiche-grande { max-height: 46vh; }
+.apercu .event-page h1 { font-size: 1.5rem; line-height: 1.25; }
+.apercu .chargement { color: var(--muted); }
+
+/* ---- Comprendre sans cliquer : heure en évidence, aperçu au survol / feuille du bas, « Ce soir à Tunis » */
+.event-date .heure { display: block; margin-top: 4px; font-size: .8rem; font-weight: 700; color: var(--accent); }
+.apercu-rapide { display: none; }
+@media (any-hover: none), (max-width: 1099px) { .apercu-rapide { display: inline-block; } }
+.bulle { position: fixed; z-index: 30; width: min(360px, calc(100vw - 16px)); background: var(--card); color: var(--fg);
+  border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, .22); overflow: hidden; pointer-events: none; }
+.bulle img { display: block; width: 100%; max-height: 180px; object-fit: cover; }
+.bulle-corps { padding: 10px 14px 12px; }
+.bulle-corps strong { display: block; margin: 4px 0 2px; font-size: 1.02rem; line-height: 1.3; }
+.bulle-infos { margin: 0 0 6px; color: var(--muted); font-size: .86rem; }
+.bulle-texte { margin: 0; font-size: .9rem; line-height: 1.45; }
+.bulle.feuille { left: 0; right: 0; bottom: 0; top: auto; width: auto; max-height: 80vh; overflow-y: auto; pointer-events: auto;
+  border-radius: 16px 16px 0 0; z-index: 41; }
+.feuille-fond { position: fixed; inset: 0; background: rgba(0, 0, 0, .4); z-index: 40; }
+.bulle-ouvrir { display: block; margin: 0 14px 16px; text-align: center; padding: 8px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+.ce-soir { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 10px 14px 6px; margin: 0 0 16px; }
+.ce-soir h2 { margin: 0 0 6px; font-size: 1.05rem; }
+.frise { list-style: none; margin: 0; padding: 0; }
+.frise li { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 2px 10px; align-items: baseline; padding: 6px 0; border-top: 1px solid var(--line); }
+.frise li:first-child { border-top: 0; }
+.frise-heure { font-weight: 700; color: var(--accent); }
+.frise li a { color: var(--fg); text-decoration: none; font-weight: 600; }
+.frise li a:hover { text-decoration: underline; }
+.frise-lieu { grid-column: 2; color: var(--muted); font-size: .85rem; }
+.frise-reste { grid-column: 3; grid-row: 1; color: var(--muted); font-size: .8rem; white-space: nowrap; }
+/* Étiquette « festival » sur les cartes : mène à la page du festival */
+.tag.festival { background: #6c3483; color: #fff; text-decoration: none; }
+.tag.festival:hover { filter: brightness(1.15); }
+.tag.serie { background: #1f618d; color: #fff; }
+
+/* ---- Accessibilité (tous écrans) ---- */
+.aller-contenu { position: absolute; inset-inline-start: 8px; top: -60px; z-index: 100; background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 0 0 8px 8px; }
+.aller-contenu:focus { top: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+main:focus { outline: none; }
+
+/* ---- Compteur de résultats et « Tout effacer » (tous écrans) ---- */
+.compteur { margin: 0 0 8px; font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: 12px; min-height: 28px; }
+.effacer { font: inherit; font-size: .9rem; border: 0; background: none; color: var(--accent); text-decoration: underline; cursor: pointer; padding: 4px 2px; }
+
+/* ---- Éléments propres au téléphone : invisibles sur grand écran ---- */
+.bouton-menu, .bouton-filtres, .date-courte, .outils .lib, .mobile-seul { display: none; }
+.nav-plus { display: contents; }
+.nav-plus a:last-child { order: 2; }
+.nav-proposer { order: 1; }
+
+/* ---- Téléphone (écran étroit) : l'ordinateur ne change pas ---- */
+@media (max-width: 700px) {
+  /* Menu réduit : 3 pages + Proposer, le reste (et les réglages) derrière « Menu » */
+  .site-header { padding: 10px 16px; gap: 6px; }
+  .site-header nav { gap: 2px 6px; width: 100%; align-items: center; }
+  .site-header nav a, .bouton-menu { padding: 10px 6px; min-height: 44px; display: inline-flex; align-items: center; }
+  .nav-proposer { order: 0; }
+  .bouton-menu { display: inline-flex; margin-inline-start: auto; font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 8px; cursor: pointer; padding: 6px 12px; gap: 6px; }
+  .nav-plus { display: none; order: 3; width: 100%; flex-wrap: wrap; gap: 0 6px; }
+  .site-header.ouvert .nav-plus { display: flex; }
+  .reglages { display: none; width: 100%; }
+  .site-header.ouvert .reglages { display: flex; }
+  .reglages button { min-height: 40px; min-width: 40px; }
+
+  /* Premier écran : titre court, sans texte d'intro ; les événements arrivent plus vite */
+  .intro h1 { margin: 8px 0 8px; font-size: 1.35rem; }
+  .intro p { display: none; }
+
+  /* Filtres : « Quand » en une rangée qui défile ; le reste dans le tiroir « Filtres » */
+  .panneau-filtres .titre-filtre { display: none; }
+  .moments { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .moments button, .filters button { flex: 0 0 auto; min-height: 40px; }
+  .bouton-filtres { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 0 0 8px; padding: 6px 16px; font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 999px; cursor: pointer; }
+  .bouton-filtres[aria-expanded="true"] { border-color: var(--fg); }
+  .nb-filtres { background: var(--accent); color: #fff; border-radius: 999px; font-size: .75rem; min-width: 20px; padding: 0 6px; text-align: center; }
+  .tiroir { display: none; }
+  .panneau-filtres.ouvert .tiroir { display: block; }
+  .recherche { margin: 0 0 8px; min-height: 44px; }
+  .cases label { min-height: 40px; }
+  .cases input { width: 20px; height: 20px; }
+
+  /* Vues rapides et bande de dates, collées en haut de la liste */
+  .mobile-seul { display: block; }
+  #moments { display: none; }
+  .bande-mobile { position: sticky; top: 0; z-index: 12; background: var(--bg); margin: 0 -16px 6px; padding: 6px 16px 4px; border-bottom: 1px solid var(--line); }
+  .bande-rapide { display: flex; gap: 6px; margin-bottom: 6px; }
+  .bande-rapide button { flex: 1 1 0; min-height: 44px; font: inherit; font-size: .9rem; font-weight: 600; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 999px; padding: 4px 8px; cursor: pointer; white-space: nowrap; }
+  .bande-rapide button.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .bande-rapide .nb { font-weight: 400; font-size: .8rem; opacity: .75; }
+  .bande-dates { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; scroll-snap-type: x proximity; }
+  .bande-dates button { flex: 0 0 auto; min-width: 48px; min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; font: inherit; line-height: 1.15; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 10px; padding: 4px 6px; cursor: pointer; scroll-snap-align: center; }
+  .bande-dates .js { font-size: .7rem; color: var(--muted); text-transform: uppercase; }
+  .bande-dates .jn { font-size: 1.1rem; font-weight: 700; }
+  .bande-dates button.we .jn { color: var(--accent); }
+  .bande-dates button.vide { opacity: .45; }
+  .bande-dates button.active { background: var(--fg); color: var(--bg); border-color: var(--fg); opacity: 1; }
+  .bande-dates button.active .js, .bande-dates button.active .jn { color: var(--bg); }
+  .quartier-choix { margin: 8px 0; }
+  .quartier-choix > span { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
+  .quartier-choix select { width: 100%; min-height: 44px; font: inherit; font-size: 1rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); }
+
+  /* Cartes : date courte (le jour et le mois sont déjà dans la pastille de date) */
+  .date-longue { display: none; }
+  .date-courte { display: inline; }
+  .event .meta a { display: inline-block; padding: 6px 0; }
+
+  /* Boutons d'action : zone de 44 px et libellé sous l'icône */
+  .outils { margin-inline-start: 0; width: 100%; justify-content: space-between; gap: 0; }
+  .outils button { flex: 1 1 0; min-width: 44px; min-height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 2px 0; font-size: 1.15rem; line-height: 1.1; }
+  .outils .lib { display: block; font-size: .64rem; color: var(--muted); white-space: nowrap; }
+  .event .actions a.billets, .event .actions a.secondaire { padding: 8px 12px; }
+  .event .actions .secondaire { min-height: 40px; display: inline-flex; align-items: center; }
+}
+
+/* Événement sur plusieurs jours : la fin est dite sous la date de début (« jusqu’au 22 nov. ») */
+.event-date .au { display: block; margin-top: 4px; font-size: .65rem; line-height: 1.2; color: var(--muted); }
+
+/* Formulaire « Proposer » : sur téléphone, lien, titre et date d'abord ; le reste derrière « Plus de détails » */
+.formulaire .plus > summary { display: none; }
+@media (max-width: 700px) {
+  .formulaire .plus > summary { display: block; cursor: pointer; font-weight: 600; min-height: 44px; line-height: 44px; color: var(--accent); }
+  .formulaire .plus[open] > summary { margin-bottom: 6px; }
+  .formulaire .plus > .plus-champs { display: grid; gap: 10px; }
+  .formulaire input, .formulaire select, .formulaire textarea { min-height: 44px; }
+  .formulaire .bouton { min-height: 48px; }
+}
+.formulaire .plus-champs { display: grid; gap: 10px; }
+
+/* Bouton discret à côté d'une note (texte d'origine / traduction) */
+.lien-bouton { background: none; border: 0; padding: 0; font: inherit; font-size: .85em; color: var(--accent, inherit); text-decoration: underline; cursor: pointer; }
+
+/* Installer l'application */
+.installer { margin-top: 12px; }
+.bouton-installer { background: var(--accent, #b5442f); color: #fff; border: 0; border-radius: 999px; padding: 10px 20px; font: inherit; font-weight: 600; cursor: pointer; }
+.aide-installer { max-width: 32rem; margin: 0 auto; }
+.aide-installer summary { cursor: pointer; font-weight: 600; }
+
+/* Titre d'origine, à côté de sa traduction */
+.titre-orig { display: block; font-size: .78em; font-weight: 400; opacity: .7; }
+.titre-orig[hidden] { display: none; }

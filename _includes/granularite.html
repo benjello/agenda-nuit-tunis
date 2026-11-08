@@ -1,0 +1,12 @@
+{%- comment -%}
+  Précision d'une source ou d'un type de scraper (bilan écrit par scrapers/granularite.py dans _data/controle.json).
+  Paramètres : g (bilan : n, pourcent, defauts, manques), exemples (montrer un titre fautif par défaut).
+{%- endcomment -%}
+{%- assign g = include.g -%}
+{%- if g and g.n > 0 -%}
+<strong class="etat {% if g.pourcent >= 90 %}ok{% elsif g.pourcent >= 50 %}attente{% else %}ko{% endif %}">{{ g.pourcent }} %</strong> <small><span data-t="gran.precis">précis</span> ({{ g.precis }}/{{ g.n }})</small>
+{%- if g.defauts.size > 0 %}<ul class="manques">
+{%- for d in g.defauts %}<li title="{{ d.texte }}"><span data-t="gran.{{ d.code }}">{{ d.texte }}</span> ×{{ d.n }}{% if include.exemples and d.exemple != "" %} <small>(« {{ d.exemple }} »)</small>{% endif %}</li>{% endfor %}
+</ul>{% endif %}
+{%- if g.manques.size > 0 %}<small class="manques"><span data-t="gran.manque">manque :</span> {% for m in g.manques %}<span data-t="gran.{{ m.code }}">{{ m.texte }}</span> ×{{ m.n }}{% unless forloop.last %}, {% endunless %}{% endfor %}</small>{% endif %}
+{%- else -%}—{%- endif -%}

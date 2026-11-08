@@ -1,0 +1,91 @@
+---
+layout: default
+title: Contribuer
+permalink: /contribuer/
+description: "Les lieux et les pages que l'agenda ne sait pas encore lire : aidez-nous à les trouver."
+---
+{%- comment -%}
+  Sources recherchées (_data/sources_recherchees.yml, tenu à la main) et sources à réparer
+  (_data/sources.yml + _data/etat_sources.json). Chaque bouton ouvre le formulaire GitHub
+  « Proposer une source » (.github/ISSUE_TEMPLATE/source.yml) déjà rempli.
+{%- endcomment -%}
+{%- assign etat = site.data.etat_sources | default: empty -%}
+{%- capture nouvelle -%}{{ site.depot }}/issues/new?template=source.yml{%- endcapture -%}
+<section class="intro">
+  <h1 data-t="contrib.titre">Contribuer : les sources qui manquent</h1>
+  <p data-t="contrib.intro">Beaucoup de lieux n'annoncent leurs dates que sur Facebook ou Instagram, et on ne connaît pas toujours leur page. Vous pouvez nous aider en cinq minutes, sans rien savoir de technique.</p>
+  <ol class="etapes">
+    <li data-t="contrib.e1">Choisissez un lieu dans la liste ci-dessous.</li>
+    <li data-t="contrib.e2">Cherchez sa page Facebook ou Instagram (ou son site) sur Google ou dans l'appli.</li>
+    <li data-t="contrib.e3">Cliquez sur « J'ai trouvé » et collez l'adresse. C'est tout : on s'occupe du reste.</li>
+  </ol>
+</section>
+
+<h2 id="recherchees" data-t="contrib.recherchees">Sources recherchées</h2>
+<div class="filters" id="filtres-niveau">
+  <button class="active" data-niveau="" data-t="contrib.tous">Tout voir</button>
+  <button data-niveau="facile" data-t="contrib.facile">Facile : chercher une page</button>
+  <button data-niveau="technique" data-t="contrib.technique">Technique : pour développeurs</button>
+</div>
+<ul class="recherchees" id="liste-recherchees">
+{%- for r in site.data.sources_recherchees %}
+  <li id="{{ r.id }}" data-niveau="{% if r.niveau == 'facile' %}facile{% else %}technique{% endif %}">
+    <strong>{{ r.nom }}</strong>{% assign cat = site.data.categories[r.categorie] %}{% if cat %} <small class="etat pause">{{ cat.label }}</small>{% endif %}{% if r.niveau == "facile" %} <small class="etat niveau-facile" data-t="contrib.facile_court">facile</small>{% else %} <small class="etat niveau-avance" data-t="contrib.technique_court">technique</small>{% endif %}
+    <p>{{ r.cherche }}</p>
+    {%- if r.pistes %}<p><small><span data-t="contrib.pistes">Déjà essayé :</span> {{ r.pistes }}</small></p>{% endif %}
+    <a class="bouton" rel="noopener" href="{{ nouvelle }}&title={{ 'Source : ' | append: r.nom | url_encode }}&nom={{ r.nom | url_encode }}&recherche={{ r.id | url_encode }}" data-t="contrib.trouve">{% if r.niveau == "facile" %}J'ai trouvé la page{% else %}Je peux aider{% endif %}</a>
+  </li>
+{%- endfor %}
+</ul>
+
+<h2 id="a-reparer" data-t="contrib.reparer">Sources à réparer</h2>
+<p data-t="contrib.reparer_intro">Ces sources sont connues, mais la page ne marche plus, n'a rien publié depuis plus d'un mois, ou n'est pas encore branchée. Une adresse plus à jour (une autre page, un compte Instagram, un site) suffit souvent.</p>
+<table class="sources">
+  <thead><tr><th data-t="source">Source</th><th data-t="col.etat">État</th><th></th></tr></thead>
+  <tbody id="a-reparer-lignes">
+  {%- for s in site.data.sources %}
+    {%- assign e = etat[s.id] -%}
+    {%- assign debut = s.id | slice: 0, 3 -%}
+    {%- if debut == "cr-" %}{% continue %}{% endif -%}{%- comment -%} délégations régionales : une seule entrée dans les sources recherchées {%- endcomment -%}
+    {%- if s.actif == false %}{% assign st = "pause" %}
+    {%- elsif e == nil or e.attente %}{% continue %}
+    {%- elsif e.ok != true %}{% assign st = "ko" %}
+    {%- else %}{% assign st = "ok" %}{% endif %}
+    <tr data-statut="{{ st }}" data-nouveau="{{ e.dernier_non_vide | default: e.premier_passage | slice: 0, 10 }}"{% if st == "ok" %} hidden{% endif %}>
+      <td>{% if s.url != "" %}<a href="{{ s.url }}" rel="noopener">{{ s.nom }}</a>{% else %}{{ s.nom }}{% endif %}{% if s.note %}<br><small>{{ s.note }}</small>{% endif %}</td>
+      <td>{% case st %}{% when "pause" %}<span class="etat pause" data-t="etat.a_etudier">à étudier</span>{% when "ko" %}<span class="etat ko" data-t="etat.en_panne">en panne</span>{% else %}<span class="etat attente" data-t="etat.silencieuse">silencieuse</span>{% endcase %}</td>
+      <td><a class="bouton" rel="noopener" href="{{ nouvelle }}&title={{ 'Source : ' | append: s.nom | url_encode }}&nom={{ s.nom | url_encode }}&recherche={{ s.id | url_encode }}" data-t="contrib.meilleure">Une meilleure adresse ?</a></td>
+    </tr>
+  {%- endfor %}
+  </tbody>
+</table>
+
+<h2 id="autre" data-t="contrib.autre">Une autre source ?</h2>
+<p data-t="contrib.autre_texte">Un lieu, un collectif ou un artiste qui annonce régulièrement ses dates et qui n'est pas encore sur l'agenda : proposez-le aussi.</p>
+<p><a class="bouton principal" rel="noopener" href="{{ nouvelle }}" data-t="proposer_source_bouton">Proposer une source</a></p>
+<p><small data-t="contrib.compte">Le formulaire s'ouvre sur GitHub : il faut un compte gratuit (2 minutes). C'est aussi notre protection contre les robots.</small></p>
+
+<details id="pull-request">
+  <summary data-t="contrib.pr">Pour les développeurs : ajouter la source vous-même</summary>
+  <p data-t="contrib.pr_texte">Vous êtes à l'aise avec GitHub ? Ajoutez la source directement dans le registre : ouvrez le fichier, cliquez sur le crayon ✎, copiez une entrée voisine du même type (page Facebook, compte Instagram…), puis « Propose changes ». GitHub prépare la pull request pour vous. Elle est vérifiée automatiquement puis relue avant d'être ajoutée.</p>
+  <p><a class="bouton" rel="noopener" href="{{ site.depot }}/edit/main/_data/sources.yml" data-t="contrib.editer">Modifier le registre des sources</a> <a class="bouton" rel="noopener" href="{{ site.depot }}/blob/main/.github/CONTRIBUTING.md" data-t="contrib.guide">Lire le guide</a></p>
+</details>
+<p class="updated" data-t="contrib.regles">Sources publiques uniquement (visibles sans se connecter), soirées et sorties de nuit. La publicité et les liens sans rapport sont fermés sans réponse.</p>
+
+<script>
+(function () {
+  var lis = document.querySelectorAll('#liste-recherchees li');
+  document.getElementById('filtres-niveau').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x === b); });
+    lis.forEach(function (li) { li.hidden = b.dataset.niveau !== '' && li.dataset.niveau !== b.dataset.niveau; });
+  });
+})();
+(function () {
+  // Une source « à jour » n'est montrée que si elle n'a rien annoncé depuis 30 jours (même règle que la page Santé).
+  var limite = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
+  document.querySelectorAll('#a-reparer-lignes tr[data-statut="ok"]').forEach(function (tr) {
+    if (tr.dataset.nouveau && tr.dataset.nouveau < limite) tr.hidden = false; else tr.remove();
+  });
+})();
+</script>

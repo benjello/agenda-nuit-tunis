@@ -1,0 +1,34 @@
+{%- comment -%}
+  Choix de la ville : Grand Tunis par défaut, mémorisé dans le navigateur.
+  Pose data-ville sur <html> ; le CSS cache les événements des autres villes, et la page
+  d'accueil écoute l'évènement « ville » pour recompter.
+{%- endcomment -%}
+{%- assign presentes = site.events | map: "ville" | compact | uniq -%}
+<div class="filters villes" id="villes" role="group" aria-label="Ville">
+  {%- for v in site.data.villes %}{% if include.toutes or presentes contains v.id or v.id == "tunis" %}<button data-ville="{{ v.id }}" data-t="ville.{{ v.id }}">{{ v.nom }}</button>{% endif %}{% endfor %}
+  <button data-ville="toutes" data-t="toute_tunisie">Toute la Tunisie</button>
+</div>
+<style>
+{%- for v in site.data.villes %}
+html[data-ville="{{ v.id }}"] .event:not([data-ville="{{ v.id }}"]) { display: none; }
+{%- endfor %}
+html[data-ville="tunis"] .event:not([data-ville]) { display: flex; }
+</style>
+<script>
+(function () {
+  var v = 'toutes';
+  try { v = localStorage.getItem('ville') || 'toutes'; } catch (e) {}
+  if (!document.querySelector('#villes button[data-ville="' + v + '"]')) v = 'toutes';
+  function choisir(x) {
+    document.documentElement.dataset.ville = x;
+    document.querySelectorAll('#villes button').forEach(function (b) { b.classList.toggle('active', b.dataset.ville === x); });
+    try { localStorage.setItem('ville', x); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('ville', { detail: x }));
+  }
+  document.getElementById('villes').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (b) choisir(b.dataset.ville);
+  });
+  choisir(v);
+})();
+</script>

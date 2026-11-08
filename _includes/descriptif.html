@@ -1,0 +1,6 @@
+{%- comment -%}
+  Petit descriptif discret d'une fiche. Paramètre : d (entrée de _data/descriptifs.json : texte, source, url).
+{%- endcomment -%}
+{%- if include.d %}
+<p class="descriptif">{{ include.d.texte | escape }}{% if include.d.source %} <small class="descriptif-source">· {% if include.d.url %}<a href="{{ include.d.url }}" rel="noopener">{{ include.d.source }}</a>{% else %}{{ include.d.source }}{% endif %}</small>{% endif %}</p>
+{%- endif %}

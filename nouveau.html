@@ -1,0 +1,18 @@
+---
+layout: default
+title: Nouveau cette semaine
+permalink: /nouveau/
+description: Les événements ajoutés à l'agenda ces sept derniers jours.
+---
+{%- assign evts = site.events | where_exp: "e", "e.doublon != true" | where_exp: "e", "e.film != true" | sort: "date" -%}
+<section class="intro">
+  <h1 data-t="nouveau_titre">Nouveau cette semaine</h1>
+  <p data-t="nouveau_intro">Ce qui est arrivé dans l'agenda ces sept derniers jours.</p>
+</section>
+{% include choix-ville.html %}
+<div class="liste-evenements" id="nouveautes" data-masquer-passes data-nouveaux>
+{%- for e in evts %}
+  {% include event-card.html event=e %}
+{%- endfor %}
+</div>
+<p class="empty" data-vide hidden data-t="rien_nouveau">Rien de nouveau cette semaine pour l'instant.</p>

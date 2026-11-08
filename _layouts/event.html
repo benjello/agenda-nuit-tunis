@@ -1,0 +1,107 @@
+---
+layout: default
+---
+{%- assign cat = site.data.categories[page.category] | default: site.data.categories.autre -%}
+{%- assign src = site.data.sources | where: "id", page.source | first -%}
+{%- assign billet = "" -%}{%- if src.type == "billetterie" -%}{%- assign billet = page.link -%}{%- endif -%}
+{%- for a in page.autres_sources -%}{%- assign s2 = site.data.sources | where: "id", a.source | first -%}{%- if billet == "" and s2.type == "billetterie" -%}{%- assign billet = a.link -%}{%- endif -%}{%- endfor -%}
+{%- assign heure = page.date | date: "%H:%M" -%}{%- if heure == "00:00" -%}{%- assign heure = "" -%}{%- endif -%}
+{%- assign heure_fin = page.end_time | default: "" -%}{%- if heure == "" -%}{%- assign heure_fin = "" -%}{%- endif -%}
+<article class="event-page event" data-date="{{ page.end_date | default: page.date | date: '%Y-%m-%d' }}" data-debut="{{ page.date | date: '%Y-%m-%d' }}" data-heure="{{ heure }}" data-heure-fin="{{ heure_fin }}" data-id="{{ page.url }}" data-titre="{{ page.title | escape }}" data-lieu="{{ page.venue | escape }}{% if page.address %}, {{ page.address | escape }}{% endif %}" data-lien="{{ page.url | absolute_url }}" data-couleur="{{ cat.color }}" data-categorie="{{ cat.label }}">
+  <p><a href="{{ '/' | relative_url }}" data-t="retour">← Retour à l'agenda</a></p>
+  {%- if page.image %}{% if page.image contains "://" %}{% assign img = page.image %}{% else %}{% assign img = page.image | relative_url %}{% endif %}
+  <img class="affiche-grande" src="{{ img }}" alt="Affiche : {{ page.title | escape }}" decoding="async">
+  {%- endif %}
+  <span class="tag" style="background: {{ cat.color }}" data-t="cat.{{ page.category | default: 'autre' }}">{{ cat.label }}</span>{% if page.famille %} <span class="tag famille" data-t="famille">En famille</span>{% endif %}{% if page.age %} <span class="tag age" data-tn="{% if page.age contains "-" %}age.plage{% else %}age.des{% endif %}" data-n="{{ page.age }}" data-tn-fr="{% if page.age contains "-" %}%n ans{% else %}dès %n ans{% endif %}">{% if page.age contains "-" %}{{ page.age }} ans{% else %}dès {{ page.age }} ans{% endif %}</span>{% endif %}{% for l in page.langues %} <span class="tag langue" data-t="langue.{{ l }}">{% case l %}{% when "ar" %}En arabe{% when "fr" %}En français{% when "en" %}En anglais{% when "vo" %}VO sous-titrée{% endcase %}</span>{% endfor %}
+  {%- assign tr = site.data.traductions.titres[page.title] -%}
+  <h1{% for l in tr %} data-tr-{{ l[0] }}="{{ l[1] | escape }}"{% endfor %}>{{ page.title }}</h1>
+  <dl class="details">
+    <dt data-t="quand">Quand</dt>
+    <dd>{% include date-fr.html date=page.date %}{% if heure_fin != "" %} – {{ heure_fin | replace: ":", "h" | replace: "h00", "h" }}{% endif %}{% if page.end_date %} → {% include date-fr.html date=page.end_date %}{% endif %}</dd>
+    <dt data-t="ou">Où</dt>
+    <dd>{% include lien-carte.html lieu=page.venue adresse=page.address %}{% if page.address %}<br><small>{{ page.address }}</small>{% endif %}</dd>
+    {% if page.price %}<dt data-t="prix">Prix</dt><dd>{{ page.price }}</dd>{% endif %}
+    {% if page.link %}<dt data-t="source">Source</dt><dd><a href="{{ page.link }}" rel="noopener">{{ page.source_name | default: page.link }}</a>{% for a in page.autres_sources %} · <a href="{{ a.link }}" rel="noopener">{{ a.name }}</a>{% endfor %}</dd>{% endif %}
+    {% if src %}{% if src.genre == "presse" %}<dt data-t="lu_dans">Article dans</dt>{% else %}<dt data-t="organisateur">Annoncé par</dt>{% endif %}<dd><a href="{% assign fiche = src.fiche | default: src.id %}{{ '/collectifs/' | append: fiche | append: '/' | relative_url }}">{{ src.nom }}</a></dd>{% endif %}
+  </dl>
+  <p class="actions grandes">
+    {%- if billet != "" %}<a class="billets" href="{{ billet }}" rel="noopener"><span data-t="billets">🎟 Billets</span>{% if page.price %} · {{ page.price }}{% endif %}</a>{% endif %}
+    <button type="button" class="ajout-agenda bouton" data-t="agenda_long">📅 Ajouter à mon agenda</button>
+    <a class="bouton google-agenda" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ page.title | url_encode }}&dates={{ page.date | date: '%Y%m%d' }}{% if heure != '' %}T{{ page.date | date: '%H%M' }}00{% endif %}/{% if page.end_date %}{{ page.end_date | date: '%Y%m%d' }}{% else %}{{ page.date | date: '%Y%m%d' }}{% endif %}{% if heure_fin != '' %}T{{ heure_fin | remove: ':' }}00{% elsif heure != '' %}T{{ page.date | date: '%H%M' }}00{% endif %}&ctz=Africa/Tunis&location={{ page.venue | append: ', ' | append: page.address | url_encode }}&details={{ page.url | absolute_url | url_encode }}">Google Agenda</a>
+    <button type="button" class="partager bouton" data-t="partager_long">↗ Partager</button>
+    <button type="button" class="fav bouton" data-t-title="favori" title="Garder en favori">☆</button>
+  </p>
+  {%- assign film = nil -%}{%- if page.film %}{% assign film = site.data.films | where_exp: "f", "f.fichiers contains page.path" | first %}{% endif -%}
+  {%- if film.presse.size > 0 %}
+  <aside class="presse-film">
+    <h2 data-t="presse_film">Ce qu'en dit la presse</h2>
+    <ul>
+      {%- for a in film.presse %}
+      <li><a href="{{ a.lien }}" rel="noopener">{{ a.titre }}</a> <small>· {{ a.source_nom }}{% if a.date %}, {% include date-fr.html date=a.date %}{% endif %}</small></li>
+      {%- endfor %}
+    </ul>
+  </aside>
+  {%- endif %}
+  {%- if page.presse.size > 0 %}
+  <aside class="presse-film">
+    <h2 data-t="presse_evt">Dans la presse</h2>
+    <ul>
+      {%- for a in page.presse %}
+      <li><a href="{{ a.lien }}" rel="noopener">{{ a.titre }}</a> <small>· {{ a.source_nom }}{% if a.date %}, {% include date-fr.html date=a.date %}{% endif %}</small></li>
+      {%- endfor %}
+    </ul>
+  </aside>
+  {%- endif %}
+  {%- capture sujet %}Erreur : {{ page.title | truncate: 80 }}{% endcapture -%}
+  <p class="signaler"><a href="{{ site.depot }}/issues/new?template=erreur.yml&title={{ sujet | url_encode }}&lien={{ page.url | absolute_url | url_encode }}" rel="noopener" data-t="signaler">⚑ Signaler une erreur</a>
+  {%- if site.contact_email != "" %} · <a href="mailto:{{ site.contact_email }}?subject={{ sujet | url_encode }}&body={{ page.url | absolute_url | url_encode }}" data-t="par_email">par e-mail</a>{% endif %}</p>
+  {%- assign notice = content | strip -%}
+  {%- if notice != "" %}
+  <div class="description" data-tr-origine>{{ content }}</div>
+  {%- assign trn = site.data.traductions.notices[page.path] -%}
+  {%- for l in trn %}{% if l[0] != "cle" %}
+  <div class="description" data-tr-bloc="{{ l[0] }}" lang="{{ l[0] }}" hidden>{{ l[1] | escape | newline_to_br }}</div>
+  {%- endif %}{% endfor %}
+  <p class="note-source">{% if page.notice_source %}<small>Texte : {{ page.notice_source }}.</small>{% else %}<small data-t="notice_source">Texte repris de l'annonce d'origine.</small>{% endif %}{% if trn %} <small class="note-trad" hidden data-t="traduction_auto">Traduction automatique.</small> <button type="button" class="voir-original lien-bouton" hidden data-t="voir_original">Voir le texte d'origine</button>{% endif %}</p>
+  {%- endif %}
+</article>
+{%- comment -%} Métadonnées schema.org : Google peut afficher l'événement dans ses résultats. {%- endcomment -%}
+{%- if heure != "" %}{% assign debut_iso = page.date | date: "%Y-%m-%dT%H:%M:00+01:00" %}{% else %}{% assign debut_iso = page.date | date: "%Y-%m-%d" %}{% endif -%}
+{%- assign prix_bas = page.price | default: "" | downcase -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.title | jsonify }},
+  "startDate": {{ debut_iso | jsonify }},
+  {%- if page.end_date %}
+  "endDate": {{ page.end_date | date: "%Y-%m-%d" | jsonify }},
+  {%- endif %}
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": {{ page.venue | default: "Tunis" | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      {%- if page.address %}
+      "streetAddress": {{ page.address | jsonify }},
+      {%- endif %}
+      "addressCountry": "TN"
+    }
+  },
+  {%- if page.image %}
+  "image": [{% if page.image contains "://" %}{{ page.image | jsonify }}{% else %}{{ page.image | absolute_url | jsonify }}{% endif %}],
+  {%- endif %}
+  {%- if prix_bas contains "gratuit" or prix_bas contains "free" or prix_bas contains "libre" %}
+  "isAccessibleForFree": true,
+  {%- endif %}
+  {%- if billet != "" %}
+  "offers": { "@type": "Offer", "url": {{ billet | jsonify }}{% if page.price %}, "description": {{ page.price | jsonify }}{% endif %}{% if page.price contains "Complet" %}, "availability": "https://schema.org/SoldOut"{% endif %} },
+  {%- endif %}
+  {%- if src %}
+  "organizer": { "@type": "Organization", "name": {{ src.nom | jsonify }}{% if src.url %}, "url": {{ src.url | jsonify }}{% endif %} },
+  {%- endif %}
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+</script>

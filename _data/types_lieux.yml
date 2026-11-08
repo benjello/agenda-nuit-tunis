@@ -1,0 +1,52 @@
+# Types de lieux : un filtre et un intertitre chacun sur la page Lieux, dans cet ordre.
+# Le type d'un lieu est lu dans son nom (« mots » : expressions régulières, sur le nom en minuscules
+# sans accents, et sur le nom tel quel pour l'arabe) ; la première règle qui convient l'emporte,
+# donc les salles précises (« Salle de cinéma, Institut français ») passent avant les institutions.
+# Sans mot reconnu, on prend l'étiquette OpenStreetMap (amenity=cinema, theatre…), sinon « autre ».
+types:
+  - id: cinema
+    nom: Cinémas
+    un: Cinéma
+    mots: ['\bcine', '\bpathe\b', 'سينما']
+  - id: theatre
+    nom: Théâtres et opéra
+    un: Théâtre
+    mots: ['\btheatre', '\bteatro\b', '\b4eme art\b', '\bopera\b', 'مسرح', 'الفن الرابع']
+  - id: musee
+    nom: Musées
+    un: Musée
+    mots: ['\bmusee', '\bmuseum', 'متحف']
+  - id: centre_art
+    nom: Centres d'art
+    un: Centre d'art
+    mots: ['\bcentre d.art\b', '\bart cent(?:re|er)\b', '\bcentre d.arts\b', 'مركز الفن']
+  - id: galerie
+    nom: Galeries
+    un: Galerie
+    mots: ['\bgalerie', '\bgallery', 'رواق']
+  - id: bibliotheque
+    nom: Médiathèques et librairies
+    un: Médiathèque
+    mots: ['\bmediatheque', '\bbibliotheque', '\blibrairie', 'مكتبة']
+  - id: club
+    nom: Clubs, bars et cafés
+    un: Club, bar
+    mots: ['\bclub\b', '\bbar\b', '\bcafe\b', '\bboite\b', '\blounge\b', '\bresort\b']
+  - id: centre
+    nom: Centres culturels et instituts
+    un: Centre culturel
+    mots: ['\binstitut', '\bcentre\b', '\bcenter\b', '\bcite de la culture\b', '\bcite des sciences\b',
+           '\bmaison\b', '\bdar\b', '\bbeit\b', '\bfondation\b', '\bespace\b', '\bauditorium\b', '\bcaserne\b',
+           '\bchapelle\b', '\bart rue\b', '\bagora\b', 'دار', 'مركز']
+  - id: autre
+    nom: Autres lieux
+    un: Lieu
+
+# Corrections à la main : « nom de la fiche » → type (cinema, theatre, musee, centre_art, galerie,
+# bibliotheque, club, centre, autre). Un type faux ? Proposez-le sur la page Proposer.
+lieux:
+  "La Boîte": centre_art
+  "B7L9 Art Centre": centre_art
+  "Shanti": club
+  "Sociale Sidi Bou Said": club
+  "L’Agora La Marsa": cinema

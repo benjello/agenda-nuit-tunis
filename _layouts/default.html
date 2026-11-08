@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#b5442f">
+  <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Agenda Tunis">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="icon" href="{{ '/assets/icones/icone-192.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/icones/icone-maskable-192.png' | relative_url }}">
+  {%- assign seo_titre = page.title | default: site.title -%}
+  {%- assign seo_desc = page.description | default: site.description -%}
+  {%- if page.layout == 'event' and page.description == nil %}{% capture seo_desc %}{{ page.date | date: '%d/%m/%Y' }} · {{ page.venue }}{% if page.address %}, {{ page.address }}{% endif %} — {{ site.description }}{% endcapture %}{% endif -%}
+  {%- if page.image %}{% if page.image contains '://' %}{% assign seo_image = page.image %}{% else %}{% assign seo_image = page.image | absolute_url %}{% endif %}{% else %}{% assign seo_image = '/assets/icones/icone-512.png' | absolute_url %}{% endif %}
+  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'event' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="{{ seo_titre | escape }}">
+  <meta property="og:description" content="{{ seo_desc | strip_html | escape }}">
+  <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  <meta property="og:image" content="{{ seo_image }}">
+  <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
+  <meta name="twitter:title" content="{{ seo_titre | escape }}">
+  <meta name="twitter:description" content="{{ seo_desc | strip_html | escape }}">
+  <meta name="twitter:image" content="{{ seo_image }}">
+  <script>
+    // Avant l'affichage : thème, affichage léger et langue choisis, pour éviter un clignotement.
+    (function (d) {
+      try {
+        var t = localStorage.getItem('theme'), l = localStorage.getItem('leger'), g = localStorage.getItem('langue');
+        if (t) d.dataset.theme = t;
+        if (l === '1') d.classList.add('leger');
+        if (g && g !== 'fr') { d.lang = g; d.dir = g === 'ar' ? 'rtl' : 'ltr'; }
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: "%Y%m%d%H%M" }}">
+</head>
+<body>
+  <a class="aller-contenu" href="#contenu" data-t="aller_contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}" data-t="titre_site">{{ site.title }}</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}" data-t="nav.agenda">Agenda</a>
+      <a href="{{ '/semaine/' | relative_url }}" data-t="nav.semaine">Cette semaine</a>
+      <a href="{{ '/week-end/' | relative_url }}" data-t="nav.weekend">Ce week-end</a>
+      <span class="nav-plus" id="menu-plus-zone">
+      <a href="{{ '/festivals/' | relative_url }}" data-t="nav.festivals">Festivals</a>
+      <a href="{{ '/lieux/' | relative_url }}" data-t="nav.lieux">Lieux</a>
+      <a href="{{ '/artistes/' | relative_url }}" data-t="nav.artistes">Artistes</a>
+      <a href="{{ '/a-propos/' | relative_url }}" data-t="nav.apropos">À propos</a>
+      </span>
+      <a class="nav-proposer" href="{{ '/proposer/' | relative_url }}" data-t="nav.proposer">+ Proposer</a>
+      <button type="button" class="bouton-menu" id="bouton-menu" aria-expanded="false" aria-controls="menu-plus-zone"><span data-t="menu_plus">Menu</span> ☰</button>
+    </nav>
+    <div class="reglages" role="group" aria-label="Réglages">
+      <span class="langues"><button type="button" data-langue="fr" lang="fr">FR</button><button type="button" data-langue="ar" lang="ar">عربي</button><button type="button" data-langue="en" lang="en">EN</button></span>
+      <button type="button" id="bouton-theme" title="Mode sombre ou clair" aria-label="Mode sombre ou clair">🌓</button>
+      <button type="button" id="bouton-leger" title="Affichage léger (sans images)" aria-label="Affichage léger">🍃</button>
+    </div>
+  </header>
+  <main id="contenu" tabindex="-1">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <p><span data-t="manque">Un événement manque ?</span> <a href="{{ '/proposer/' | relative_url }}" data-t="nav.proposer">Proposer un événement</a>.
+      · <a href="{{ '/contribuer/' | relative_url }}" data-t="nav.contribuer">Contribuer</a> · <a href="{{ '/sources/' | relative_url }}" data-t="nav.sources">Sources</a> · <a href="{{ '/carte/' | relative_url }}" data-t="nav.carte">Carte</a> · <a href="{{ '/nouveau/' | relative_url }}" data-t="nav.nouveau">Nouveau</a> · <a href="{{ '/archives/' | relative_url }}" data-t="nav.archives">Archives</a> · <a href="{{ '/couverture/' | relative_url }}" data-t="nav.couverture">Couverture</a> · <a href="{{ '/abonnements/' | relative_url }}" data-t="nav.abonner">S'abonner</a> · <a href="{{ '/api/' | relative_url }}">API</a></p>
+    <div class="installer" id="installer-zone" hidden>
+      <button type="button" class="bouton-installer" data-installer hidden data-t="installer.bouton">Installer l'application</button>
+      <details class="aide-installer" id="aide-installer" hidden>
+        <summary data-t="installer.bouton">Installer l'application</summary>
+        <p id="aide-ios" hidden data-t="installer.ios">Sur iPhone ou iPad (Safari) : touchez le bouton Partager, puis « Sur l'écran d'accueil ».</p>
+        <p id="aide-autre" hidden data-t="installer.autre">Dans le menu de votre navigateur, cherchez « Installer l'application » ou « Ajouter à l'écran d'accueil ». Firefox sur ordinateur ne sait pas installer le site : utilisez Chrome ou Edge.</p>
+      </details>
+    </div>
+  </footer>
+  <script>window.I18N = {{ site.data.i18n | jsonify }}; window.BASE = {{ '/' | relative_url | jsonify }};</script>
+  <script src="{{ '/assets/site.js' | relative_url }}?v={{ site.time | date: "%Y%m%d%H%M" }}"></script>
+</body>
+</html>

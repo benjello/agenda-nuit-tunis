@@ -1,0 +1,30 @@
+name: Recherche de sources Instagram
+
+# Lancement à la main : Actions → Recherche de sources Instagram → Run workflow.
+# Le résultat (comptes trouvés) est dans le journal de l'exécution. Rien n'est modifié.
+on:
+  workflow_dispatch:
+    inputs:
+      mots:
+        description: "Mots-clés séparés par des virgules (ex. gammarth club, la marsa bar)"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  chercher:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Chercher
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          MOTS: ${{ inputs.mots }}
+        run: |
+          IFS=',' read -ra liste <<< "$MOTS"
+          python3 -m scrapers.recherche_instagram "${liste[@]}"

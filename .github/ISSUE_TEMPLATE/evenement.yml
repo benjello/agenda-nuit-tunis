@@ -1,0 +1,61 @@
+name: Proposer un événement
+description: Annoncer gratuitement un concert, une expo, une projection, une rencontre… à Tunis.
+title: "Événement : "
+labels: ["proposition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Un membre de l'équipe vérifie la proposition, puis elle apparaît sur l'agenda.
+        Les petits lieux, collectifs et artistes sans billetterie sont les bienvenus.
+  - type: input
+    id: titre
+    attributes:
+      label: Titre
+      placeholder: "Concert de oud – Trio X"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date et heure
+      description: "Format AAAA-MM-JJ HH:MM. Pour plusieurs jours, la date de début."
+      placeholder: "2026-11-21 20:30"
+    validations:
+      required: true
+  - type: input
+    id: fin
+    attributes:
+      label: Date de fin (facultatif)
+      description: "Pour une expo ou un festival : AAAA-MM-JJ"
+  - type: input
+    id: lieu
+    attributes:
+      label: Lieu
+      placeholder: "Dar Lasram, Médina de Tunis"
+    validations:
+      required: true
+  - type: dropdown
+    id: categorie
+    attributes:
+      label: Catégorie
+      options: [Club, Discothèque, Cabaret, Concert live, Bar & lounge, Karaoké, Stand-up, Festival & open air, Autre soirée]
+    validations:
+      required: true
+  - type: input
+    id: prix
+    attributes:
+      label: Prix (facultatif)
+      placeholder: "Gratuit, 20 DT…"
+  - type: input
+    id: lien
+    attributes:
+      label: Lien
+      description: "Page Facebook, Instagram, billetterie… là où on trouve les détails."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description et affiche (facultatif)
+      description: "Quelques lignes. Vous pouvez glisser l'affiche ici."

@@ -1,0 +1,47 @@
+---
+layout: default
+title: S'abonner
+permalink: /abonnements/
+description: Recevoir l'agenda de la nuit dans son calendrier (Google Agenda, téléphone) ou dans un lecteur de flux, par catégorie ou par ville.
+---
+{%- comment -%}
+  Les calendriers sont des fichiers .ics reconstruits chaque jour avec le site (calendriers/*.ics).
+  webcal:// ouvre directement l'application Calendrier du téléphone ; le lien Google ajoute l'abonnement.
+{%- endcomment -%}
+<section class="intro">
+  <h1 data-t="abo.titre">S'abonner</h1>
+  <p data-t="abo.intro">Ajoutez l'agenda à votre calendrier : il se met à jour tout seul chaque jour. Choisissez tout l'agenda, une catégorie ou une ville.</p>
+</section>
+<div class="doc-api abonnements">
+<h2 data-t="abo.tout">Tout l'agenda</h2>
+<table class="sources">
+  {%- assign f = '/agenda.ics' | relative_url %}
+  <tr><td data-t="abo.tous_evts">Tous les événements</td><td>{% include lien-abonnement.html chemin=f %}</td></tr>
+</table>
+
+<h2 data-t="abo.par_cat">Par catégorie</h2>
+<table class="sources">
+  {%- for c in site.data.categories %}
+  {%- assign f = '/calendriers/' | append: c[0] | append: '.ics' | relative_url %}
+  <tr><td><span class="tag" style="background: {{ c[1].color }}" data-t="cat.{{ c[0] }}">{{ c[1].label }}</span></td><td>{% include lien-abonnement.html chemin=f %}</td></tr>
+  {%- endfor %}
+</table>
+
+<h2 data-t="abo.par_ville">Par ville</h2>
+<table class="sources">
+  {%- for v in site.data.villes %}
+  {%- assign f = '/calendriers/ville-' | append: v.id | append: '.ics' | relative_url %}
+  <tr><td data-t="ville.{{ v.id }}">{{ v.nom }}</td><td>{% include lien-abonnement.html chemin=f %}</td></tr>
+  {%- endfor %}
+</table>
+
+<h2 data-t="abo.rss">Fil RSS</h2>
+<p><span data-t="abo.rss_texte">Les derniers événements arrivés dans l'agenda, pour un lecteur de flux (Feedly, Inoreader…) ou un canal Telegram :</span> <a href="{{ '/feed.xml' | relative_url }}"><code>{{ '/feed.xml' | absolute_url }}</code></a></p>
+
+<h2 data-t="abo.comment">Comment faire</h2>
+<ul>
+  <li data-th="abo.aide_tel"><strong>Téléphone</strong> (iPhone, Android) : touchez « 📱 Calendrier », puis confirmez l'abonnement.</li>
+  <li data-th="abo.aide_google"><strong>Google Agenda</strong> : touchez « Google Agenda » sur un ordinateur ; l'agenda apparaît ensuite aussi sur le téléphone.</li>
+  <li data-th="abo.aide_autre"><strong>Outlook, autre</strong> : copiez l'adresse du fichier et collez-la dans « Ajouter un calendrier » → « Depuis Internet ».</li>
+</ul>
+</div>

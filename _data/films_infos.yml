@@ -1,0 +1,3 @@
+# Corrections à la main pour les films à l'affiche, quand Wikidata ne sait pas (films tunisiens récents surtout).
+# Le titre est celui de l'affiche ; accents et majuscules ne comptent pas.
+# Champs : tunisien (true/false), jeune (true : jeune public), genres [liste], age ("Tous publics", "-12"…)

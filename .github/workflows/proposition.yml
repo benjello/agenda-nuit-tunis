@@ -1,0 +1,49 @@
+name: Proposition validée
+
+# Quand un membre de l'équipe pose l'étiquette « valide » sur une issue « Proposer un événement »,
+# l'événement est ajouté à l'agenda (_events/propositions/) et l'issue est fermée.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  ajouter:
+    if: github.event.label.name == 'valide' && contains(github.event.issue.labels.*.name, 'proposition')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Écrire l'événement
+        id: ecrire
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: echo "fichier=$(python3 -m scrapers.propositions)" >> "$GITHUB_OUTPUT"
+      - name: Enregistrer
+        env:
+          FICHIER: ${{ steps.ecrire.outputs.fichier }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
+          git add "$FICHIER"
+          git commit -m "Événement proposé (#$NUMERO)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
+      - name: Fermer l'issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: gh issue close "$NUMERO" --repo "$GITHUB_REPOSITORY" --comment "Merci ! L'événement est ajouté à l'agenda, il apparaît sur le site dans quelques minutes."
+      - name: Signaler une erreur
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body "L'ajout automatique a échoué (date au format AAAA-MM-JJ HH:MM ?). Corrigez l'issue puis reposez l'étiquette « valide »."

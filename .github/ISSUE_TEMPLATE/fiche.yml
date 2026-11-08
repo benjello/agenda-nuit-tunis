@@ -1,0 +1,50 @@
+name: Ajouter ou corriger une fiche
+description: Un lieu, un artiste, un conférencier, un organisateur qui manque ; une information à ajouter ou à corriger sur une fiche.
+title: "Fiche : "
+labels: ["fiche"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Pour un événement précis, utilisez plutôt le formulaire « Proposer un événement » du site.
+  - type: dropdown
+    id: demande
+    attributes:
+      label: Ce que vous voulez faire
+      options: [Ajouter une fiche qui manque, Compléter ou corriger une fiche]
+    validations:
+      required: true
+  - type: dropdown
+    id: quoi
+    attributes:
+      label: De quoi s'agit-il ?
+      options: [Lieu, Artiste, Conférencier ou intervenant, Organisateur ou collectif, Festival, Musée, Autre]
+    validations:
+      required: true
+  - type: input
+    id: nom
+    attributes:
+      label: Nom
+      placeholder: "Théâtre Le 4ème Art, Emel Mathlouthi…"
+    validations:
+      required: true
+  - type: input
+    id: lien
+    attributes:
+      label: Fiche sur l'agenda (pour une correction)
+      description: "Remplie toute seule depuis le lien « Compléter ou corriger cette fiche »."
+  - type: textarea
+    id: infos
+    attributes:
+      label: Les informations
+      description: |
+        Ce qui manque ou ce qui est faux. Par exemple : type de lieu (cinéma, théâtre, galerie…), adresse,
+        artiste ou conférencier, autres façons d'écrire le nom (arabe, français), pages Facebook ou Instagram,
+        site web, page Wikipédia.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Où l'avez-vous vu ? (facultatif)
+      placeholder: "https://"

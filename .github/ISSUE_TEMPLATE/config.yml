@@ -1,0 +1,6 @@
+# Pas d'issue vide : chaque demande passe par un formulaire (moins de spam, demandes plus faciles à traiter).
+blank_issues_enabled: false
+contact_links:
+  - name: Sources recherchées
+    url: https://benjello.github.io/agenda-nuit-tunis/contribuer/
+    about: La liste des lieux et pages que l'agenda ne sait pas encore lire.

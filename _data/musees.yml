@@ -1,0 +1,10 @@
+# Musées de Tunisie, pour la page /musees/.
+#   nom    nom usuel
+#   ville  région du site (_data/villes.yml) : tunis, sousse, sfax, monastir, nabeul, bizerte, kairouan, sud, autres
+#   lieu   ville ou quartier
+#   genre  archeologie | arts-traditions | art | histoire | sciences
+#   mots   (facultatif) mots qui, dans le lieu d'un événement, désignent ce musée
+# Liste faite à la main (novembre 2026) : horaires et tarifs à vérifier auprès de chaque musée.
+# Un musée manque ? Ajoutez-le ici ou proposez-le sur la page « Proposer ».
+
+# Grand Tunis

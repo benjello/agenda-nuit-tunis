@@ -1,0 +1,44 @@
+---
+layout: default
+title: Soirées de Ramadan
+permalink: /ramadan/
+description: "Les soirées culturelles du Ramadan en Tunisie : festivals de la Médina, concerts, spectacles après la rupture du jeûne."
+---
+{%- assign r = site.data.ramadan -%}
+{%- assign debut = r.debut | date: "%Y-%m-%d" -%}{%- assign fin = r.fin | date: "%Y-%m-%d" -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | where_exp: "e", "e.film != true" | sort: "date" -%}
+<section class="intro">
+  <h1 data-t="ramadan_titre">Soirées de Ramadan</h1>
+  <p>Ramadan {{ r.annee }} : <span data-t="du">du</span> {% include date-fr.html date=r.debut %} <span data-t="au">au</span> {% include date-fr.html date=r.fin %}{% if r.estime %} <span data-t="ramadan_estime">(dates estimées, à confirmer)</span>{% endif %}.
+  <span id="ramadan-compte"></span></p>
+</section>
+{% include choix-ville.html %}
+<div class="liste-evenements" id="ramadan-liste" data-masquer-passes>
+{%- for e in events -%}
+  {%- assign d1 = e.date | date: "%Y-%m-%d" -%}{%- assign d2 = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+  {%- if d2 >= debut and d1 <= fin -%}
+    {%- assign h = e.date | date: "%H:%M" -%}{%- assign t = e.title | downcase -%}
+    {%- assign garde = false -%}
+    {%- if h >= r.heure_soiree -%}{%- assign garde = true -%}{%- endif -%}
+    {%- for m in r.mots -%}{%- if t contains m -%}{%- assign garde = true -%}{%- endif -%}{%- endfor -%}
+    {%- if garde %}
+  {% include event-card.html event=e %}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor %}
+</div>
+<p class="empty" data-vide hidden data-t="ramadan_vide">Le programme arrive en général une ou deux semaines avant le début du mois : les soirées annoncées apparaîtront ici.</p>
+<h2 data-t="ramadan_habituels">Les rendez-vous habituels</h2>
+<ul class="liste-fiches">
+{%- for x in r.rendez_vous %}
+  <li>{% if x.festival %}<a href="{{ '/festivals/' | relative_url }}#{{ x.festival }}">{{ x.nom }}</a>{% else %}{{ x.nom }}{% endif %} <small>{{ x.lieu }}</small></li>
+{%- endfor %}
+</ul>
+<script>
+(function () {
+  var debut = new Date({{ debut | jsonify }} + 'T00:00:00'), auj = new Date();
+  var j = Math.ceil((debut - auj) / 864e5), c = document.getElementById('ramadan-compte');
+  if (j > 1) { c.dataset.tn = 'fest.dans_n'; c.dataset.tnFr = 'Dans %n jours'; c.dataset.n = j; c.textContent = 'Dans ' + j + ' jours'; }
+  else if (j === 1) { c.dataset.tn = 'demain'; c.textContent = 'Demain'; }
+})();
+</script>

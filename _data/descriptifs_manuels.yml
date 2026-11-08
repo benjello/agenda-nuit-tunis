@@ -1,0 +1,15 @@
+# Descriptifs écrits à la main : ils passent devant ceux trouvés automatiquement
+# (page de l'annonce, Wikipédia, TMDb). Deux ou trois phrases suffisent.
+#
+#   evenements  nom du fichier de l'événement sans .md (ex. 2026-11-07-concert-oud-el-teatro)
+#   films       id du film dans _data/films.json (ex. bakma)
+#   lieux       nom du fichier dans _lieux/ sans .md (ex. cinema-le-colisee)
+#   festivals   id dans _data/festivals.yml (ex. jcc)
+#   musees      nom exact dans _data/musees.yml
+#   artistes    nom du fichier dans _artistes/ sans .md (ex. anouar-brahem), à corriger en cas d'homonyme
+#   collectifs  nom du fichier dans _collectifs/ sans .md (ex. cine-agora)
+#
+# Exemple :
+# lieux:
+#   cinema-le-colisee: >-
+#     Salle historique de l'avenue Bourguiba, ouverte en 1952, qui programme films tunisiens et sorties internationales.

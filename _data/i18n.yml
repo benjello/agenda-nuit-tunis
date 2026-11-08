@@ -1,0 +1,456 @@
+# Traductions de l'interface (les titres des événements restent dans la langue de la source).
+# Une clé = un texte du site, repéré par data-t="clé" dans les pages ; le français est le texte de la page.
+titre_site: { ar: "تونايت تونس", en: "ToNight Tunis" }
+nav.agenda: { ar: "الأجندا", en: "Agenda" }
+nav.weekend: { ar: "نهاية الأسبوع", en: "This weekend" }
+nav.semaine: { ar: "هذا الأسبوع", en: "This week" }
+sem.titre: { ar: "هذا الأسبوع", en: "This week" }
+sem.intro: { ar: "الأيام السبعة القادمة، يوما بيوم. المعارض المفتوحة حاليا مرتبة في اليوم (ولا تدخل في رسالة واتساب).", en: "The next seven days, day by day. Exhibitions already open are listed under today (they are left out of the WhatsApp message)." }
+sem.whatsapp: { ar: "💬 شارك على واتساب", en: "💬 Share on WhatsApp" }
+sem.copier: { ar: "📋 انسخ النص", en: "📋 Copy the text" }
+sem.vide: { ar: "لا شيء معلن لهذا الأسبوع حاليا.", en: "Nothing announced for this week yet." }
+nav.festivals: { ar: "المهرجانات", en: "Festivals" }
+nav.lieux: { ar: "الفضاءات", en: "Venues" }
+nav.artistes: { ar: "الفنانون", en: "Artists" }
+nav.apropos: { ar: "من نحن", en: "About" }
+nav.sources: { ar: "المصادر", en: "Sources" }
+nav.carte: { ar: "الخريطة", en: "Map" }
+carte.auj: { ar: "اليوم", en: "Today" }
+carte.sept: { ar: "7 أيام", en: "7 days" }
+carte.tout: { ar: "الكل", en: "All" }
+nav.nouveau: { ar: "جديد", en: "New" }
+nav.archives: { ar: "الأرشيف", en: "Archives" }
+arch.titre: { ar: "الأرشيف", en: "Archives" }
+arch.intro: { ar: "الأنشطة الماضية، محفوظة منذ نوفمبر 2026. ابحث عن فنان، فضاء، مهرجان…", en: "Past events, kept since November 2026. Search for an artist, a venue, a festival…" }
+arch.chercher: { fr: "Chercher dans les archives…", ar: "ابحث في الأرشيف…", en: "Search the archives…" }
+arch.vide: { ar: "لم نجد شيئا في الأرشيف.", en: "Nothing found in the archives." }
+arch.toutes: { ar: "الكل", en: "All" }
+nav.musees: { ar: "المتاحف", en: "Museums" }
+musees_titre: { ar: "متاحف تونس", en: "Museums in Tunisia" }
+musees_intro: { ar: "متاحف كامل البلاد حسب الجهة، مع ما تعلن عنه.", en: "Museums across the country, by region, with what they announce." }
+musees_gratuit: { ar: "الدخول مجاني غالبا يوم الأحد الأول من كل شهر: تثبتوا من إعلان المتحف.", en: "Entry is often free on the first Sunday of the month: check the museum's announcement." }
+nav.couverture: { ar: "التغطية", en: "Coverage" }
+intro_titre: { ar: "وين نسهرو الليلة؟", en: "Where to go out tonight?" }
+intro_texte: { ar: "نوادٍ، ملاهٍ ليلية، كباريهات، حفلات، ستاند أب… كل سهرات تونس في مكان واحد.", en: "Clubs, nightclubs, cabarets, concerts, stand-up… every night out in Tunisia in one place." }
+cat.club: { ar: "نوادي", en: "Club" }
+cat.discotheque: { ar: "ملاهي ليلية", en: "Nightclub" }
+cat.cabaret: { ar: "كباريه", en: "Cabaret" }
+cat.concert: { ar: "حفلات حية", en: "Live music" }
+cat.bar: { ar: "حانات ولاونج", en: "Bars & lounges" }
+cat.karaoke: { ar: "كاريوكي", en: "Karaoke" }
+cat.humour: { ar: "ستاند أب", en: "Stand-up" }
+cat.festival: { ar: "مهرجانات وسهرات في الهواء الطلق", en: "Festivals & open air" }
+cat.autre: { ar: "سهرات أخرى", en: "Other nights" }
+recherche: { fr: "Chercher un DJ, un club, une soirée…", ar: "ابحث عن دي جي، نادٍ، سهرة…", en: "Search a DJ, a club, a night…" }
+toute_tunisie: { ar: "كل تونس", en: "All Tunisia" }
+tout: { ar: "الكل", en: "All" }
+jusquau: { ar: "إلى غاية", en: "until" }
+moment.tout: { ar: "في أي وقت", en: "Any time" }
+moment.aujourdhui: { ar: "اليوم", en: "Today" }
+moment.soir: { ar: "هذا المساء", en: "Tonight" }
+moment.demain: { ar: "غدا", en: "Tomorrow" }
+moment.semaine: { ar: "هذا الأسبوع", en: "This week" }
+moment.weekend: { ar: "نهاية الأسبوع", en: "Weekend" }
+seul_gratuit: { ar: "مجاني", en: "Free" }
+seul_famille: { ar: "مع العائلة", en: "Family" }
+seul_favoris: { ar: "مفضلاتي", en: "My favourites" }
+nouveautes: { fr: "✨ {n} nouveautés cette semaine →", ar: "✨ {n} جديد هذا الأسبوع ←", en: "✨ {n} new this week →" }
+au_cinema: { ar: "في السينما", en: "At the cinema" }
+famille: { ar: "للعائلة", en: "Family" }
+billets: { ar: "🎟 التذاكر", en: "🎟 Tickets" }
+gratuit: { ar: "مجاني", en: "Free" }
+annonce: { ar: "الإعلان", en: "See the post" }
+infos: { ar: "تفاصيل أكثر", en: "More info" }
+seances: { ar: "عروض", en: "screenings" }
+favori: { fr: "Garder en favori", ar: "إضافة إلى المفضلة", en: "Save as favourite" }
+agenda: { fr: "Ajouter à mon agenda", ar: "أضف إلى رزنامتي", en: "Add to my calendar" }
+lib_apercu: { fr: "Aperçu", ar: "معاينة", en: "Preview" }
+lib_favori: { fr: "Favori", ar: "مفضلة", en: "Save" }
+lib_agenda: { fr: "Agenda", ar: "رزنامة", en: "Calendar" }
+lib_partager: { fr: "Partager", ar: "مشاركة", en: "Share" }
+menu_plus: { fr: "Menu", ar: "القائمة", en: "Menu" }
+aller_contenu: { fr: "Aller au contenu", ar: "انتقل إلى المحتوى", en: "Skip to content" }
+filtres_bouton: { fr: "Filtres", ar: "تصفية", en: "Filters" }
+compteur_un: { fr: "1 événement", ar: "حدث واحد", en: "1 event" }
+compteur_n: { fr: "{n} événements", ar: "{n} حدثًا", en: "{n} events" }
+quartier_titre: { fr: "Quartier", ar: "الحي", en: "Neighbourhood" }
+quartier_tous: { fr: "Tous les quartiers", ar: "كل الأحياء", en: "All neighbourhoods" }
+bande_tout: { fr: "Tout", ar: "الكل", en: "All" }
+bande_jours: { fr: "Choisir un jour", ar: "اختر يوما", en: "Pick a day" }
+f_plus: { fr: "Plus de détails (facultatif)", ar: "مزيد من التفاصيل (اختياري)", en: "More details (optional)" }
+tout_effacer: { fr: "Tout effacer", ar: "مسح الكل", en: "Clear all" }
+partager: { fr: "Partager", ar: "مشاركة", en: "Share" }
+agenda_long: { ar: "📅 أضف إلى رزنامتي", en: "📅 Add to my calendar" }
+partager_long: { ar: "↗ مشاركة", en: "↗ Share" }
+retour: { ar: "→ العودة إلى الأجندا", en: "← Back to the agenda" }
+quand: { ar: "متى", en: "When" }
+ou: { ar: "أين", en: "Where" }
+prix: { ar: "السعر", en: "Price" }
+source: { ar: "المصدر", en: "Source" }
+organisateur: { ar: "أعلن عنه", en: "Announced by" }
+notice_source: { ar: "النص مأخوذ من الإعلان الأصلي.", en: "Text taken from the original announcement." }
+tous_lieux: { ar: "→ كل الفضاءات", en: "← All venues" }
+tous_collectifs: { ar: "→ الفنانون والمحاضرون والمنظمون", en: "← Artists, speakers and organisers" }
+voir_carte: { ar: "على الخريطة", en: "See on the map" }
+a_venir: { ar: "قريبا", en: "Coming up" }
+rien_a_venir: { ar: "لا شيء معلن حاليا.", en: "Nothing announced yet." }
+site_web: { ar: "الموقع", en: "Website" }
+lieux_titre: { ar: "الفضاءات", en: "Venues" }
+lieux_intro: { ar: "نوادٍ وملاهٍ وكباريهات وحانات لها سهرات معلنة.", en: "Clubs, nightclubs, cabarets and bars with a night announced." }
+voir_carte_lieux: { ar: "🗺 الخريطة", en: "🗺 See the map" }
+collectifs_titre: { ar: "الفنانون والمحاضرون والمنظمون", en: "Artists, speakers and organisers" }
+collectifs_intro: { ar: "كل بطاقة تعرض ما أعلنوا عنه. اسم ناقص؟ أعلمونا عبر الرابط أسفل الصفحة.", en: "Each page shows what they have announced. A name is missing? Tell us with the link at the bottom of the page." }
+artistes: { ar: "فنانون", en: "Artists" }
+conferenciers: { ar: "محاضرون ومتدخلون", en: "Speakers" }
+conferenciers_intro: { ar: "من نأتي للاستماع إليهم: محاضرات، لقاءات، نقاشات، مقاهي فلسفية.", en: "People you come to hear: talks, meet-the-author events, debates, philosophy cafés." }
+conferencier: { ar: "محاضرات ولقاءات", en: "Talks and meetings" }
+type_lieu.cinema: { ar: "قاعات السينما", en: "Cinemas" }
+type_lieu.theatre: { ar: "المسارح والأوبرا", en: "Theatres and opera" }
+type_lieu.musee: { ar: "المتاحف", en: "Museums" }
+type_lieu.centre_art: { ar: "مراكز الفن", en: "Art centres" }
+type_lieu.galerie: { ar: "الأروقة", en: "Galleries" }
+type_lieu.bibliotheque: { ar: "المكتبات", en: "Libraries and bookshops" }
+type_lieu.club: { ar: "النوادي والحانات والمقاهي", en: "Clubs, bars and cafés" }
+type_lieu.centre: { ar: "المراكز الثقافية والمعاهد", en: "Cultural centres and institutes" }
+type_lieu.autre: { ar: "فضاءات أخرى", en: "Other venues" }
+type_lieu_un.cinema: { ar: "سينما", en: "Cinema" }
+type_lieu_un.theatre: { ar: "مسرح", en: "Theatre" }
+type_lieu_un.musee: { ar: "متحف", en: "Museum" }
+type_lieu_un.centre_art: { ar: "مركز فني", en: "Art centre" }
+type_lieu_un.galerie: { ar: "رواق", en: "Gallery" }
+type_lieu_un.bibliotheque: { ar: "مكتبة", en: "Library" }
+type_lieu_un.club: { ar: "نادي، حانة", en: "Club, bar" }
+type_lieu_un.centre: { ar: "مركز ثقافي", en: "Cultural centre" }
+fiche.corriger: { ar: "✎ أكمل أو صحح هذه البطاقة", en: "✎ Complete or correct this page" }
+fiche.manque_lieu: { ar: "فضاء ناقص، أو معلومة خاطئة؟", en: "A venue is missing, or something is wrong?" }
+fiche.manque_artiste: { ar: "فنان أو محاضر أو منظم ناقص، أو معلومة خاطئة؟", en: "An artist, speaker or organiser is missing, or something is wrong?" }
+fiche.signaler: { ar: "أعلمونا", en: "Tell us" }
+proposer_fiche: { ar: "اسم ناقص أو معلومة خاطئة؟", en: "A name is missing, or something is wrong?" }
+proposer_fiche_texte: { ar: "فضاء، فنان، محاضر أو منظم غير موجود في الأجندا، أو بطاقة ينقصها شيء (نوع الفضاء، العنوان، الروابط…): أعلمونا.", en: "A venue, artist, speaker or organiser missing from the agenda, or a page that lacks something (type of venue, address, links…): tell us." }
+proposer_fiche_ajouter: { ar: "➕ إضافة بطاقة", en: "➕ Add a page" }
+proposer_fiche_corriger: { ar: "✎ تصحيح بطاقة", en: "✎ Correct a page" }
+organisateurs: { ar: "منظمون، فضاءات ومجموعات", en: "Organisers, venues and collectives" }
+genre.lieu: { ar: "الفضاءات", en: "Venues" }
+genre.institution: { ar: "المعاهد والمراكز الثقافية", en: "Cultural institutes and centres" }
+genre.festival: { ar: "المهرجانات", en: "Festivals" }
+genre.collectif: { ar: "مجموعات وجمعيات وفنانون", en: "Collectives, associations, DJs and artists" }
+genre.administration: { ar: "المندوبيات الجهوية للثقافة", en: "Regional culture offices" }
+genre.agenda: { ar: "أجندات ومنصات تذاكر", en: "Listings and ticketing" }
+genre.presse: { ar: "الصحف", en: "Newspapers" }
+traduction_auto: { ar: "ترجمة آلية.", en: "Machine translation." }
+lieu_preciser: { ar: "المكان سيُحدَّد لاحقًا", en: "Venue to be announced" }
+voir_annonce: { ar: "انظر الإعلان", en: "see the announcement" }
+voir_article: { ar: "انظر المقال", en: "see the article" }
+voir_original: { ar: "عرض النص الأصلي", en: "See the original text" }
+voir_traduction: { ar: "عرض الترجمة", en: "See the translation" }
+lu_dans: { ar: "مقال في", en: "Read in" }
+fest.presse: { ar: "رُصدت في الصحافة", en: "Spotted in the press" }
+presse_evt: { ar: "في الصحافة", en: "In the press" }
+presse_film: { ar: "ماذا تقول الصحافة", en: "What the press says" }
+nouveau_titre: { ar: "جديد هذا الأسبوع", en: "New this week" }
+nouveau_intro: { ar: "ما أضيف إلى الأجندا في الأيام السبعة الأخيرة.", en: "What arrived in the agenda over the last seven days." }
+rien_nouveau: { ar: "لا جديد هذا الأسبوع.", en: "Nothing new this week yet." }
+carte_titre: { ar: "خريطة الفضاءات", en: "Venue map" }
+carte_intro: { ar: "اضغط على فضاء لترى برمجته.", en: "Tap a venue to see what's on." }
+liste_lieux: { ar: "قائمة الفضاءات", en: "Venue list" }
+carte_vide: { ar: "الخريطة تكتمل يوما بعد يوم.", en: "The map fills up day by day." }
+manque: { ar: "ينقص نشاط؟", en: "An event is missing?" }
+proposer: { ar: "اقترح مصدرا", en: "Suggest a source" }
+aucun: { ar: "لا شيء قادم حاليا.", en: "Nothing coming up yet." }
+films_tous: { ar: "كل الأفلام", en: "All films" }
+films_tunisiens: { ar: "أفلام تونسية", en: "Tunisian films" }
+films_jeunes: { ar: "للصغار", en: "Young audience" }
+copier: { fr: "Copier le lien", ar: "نسخ الرابط", en: "Copy link" }
+copie: { fr: "Lien copié", ar: "تم النسخ", en: "Link copied" }
+image: { fr: "Télécharger l'image", ar: "تحميل الصورة", en: "Download image" }
+fermer: { fr: "Fermer", ar: "إغلاق", en: "Close" }
+en_ce_moment: { ar: "حاليا", en: "Now on" }
+signaler: { ar: "⚑ الإبلاغ عن خطأ", en: "⚑ Report an error" }
+par_email: { ar: "بالبريد", en: "by e-mail" }
+proposer_titre: { ar: "اقترح نشاطا", en: "Suggest an event" }
+proposer_intro: { ar: "مجانا. الفضاءات الصغيرة والمجموعات والفنانون مرحب بهم. نتثبت ثم ينشر النشاط في الأجندا.", en: "It's free. Small venues, collectives and artists are welcome. We check it, then it appears on the agenda." }
+f_titre: { ar: "العنوان", en: "Title" }
+f_date: { ar: "التاريخ", en: "Date" }
+f_heure: { ar: "الساعة", en: "Time" }
+f_fin: { ar: "تاريخ النهاية (معرض، مهرجان)", en: "End date (exhibition, festival)" }
+f_lieu: { ar: "المكان", en: "Venue" }
+f_categorie: { ar: "الصنف", en: "Category" }
+f_prix: { ar: "السعر", en: "Price" }
+f_lien: { ar: "رابط (فيسبوك، إنستغرام، تذاكر)", en: "Link (Facebook, Instagram, tickets)" }
+f_description: { ar: "بضعة أسطر للتعريف", en: "A few lines of description" }
+f_github: { ar: "إرسال (حساب GitHub)", en: "Send (GitHub account)" }
+f_email: { ar: "إرسال بالبريد", en: "Send by e-mail" }
+f_aide: { ar: "يفتح الإرسال صفحة GitHub معبأة مسبقا.", en: "Sending opens a pre-filled GitHub page: just click « Submit new issue »." }
+proposer_source: { ar: "تنشر باستمرار؟", en: "You post often?" }
+proposer_source_texte: { ar: "أعطنا عنوان صفحتك وستقرؤها الأجندا كل يوم.", en: "Give us your page's address and the agenda will read it every day." }
+proposer_source_bouton: { ar: "اقترح مصدرا", en: "Suggest a source" }
+nav.proposer: { ar: "اقترح نشاطا", en: "Add an event" }
+ramadan_bandeau: { fr: "🌙 Soirées de Ramadan : le programme →", ar: "🌙 سهرات رمضان: البرنامج ←", en: "🌙 Ramadan nights: the programme →" }
+ramadan_titre: { ar: "سهرات رمضان", en: "Ramadan nights" }
+# Régions, genres de musées et de sources
+ville.tunis: { ar: "تونس الكبرى", en: "Greater Tunis" }
+ville.sousse: { ar: "سوسة", en: "Sousse" }
+ville.sfax: { ar: "صفاقس", en: "Sfax" }
+ville.monastir: { ar: "المنستير", en: "Monastir" }
+ville.nabeul: { ar: "نابل والحمامات", en: "Nabeul and Hammamet" }
+ville.bizerte: { ar: "بنزرت", en: "Bizerte" }
+ville.kairouan: { ar: "القيروان", en: "Kairouan" }
+ville.sud: { ar: "الجنوب (جربة، قابس، توزر…)", en: "South (Djerba, Gabès, Tozeur…)" }
+ville.autres: { ar: "جهات أخرى", en: "Other regions" }
+musee.archeologie: { ar: "آثار", en: "Archaeology" }
+musee.arts-traditions: { ar: "فنون وتقاليد شعبية", en: "Folk arts and traditions" }
+musee.art: { ar: "فنون", en: "Art" }
+musee.histoire: { ar: "تاريخ", en: "History" }
+musee.sciences: { ar: "علوم", en: "Science" }
+musees_note: { ar: "قائمة معدة يدويا: تثبتوا من التوقيت والأسعار لدى كل متحف. ينقص متحف؟ <a href=\"{base}proposer/\">أخبرونا</a>.", en: "List made by hand: check opening hours and prices with each museum. A museum is missing? <a href=\"{base}proposer/\">Tell us</a>." }
+genre.manuel: { ar: "إضافات يدوية", en: "Added by hand" }
+billetterie: { ar: "تذاكر", en: "ticketing" }
+# Accueil et week-end
+films_affiche_dans: { ar: "فيلما في القاعات، في", en: "films showing in" }
+salles_fleche: { ar: "قاعة ←", en: "cinemas →" }
+films_choisir_jour: { ar: "فيلما في القاعات، اختر اليوم ←", en: "films showing, pick a day →" }
+we_intro: { ar: "ما يحدث في تونس من الجمعة إلى الأحد. تفاصيل كل نشاط في مصدره.", en: "What's on in Tunis from Friday to Sunday. Each event's details are on its source." }
+we_vide: { ar: "لا شيء معلن لهذه العطلة حتى الآن.", en: "Nothing announced for this weekend yet." }
+demain: { ar: "غدا", en: "Tomorrow" }
+# Festivals
+fest_intro: { ar: "تعرف مواعيد المهرجانات الكبرى قبل أشهر، لكن برامجها تصدر غالبا قبل أيام قليلة. هنا نقول ما هو مؤكد وما ليس كذلك بعد. تنشر البرامج أولا على فيسبوك وإنستغرام. <a href=\"{base}ramadan/\">🌙 سهرات رمضان</a>", en: "The dates of the big festivals are known months ahead, but their programmes often come out only a few days before. Here we say what is confirmed and what is not yet. Programmes appear first on Facebook and Instagram. <a href=\"{base}ramadan/\">🌙 Ramadan nights</a>" }
+fest.programme_publie: { ar: "البرنامج منشور", en: "Programme published" }
+fest.estimee: { ar: "تاريخ تقديري (رمضان)، في انتظار التأكيد.", en: "Estimated date (Ramadan), to be confirmed." }
+fest.confirmees: { ar: "مواعيد مؤكدة", en: "Confirmed dates" }
+fest.pas_annoncees: { ar: "لم تعلن المواعيد بعد.", en: "Dates not announced yet." }
+fest.pas_programme: { ar: "البرنامج لم ينشر بعد (تم التثبت في 1 نوفمبر).", en: "Programme not published yet (checked on 1 November)." }
+fest.dans_agenda: { ar: "في الأجندا", en: "In the agenda" }
+fest_note: { ar: "ينقص مهرجان، أو صدر برنامجه؟ <a href=\"{base}a-propos/#proposer\">أخبرونا</a>.", en: "A festival is missing, or its programme is out? <a href=\"{base}a-propos/#proposer\">Tell us</a>." }
+fest.dates_a_venir: { ar: "المواعيد قريبا", en: "Dates to come" }
+fest.termine: { ar: "انتهى", en: "Over" }
+fest.en_cours: { ar: "جار الآن", en: "On now" }
+fest.dans_n: { ar: "بعد %n أيام", en: "In %n days" }
+# Ramadan
+ramadan_vide: { ar: "يصدر البرنامج عادة قبل أسبوع أو أسبوعين من بداية الشهر: ستظهر السهرات المعلنة هنا.", en: "The programme usually comes out one or two weeks before the month starts: announced nights will appear here." }
+ramadan_habituels: { ar: "المواعيد المعتادة", en: "The usual events" }
+ramadan_estime: { ar: "(مواعيد تقديرية، في انتظار التأكيد)", en: "(estimated dates, to be confirmed)" }
+# Sources et santé
+sources_titre: { ar: "مصادرنا", en: "Our sources" }
+sources_intro: { ar: "تعيد الأجندا قراءة هذه المواقع كل يوم، حيث تعلن الفضاءات ومواقع التذاكر برامجها. كل نشاط يحيل إلى مصدره.", en: "Every day the agenda rereads these sites, where venues and ticketing sites announce their programmes. Each event links to its source." }
+sources.p1: { ar: "تفاصيل كل مصدر (آخر جديد، الأخطاء، المصادر الصامتة) في صفحة <a href=\"{base}sante/\">حالة المصادر</a>.", en: "Each source's details (latest news, errors, silent sources) are on the <a href=\"{base}sante/\">Source health</a> page." }
+sources.p2: { ar: "بيانات الأجندا مفتوحة: انظر <a href=\"{base}a-propos/#donnees\">البيانات المفتوحة</a>.", en: "The agenda's data is open: see <a href=\"{base}a-propos/#donnees\">Open data</a>." }
+sources.p3: { ar: "تعرف موقعا موثوقا يعلن عن أنشطة؟ <a href=\"{base}a-propos/#proposer\">اقترحه</a>.", en: "Know a reliable site that announces events? <a href=\"{base}a-propos/#proposer\">Suggest it</a>." }
+col.genre: { ar: "النوع", en: "Type" }
+col.etat: { ar: "الحالة", en: "Status" }
+col.sur_site: { ar: "في الموقع", en: "On the site" }
+col.nouveaute: { ar: "آخر جديد", en: "Latest news" }
+col.lecture: { ar: "آخر قراءة", en: "Last read" }
+col.evenement: { ar: "النشاط", en: "Event" }
+col.probleme: { ar: "المشكلة", en: "Problem" }
+etat.a_etudier: { ar: "قيد الدرس", en: "to study" }
+etat.en_attente: { ar: "في الانتظار", en: "waiting" }
+etat.pas_lue: { ar: "لم تقرأ بعد", en: "not read yet" }
+etat.a_jour: { ar: "محدث", en: "up to date" }
+etat.en_panne: { ar: "معطل", en: "broken" }
+etat.dernier_succes: { ar: "آخر نجاح في", en: "last success on" }
+etat.en_pause: { ar: "متوقف", en: "paused" }
+etat.rien: { ar: "لا شيء قادم", en: "nothing upcoming" }
+etat.jamais: { ar: "أبدا", en: "never" }
+etat.silencieuse: { ar: "صامت", en: "silent" }
+films: { ar: "أفلام", en: "films" }
+evenements: { ar: "أنشطة", en: "events" }
+sante_titre: { ar: "حالة المصادر", en: "Source health" }
+sante_intro: { ar: "يعاد قراءة كل مصدر آليا. هنا نرى المصادر التي تعمل، والتي لم تعلن شيئا منذ مدة (فضاء مغلق، حساب تغير؟) والمعطلة أو المتوقفة. كل مساعدة لإصلاح مصدر مرحب بها.", en: "Each source is reread automatically. Here you see the ones that work, the ones that have announced nothing for a long time (venue closed, account changed?) and the ones that are broken or paused. Any help fixing a source is welcome." }
+sante.toutes: { ar: "الكل", en: "All" }
+sante.ko: { ar: "معطلة", en: "Broken" }
+sante.silence: { ar: "صامتة", en: "Silent" }
+sante.vide: { ar: "لا شيء قادم", en: "Nothing upcoming" }
+sante.ok: { ar: "بها أنشطة", en: "With events" }
+sante.pause: { ar: "متوقفة", en: "Paused" }
+sante.r_ok: { ar: "بها أنشطة", en: "with events" }
+sante.r_vide: { ar: "بلا شيء قادم", en: "with nothing upcoming" }
+sante.r_silence: { ar: "صامتة", en: "silent" }
+sante.r_ko: { ar: "معطلة", en: "broken" }
+sante.r_pause: { ar: "متوقفة", en: "paused" }
+sante.r_attente: { ar: "في الانتظار", en: "waiting" }
+sante_note: { ar: "« صامت »: يقرأ المصدر جيدا لكنه لم يعلن شيئا منذ أكثر من 30 يوما. المصادر المتوقفة معروفة لكنها لم توصل بعد، أو عنوانها يحتاج تثبتا (انظر <code>_data/sources.yml</code>).", en: "“Silent”: the source reads fine but has announced nothing for more than 30 days. Paused sources are known but not connected yet, or their address needs checking (see <code>_data/sources.yml</code>)." }
+sante.a_verifier: { ar: "مداخل للتثبت", en: "Entries to check" }
+col.precision: { ar: "الدقة: ما ينقص", en: "Precision: what is missing" }
+col.scraper: { ar: "نوع المصدر", en: "Type of source (scraper)" }
+sante.granularite: { ar: "الدقة حسب نوع المصدر", en: "Precision by type of source" }
+sante.granularite_intro: { ar: "يكون المدخل دقيقا عندما يكون نشاطا مسمى (فيلم بعروضه، معرض بتواريخه)، برابط إلى صفحته الخاصة وفضاء معروف. يبين هذا الجدول، لكل طريقة قراءة، نسبة المداخل الدقيقة وما ينقصها: هناك يجب تحسين أداة القراءة.", en: "An entry is precise when it is a named event (a film with its showtimes, an exhibition with its dates), with a link to its own page and a known venue. This table shows, for each way of reading sources, the share of precise entries and what is missing: that is where the scraper needs work." }
+sante.voir_granularite: { ar: "دقة المداخل حسب نوع المصدر: ما ينقص", en: "Precision of entries by type of source: what is missing" }
+gran.precis: { ar: "دقيقة", en: "precise" }
+gran.manque: { ar: "ينقص:", en: "missing:" }
+gran.pas_evenement: { ar: "إعلان خدمة وليس نشاطا", en: "service notice, not an event" }
+gran.titre_generique: { ar: "عنوان عام (نوع أو باب، لا اسم العمل)", en: "generic title (genre or section, not the work's name)" }
+gran.titre_phrase: { ar: "العنوان جملة إعلان أو مقال", en: "title is an announcement or article headline" }
+gran.titre_prefixe: { ar: "باب قبل عنوان الفيلم", en: "section name before the film title" }
+gran.lien_general: { ar: "رابط إلى صفحة عامة (برنامج، PDF، رئيسية)", en: "link to a general page (programme, PDF, home)" }
+gran.lien_partage: { ar: "نفس الرابط لعدة أنشطة", en: "same link for several events" }
+gran.film_sans_seance: { ar: "فيلم بلا توقيت ولا عرض", en: "film without showtime" }
+gran.expo_sans_fin: { ar: "معرض بلا تاريخ نهاية", en: "exhibition without end date" }
+gran.lieu_vague: { ar: "فضاء غير محدد", en: "venue to be specified" }
+gran.sans_heure: { ar: "الساعة", en: "time" }
+gran.sans_image: { ar: "الصورة", en: "image" }
+gran.sans_notice: { ar: "النبذة", en: "description" }
+rien_signaler: { ar: "لا شيء يذكر.", en: "Nothing to report." }
+# Couverture
+couv_titre: { ar: "تغطية الأجندا", en: "Agenda coverage" }
+couv_intro: { ar: "حصيلة تحدث كل يوم، سطر لكل أسبوع. نحسب أنشطة الأيام السبعة القادمة دون تكرار. يحسب الفيلم مرة واحدة مهما كان عدد القاعات. انظر أيضا <a href=\"{base}sante/\">حالة المصادر</a>.", en: "Updated every day, one line per week. We count the events of the next 7 days, without duplicates. A film counts once, whatever the number of cinemas. See also the <a href=\"{base}sante/\">source health</a>." }
+couv.sept: { ar: "نشاطا في الأيام السبعة", en: "events in the next 7 days" }
+couv.a_venir: { ar: "قادمة في المجموع", en: "upcoming in all" }
+couv.sources: { ar: "مصدرا لديها جديد هذا الأسبوع", en: "sources have something this week" }
+couv.semaine: { ar: "الأسبوع", en: "week" }
+couv.par_ville: { ar: "حسب المدينة", en: "By city" }
+couv.par_genre: { ar: "حسب نوع المصدر", en: "By type of source" }
+couv.par_source: { ar: "حسب المصدر", en: "By source" }
+couv.rien_chez: { ar: "لا شيء هذا الأسبوع عند:", en: "Nothing this week from:" }
+couv.semaines: { ar: "أسبوعا بأسبوع", en: "Week by week" }
+couv.col_semaine: { ar: "الأسبوع", en: "Week" }
+couv.col_7: { ar: "7 أيام", en: "7 days" }
+couv.col_venir: { ar: "قادمة", en: "Upcoming" }
+couv.col_sources: { ar: "مصادر نشطة", en: "Active sources" }
+couv.premier: { ar: "ستعد أول حصيلة في المرور القادم للبرامج الآلية.", en: "The first report will be made on the next scraper run." }
+# API
+api_titre: { ar: "واجهة برمجة مفتوحة", en: "Open API" }
+api_intro: { ar: "كل بيانات الأجندا حرة (رخصة <a href=\"https://creativecommons.org/licenses/by/4.0/deed.ar\">CC BY 4.0</a>: إعادة استعمال حرة، بما في ذلك التجارية، مع ذكر « Agenda culturel Tunis »). بلا مفتاح ولا تسجيل: ملفات تحدث كل يوم، تقرأ من أي موقع (CORS مفتوح).", en: "All the agenda's data is free (licence <a href=\"https://creativecommons.org/licenses/by/4.0/\">CC BY 4.0</a>: free reuse, including commercial, crediting “Agenda culturel Tunis”). No key, no sign-up: these are files updated every day, readable from any site (open CORS)." }
+api.fichiers: { ar: "الملفات", en: "Files" }
+api.adresse: { ar: "العنوان", en: "Address" }
+api.contenu: { ar: "المحتوى", en: "Content" }
+api.f_evts: { ar: "كل الأنشطة القادمة، كل تونس", en: "All upcoming events, all of Tunisia" }
+api.f_lieux: { ar: "الفضاءات، مع الإحداثيات عندما نعرفها", en: "Venues, with coordinates when known" }
+api.f_sources: { ar: "المصادر المقروءة وحالتها", en: "The sources read and their status" }
+api.f_ics: { ar: "الرزنامة، تضاف إلى Google Agenda أو Apple Calendrier أو Outlook", en: "The calendar, to add to Google Calendar, Apple Calendar or Outlook" }
+api.f_ics_filtres: { ar: "نفس الرزنامة، لصنف أو لمدينة:", en: "The same calendar, for one category or one city:" }
+api.f_rss: { ar: "خلاصة RSS لآخر الأنشطة المضافة", en: "RSS feed of the latest events added" }
+nav.abonner: { ar: "اشترك", en: "Subscribe" }
+abo.titre: { ar: "اشترك", en: "Subscribe" }
+abo.intro: { ar: "أضف الأجندا إلى رزنامتك: تتحدث وحدها كل يوم. اختر الأجندا كاملة أو صنفا أو مدينة.", en: "Add the agenda to your calendar: it updates itself every day. Pick the whole agenda, a category or a city." }
+abo.tout: { ar: "الأجندا كاملة", en: "The whole agenda" }
+abo.tous_evts: { ar: "كل الأنشطة", en: "All events" }
+abo.par_cat: { ar: "حسب الصنف", en: "By category" }
+abo.par_ville: { ar: "حسب المدينة", en: "By city" }
+abo.rss: { ar: "خلاصة RSS", en: "RSS feed" }
+abo.rss_texte: { ar: "آخر الأنشطة التي وصلت إلى الأجندا، لقارئ خلاصات (Feedly، Inoreader…) أو قناة Telegram:", en: "The latest events added to the agenda, for a feed reader (Feedly, Inoreader…) or a Telegram channel:" }
+abo.comment: { ar: "كيف أفعل؟", en: "How to" }
+abo.calendrier: { ar: "📱 الرزنامة", en: "📱 Calendar" }
+abo.aide_tel: { ar: "<strong>الهاتف</strong> (iPhone، Android): المس « 📱 الرزنامة » ثم أكد الاشتراك.", en: "<strong>Phone</strong> (iPhone, Android): tap “📱 Calendar”, then confirm the subscription." }
+abo.aide_google: { ar: "<strong>Google Agenda</strong>: المس « Google Agenda » من حاسوب؛ تظهر الأجندا بعد ذلك في الهاتف أيضا.", en: "<strong>Google Calendar</strong>: tap “Google Agenda” on a computer; the calendar then also shows on your phone." }
+abo.aide_autre: { ar: "<strong>Outlook وغيره</strong>: انسخ عنوان الملف وألصقه في « إضافة رزنامة » ← « من الإنترنت ».", en: "<strong>Outlook, other</strong>: copy the file's address and paste it into “Add calendar” → “From the Internet”." }
+api.adresse_complete: { ar: "العنوان الكامل:", en: "Full address:" }
+api.v1: { ar: "حقول النسخة 1 لا تتغير؛ النسخة الجديدة سيكون لها عنوان جديد.", en: "Version 1 fields do not change; a new version will have a new address." }
+api.un_evt: { ar: "نشاط", en: "An event" }
+api.champ: { ar: "الحقل", en: "Field" }
+api.description: { ar: "الوصف", en: "Description" }
+api.c_id: { ar: "معرف ثابت ما دام العنوان والتاريخ لا يتغيران", en: "Stable identifier as long as title and date do not change" }
+api.c_titre: { ar: "بلغة المصدر", en: "In the source's language" }
+api.si_heure: { ar: "إن كانت الساعة معروفة، وإلا", en: "if the time is known, otherwise" }
+api.c_fin: { ar: "آخر يوم (معارض، مهرجانات)، وإلا", en: "Last day (exhibitions, festivals), otherwise" }
+api.c_prix: { ar: "نص السعر (« 20 DT »، « مجاني ») وقيمة منطقية", en: "Price text (“20 DT”, “Gratuit”) and boolean" }
+api.c_bool: { ar: "قيم منطقية. <code>commercial</code>: دروس، يوغا، فطور…", en: "Booleans. <code>commercial</code>: classes, yoga, brunch…" }
+api.c_seances: { ar: "لفيلم أو عرض يقدم عدة أيام: التواريخ", en: "For a film or show running several days: the dates" }
+api.c_fiche: { ar: "صفحة النشاط في الأجندا، الصفحة الأصلية", en: "Page on the agenda, original page" }
+api.c_source: { ar: "من أين جاء النشاط؛ هل رئي في مكان آخر (تذاكر…)", en: "Where the event comes from; whether it was seen elsewhere (ticketing…)" }
+api.c_image: { ar: "الملصق، إن وجد", en: "Poster, if we have one" }
+api.c_ajoute: { ar: "تاريخ الوصول إلى الأجندا", en: "Date added to the agenda" }
+api.exemple: { ar: "مثال", en: "Example" }
+api.fin: { ar: "الشفرة وسجل المصادر على <a href=\"https://github.com/benjello/agenda-nuit-tunis\">GitHub</a>. فكرة، حاجة؟ افتحوا issue.", en: "The code and the source registry are on <a href=\"https://github.com/benjello/agenda-nuit-tunis\">GitHub</a>. An idea, a need? Open an issue." }
+# À propos
+apropos.titre: { ar: "حول الأجندا", en: "About" }
+apropos.p1: { ar: "أغلب السهرات في تونس لا يعلن عنها إلا بملصق على إنستغرام أو في شباك تذاكر. تجمعها تونايت في مكان واحد، لكل الجماهير.", en: "Most nights out in Tunisia are only announced by a poster on Instagram or on a ticketing site. ToNight brings them together in one place, for every crowd." }
+apropos.p2: { ar: "هي حاليا أجندا بين أصدقاء. الهدف أن تصبح موقعا عموميا حقيقيا.", en: "For now it is an agenda among friends. The goal is to make it a real public site." }
+apropos.h_proposer: { ar: "اقترح مصدرا", en: "Suggest a source" }
+apropos.p3: { ar: "تملأ الأجندا آليا من <a href=\"{base}sources/\">مصادر موثوقة</a>: مواقع فضاءات، مواقع تذاكر، مهرجانات. الأكثر إفادة أن تدلنا على <strong>موقع يعلن بانتظام عن أنشطة</strong>، بدل نشاط منفرد.", en: "The agenda fills itself from <a href=\"{base}sources/\">reliable sources</a>: venue sites, ticketing sites, festivals. The most useful thing is to point us to <strong>a site that regularly announces events</strong>, rather than a single event." }
+apropos.p4: { ar: "لنشاط محدد، استعمل <a href=\"{base}proposer/\">استمارة « اقترح نشاطا »</a>. خطأ في صفحة؟ رابط « الإبلاغ عن خطأ » أسفل كل صفحة يفتح استمارة معبأة مسبقا. فضاء أو فنان أو محاضر ناقص، أو بطاقته غير مكتملة؟ <a href=\"{base}proposer/#fiche\">أعلمونا</a>.", en: "For a specific event, use the <a href=\"{base}proposer/\">“Suggest an event” form</a>. A mistake on a page? The “Report an error” link at the bottom of each page opens a pre-filled form. A venue, artist or speaker is missing, or their page is incomplete? <a href=\"{base}proposer/#fiche\">Tell us</a>." }
+apropos.h_donnees: { ar: "البيانات المفتوحة", en: "Open data" }
+apropos.p5: { ar: "كل ما في الأجندا قابل لإعادة الاستعمال بحرية:", en: "Everything in the agenda can be freely reused:" }
+apropos.liste: { ar: "<li><strong>الرزنامة</strong>: اشترك في <a href=\"{base}agenda.ics\"><code>agenda.ics</code></a> في Google Agenda أو Apple Calendrier أو Outlook (« إضافة رزنامة عبر رابط »). تتحدث وحدها.</li><li><strong>واجهة برمجة</strong>: ملفات JSON مفتوحة (أنشطة، فضاءات، مصادر)، موثقة في صفحة <a href=\"{base}api/\">API</a>، لمواقعكم وبرامجكم وتطبيقاتكم.</li><li><strong>سجل المصادر</strong> و<strong>شفرة البرامج الآلية</strong>: على <a href=\"https://github.com/benjello/agenda-nuit-tunis\">مستودع GitHub</a>، لإعادة الاستعمال أو التحسين.</li>", en: "<li><strong>Calendar</strong>: subscribe to <a href=\"{base}agenda.ics\"><code>agenda.ics</code></a> in Google Calendar, Apple Calendar or Outlook (“add calendar by URL”). It updates itself.</li><li><strong>API</strong>: open JSON files (events, venues, sources), documented on the <a href=\"{base}api/\">API</a> page, for your sites, bots or apps.</li><li><strong>Source registry</strong> and <strong>scraper code</strong>: on the <a href=\"https://github.com/benjello/agenda-nuit-tunis\">GitHub repository</a>, to reuse or improve.</li>" }
+apropos.p6: { ar: "تنشر البيانات برخصة <a href=\"https://creativecommons.org/licenses/by/4.0/deed.ar\">CC BY 4.0</a>: إعادة استعمال حرة، بما في ذلك التجارية، مع ذكر « Agenda culturel Tunis ». يحتفظ كل نشاط برابط مصدره الأصلي.", en: "The data is published under the <a href=\"https://creativecommons.org/licenses/by/4.0/\">CC BY 4.0</a> licence: free reuse, including commercial, crediting “Agenda culturel Tunis”. Each event keeps the link to its original source." }
+sante.controle: { ar: "بعد كل مرور، يعيد فحص قراءة كل الأنشطة. يصحح وحده الأماكن التي هي في الحقيقة اسم مصدر (جريدة، أجندا، مجموعة).", en: "After each run, a check rereads every event. It fixes by itself the venues that are really the name of a source (newspaper, agenda, collective)." }
+sante.corriges: { ar: "صححت في المرور الأخير.", en: "fixed on the last run." }
+sante.signale: { ar: "ويشير هنا إلى الباقي: عنوان مبهم أو طويل جدا، تاريخ بعيد، نفس النشاط مرتين.", en: "It lists the rest here: vague or overly long title, far-off date, same event twice." }
+du: { ar: "من", en: "from" }
+au: { ar: "إلى", en: "to" }
+# Enfants
+nav.enfants: { ar: "أطفال", en: "Kids" }
+enf_titre: { ar: "أطفال", en: "Kids" }
+enf_intro: { ar: "عروض وورشات وأفلام وخرجات للأطفال. السن مذكور عندما يعطيه الإعلان.", en: "Shows, workshops, films and outings for children. The age is given when the announcement says it." }
+enf_we: { ar: "هذه العطلة مع الأطفال", en: "This weekend with the kids" }
+enf.spectacles: { ar: "عروض", en: "Shows" }
+enf.ateliers: { ar: "ورشات وأنشطة", en: "Workshops and activities" }
+enf.films: { ar: "أفلام", en: "Films" }
+enf.sorties: { ar: "متاحف وخرجات", en: "Museums and outings" }
+enf_musees: { ar: "كل متاحف تونس ←", en: "All museums in Tunisia →" }
+enf_vide: { ar: "لا شيء معلن للأطفال في هذه المدينة حاليا.", en: "Nothing announced for children in this city yet." }
+enf_festivals: { ar: "مهرجانات الأطفال والشباب", en: "Festivals for young audiences" }
+enf_note: { ar: "ينقص عرض أو ورشة للأطفال؟ <a href=\"{base}proposer/\">اقترحه</a>.", en: "A show or workshop for kids is missing? <a href=\"{base}proposer/\">Suggest it</a>." }
+age.des: { fr: "dès %n ans", ar: "من %n سنوات", en: "ages %n+" }
+age.plage: { fr: "%n ans", ar: "%n سنوات", en: "ages %n" }
+sante.apify: { ar: "رصيد Apify لهذا الشهر (إنستغرام، فيسبوك):", en: "Apify credit this month (Instagram, Facebook):" }
+sante.recharge: { ar: "يتجدد في", en: "renews on" }
+sante.apify_epuise: { ar: "نفد: لم يعد إنستغرام وفيسبوك يقرآن", en: "used up: Instagram and Facebook are no longer read" }
+synopsis: { ar: "ملخص الفيلم", en: "Synopsis" }
+pas_de_synopsis: { ar: "لا يوجد ملخص متاح", en: "No synopsis available" }
+en_savoir_plus: { ar: "للمزيد", en: "Learn more" }
+acces.yes: { ar: "مهيأ للكراسي المتحركة", en: "Wheelchair accessible" }
+acces.limited: { ar: "تهيئة جزئية للكراسي المتحركة", en: "Partial wheelchair access" }
+acces.no: { ar: "غير مهيأ للكراسي المتحركة", en: "No wheelchair access" }
+horaires: { ar: "التوقيت", en: "Opening hours" }
+sans_heure: { ar: "بدون توقيت", en: "no time" }
+complet: { ar: "نفدت التذاكر", en: "Sold out" }
+langue.ar: { ar: "بالعربية", en: "In Arabic" }
+langue.fr: { ar: "بالفرنسية", en: "In French" }
+langue.en: { ar: "بالإنجليزية", en: "In English" }
+langue.vo: { ar: "نسخة أصلية مترجمة", en: "Original version, subtitled" }
+nav.contribuer: { ar: "ساهم", en: "Contribute" }
+contrib.voir: { ar: "المصادر التي نبحث عنها", en: "Sources we are looking for" }
+contrib.titre: { ar: "ساهم: المصادر الناقصة", en: "Contribute: missing sources" }
+contrib.intro: { ar: "فضاءات كثيرة لا تعلن عن مواعيدها إلا على فيسبوك أو إنستغرام، ولا نعرف دائما صفحتها. تعرفها؟ أعطنا العنوان وستقرؤها الأجندا كل يوم.", en: "Many venues only announce their dates on Facebook or Instagram, and we don't always know their page. Do you? Give us the address and the agenda will read it every day." }
+contrib.recherchees: { ar: "مصادر نبحث عنها", en: "Sources we are looking for" }
+contrib.pistes: { ar: "جرّبنا:", en: "Already tried:" }
+contrib.trouve: { ar: "وجدتها", en: "I found it" }
+contrib.reparer: { ar: "مصادر يجب إصلاحها", en: "Sources to fix" }
+contrib.reparer_intro: { ar: "هذه المصادر معروفة، لكن الصفحة لم تعد تعمل، أو لم تنشر شيئا منذ أكثر من شهر، أو لم تربط بعد. عنوان أحدث يكفي غالبا.", en: "These sources are known, but the page no longer works, has posted nothing for over a month, or is not connected yet. A more recent address is often enough." }
+contrib.meilleure: { ar: "عنوان أفضل؟", en: "A better address?" }
+contrib.autre: { ar: "مصدر آخر؟", en: "Another source?" }
+contrib.autre_texte: { ar: "فضاء أو مجموعة أو فنان يعلن باستمرار عن مواعيده وغير موجود بعد في الأجندا: اقترحه أيضا.", en: "A venue, collective or artist that regularly announces dates and is not on the agenda yet: suggest it too." }
+contrib.compte: { ar: "الاستمارة على GitHub: يلزم حساب (مجاني). هذا أيضا حمايتنا من الروبوتات.", en: "The form is on GitHub: you need a (free) account. It is also our protection against bots." }
+contrib.pr: { ar: "أضف المصدر بنفسك", en: "Add the source yourself" }
+contrib.pr_texte: { ar: "تعرف GitHub؟ أضف المصدر مباشرة في السجل: افتح الملف، اضغط على القلم ✎، انسخ مدخلا مشابها، ثم «Propose changes». يتحقق منه آليا ثم يراجع قبل إضافته.", en: "Comfortable with GitHub? Add the source to the registry directly: open the file, click the pencil ✎, copy a similar entry, then « Propose changes ». It is checked automatically, then reviewed before being added." }
+contrib.editer: { ar: "تعديل سجل المصادر", en: "Edit the source registry" }
+contrib.guide: { ar: "اقرأ الدليل", en: "Read the guide" }
+contrib.regles: { ar: "مصادر عمومية فقط (تظهر دون تسجيل الدخول)، وأنشطة ثقافية. الإشهار والروابط التي لا علاقة لها تغلق دون رد.", en: "Public sources only (visible without logging in), cultural events. Advertising and unrelated links are closed without reply." }
+contrib.tous_niveaux: { ar: "كل المستويات", en: "All levels" }
+contrib.facile: { ar: "سهل: البحث عن صفحة", en: "Easy: find a page" }
+contrib.moyen: { ar: "متوسط: قليل من GitHub", en: "Medium: a bit of GitHub" }
+contrib.avance: { ar: "متقدم: Python", en: "Advanced: Python" }
+contrib.facile_court: { ar: "سهل", en: "easy" }
+contrib.moyen_court: { ar: "متوسط", en: "medium" }
+contrib.avance_court: { ar: "متقدم", en: "advanced" }
+contrib.toutes_taches: { ar: "كل المهام", en: "All tasks" }
+contrib.t_trouver: { ar: "البحث عن صفحة", en: "Find a page" }
+contrib.t_verifier: { ar: "التحقق", en: "Check" }
+contrib.t_brancher: { ar: "الإضافة إلى السجل", en: "Add to the registry" }
+contrib.t_coder: { ar: "البرمجة", en: "Code" }
+contrib.e1: { ar: "اختر فضاء من القائمة أدناه.", en: "Pick a venue from the list below." }
+contrib.e2: { ar: "ابحث عن صفحته على فيسبوك أو إنستغرام (أو موقعه) عبر غوغل أو التطبيق.", en: "Look for its Facebook or Instagram page (or website) on Google or in the app." }
+contrib.e3: { ar: "اضغط «وجدتها» والصق العنوان. هذا كل شيء: نتكفل بالباقي.", en: "Click “I found it” and paste the address. That's all: we do the rest." }
+contrib.tous: { ar: "عرض الكل", en: "Show all" }
+contrib.technique: { ar: "تقني: للمطورين", en: "Technical: for developers" }
+contrib.technique_court: { ar: "تقني", en: "technical" }
+# Affichage ordinateur : titres des filtres et panneau d'aperçu
+filtre_ou: { fr: "Où", ar: "أين", en: "Where" }
+filtre_quand: { fr: "Quand", ar: "متى", en: "When" }
+filtre_quoi: { fr: "Quoi", ar: "ماذا", en: "What" }
+ouvrir_page: { fr: "Ouvrir la page", ar: "فتح الصفحة", en: "Open the page" }
+apercu: { fr: "Aperçu", ar: "معاينة", en: "Preview" }
+
+apercu_rapide: { fr: "Aperçu rapide", ar: "معاينة سريعة", en: "Quick preview" }
+ce_soir_titre: { fr: "Ce soir à Tunis", ar: "هذا المساء في تونس", en: "Tonight in Tunis" }
+ce_soir_matin: { fr: "Ce matin à Tunis", ar: "هذا الصباح في تونس", en: "This morning in Tunis" }
+ce_soir_apres_midi: { fr: "Cet après-midi à Tunis", ar: "بعد ظهر اليوم في تونس", en: "This afternoon in Tunis" }
+ce_soir_jour: { fr: "Aujourd'hui à Tunis", ar: "اليوم في تونس", en: "Today in Tunis" }
+dans: { fr: "dans", ar: "بعد", en: "in" }
+en_cours_maintenant: { fr: "a commencé", ar: "بدأ", en: "started" }
+installer.bouton: { fr: "Installer l'application", ar: "ثبّت التطبيق", en: "Install the app" }
+installer.ios: { fr: "Sur iPhone ou iPad (Safari) : touchez le bouton Partager, puis « Sur l'écran d'accueil ».", ar: "على آيفون أو آيباد (سفاري): اضغط على زر المشاركة ثم «إضافة إلى الشاشة الرئيسية».", en: "On iPhone or iPad (Safari): tap the Share button, then “Add to Home Screen”." }
+installer.autre: { fr: "Dans le menu de votre navigateur, cherchez « Installer l'application » ou « Ajouter à l'écran d'accueil ». Firefox sur ordinateur ne sait pas installer le site : utilisez Chrome ou Edge.", ar: "ابحث في قائمة المتصفح عن «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية». فايرفوكس على الحاسوب لا يثبّت المواقع: استعمل كروم أو إيدج.", en: "In your browser menu, look for “Install app” or “Add to Home Screen”. Desktop Firefox cannot install the site: use Chrome or Edge." }
+programmes_facebook: { ar: "برامج منشورة على فيسبوك", en: "Programmes posted on Facebook" }
+publie_le: { ar: "نُشر في", en: "posted on" }
+voir_publication: { ar: "انظر المنشور على فيسبوك", en: "See the post on Facebook" }

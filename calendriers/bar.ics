@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/bar.ics
+---
+{% include calendrier.ics categorie="bar" nom="Bar & lounge" %}

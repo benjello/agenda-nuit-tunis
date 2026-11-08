@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-sud.ics
+---
+{% include calendrier.ics ville="sud" nom="Sud (Djerba, Gabès, Tozeur…)" %}

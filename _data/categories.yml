@@ -1,0 +1,12 @@
+# Catégories autorisées dans le champ « category » d'un événement.
+# clé: { nom affiché, couleur, aide }
+# Un événement d'une autre catégorie (cinéma, expo, théâtre…) n'est pas publié : c'est l'agenda de la nuit.
+club:        { label: "Club",            color: "#c2185b", aide: "Soirées DJ : électro, house, techno, afro, hip-hop…" }
+discotheque: { label: "Discothèque",     color: "#7b1fa2", aide: "Boîtes de nuit généralistes, soirées à thème, hôtels et resorts" }
+cabaret:     { label: "Cabaret",         color: "#b8860b", aide: "Cabarets, dîners-spectacles, soirées orientales, revues" }
+concert:     { label: "Concert live",    color: "#1565c0", aide: "Concerts du soir, groupes et live en bar" }
+bar:         { label: "Bar & lounge",    color: "#00796b", aide: "Bars musicaux, pubs, lounges, rooftops, afterworks" }
+karaoke:     { label: "Karaoké",         color: "#e65100", aide: "Soirées karaoké et open mic chanté" }
+humour:      { label: "Stand-up",        color: "#5d4037", aide: "Stand-up et comédie en soirée" }
+festival:    { label: "Festival & open air", color: "#2e7d32", aide: "Festivals électro, open air, day parties" }
+autre:       { label: "Autre soirée",    color: "#555555" }

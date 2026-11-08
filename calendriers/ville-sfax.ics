@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-sfax.ics
+---
+{% include calendrier.ics ville="sfax" nom="Sfax" %}

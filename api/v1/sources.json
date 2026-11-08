@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /api/v1/sources.json
+---
+{
+  "version": 1,
+  "genere_le": {{ site.time | date_to_xmlschema | jsonify }},
+  "sources": [
+  {%- for s in site.data.sources %}{% unless forloop.first %},{% endunless %}{% assign etat = site.data.etat_sources[s.id] %}
+    {"id": {{ s.id | jsonify }}, "nom": {{ s.nom | jsonify }}, "url": {{ s.url | jsonify }}, "type": {{ s.type | jsonify }},
+     "actif": {% if s.actif == false %}false{% else %}true{% endif %}, "en_ligne": {% if etat.ok %}true{% else %}false{% endif %},
+     "evenements": {{ etat.nb | default: 0 }}, "derniere_lecture": {{ etat.dernier_succes | jsonify }}}
+  {%- endfor %}
+  ]
+}

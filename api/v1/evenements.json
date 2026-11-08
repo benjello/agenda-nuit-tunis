@@ -1,0 +1,47 @@
+---
+layout: null
+permalink: /api/v1/evenements.json
+---
+{%- comment -%} API ouverte, version 1 : voir la page /api/. Les champs ne changent pas sans nouvelle version. {%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | sort: "date" -%}
+{
+  "version": 1,
+  "licence": "CC BY 4.0, citer « ToNight Tunis »",
+  "documentation": {{ '/api/' | absolute_url | jsonify }},
+  "genere_le": {{ site.time | date_to_xmlschema | jsonify }},
+  "evenements": [
+  {%- assign first = true -%}
+  {%- for e in events -%}
+    {%- assign last_day = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+    {%- if last_day >= today -%}
+    {%- unless first %},{% endunless %}{% assign first = false %}
+    {%- assign heure = e.date | date: "%H:%M" -%}
+    {%- assign prix_bas = e.price | default: "" | downcase -%}
+    {%- assign src = site.data.sources | where: "id", e.source | first -%}
+    {%- assign fiche_lieu = site.data.lieux.index[e.venue] -%}
+    {%- if e.image contains "://" %}{% assign img = e.image %}{% elsif e.image %}{% assign img = e.image | absolute_url %}{% else %}{% assign img = nil %}{% endif %}
+    {
+      "id": {{ e.url | remove: "/evenements/" | split: "/" | join: "/" | jsonify }},
+      "titre": {{ e.title | jsonify }},
+      "debut": {% if heure != "00:00" %}{{ e.date | date: "%Y-%m-%dT%H:%M:00+01:00" | jsonify }}{% else %}{{ e.date | date: "%Y-%m-%d" | jsonify }}{% endif %},
+      "fin": {% if e.end_date %}{{ e.end_date | date: "%Y-%m-%d" | jsonify }}{% else %}null{% endif %},
+      "categorie": {{ e.category | default: "autre" | jsonify }},
+      "lieu": {"nom": {{ e.venue | jsonify }}, "adresse": {{ e.address | jsonify }}, "ville": {{ e.ville | default: "tunis" | jsonify }}, "fiche": {% if fiche_lieu %}{{ '/lieux/' | append: fiche_lieu | append: '/' | absolute_url | jsonify }}{% else %}null{% endif %}},
+      "prix": {{ e.price | jsonify }},
+      "gratuit": {% if prix_bas contains "gratuit" or prix_bas contains "libre" or prix_bas contains "free" %}true{% else %}false{% endif %},
+      "en_famille": {% if e.famille %}true{% else %}false{% endif %},
+      "commercial": {% if e.discret %}true{% else %}false{% endif %},
+      "film": {% if e.film %}true{% else %}false{% endif %},
+      "seances": {{ e.seances | default: empty | jsonify }},
+      "fiche": {{ e.url | absolute_url | jsonify }},
+      "lien": {{ e.link | jsonify }},
+      "source": {"id": {{ e.source | default: "manuel" | jsonify }}, "nom": {{ e.source_name | default: "saisie manuelle" | jsonify }}, "type": {{ src.type | jsonify }}},
+      "autres_sources": {{ e.autres_sources | default: empty | jsonify }},
+      "image": {{ img | jsonify }},
+      "ajoute_le": {{ e.ajoute | jsonify }}
+    }
+    {%- endif -%}
+  {%- endfor %}
+  ]
+}

@@ -1,0 +1,48 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths: ["scrapers/**", "tests/**", "requirements.txt", "_data/sources.yml", "_data/sources_recherchees.yml"]
+
+# Lecture seule : une PR venant d'un fork ne reçoit de toute façon ni secrets ni droit d'écriture.
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python3 -m unittest discover tests -v
+
+  traduction:
+    # vérifie que les modèles de traduction se téléchargent et traduisent (seulement si traduire.py change)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: change
+        run: |
+          if git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -q "scrapers/traduire.py"; then echo "oui=1" >> $GITHUB_OUTPUT; fi
+      - uses: actions/setup-python@v5
+        if: steps.change.outputs.oui
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        if: steps.change.outputs.oui
+        with:
+          path: ~/.cache/agenda-traduction
+          key: traduction-argos-v1
+      - if: steps.change.outputs.oui
+        run: |
+          pip install -q -r requirements.txt -r requirements-traduction.txt
+          python3 -m scrapers.traduire --essai

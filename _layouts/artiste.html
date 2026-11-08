@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- assign evts = "" | split: "" -%}
+{%- for e in site.events -%}{%- if e.doublon == true -%}{%- continue -%}{%- endif -%}
+  {%- capture t -%}{{ e.title }} {{ e.artists | join: " " }}{%- endcapture -%}{%- assign t = t | downcase -%}
+  {%- for m in page.mots -%}{%- if t contains m -%}{%- assign evts = evts | push: e -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- endfor -%}
+<section class="intro fiche">
+  <p><a href="{{ '/artistes/' | relative_url }}{% if page.role == "conferencier" %}#conferenciers{% endif %}" data-t="tous_collectifs">← Artistes, conférenciers et organisateurs</a></p>
+  <h1>{{ page.title }}</h1>
+  <p>{% if page.role == "conferencier" %}<span data-t="conferencier">Conférences et rencontres</span>{% if page.genre %} · {% endif %}{% endif %}{% if page.genre %}{{ page.genre | capitalize }}{% endif %}
+  {%- if page.instagram %} · <a href="{{ page.instagram }}" rel="noopener">Instagram</a>{% endif %}
+  {%- if page.facebook %} · <a href="{{ page.facebook }}" rel="noopener">Facebook</a>{% endif %}
+  {%- if page.site %} · <a href="{{ page.site }}" rel="noopener" data-t="site_web">Site web</a>{% endif %}</p>
+  {%- capture cle %}artiste:{{ page.slug }}{% endcapture %}{% include enrichi.html cle=cle nom=page.title %}
+  {%- assign d = site.data.descriptifs.artistes[page.slug] -%}{% include descriptif.html d=d %}
+</section>
+<h2 data-t="a_venir">À venir</h2>
+{% include liste-evenements.html evenements=evts %}
+{% include signaler-fiche.html nom=page.title %}

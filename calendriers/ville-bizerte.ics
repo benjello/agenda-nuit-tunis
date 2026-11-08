@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/ville-bizerte.ics
+---
+{% include calendrier.ics ville="bizerte" nom="Bizerte" %}

@@ -1,0 +1,13 @@
+# Artistes et collectifs suivis : une fiche chacun sur /artistes/, avec leurs dates à venir.
+# Un événement est rattaché quand son titre contient un des « mots » (minuscules ou non).
+# Les noms lus dans les titres (« Rencontre avec Sonia Hanihina ») ont aussi leur fiche,
+# sans rien ajouter ici. Ajouter une ligne pour donner des liens ou des variantes du nom.
+# Rôle : « artiste » ou « conferencier » (conférences, rencontres, débats). Sans « role »,
+# scrapers/pages.py le devine : conférencier si la moitié au moins de ses dates en sont.
+#
+# - nom: Emel Mathlouthi
+#   mots: [emel mathlouthi, emel, آمال المثلوثي]
+#   genre: musique
+#   role: artiste
+#   instagram: https://www.instagram.com/…
+#   site: https://…

@@ -1,0 +1,6 @@
+# Toute modification demande la relecture de Mahdi (avec la règle « Require review from Code Owners »).
+*            @benjello
+# À relire de très près : ces fichiers s'exécutent dans GitHub Actions, avec les secrets.
+/.github/    @benjello
+/scrapers/   @benjello
+/requirements*.txt @benjello

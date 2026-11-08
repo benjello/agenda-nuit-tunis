@@ -1,0 +1,112 @@
+---
+layout: default
+title: Festivals
+permalink: /festivals/
+description: Le calendrier des festivals en Tunisie (JTC, JCC, Festival de la Médina, Carthage…), avec les dates confirmées et l'état du programme.
+---
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | sort: "date" -%}
+<section class="intro">
+  <h1 data-t="nav.festivals">Festivals</h1>
+  <p data-th="fest_intro">Les dates des grands festivals sont connues des mois à l'avance, mais leurs programmes sortent souvent quelques jours avant. Ici, on dit ce qui est confirmé et ce qui ne l'est pas encore. Les programmes paraissent d'abord sur Facebook et Instagram. <a href="{{ '/ramadan/' | relative_url }}">🌙 Soirées de Ramadan</a></p>
+</section>
+
+{%- comment -%} Filtre par discipline : un festival est transversal ; « Multidisciplinaire » (Jaou, Dream City…) a sa place à côté de théâtre, cinéma, musique. {%- endcomment -%}
+{%- assign genres_f = site.data.festivals | map: "genre" | uniq -%}
+<div class="filters" id="filtre-genre" role="group" aria-label="Discipline">
+  <button class="active" data-genre="all" data-t="tout">Tout</button>
+  {%- for c in site.data.categories %}{% if genres_f contains c[0] %}<button data-genre="{{ c[0] }}" data-t="cat.{{ c[0] }}"{% if c[1].aide %} title="{{ c[1].aide | escape }}"{% endif %}>{{ c[1].label }}</button>{% endif %}{% endfor %}
+</div>
+
+<div id="festivals">
+{%- for f in site.data.festivals %}
+  {%- assign cat = site.data.categories[f.genre] | default: site.data.categories.autre -%}
+  <article class="festival" id="{{ f.id }}" data-genre="{{ f.genre | default: 'autre' }}" data-debut="{{ f.debut | date: '%Y-%m-%d' }}" data-fin="{{ f.fin | default: f.debut | date: '%Y-%m-%d' }}">
+    <div class="festival-tete">
+      <span class="tag" style="background: {{ cat.color }}">{{ cat.label }}</span>
+      <span class="badge statut"></span>
+      {%- if f.programme %}<span class="badge programme" data-t="fest.programme_publie">Programme publié</span>{% endif -%}
+    </div>
+    <h3>{{ f.nom }}</h3>
+    <p class="meta">
+      {%- if f.debut %}{% if f.date_estimee %}Vers le {% endif %}{% include date-fr.html date=f.debut %}{% if f.fin %} → {% include date-fr.html date=f.fin %}{% endif %}{% else %}{{ f.periode }}{% endif %}
+      {%- if f.edition %} · {{ f.edition }}{% endif %}
+    </p>
+    {%- assign d = site.data.descriptifs.festivals[f.id] -%}
+    {%- if d %}
+    <p class="descriptif">{{ d.texte | escape }}{% if d.source %} <small class="descriptif-source">· {% if d.url %}<a href="{{ d.url }}" rel="noopener">{{ d.source }}</a>{% else %}{{ d.source }}{% endif %}</small>{% endif %}</p>
+    {%- endif %}
+    <p class="info">
+      {%- if f.debut and f.date_estimee %}<span data-t="fest.estimee">Date estimée (Ramadan), à confirmer.</span>
+      {%- elsif f.debut %}<span data-t="fest.confirmees">Dates confirmées</span>{% if f.source_dates %} (<a href="{{ f.source_dates }}" rel="noopener">source</a>){% endif %}.
+      {%- else %}<span data-t="fest.pas_annoncees">Dates pas encore annoncées.</span>{% endif %}
+      {% unless f.programme %}<span data-t="fest.pas_programme">Programme pas encore publié (vérifié le 1er novembre).</span>{% endunless %}
+    </p>
+    <p class="actions">
+      {%- if f.facebook %}<a href="{{ f.facebook }}" rel="noopener">Facebook</a>{% endif -%}
+      {%- if f.instagram %}<a href="{{ f.instagram }}" rel="noopener">Instagram</a>{% endif -%}
+      {%- if f.site %}<a href="{{ f.site }}" rel="noopener">Site officiel</a>{% endif -%}
+    </p>
+    {%- assign mots = f.mots | split: "|" -%}
+    {%- capture liste -%}
+      {%- for e in events -%}
+        {%- assign fin = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+        {%- if fin >= today -%}
+          {%- assign relie = false -%}{%- if e.festival == f.id -%}{%- assign relie = true -%}{%- else -%}{%- for m in mots -%}{%- if e.title contains m -%}{%- assign relie = true -%}{%- break -%}{%- endif -%}{%- endfor -%}{%- endif -%}
+          {%- if relie %}<li><a href="{{ e.link | default: e.url | relative_url }}" rel="noopener">{{ e.title }}</a> · {% include date-fr.html date=e.date %} · {{ e.venue }}</li>{% endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- if liste != "" %}
+    <details class="festival-evts"><summary data-t="fest.dans_agenda">Dans l'agenda</summary><ul>{{ liste }}</ul></details>
+    {%- endif %}
+  </article>
+{%- endfor %}
+</div>
+{%- comment -%} Deux filtres à la suite : where_exp n'accepte pas « and » dans Liquid 4 (le build de GitHub Pages échouait). {%- endcomment -%}
+{%- assign reperes = events | where_exp: "e", "e.festival" | where_exp: "e", "e.source contains 'presse-'" -%}
+{%- capture reperes_liste -%}
+  {%- for e in reperes -%}
+    {%- assign fin = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+    {%- if fin >= today %}<li><a href="{{ e.url | relative_url }}">{{ e.title }}</a> · {% include date-fr.html date=e.date %}{% if e.end_date %} → {% include date-fr.html date=e.end_date %}{% endif %} <small>· <a href="{{ e.link }}" rel="noopener">{{ e.source_name }}</a></small></li>{% endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if reperes_liste != "" %}
+<section class="festivals-presse">
+  <h2 data-t="fest.presse">Repérés dans la presse</h2>
+  <ul>{{ reperes_liste }}</ul>
+</section>
+{%- endif %}
+<p class="updated" data-th="fest_note">Un festival manque, ou son programme est sorti ? <a href="{{ '/a-propos/' | relative_url }}#proposer">Dites-le-nous</a>.</p>
+
+<script>
+(function () {
+  function iso(d) { return d.toISOString().slice(0, 10); }
+  var auj = iso(new Date());
+  var liste = document.getElementById('festivals');
+  var cartes = Array.prototype.slice.call(liste.querySelectorAll('.festival'));
+  cartes.forEach(function (c) {
+    var d = c.dataset.debut, f = c.dataset.fin, s = c.querySelector('.statut'), rang;
+    // texte en français ; site.js le traduit (data-tn)
+    function statut(cle, fr, n) { s.dataset.tn = cle; s.dataset.tnFr = fr; if (n) s.dataset.n = n; s.textContent = fr.replace('%n', n || ''); }
+    if (!d) { statut('fest.dates_a_venir', 'Dates à venir'); rang = 2; }
+    else if (f < auj) { statut('fest.termine', 'Terminé'); rang = 3; }
+    else if (d <= auj) { statut('fest.en_cours', 'En cours'); s.classList.add('en-cours'); rang = 0; }
+    else {
+      var n = Math.round((new Date(d + 'T12:00:00') - new Date(auj + 'T12:00:00')) / 864e5);
+      if (n <= 1) statut('demain', 'Demain'); else statut('fest.dans_n', 'Dans %n jours', n);
+      rang = 1;
+    }
+    c.dataset.rang = rang;
+  });
+  document.getElementById('filtre-genre').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (!b) return;
+    this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x === b); });
+    cartes.forEach(function (c) { c.hidden = b.dataset.genre !== 'all' && c.dataset.genre !== b.dataset.genre; });
+  });
+  cartes.sort(function (a, b) {
+    return (a.dataset.rang - b.dataset.rang) || (a.dataset.debut || '9').localeCompare(b.dataset.debut || '9');
+  }).forEach(function (c) { liste.appendChild(c); });
+})();
+</script>

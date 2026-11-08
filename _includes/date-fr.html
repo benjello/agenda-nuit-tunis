@@ -1,0 +1,7 @@
+{%- comment -%} Usage : {% include date-fr.html date=page.date %} → « samedi 7 novembre 2026, 20h00 » (le script la traduit en arabe ou en anglais) {%- endcomment -%}
+{%- assign d = include.date -%}
+{%- assign j = d | date: "%w" | plus: 0 -%}
+{%- assign m = d | date: "%-m" | minus: 1 -%}
+{%- assign h = d | date: "%H:%M" -%}
+<time datetime="{{ d | date: '%Y-%m-%d' }}{% if h != '00:00' %}T{{ h }}{% endif %}">{{ site.data.fr.jours[j] }} {{ d | date: "%-d" }} {{ site.data.fr.mois[m] }} {{ d | date: "%Y" }}
+{%- if h != "00:00" -%}, {{ d | date: "%Hh%M" }}{%- endif -%}</time>

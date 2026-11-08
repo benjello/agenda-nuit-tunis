@@ -1,0 +1,142 @@
+name: Scrapers
+
+on:
+  schedule:
+    - cron: "17 5 * * *"  # tous les jours vers 6h20, heure de Tunis (minute creuse : GitHub saute souvent les heures pile)
+    - cron: "47 10 * * *" # 11h45 : l'agenda du jour de Tunisie Numérique, paru dans la matinée
+  workflow_dispatch:       # bouton « Run workflow » pour lancer à la main
+    inputs:
+      sources:
+        description: "Ids des sources à relire, séparés par des espaces (vide = toutes)"
+        required: false
+        default: ""
+      debug:
+        description: "Garder les pages téléchargées (artefact « debug ») pour mettre au point un scraper"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write   # alerte « Sources silencieuses »
+
+concurrency:
+  group: scrapers
+  cancel-in-progress: false
+
+jobs:
+  scrapers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Installer l'OCR (lecture des programmes en image)
+        # l'index des paquets de l'image peut être périmé (404) : on le rafraîchit ; sans OCR, les scrapers tournent quand même
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-fra tesseract-ocr-ara poppler-utils > /dev/null
+      - name: Archiver les événements passés (avant que les scrapers ne les effacent)
+        run: python3 -m scrapers.archives
+        continue-on-error: true
+      - name: Lancer les scrapers
+        id: run
+        run: python3 -m scrapers $SOURCES ${{ inputs.debug && '--debug' || '' }}
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # pages Facebook ; facultatif
+          SOURCES: ${{ github.event.schedule == '47 10 * * *' && 'tn-agenda-du-jour' || inputs.sources }}
+        continue-on-error: true   # on enregistre quand même ce qui a marché et l'état des sources
+      - name: Fiches lieux, organisateurs, artistes et carte
+        run: |
+          python3 -m scrapers.festivals
+          python3 -m scrapers.ranger
+          python3 -m scrapers.pages
+          python3 -m scrapers.bilan
+        continue-on-error: true
+      - name: Descriptifs (page de l'annonce, Wikipédia, TMDb si la clé existe)
+        run: python3 -m scrapers.descriptifs
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}   # facultatif, gratuit sur themoviedb.org
+        continue-on-error: true
+      - name: Photos (Wikidata), accès et horaires (OpenStreetMap)
+        continue-on-error: true
+        run: python3 -m scrapers.enrichir
+      - name: Garder les modèles de traduction d'un passage à l'autre
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/agenda-traduction
+          key: traduction-argos-v1
+      - name: Traduire les titres et notices (arabe, anglais, français)
+        run: |
+          pip install -q -r requirements-traduction.txt
+          python3 -m scrapers.traduire
+          python3 -m scrapers.libelles
+        continue-on-error: true
+      - name: Garder les pages téléchargées
+        if: inputs.debug
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug
+          path: debug/
+          retention-days: 3
+      - name: Crédit Apify du mois
+        continue-on-error: true
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: python3 -m scrapers.credit_apify > alerte-apify.md
+      - name: Enregistrer s'il y a du nouveau
+        # sur une branche d'essai, on lit sans rien enregistrer (pas d'échec de push)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
+          git add -A _events _data/etat_sources.json _data/films.json _data/critiques.json _data/presse.json _data/wikidata.json _data/controle.json _data/traductions.json _data/libelles.json _data/bilan.json _data/apify.json _data/descriptifs.json _data/enrichi.json \
+            _lieux _collectifs _artistes _data/lieux.json _data/geo.json archives/donnees
+          for d in _data/programmes _cache/publications assets/programmes; do
+            if [ -d "$d" ]; then git add -A "$d"; fi
+          done
+          git diff --cached --quiet && echo "Rien de nouveau." && exit 0
+          git commit -m "Scrapers : mise à jour automatique"
+          # main a pu bouger pendant le passage (merge d'une PR) : on rejoue notre commit par-dessus.
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
+      - name: Alerte « Sources silencieuses » (rien depuis 30 jours)
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -m scrapers.alerte > alerte.md
+          titre="Sources silencieuses"
+          num=$(gh issue list --state open --search "in:title \"$titre\"" --json number,title --jq ".[] | select(.title == \"$titre\") | .number" | head -1)
+          if [ -s alerte.md ] && grep -q . alerte.md; then
+            if [ -n "$num" ]; then gh issue edit "$num" --body-file alerte.md
+            else gh label create alerte --color B5442F --force >/dev/null 2>&1 || true
+                 gh issue create --title "$titre" --label alerte --body-file alerte.md; fi
+          elif [ -n "$num" ]; then
+            gh issue close "$num" --comment "Toutes les sources ont de nouveau annoncé quelque chose ces 30 derniers jours."
+          fi
+      - name: Alerte « Crédit Apify » (80 % de la limite du mois)
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          titre="Crédit Apify"
+          num=$(gh issue list --state open --search "in:title \"$titre\"" --json number,title --jq ".[] | select(.title == \"$titre\") | .number" | head -1)
+          if [ -s alerte-apify.md ]; then
+            if [ -n "$num" ]; then gh issue edit "$num" --body-file alerte-apify.md
+            else gh label create alerte --color B5442F --force >/dev/null 2>&1 || true
+                 gh issue create --title "$titre" --label alerte --assignee benjello --body-file alerte-apify.md; fi
+          elif [ -n "$num" ] && grep -q "\"jour\": \"$(date +%F)\"" _data/apify.json 2>/dev/null; then
+            gh issue close "$num" --comment "La consommation Apify est repassée sous 80 %."
+          fi
+      - name: Signaler l'échec
+        if: steps.run.outcome == 'failure'
+        run: echo "::error::Toutes les sources ont échoué, voir l'étape « Lancer les scrapers »." && exit 1

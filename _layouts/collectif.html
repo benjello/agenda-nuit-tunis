@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{%- if page.sources -%}
+  {%- assign evts = site.events | where_exp: "e", "page.sources contains e.source" -%}
+{%- else -%}
+  {%- assign evts = site.events | where: "source", page.source -%}
+{%- endif -%}
+<section class="intro fiche">
+  <p><a href="{{ '/artistes/' | relative_url }}" data-t="tous_collectifs">← Artistes, conférenciers et organisateurs</a></p>
+  <h1>{{ page.title | replace: " (Instagram)", "" | replace: " (Facebook)", "" }}</h1>
+  {%- assign liens = page.liens -%}
+  {%- unless liens %}{% assign liens = "" | split: "" %}{% endunless %}
+  <p>{% if liens.size > 0 %}{% for l in liens %}{% unless forloop.first %} · {% endunless %}<a href="{{ l.url }}" rel="noopener">{% if l.reseau == "instagram" %}Instagram{% elsif l.reseau == "facebook" %}Facebook{% else %}<span data-t="site_web">Site web</span>{% endif %}</a>{% endfor %}{% else %}<a href="{{ page.url_source }}" rel="noopener">{% if page.reseau == "instagram" %}Instagram{% elsif page.reseau == "facebook" %}Facebook{% else %}<span data-t="site_web">Site web</span>{% endif %}</a>{% endif %}</p>
+  {%- assign d = site.data.descriptifs.collectifs[page.slug] -%}{% include descriptif.html d=d %}
+</section>
+<h2 data-t="a_venir">À venir</h2>
+{% include liste-evenements.html evenements=evts %}
+{% include signaler-fiche.html nom=page.title %}

@@ -1,0 +1,25 @@
+name: Contribution
+
+# Résumé de chaque pull request pour la relecture : contribution extérieure ou non,
+# et liste des fichiers sensibles touchés (code, workflows), qui demandent une relecture attentive.
+# Déclenché par pull_request (jamais pull_request_target) : pour une PR venant d'un fork,
+# GitHub ne donne ni les secrets ni le droit d'écrire. Rien n'est commenté ni modifié.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fichiers modifiés
+        env:
+          BASE: ${{ github.base_ref }}
+          AUTEUR: ${{ github.event.pull_request.user.login }}
+          ASSOCIATION: ${{ github.event.pull_request.author_association }}
+        run: python3 .github/scripts/resume_contribution.py

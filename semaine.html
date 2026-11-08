@@ -1,0 +1,103 @@
+---
+layout: default
+title: Cette semaine
+permalink: /semaine/
+description: Que faire à Tunis cette semaine ? Les sept prochains jours de concerts, théâtre, conférences, expos, à partager sur WhatsApp.
+---
+{%- comment -%}
+  Le site est reconstruit une fois par jour : on met ici tout ce qui vient dans les 9 prochains jours,
+  et le script garde les 7 jours à partir d'aujourd'hui. Le bouton WhatsApp fabrique un message
+  texte avec les événements affichés (ville choisie comprise).
+{%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign limite = site.time | date: "%s" | plus: 777600 | date: "%Y-%m-%d" -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | where_exp: "e", "e.film != true" | sort: "date" -%}
+<section class="intro">
+  <h1 data-t="sem.titre">Cette semaine</h1>
+  <p data-t="sem.intro">Les sept prochains jours, jour par jour. Les expositions déjà ouvertes sont rangées à aujourd'hui (elles ne vont pas dans le message WhatsApp).</p>
+  <p class="actions">
+    <a id="sem-whatsapp" class="bouton" rel="noopener" href="https://wa.me/" data-t="sem.whatsapp">💬 Partager sur WhatsApp</a>
+    <button type="button" id="sem-copier" class="bouton" data-t="sem.copier">📋 Copier le texte</button>
+  </p>
+</section>
+{% include choix-ville.html %}
+
+{%- for jour in (0..6) %}
+<section class="month sem-jour" data-decalage="{{ jour }}" hidden>
+  <h2></h2>
+</section>
+{%- endfor %}
+
+<div id="sem-tous" hidden>
+{%- for e in events -%}
+  {%- assign debut = e.date | date: "%Y-%m-%d" -%}
+  {%- assign fin = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+  {%- if fin >= today and debut <= limite %}
+  <div class="sem-evt" data-debut="{{ debut }}" data-fin="{{ fin }}">{% include event-card.html event=e %}</div>
+  {%- endif -%}
+{%- endfor %}
+</div>
+<p id="sem-vide" class="empty" hidden data-t="sem.vide">Rien d'annoncé pour cette semaine pour l'instant.</p>
+
+<script>
+(function () {
+  var L = (document.documentElement.lang || 'fr').slice(0, 2);
+  var NOMS = {
+    fr: { j: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'], m: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'], titre: 'Cette semaine', entete: 'Que faire cette semaine ?', suite: 'Tout le programme' },
+    en: { j: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], m: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], titre: 'This week', entete: 'What’s on this week?', suite: 'Full programme' },
+    ar: { j: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'], m: ['جانفي', 'فيفري', 'مارس', 'أفريل', 'ماي', 'جوان', 'جويلية', 'أوت', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'], titre: 'هذا الأسبوع', entete: 'ماذا نفعل هذا الأسبوع؟', suite: 'البرنامج كاملا' }
+  };
+  var N = NOMS[L] || NOMS.fr;
+  function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function nomJour(d) { var s = N.j[d.getDay()] + ' ' + d.getDate() + ' ' + N.m[d.getMonth()]; return s.charAt(0).toUpperCase() + s.slice(1); }
+  var auj = new Date(); auj.setHours(12, 0, 0, 0);
+  var jours = [0, 1, 2, 3, 4, 5, 6].map(function (k) { var d = new Date(auj); d.setDate(auj.getDate() + k); return d; });
+  var aujIso = iso(auj), n = 0;
+  document.querySelectorAll('.sem-jour').forEach(function (s) {
+    var d = jours[+s.dataset.decalage], di = iso(d);
+    s.querySelector('h2').textContent = nomJour(d);
+    document.querySelectorAll('#sem-tous .sem-evt').forEach(function (e) {
+      // Un événement va sous son premier jour dans la semaine (aujourd'hui pour une expo déjà ouverte).
+      var premier = e.dataset.debut > aujIso ? e.dataset.debut : aujIso;
+      if (premier === di && e.dataset.fin >= di) { s.appendChild(e); n++; }
+    });
+  });
+
+  // Cache les jours vides selon la ville choisie, et prépare le message à partager.
+  function texte() {
+    var lignes = ['*' + N.entete + '*'], total = 0, montres = 0;
+    document.querySelectorAll('.sem-jour').forEach(function (s) {
+      var vus = Array.prototype.filter.call(s.querySelectorAll('.event'), function (e) { return e.offsetParent !== null; });
+      s.hidden = vus.length === 0; montres += vus.length;
+      if (!vus.length || total >= 40) return;
+      vus = vus.filter(function (e) { return e.dataset.debut >= aujIso; });  // pas les expos déjà ouvertes
+      if (!vus.length) return;
+      lignes.push('', '📅 *' + s.querySelector('h2').textContent + '*');
+      vus.forEach(function (e) {
+        if (total >= 40) return;
+        var a = e.querySelector('h3 a'), titre = (a && (a.getAttribute('data-tr-' + L) || a.textContent) || '').trim();
+        var h = e.dataset.heure ? e.dataset.heure.replace(':', 'h') + ' ' : '';
+        var lieu = (e.dataset.lieu || '').split(',')[0];
+        lignes.push('• ' + h + titre + (lieu ? ' — ' + lieu : ''));
+        total++;
+      });
+    });
+    lignes.push('', N.suite + ' : ' + location.href.split('#')[0]);
+    return { texte: lignes.join('\n'), total: montres };
+  }
+  function maj() {
+    // On rend les jours visibles le temps de mesurer, puis on cache ceux qui sont vides.
+    document.querySelectorAll('.sem-jour').forEach(function (s) { s.hidden = false; });
+    var t = texte();
+    document.getElementById('sem-vide').hidden = t.total > 0;
+    document.getElementById('sem-whatsapp').href = 'https://wa.me/?text=' + encodeURIComponent(t.texte);
+    return t;
+  }
+  document.addEventListener('ville', maj);
+  maj();
+  document.getElementById('sem-copier').addEventListener('click', function () {
+    var b = this, t = maj().texte;
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { b.textContent = '✓'; setTimeout(function () { b.textContent = '📋'; }, 1500); });
+  });
+})();
+</script>

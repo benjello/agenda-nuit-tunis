@@ -1,0 +1,277 @@
+# Registre des sources de l'agenda de la nuit.
+#
+# Une source = un endroit fiable où un lieu, une billetterie ou un festival
+# annonce sa programmation. Les scrapers relisent chaque source active chaque jour.
+#
+# Champs :
+#   id         identifiant court, unique (lettres, chiffres, tirets)
+#   nom        nom affiché sur le site
+#   url        page où la programmation est publiée
+#   type       lieu | billetterie | cinema | agenda
+#   genre      ce qu'est la source, pour la ranger sur le site :
+#              lieu | institution | festival | collectif | administration | presse | agenda
+#              Hors « lieu » et « institution », le nom de la source n'est jamais pris pour un lieu
+#              (pas de fiche lieu ni de point sur la carte pour « Webdo » ou « tunis.events »).
+#   scraper    nom du scraper qui sait lire cette source (dossier scrapers/sources/)
+#   categorie  catégorie par défaut des événements (voir _data/categories.yml). Le titre l'emporte
+#              (« DJ set » → club, « karaoké » → karaoke) ; un film, une expo ou une conférence est écarté.
+#   actif      false : source repérée mais pas encore branchée (ou en pause)
+#   options    réglages propres au scraper (facultatif)
+#   tous_les_jours  relire la source seulement tous les N jours (facultatif)
+#   note       remarque libre (facultatif)
+
+
+- id: teskerti
+  nom: Teskerti
+  url: https://teskerti.tn/
+  type: billetterie
+  genre: agenda
+  scraper: teskerti
+  actif: true
+  note: 'Billetterie nationale. Seules les rubriques clubbing, concerts et humour sont gardées ; théâtre, cinéma
+    et jeune public sont écartés (catégorie par défaut : theatre, hors agenda).'
+
+- id: tunis-events
+  nom: tunis.events (agenda)
+  url: https://tunis.events/nightlife
+  type: billetterie
+  genre: agenda
+  scraper: tunis_events
+  categorie: club
+  actif: true
+  options:
+    pages:
+    - url: https://tunis.events/nightlife
+      categorie: club
+    - url: https://tunis.events/concerts
+      categorie: concert
+    - url: https://tunis.events/music
+      categorie: concert
+    - url: https://tunis.events/stand_up
+      categorie: humour
+  note: 'Billetterie : clubs et concerts (Gammarth, La Marsa, La Goulette, centre-ville). Seules les rubriques du
+    soir sont lues. Hors Grand Tunis écarté.'
+
+- id: resident-advisor
+  nom: Resident Advisor (Tunisie)
+  url: https://ra.co/events/tn/all
+  type: agenda
+  genre: agenda
+  scraper: resident_advisor
+  categorie: club
+  actif: true
+  options:
+    pays: tn
+    zone: all
+    area: 196
+  note: Soirées électro et clubs, Tunisie entière, par l'API GraphQL du site.
+
+- id: tn-agenda-du-jour
+  nom: Tunisie Numérique (agenda du jour)
+  url: https://www.tunisienumerique.com
+  type: agenda
+  genre: presse
+  scraper: agenda_du_jour
+  categorie: autre
+  actif: true
+  note: 'Article quotidien des rendez-vous en Tunisie : on n''en garde que les soirées (concerts, cabarets, festivals,
+    stand-up).'
+  options:
+    flux: https://www.tunisienumerique.com/tunisie-actualite/agenda-culturel/feed/
+
+- id: ig-habibi-downtown
+  nom: Habibi Downtown (Instagram)
+  url: https://www.instagram.com/habibidowntown_/
+  type: lieu
+  genre: lieu
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: habibidowntown_
+    lieu: Habibi Downtown (av. de Paris, Tunis)
+  note: Club du centre-ville, soirées DJ. Aussi sur tunis.events.
+
+- id: ig-rock-n-rolla
+  nom: Rock'n'Rolla La Goulette (Instagram)
+  url: https://www.instagram.com/rocknrollagoulettepub/
+  type: lieu
+  genre: lieu
+  scraper: instagram
+  categorie: concert
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: rocknrollagoulettepub
+    lieu: Rock'n'Rolla, La Goulette
+  note: Pub avec programmation musicale. Trouvé par la recherche Instagram (dernière publication le 31/10/2026).
+
+- id: ig-downtown-vibes
+  nom: Downtown Vibes (Instagram)
+  url: https://www.instagram.com/downtown.vibes.world/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: downtown.vibes.world
+    lieu: Downtown Vibes
+    resultats: 8
+  note: Collectif house/disco depuis 2013 (Secret Vibes, Wax Day).
+
+- id: ig-hamdi-ryder
+  nom: Hamdi RydEr (Instagram)
+  url: https://www.instagram.com/thehamditheryder/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: thehamditheryder
+    lieu: Hamdi RydEr
+    resultats: 8
+  note: DJ, cofondateur de Downtown Vibes.
+
+- id: ig-balaclava
+  nom: Balaclava (Instagram)
+  url: https://www.instagram.com/blcv.tunis/
+  type: lieu
+  genre: lieu
+  scraper: instagram
+  categorie: club
+  actif: false
+  tous_les_jours: 3
+  options:
+    compte: blcv.tunis
+    lieu: Balaclava
+    resultats: 8
+  note: Collectif électro / rap, billetterie « lien en bio ».
+
+- id: ig-syndicate-of-love
+  nom: Syndicate of Love (Instagram)
+  url: https://www.instagram.com/syndicateoflove.tn/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: false
+  tous_les_jours: 3
+  options:
+    compte: syndicateoflove.tn
+    lieu: Syndicate of Love
+    resultats: 8
+  note: Soirées house/disco.
+
+- id: ig-kadhem
+  nom: Kadhem (Instagram)
+  url: https://www.instagram.com/kadhemusic/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: kadhemusic
+    lieu: Kadhem
+    resultats: 8
+  note: DJ / producteur.
+
+- id: ig-eddisco
+  nom: Eddisco Records (Instagram)
+  url: https://www.instagram.com/eddisco_records/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: eddisco_records
+    lieu: Eddisco Records, Tunis
+    resultats: 8
+  note: 'Label et disquaire du centre-ville (Downtown Vibes) : écoutes, DJ sets.'
+
+- id: fb-eddisco
+  nom: Eddisco
+  url: https://www.facebook.com/eddiscorecordstore
+  type: lieu
+  genre: collectif
+  scraper: facebook_programmes
+  categorie: club
+  actif: false
+  tous_les_jours: 3
+  options:
+    page: eddiscorecordstore
+    lieu: Eddisco
+    lecteur: une_affiche_par_evenement
+    max: 6
+    resultats: 8
+  note: Disquaire et label, soirées sur liste d'invités.
+
+- id: fb-61595612945174
+  nom: Steppers Sound System
+  url: https://www.facebook.com/profile.php?id=61595612945174
+  type: lieu
+  genre: collectif
+  scraper: facebook_programmes
+  categorie: club
+  actif: true
+  tous_les_jours: 3
+  options:
+    page: https://www.facebook.com/profile.php?id=61595612945174
+    lieu: Lieu à préciser
+    lecteur: une_affiche_par_evenement
+    max: 6
+    resultats: 8
+  note: Sound system, soirées bass music (page STEPPERStn). Proposé par Mahdi.
+
+- id: ig-echos-electrik
+  nom: Échos Électrik (Instagram)
+  url: https://www.instagram.com/echos.electrik/
+  type: lieu
+  genre: collectif
+  scraper: instagram
+  categorie: festival
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: echos.electrik
+    lieu: Tunis, voir l'annonce
+    resultats: 8
+  note: Association des cultures électroniques (E-Fest, E-Fest Camp à Ksar El Ferch, Tataouine). Proposé par Mahdi.
+
+- id: ig-fabrika
+  nom: Fabrika festival (Instagram)
+  url: https://www.instagram.com/fabrika_festival/
+  type: lieu
+  genre: festival
+  scraper: instagram
+  categorie: festival
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: fabrika_festival
+    lieu: One Resort, Monastir
+    resultats: 8
+  note: Festival électro, 5 au 9 novembre 2026 à Monastir.
+
+- id: ig-jaou-tunis
+  nom: Jaou Tunis (Instagram)
+  url: https://www.instagram.com/jaoutunis/
+  type: lieu
+  genre: festival
+  scraper: instagram
+  categorie: festival
+  actif: true
+  tous_les_jours: 3
+  options:
+    compte: jaoutunis
+    lieu: Jaou Tunis
+    resultats: 8
+  note: Festival et soirées Jaou Nights (Fondation Kamel Lazaar).

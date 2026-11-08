@@ -1,0 +1,38 @@
+---
+layout: null
+permalink: /feed.xml
+---
+{%- comment -%}
+  Fil RSS : les derniers événements arrivés dans l'agenda (champ « ajoute »), encore à venir.
+  À suivre dans un lecteur de flux, ou à brancher sur un canal Telegram, un bot, etc.
+{%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | where_exp: "e", "e.film != true" | sort: "ajoute", "last" | reverse -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>{{ site.title | xml_escape }}</title>
+  <link>{{ '/' | absolute_url }}</link>
+  <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+  <description>{{ site.description | xml_escape }}</description>
+  <language>fr</language>
+  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+  {%- assign n = 0 -%}
+  {%- for e in events -%}
+  {%- assign fin = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+  {%- if fin >= today and n < 60 -%}
+  {%- assign n = n | plus: 1 -%}
+  {%- assign cat = site.data.categories[e.category] | default: site.data.categories.autre -%}
+  {%- capture quand %}{% include date-fr.html date=e.date %}{% if e.end_date %} → {% include date-fr.html date=e.end_date %}{% endif %}{% endcapture %}
+  <item>
+    <title>{{ e.title | xml_escape }}</title>
+    <link>{{ e.url | absolute_url }}</link>
+    <guid isPermaLink="true">{{ e.url | absolute_url }}</guid>
+    <category>{{ cat.label | xml_escape }}</category>
+    {%- if e.ajoute %}<pubDate>{{ e.ajoute | date_to_rfc822 }}</pubDate>{% endif %}
+    <description>{{ quand | strip_html | normalize_whitespace | xml_escape }}{% if e.venue %} · {{ e.venue | xml_escape }}{% endif %}{% if e.price %} · {{ e.price | xml_escape }}{% endif %}</description>
+  </item>
+  {%- endif -%}
+  {%- endfor %}
+</channel>
+</rss>

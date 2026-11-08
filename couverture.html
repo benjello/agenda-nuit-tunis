@@ -1,0 +1,57 @@
+---
+layout: default
+title: Couverture
+permalink: /couverture/
+description: "Bilan de la semaine : combien d'événements l'agenda couvre, par ville, par source et par genre de source."
+---
+{%- assign hist = site.data.bilan | default: empty -%}
+{%- assign b = hist | last -%}
+<section class="intro">
+  <h1 data-t="couv_titre">Couverture de l'agenda</h1>
+  <p data-th="couv_intro">Bilan mis à jour chaque jour, une ligne par semaine. On compte les événements des 7 prochains jours, sans les doublons. Un film compte une fois, quel que soit le nombre de salles. Voir aussi l'<a href="{{ '/sante/' | relative_url }}">état des sources</a>.</p>
+</section>
+{%- if b %}
+<p class="bilan-chiffres"><strong>{{ b.sept_jours }}</strong> <span data-t="couv.sept">événements dans les 7 jours</span> · <strong>{{ b.a_venir }}</strong> <span data-t="couv.a_venir">à venir en tout</span> · <strong>{{ b.sources_avec_evenements }}</strong>/{{ b.sources_actives }} <span data-t="couv.sources">sources ont quelque chose cette semaine</span> <small>(<span data-t="couv.semaine">semaine</span> {{ b.semaine | split: "-S" | last }}, {{ b.date | date: "%d/%m/%Y" }})</small></p>
+
+<h2 data-t="couv.par_ville">Par ville</h2>
+<table class="sources">
+  <tbody>
+  {%- for v in site.data.villes %}{% assign n = b.par_ville[v.id] | default: 0 %}
+    <tr><td data-t="ville.{{ v.id }}">{{ v.nom }}</td><td>{{ n }}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
+
+<h2 data-t="couv.par_genre">Par genre de source</h2>
+<table class="sources">
+  <tbody>
+  {%- for g in b.par_genre %}
+    <tr><td data-t="genre.{{ g[0] }}">{{ site.data.genres[g[0]] | default: "Ajouts à la main" }}</td><td>{{ g[1] }}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
+
+<h2 data-t="couv.par_source">Par source</h2>
+<table class="sources">
+  <tbody>
+  {%- for s in b.par_source %}{% assign src = site.data.sources | where: "id", s[0] | first %}
+    <tr><td>{% if src %}<a href="{% assign fiche = src.fiche | default: src.id %}{{ '/collectifs/' | append: fiche | append: '/' | relative_url }}">{{ src.nom }}</a>{% else %}{{ s[0] }}{% endif %}</td><td>{{ s[1] }}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{%- if b.sources_muettes.size > 0 %}
+<p><small><span data-t="couv.rien_chez">Rien cette semaine chez :</span> {% for id in b.sources_muettes %}{% assign src = site.data.sources | where: "id", id | first %}{{ src.nom | default: id }}{% unless forloop.last %}, {% endunless %}{% endfor %}.</small></p>
+{%- endif %}
+
+<h2 data-t="couv.semaines">Semaine par semaine</h2>
+<table class="sources">
+  <thead><tr><th data-t="couv.col_semaine">Semaine</th><th data-t="couv.col_7">7 jours</th><th data-t="couv.col_venir">À venir</th><th data-t="couv.col_sources">Sources actives</th>{% for v in site.data.villes %}<th data-t="ville.{{ v.id }}">{{ v.nom | split: " (" | first }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {%- for h in hist reversed %}
+    <tr><td>{{ h.semaine }}</td><td>{{ h.sept_jours }}</td><td>{{ h.a_venir }}</td><td>{{ h.sources_avec_evenements }}/{{ h.sources_actives }}</td>{% for v in site.data.villes %}<td>{{ h.par_ville[v.id] | default: 0 }}</td>{% endfor %}</tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{%- else %}
+<p data-t="couv.premier">Le premier bilan sera fait au prochain passage des scrapers.</p>
+{%- endif %}

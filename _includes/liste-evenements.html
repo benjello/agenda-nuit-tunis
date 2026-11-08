@@ -1,0 +1,12 @@
+{%- comment -%}
+  Liste d'événements à venir (fiches lieu, organisateur, artiste). Les événements passés sont masqués
+  par assets/site.js, le site n'étant reconstruit qu'une fois par jour.
+  Usage : {% include liste-evenements.html evenements=liste %}
+{%- endcomment -%}
+{%- assign liste = include.evenements | sort: "date" -%}
+<div class="liste-evenements" data-masquer-passes>
+{%- for e in liste %}
+  {% include event-card.html event=e %}
+{%- endfor %}
+</div>
+<p class="empty" data-vide{% if liste.size > 0 %} hidden{% endif %} data-t="rien_a_venir">Rien d'annoncé pour l'instant.</p>

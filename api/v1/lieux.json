@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /api/v1/lieux.json
+---
+{
+  "version": 1,
+  "licence": "CC BY 4.0, citer « ToNight Tunis »",
+  "genere_le": {{ site.time | date_to_xmlschema | jsonify }},
+  "lieux": [
+  {%- for l in site.lieux %}{% unless forloop.first %},{% endunless %}
+    {"id": {{ l.slug | jsonify }}, "nom": {{ l.title | jsonify }}, "noms": {{ l.noms | jsonify }}, "adresse": {{ l.adresse | jsonify }}, "ville": {{ l.ville | jsonify }},
+     "lat": {{ l.lat | default: nil | jsonify }}, "lon": {{ l.lon | default: nil | jsonify }}, "fiche": {{ l.url | absolute_url | jsonify }}}
+  {%- endfor %}
+  ]
+}

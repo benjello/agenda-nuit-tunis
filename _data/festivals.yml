@@ -1,0 +1,5 @@
+# Calendrier des festivals. Une entrée par festival, pour l'édition à venir (ou la dernière).
+# programme : true dès que le programme de l'édition est publié (sinon on affiche « programme pas encore publié »).
+# mots : mots du titre qui rattachent un événement de l'agenda au festival.
+# enfants : true pour un festival jeune public (affiché aussi sur la page Enfants).
+# Vérifié le 1er novembre 2026 (voir bilan-sources/festivals.md).

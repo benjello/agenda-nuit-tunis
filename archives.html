@@ -1,0 +1,79 @@
+---
+layout: default
+title: Archives
+permalink: /archives/
+description: Tous les événements passés de l'agenda de la nuit, avec une recherche par titre, lieu ou mot-clé.
+---
+{%- comment -%}
+  Les données viennent de archives/donnees/AAAA.json, remplies chaque jour par scrapers/archives.py
+  (GitHub Actions). La recherche se fait dans le navigateur, sans serveur.
+{%- endcomment -%}
+<section class="intro">
+  <h1 data-t="arch.titre">Archives</h1>
+  <p data-t="arch.intro">Les événements passés, gardés depuis novembre 2026. Cherchez un artiste, un lieu, un festival…</p>
+</section>
+<input type="search" id="arch-recherche" class="recherche" placeholder="Chercher dans les archives…" data-t-placeholder="arch.chercher" aria-label="Chercher" autocomplete="off">
+<div class="filters" id="arch-annees" role="group" aria-label="Année"></div>
+<p id="arch-compte" class="meta"></p>
+<div id="arch-liste"></div>
+<p id="arch-vide" class="empty" hidden data-t="arch.vide">Rien trouvé dans les archives.</p>
+<script>
+(function () {
+  var base = {{ '/archives/donnees/' | relative_url | jsonify }};
+  var COULEURS = {{ site.data.categories | jsonify }};
+  var MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  var tout = [], annee = '', champ = document.getElementById('arch-recherche');
+  function tr(cle, defaut) { return window.t ? window.t(cle, defaut) : defaut; }
+  function sansAccents(s) { return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+  function el(tag, cls, txt) { var x = document.createElement(tag); if (cls) x.className = cls; if (txt) x.textContent = txt; return x; }
+
+  function afficher() {
+    var mots = sansAccents(champ.value).split(/\s+/).filter(Boolean);
+    var res = tout.filter(function (e) {
+      if (annee && e.debut.slice(0, 4) !== annee) return false;
+      return mots.every(function (m) { return e._txt.indexOf(m) >= 0; });
+    }).reverse();
+    var liste = document.getElementById('arch-liste'); liste.textContent = '';
+    document.getElementById('arch-vide').hidden = res.length > 0 || !tout.length;
+    document.getElementById('arch-compte').textContent = res.length + ' / ' + tout.length;
+    var mois = '', bloc;
+    res.slice(0, 300).forEach(function (e) {
+      var m = e.debut.slice(0, 7);
+      if (m !== mois) {
+        mois = m; bloc = el('section', 'month');
+        bloc.appendChild(el('h2', '', MOIS[+m.slice(5) - 1] + ' ' + m.slice(0, 4)));
+        liste.appendChild(bloc);
+      }
+      var c = COULEURS[e.categorie] || COULEURS.autre;
+      var p = el('p', 'arch-evt');
+      var tag = el('span', 'tag', tr('cat.' + e.categorie, c.label)); tag.style.background = c.color;
+      p.appendChild(tag); p.appendChild(document.createTextNode(' '));
+      var t = e.lien ? el('a', '', e.titre) : el('strong', '', e.titre);
+      if (e.lien) { t.href = e.lien; t.rel = 'noopener'; }
+      p.appendChild(t);
+      p.appendChild(el('small', 'meta', ' · ' + e.debut.slice(8) + '/' + e.debut.slice(5, 7) + (e.heure ? ' ' + e.heure : '') + (e.fin !== e.debut ? ' → ' + e.fin.slice(8) + '/' + e.fin.slice(5, 7) : '') + (e.lieu ? ' · ' + e.lieu : '')));
+      bloc.appendChild(p);
+    });
+  }
+
+  fetch(base + 'index.json').then(function (r) { return r.json(); }).then(function (index) {
+    var annees = Object.keys(index).sort().reverse(), boutons = document.getElementById('arch-annees');
+    [''].concat(annees).forEach(function (a) {
+      var b = el('button', a === '' ? 'active' : '', a || tr('arch.toutes', 'Toutes'));
+      b.type = 'button'; b.dataset.annee = a; boutons.appendChild(b);
+    });
+    boutons.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button'); if (!b) return;
+      annee = b.dataset.annee;
+      boutons.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x === b); });
+      afficher();
+    });
+    return Promise.all(annees.map(function (a) { return fetch(base + a + '.json').then(function (r) { return r.json(); }); }));
+  }).then(function (listes) {
+    tout = [].concat.apply([], listes).sort(function (a, b) { return (a.debut + a.heure) < (b.debut + b.heure) ? -1 : 1; });
+    tout.forEach(function (e) { e._txt = sansAccents([e.titre, e.lieu, e.source, e.resume].join(' ')); });
+    afficher();
+  }).catch(function () { document.getElementById('arch-vide').hidden = false; });
+  champ.addEventListener('input', afficher);
+})();
+</script>

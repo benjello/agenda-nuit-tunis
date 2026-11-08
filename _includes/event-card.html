@@ -1,0 +1,72 @@
+{%- assign e = include.event -%}
+{%- assign prix_bas = e.price | default: "" | downcase -%}
+{%- assign est_gratuit = false -%}{%- if prix_bas contains "gratuit" or prix_bas contains "libre" or prix_bas contains "free" or prix_bas == "0" or prix_bas == "0 dt" or prix_bas == "0 tnd" -%}{%- assign est_gratuit = true -%}{%- endif -%}
+{%- assign cat = site.data.categories[e.category] | default: site.data.categories.autre -%}
+{%- assign cat_id = e.category | default: "autre" -%}
+{%- assign heure = e.date | date: "%H:%M" -%}{%- if heure == "00:00" -%}{%- assign heure = "" -%}{%- endif -%}
+{%- assign heure_fin = e.end_time | default: "" -%}{%- if heure == "" or e.film == true -%}{%- assign heure_fin = "" -%}{%- endif -%}
+{%- assign resume = e.content | strip_html | strip_newlines | strip | truncatewords: 60, "…" -%}
+{%- assign trn = site.data.traductions.notices[e.path] -%}
+{%- assign img_bulle = "" -%}{%- if e.image and e.film != true -%}{%- if e.image contains "://" -%}{%- assign img_bulle = e.image -%}{%- else -%}{%- assign img_bulle = e.image | relative_url -%}{%- endif -%}{%- endif -%}
+{%- comment -%}
+  Le titre mène à la fiche de l'événement sur le site (notice, affiche, billets, carte, partage).
+  Les liens vers la source restent en bas de carte.
+{%- endcomment -%}
+<article class="event{% if e.film %} film{% endif %}{% if e.discret %} discret{% endif %}" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}" data-debut="{{ e.date | date: '%Y-%m-%d' }}" data-heure="{{ heure }}" data-heure-fin="{{ heure_fin }}" data-category="{{ cat_id }}" data-ville="{{ e.ville | default: 'tunis' }}"{% if est_gratuit %} data-gratuit{% endif %}{% if e.famille %} data-famille{% endif %} data-ajoute="{{ e.ajoute }}" data-id="{{ e.url }}" data-org="{{ e.source_name | escape }}" data-titre="{{ e.title | escape }}" data-lieu="{{ e.venue | escape }}{% if e.address %}, {{ e.address | escape }}{% endif %}" data-lien="{{ e.url | absolute_url }}" data-festival="{{ e.festival }}" data-resume="{{ resume | escape }}"{% for l in trn %}{% if l[0] != "cle" %} data-resume-{{ l[0] }}="{{ l[1] | strip_newlines | strip | truncatewords: 60, "…" | escape }}"{% endif %}{% endfor %} data-image="{{ img_bulle }}" data-prix="{{ e.price | escape }}" data-couleur="{{ cat.color }}" data-categorie="{{ cat.label }}">
+  <div class="event-date">
+    <span class="day">{{ e.date | date: "%-d" }}</span>
+    <span class="mon" data-mc="{{ e.date | date: '%-m' }}">{% assign m = e.date | date: "%-m" | minus: 1 %}{{ site.data.fr.mois_courts[m] }}</span>
+    {%- if heure != "" and e.film != true %}<span class="heure">{{ e.date | date: "%Hh%M" | replace: "h00", "h" }}{% if heure_fin != "" %}–{{ heure_fin | replace: ":", "h" | replace: "h00", "h" }}{% endif %}</span>{% endif %}
+    {%- if e.end_date and e.film != true %}{% assign fin_iso = e.end_date | date: "%Y-%m-%d" %}{% assign debut_iso = e.date | date: "%Y-%m-%d" %}{% if fin_iso != debut_iso %}{% assign mfin = e.end_date | date: "%-m" | minus: 1 %}<span class="au"><span data-t="jusquau">jusqu’au</span> {{ e.end_date | date: "%-d" }} <span data-mc="{{ e.end_date | date: '%-m' }}">{{ site.data.fr.mois_courts[mfin] }}</span></span>{% endif %}{% endif %}
+  </div>
+  <div class="event-body">
+    <span class="tag" style="background: {{ cat.color }}" data-t="cat.{{ cat_id }}">{{ cat.label }}</span>{% if e.festival %}{% assign fest = site.data.festivals | where: "id", e.festival | first %}{% if fest %} <a class="tag festival" href="{{ '/festivals/' | relative_url }}#{{ fest.id }}" title="{{ fest.nom | escape }}">🎪 {{ fest.nom_court | default: fest.nom }}</a>{% endif %}{% endif %}{% if e.serie %}{% assign ser = site.data.series | where: "id", e.serie | first %}{% if ser %} <span class="tag serie" title="{{ ser.nom | escape }}">📚 {{ ser.nom_court | default: ser.nom }}</span>{% endif %}{% endif %}{% if e.famille %} <span class="tag famille" data-t="famille">En famille</span>{% endif %}{% if e.age %} <span class="tag age" data-tn="{% if e.age contains "-" %}age.plage{% else %}age.des{% endif %}" data-n="{{ e.age }}" data-tn-fr="{% if e.age contains "-" %}%n ans{% else %}dès %n ans{% endif %}">{% if e.age contains "-" %}{{ e.age }} ans{% else %}dès {{ e.age }} ans{% endif %}</span>{% endif %}{% for l in e.langues %} <span class="tag langue" data-t="langue.{{ l }}">{% case l %}{% when "ar" %}En arabe{% when "fr" %}En français{% when "en" %}En anglais{% when "vo" %}VO sous-titrée{% endcase %}</span>{% endfor %}
+    {%- assign tr = site.data.traductions.titres[e.title] %}
+    <h3><a href="{{ e.url | relative_url }}"{% for l in tr %} data-tr-{{ l[0] }}="{{ l[1] | escape }}"{% endfor %}>{{ e.title }}</a></h3>
+    {%- if e.film %}
+    {%- capture duree %}{% if e.duration %}{% assign h = e.duration | divided_by: 60 %}{% assign mn = e.duration | modulo: 60 %}{{ h }}h{% if mn < 10 %}0{% endif %}{{ mn }}{% endif %}{% endcapture -%}
+    {%- capture lien_imdb %}{% include liens-film.html titre=e.title imdb=e.imdb letterboxd=e.letterboxd %}{% endcapture -%}
+    {%- assign parts = "" | split: "" -%}
+    {%- if duree != "" %}{% assign parts = parts | push: duree %}{% endif -%}
+    {%- if e.genres %}{% assign g = e.genres | join: ", " %}{% assign parts = parts | push: g %}{% endif -%}
+    {%- if lien_imdb != "" %}{% assign parts = parts | push: lien_imdb %}{% endif -%}
+    {%- if parts.size > 0 %}
+    <p class="meta">{{ parts | join: " · " }}</p>
+    {%- endif %}
+    <p class="days">
+      {%- assign jours = e.seances | default: empty -%}{%- if jours.size == 0 %}{% assign jours = "" | split: "" | push: e.date %}{% endif -%}
+      {%- assign prec = "" -%}
+      {%- for d in jours -%}{%- assign iso = d | date: '%Y-%m-%d' -%}{%- if iso != prec -%}{%- assign prec = iso -%}{%- assign j = d | date: "%w" | plus: 0 -%}<span data-jour="{{ iso }}">{{ site.data.fr.jours_courts[j] }} {{ d | date: "%-d" }}</span>{%- endif -%}{%- endfor -%}
+    </p>
+    {%- else %}
+    <p class="meta"><span class="date-longue">{% include date-fr.html date=e.date %}{% if e.end_date %} → {% include date-fr.html date=e.end_date %}{% endif %} · </span>{% if e.end_date %}<span class="date-courte">→ {{ e.end_date | date: "%-d" }} <span data-mc="{{ e.end_date | date: '%-m' }}">{% assign mf = e.end_date | date: "%-m" | minus: 1 %}{{ site.data.fr.mois_courts[mf] }}</span> · </span>{% endif %}{% include lien-carte.html lieu=e.venue adresse=e.address %}</p>
+    {%- endif %}
+    {%- comment -%} Début de la notice : affiché seulement sur grand écran (voir .extrait dans style.css). {%- endcomment -%}
+    {%- assign extrait = e.content | strip_html | strip_newlines | strip | truncatewords: 28, "…" -%}
+    {%- if extrait != "" and e.film != true %}
+    <p class="extrait"{% for l in trn %}{% if l[0] != "cle" %} data-tr-{{ l[0] }}="{{ l[1] | strip_newlines | strip | truncatewords: 28, "…" | escape }}"{% endif %}{% endfor %}>{{ extrait }}</p>
+    {%- endif %}
+    {%- comment -%} Pas de « Source : … » : on propose ce que le lecteur veut faire (acheter, lire l'annonce). Le nom de la source reste en infobulle. {%- endcomment -%}
+    {%- assign src = site.data.sources | where: "id", e.source | first -%}
+    {%- assign billet = "" -%}{%- if src.type == "billetterie" -%}{%- assign billet = e.link -%}{%- endif -%}
+    {%- for a in e.autres_sources -%}{%- assign s2 = site.data.sources | where: "id", a.source | first -%}{%- if billet == "" and s2.type == "billetterie" -%}{%- assign billet = a.link -%}{%- endif -%}{%- endfor -%}
+    <p class="actions">
+      {%- assign complet = false %}{% if e.price contains "Complet" %}{% assign complet = true %}{% endif %}
+      {%- assign prix_aff = e.price | remove: " · Complet" | remove: "Complet" | strip %}
+      {%- if complet %}<span class="prix complet" data-t="complet">Complet</span> {% endif %}
+      {%- if billet != "" %}<a class="billets" href="{{ billet }}" rel="noopener"><span data-t="billets">🎟 Billets</span>{% if prix_aff != "" %} · {{ prix_aff }}{% endif %}</a>{% elsif est_gratuit %}<span class="prix gratuit" data-t="gratuit">Gratuit</span>{% elsif prix_aff != "" %}<span class="prix">{{ prix_aff }}</span>{% endif -%}
+      {%- if e.link and e.link != billet %}<a class="secondaire" href="{{ e.link }}" rel="noopener" title="{{ e.source_name }}">{% if src.scraper == "instagram" or src.scraper == "facebook_programmes" %}<span data-t="annonce">Voir l'annonce</span>{% else %}<span data-t="infos">Plus d'infos</span>{% endif %}</a>{% endif -%}
+      {%- if e.seances and e.film != true %}<span>{{ e.seances.size }} <span data-t="seances">séances</span></span>{% endif -%}
+      {%- if e.category == "cinema" and e.film != true %}<span class="secondaire">{% include liens-film.html titre=e.title imdb=e.imdb letterboxd=e.letterboxd %}</span>{% endif -%}
+      <span class="outils">
+        <button type="button" class="apercu-rapide" aria-label="Aperçu rapide" data-t-title="apercu_rapide" title="Aperçu rapide"><span class="ico" aria-hidden="true">👁</span><span class="lib" aria-hidden="true" data-t="lib_apercu">Aperçu</span></button>
+        <button type="button" class="fav" aria-label="Garder en favori" data-t-title="favori" title="Garder en favori"><span class="ico" aria-hidden="true">☆</span><span class="lib" aria-hidden="true" data-t="lib_favori">Favori</span></button>
+        <button type="button" class="ajout-agenda" aria-label="Ajouter à mon agenda" data-t-title="agenda" title="Ajouter à mon agenda"><span class="ico" aria-hidden="true">📅</span><span class="lib" aria-hidden="true" data-t="lib_agenda">Agenda</span></button>
+        <button type="button" class="partager" aria-label="Partager" data-t-title="partager" title="Partager"><span class="ico" aria-hidden="true">↗</span><span class="lib" aria-hidden="true" data-t="lib_partager">Partager</span></button>
+      </span>
+    </p>
+  </div>
+  {%- if e.image and e.film != true %}{% if e.image contains "://" %}{% assign img = e.image %}{% else %}{% assign img = e.image | relative_url %}{% endif %}
+  <a class="vignette" href="{{ e.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ img }}" alt="" loading="lazy" decoding="async"></a>
+  {%- endif %}
+</article>

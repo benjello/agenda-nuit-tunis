@@ -1,0 +1,66 @@
+# Sources recherchées : ce que l'agenda ne sait pas encore lire, faute d'adresse.
+# Affichées sur la page « Contribuer » (/contribuer/) avec un bouton « J'ai trouvé ».
+# Les sources en pause ou en panne de _data/sources.yml s'y ajoutent toutes seules.
+#
+# Champs :
+#   id         identifiant court, unique (lettres, chiffres, tirets)
+#   nom        ce qu'on cherche
+#   categorie  catégorie (voir _data/categories.yml)
+#   cherche    ce qui nous manque : la page, le compte, le programme…
+#   pistes     ce qui a déjà été essayé (facultatif)
+#   tache      trouver (chercher une page ou un compte) | verifier (contrôler qu'une page marche)
+#              | brancher (écrire l'entrée dans le registre) | coder (écrire ou réparer un scraper)
+#   niveau     facile (un navigateur suffit) | moyen (un peu de GitHub) | avance (Python)
+#   source     id dans _data/sources.yml si la source existe déjà (facultatif)
+# Quand une entrée est trouvée et branchée, la retirer d'ici.
+
+- id: clubs-gammarth
+  tache: trouver
+  niveau: facile
+  nom: Clubs et discothèques de Gammarth et La Marsa
+  categorie: discotheque
+  cherche: "Le compte Instagram (ou la page Facebook) actif de chaque club de la côte nord : celui où sortent les affiches des soirées de la semaine."
+  pistes: "Beaucoup de clubs ne publient que des stories : il faut un compte qui poste aussi des affiches en publication."
+
+- id: clubs-hammamet-sousse
+  tache: trouver
+  niveau: facile
+  nom: Discothèques de Hammamet, Yasmine Hammamet, Sousse et Monastir
+  categorie: discotheque
+  cherche: "Le compte Instagram ou Facebook de chaque discothèque (souvent dans un hôtel ou un resort), avec les soirées à thème annoncées."
+
+- id: cabarets-tunis
+  tache: trouver
+  niveau: facile
+  nom: Cabarets et dîners-spectacles
+  categorie: cabaret
+  cherche: "Les cabarets et restaurants-spectacles du Grand Tunis et de Hammamet (soirées orientales, mezoued, chanteurs) et la page où ils annoncent leurs soirées."
+
+- id: bars-live-tunis
+  tache: trouver
+  niveau: facile
+  nom: Bars, pubs et rooftops avec programmation
+  categorie: bar
+  cherche: "Les bars et lounges qui annoncent concerts, DJ ou afterworks chaque semaine (centre-ville, Lac, La Marsa, La Goulette)."
+
+- id: karaoke-tunis
+  tache: trouver
+  niveau: facile
+  nom: Soirées karaoké
+  categorie: karaoke
+  cherche: "Les lieux qui organisent des soirées karaoké régulières, et leur compte Instagram ou Facebook."
+
+- id: stand-up-tunis
+  tache: trouver
+  niveau: facile
+  nom: Scènes de stand-up et comedy clubs
+  categorie: humour
+  cherche: "Les comedy clubs et soirées open mic du Grand Tunis (compte Instagram ou page Facebook)."
+
+- id: collectifs-soirees
+  tache: trouver
+  niveau: facile
+  nom: Collectifs et organisateurs de soirées
+  categorie: club
+  cherche: "Les collectifs qui organisent des soirées dans des lieux différents (techno, afro, hip-hop, amapiano…) et leur compte Instagram."
+  pistes: "Resident Advisor (ra.co/events/tn) liste déjà une partie des promoteurs : partir de leurs noms."

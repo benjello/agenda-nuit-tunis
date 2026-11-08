@@ -1,0 +1,13 @@
+# Coordonnées placées à la main, quand OpenStreetMap (Nominatim) ne trouve pas le lieu par son nom.
+# « nom du lieu » : [latitude, longitude]. Prioritaires sur la recherche automatique.
+"Agorgi Gallery, Sidi Bou Saïd": [36.8697, 10.3417]
+"B7L9 Art Centre": [36.8890, 10.3070]
+"Ciné 350 (Cité de la Culture)": [36.8125, 10.1817]
+"Salle des Jeunes Créateurs - Cité de la Culture": [36.8125, 10.1817]
+"Cinéma Alhambra Zéphyr": [36.8780, 10.3245]
+"Cinéma Le Palace": [36.8000, 10.1830]
+"CinéMadart": [36.8540, 10.3240]
+"Institut français de Sfax": [34.7400, 10.7600]
+"Salle Albert Camus, Institut français de Sfax": [34.7400, 10.7600]
+"Institut français de Sousse": [35.8290, 10.6380]
+"Pathé Azur City": [36.7440, 10.2320]

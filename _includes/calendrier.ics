@@ -1,0 +1,56 @@
+{%- comment -%} Corps commun des calendriers : agenda.ics et calendriers/*.ics. {%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- comment -%} Les films à l'affiche (un par salle et par jour) ne vont pas dans le calendrier. {%- endcomment -%}
+{%- assign events = site.events | where_exp: "e", "e.doublon != true" | where_exp: "e", "e.film != true" | sort: "date" -%}
+{%- comment -%} Filtres facultatifs (calendriers/*.ics) : une catégorie, une ville. {%- endcomment -%}
+{%- if include.categorie %}{% assign events = events | where: "category", include.categorie %}{% endif -%}
+{%- if include.ville %}{% assign events = events | where: "ville", include.ville %}{% endif -%}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//agenda-nuit-tunis//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ site.title }}{% if include.nom %} · {{ include.nom }}{% endif %}
+X-WR-TIMEZONE:Africa/Tunis
+BEGIN:VTIMEZONE
+TZID:Africa/Tunis
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0100
+TZNAME:CET
+END:STANDARD
+END:VTIMEZONE
+{%- for e in events -%}
+{%- assign last_day = e.end_date | default: e.date | date: "%Y-%m-%d" -%}
+{%- if last_day >= today -%}
+{%- capture loc %}{{ e.venue }}{% if e.address %}, {{ e.address }}{% endif %}{% endcapture -%}
+{%- capture link %}{% if e.link %}{{ e.link }}{% else %}{{ site.url }}{{ e.url | relative_url }}{% endif %}{% endcapture -%}
+{%- if e.seances -%}{%- assign starts = e.seances -%}{%- else -%}{%- assign starts = "" | split: "" | push: e.date -%}{%- endif -%}
+{%- for start in starts -%}
+{%- assign h = start | date: "%H%M" %}
+BEGIN:VEVENT
+UID:{{ e.id | slugify }}-{{ forloop.index }}@agenda-nuit-tunis
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%S" }}
+{% if h == "0000" -%}
+DTSTART;VALUE=DATE:{{ start | date: "%Y%m%d" }}
+{% if e.end_date and e.seances == nil %}DTEND;VALUE=DATE:{{ e.end_date | date: "%s" | plus: 86400 | date: "%Y%m%d" }}
+{% endif -%}
+{%- else -%}
+DTSTART;TZID=Africa/Tunis:{{ start | date: "%Y%m%dT%H%M00" }}
+{% if e.end_time and e.seances == nil -%}
+{%- assign fin_s = start | date: "%Y-%m-%d" | append: " " | append: e.end_time | date: "%s" | plus: 0 -%}
+{%- assign deb_s = start | date: "%s" | plus: 0 -%}
+{%- if fin_s <= deb_s %}{% assign fin_s = fin_s | plus: 86400 %}{% endif -%}
+DTEND;TZID=Africa/Tunis:{{ fin_s | date: "%Y%m%dT%H%M00" }}
+{% endif -%}
+{% endif -%}
+SUMMARY:{{ e.title | replace: "\", "\\" | replace: ",", "\," | replace: ";", "\;" }}
+LOCATION:{{ loc | replace: ",", "\," | replace: ";", "\;" }}
+URL:{{ link }}
+DESCRIPTION:{{ link }}
+END:VEVENT
+{%- endfor -%}
+{%- endif -%}
+{%- endfor %}
+END:VCALENDAR

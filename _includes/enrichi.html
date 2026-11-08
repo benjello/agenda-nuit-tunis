@@ -1,0 +1,18 @@
+{%- comment -%}
+  Photo (Wikidata / Wikimedia Commons) et infos OpenStreetMap (accès fauteuil, horaires) d'une fiche.
+  include.cle : « artiste:<slug> », « lieu:<slug> » ou « musee:<nom> » (voir scrapers/enrichir.py).
+{%- endcomment -%}
+{%- assign en = site.data.enrichi -%}
+{%- assign img = en.images[include.cle] -%}
+{%- assign o = en.osm[include.cle] -%}
+{%- if img and include.photo != false %}
+<figure class="photo-fiche"><img src="{{ img.image }}" alt="{{ include.nom | escape }}" loading="lazy" width="400"><figcaption><a href="{{ img.credit }}" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+{%- endif %}
+{%- if o.wheelchair or o.opening_hours or o.website %}
+<p class="infos-osm">
+  {%- if o.wheelchair %}<span>♿ <span data-t="acces.{{ o.wheelchair }}">{% case o.wheelchair %}{% when "yes" %}Accessible en fauteuil{% when "limited" %}Accès fauteuil partiel{% when "no" %}Pas d'accès fauteuil{% else %}Accès fauteuil : {{ o.wheelchair }}{% endcase %}</span></span>{% endif %}
+  {%- if o.opening_hours %}{% if o.wheelchair %} · {% endif %}<span>🕒 <span data-t="horaires">Horaires</span> : <code>{{ o.opening_hours | escape }}</code></span>{% endif %}
+  {%- if o.website %}{% if o.wheelchair or o.opening_hours %} · {% endif %}<a href="{{ o.website }}" rel="noopener">🔗 <span data-t="site_web">Site web</span></a>{% endif %}
+  <small> · <a href="https://www.openstreetmap.org/copyright" rel="noopener">© OpenStreetMap</a></small>
+</p>
+{%- endif %}

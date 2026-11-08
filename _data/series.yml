@@ -1,0 +1,5 @@
+# Séries : des rendez-vous qui reviennent à des dates différentes (cycles, cercles, cafés…).
+# Un événement dont le titre (ou le début de la notice) contient un des mots reçoit l'étiquette de la série
+# (champ « serie », voir scrapers/festivals.py). Pas de dates : une série n'a pas de période.
+# mots : mots entiers séparés par « | », sans casse ni accents.
+# Pour ajouter une série : une entrée ici (id, nom, nom_court, mots).

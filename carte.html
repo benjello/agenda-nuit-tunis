@@ -1,0 +1,80 @@
+---
+layout: default
+title: Carte des lieux
+permalink: /carte/
+description: La carte des clubs, cabarets et bars de Tunisie qui ont une soirée annoncée.
+---
+<section class="intro">
+  <h1 data-t="carte_titre">Carte des lieux</h1>
+  <p><span data-t="carte_intro">Touchez un lieu pour voir ce qu'il programme.</span> <a href="{{ '/lieux/' | relative_url }}" data-t="liste_lieux">Liste des lieux</a></p>
+</section>
+{%- assign points = site.data.lieux.carte | default: empty -%}
+<div class="filters" id="periodes" role="group" aria-label="Période">
+  <button type="button" data-jours="1" data-t="carte.auj">Aujourd'hui</button>
+  <button type="button" data-jours="7" data-t="carte.sept">7 jours</button>
+  <button type="button" data-jours="0" class="active" data-t="carte.tout">Tout</button>
+</div>
+{%- comment -%} Événements à venir rattachés à un lieu de la carte : le script les compte selon la période choisie. {%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign evts = site.events | where_exp: "e", "e.doublon != true" | sort: "date" -%}
+{%- capture liste %}[{% assign first = true %}{% for e in evts %}{% assign fin = e.end_date | default: e.date | date: "%Y-%m-%d" %}{% assign slug = site.data.lieux.index[e.venue] %}{% if fin >= today and slug %}{% unless first %},{% endunless %}{% assign first = false %}[{{ slug | jsonify }},{{ e.date | date: "%Y-%m-%d" | jsonify }},{{ fin | jsonify }},{{ e.title | truncate: 70 | jsonify }},{{ e.url | relative_url | jsonify }}]{% endif %}{% endfor %}]{% endcapture -%}
+<div id="carte" class="carte-lieux" aria-label="Carte"></div>
+{%- if points.size == 0 %}<p class="empty" data-t="carte_vide">La carte se remplit au fil des passages : les lieux sont placés automatiquement chaque jour.</p>{% endif %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function () {
+  if (!window.L) return;  // carte injoignable : la liste des lieux reste là
+  var points = {{ points | jsonify }};
+  var base = {{ '/lieux/' | relative_url | jsonify }};
+  var carte = L.map('carte').setView([36.82, 10.18], 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(carte);
+  var v = document.documentElement.dataset.ville;
+  try { v = localStorage.getItem('ville') || 'toutes'; } catch (e) { v = 'toutes'; }
+  var evts = {{ liste | strip }};
+  function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  var couche = L.layerGroup().addTo(carte), premiere = true;
+  function dessiner(jours) {
+    couche.clearLayers();
+    var auj = new Date(), aujIso = iso(auj), lim = new Date(auj);
+    lim.setDate(auj.getDate() + Math.max(jours - 1, 0));
+    var limIso = iso(lim), parLieu = {};
+    evts.forEach(function (e) {
+      // e = [lieu, début, fin, titre, lien] ; un événement compte s'il a lieu pendant la période.
+      // Un film joué plusieurs jours n'est compté qu'une fois par lieu.
+      if (e[2] < aujIso || (jours && e[1] > limIso)) return;
+      var l = parLieu[e[0]] = parLieu[e[0]] || [];
+      if (!l.some(function (x) { return x[3] === e[3]; })) l.push(e);
+    });
+    var groupe = [];
+    points.forEach(function (p) {
+      var liste = parLieu[p.slug] || [];
+      if (!liste.length) return;
+      var m = L.circleMarker([p.lat, p.lon], { radius: 6 + Math.min(liste.length, 20) / 2, color: '#b5442f', weight: 2, fillOpacity: .6 }).addTo(couche);
+      var d = document.createElement('div'), a = document.createElement('a');
+      a.href = base + p.slug + '/'; a.textContent = p.nom;
+      var b = document.createElement('strong'); b.appendChild(a); d.appendChild(b);
+      var ul = document.createElement('ul');
+      liste.slice(0, 6).forEach(function (e) {
+        var li = document.createElement('li'), l = document.createElement('a');
+        l.href = e[4]; l.textContent = e[3]; li.appendChild(l); ul.appendChild(li);
+      });
+      if (liste.length > 6) { var li = document.createElement('li'); li.textContent = '+ ' + (liste.length - 6); ul.appendChild(li); }
+      d.appendChild(ul);
+      m.bindPopup(d);
+      if (v === 'toutes' || p.ville === v) groupe.push([p.lat, p.lon]);
+    });
+    if (premiere && groupe.length > 1) carte.fitBounds(groupe, { padding: [30, 30], maxZoom: 14 });
+    premiere = false;
+  }
+  document.getElementById('periodes').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (!b) return;
+    this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('active', x === b); });
+    dessiner(+b.dataset.jours);
+  });
+  dessiner(0);
+})();
+</script>
