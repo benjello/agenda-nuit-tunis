@@ -39,7 +39,7 @@ body:
     id: categorie
     attributes:
       label: Catégorie
-      options: [Club, Discothèque, Cabaret, Concert live, Bar & lounge, Karaoké, Stand-up, Festival & open air, Autre soirée]
+      options: [Club, Discothèque, Cabaret, Concert live, Bar & lounge, Karaoké, Stand-up, Sound system, Festival & open air, Autre soirée]
     validations:
       required: true
   - type: input

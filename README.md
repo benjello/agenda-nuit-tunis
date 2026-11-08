@@ -10,7 +10,7 @@ même moteur (Jekyll, scrapers Python, GitHub Actions), mêmes formats. Seules c
 catégorie de nuit d'après son titre (« DJ set » → club, « karaoké » → karaoke, « dîner-spectacle » → cabaret) ;
 les films, expos, conférences, ateliers et pièces de théâtre sont écartés (`scrapers/commun.py: categorie_nuit`).
 
-**Catégories** : `club`, `discotheque`, `cabaret`, `concert`, `bar`, `karaoke`, `humour`, `festival`, `autre`.
+**Catégories** : `club`, `discotheque`, `cabaret`, `concert`, `bar`, `karaoke`, `humour`, `soundsystem`, `festival`, `autre`.
 
 ## Ajouter un événement
 

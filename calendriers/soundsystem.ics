@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /calendriers/soundsystem.ics
+---
+{% include calendrier.ics categorie="soundsystem" nom="Sound system" %}

@@ -74,6 +74,13 @@ _TUNISIE = re.compile(r"tunisi|tunis\b|gammarth|marsa|goulette|carthage|sidi bou
                       r"hammamet|nabeul|sousse|monastir|mahdia|sfax|djerba|bizerte|tabarka|kantaoui|yasmine|tozeur", re.I)
 
 
+def de_jour(e: Evenement) -> bool:
+    """Une annonce qui commence le matin ou l'après-midi (salon, convention, atelier) n'est pas une soirée.
+    Midi pile est souvent une heure par défaut (affiche sans heure) : on la garde. Les festivals et day parties restent."""
+    h = e.debut.hour
+    return e.categorie != "festival" and (6 <= h < 12 or 13 <= h < 16)
+
+
 def soiree_sure(e: Evenement) -> bool:
     """Pour une source large : titre de soirée reconnu, début après 17 h (ou heure inconnue), lieu en Tunisie."""
     if not categorie_du_titre(e.titre):
@@ -106,7 +113,7 @@ def ecrire_evenements(source: dict, evenements: list[Evenement]) -> int:
     # Films, expos, conférences, ateliers et pièces de théâtre restent dans l'agenda culturel.
     for e in a_venir:
         e.categorie = categorie_nuit(e.categorie or source.get("categorie") or "autre", e.titre)
-    a_venir = [e for e in a_venir if e.categorie and not e.film]
+    a_venir = [e for e in a_venir if e.categorie and not e.film and not de_jour(e)]
     # Sources larges (recherche Facebook par mots-clés) : le titre doit dire la soirée, l'heure être le soir,
     # et le lieu être en Tunisie. Sinon on récolte des formations, des salons ou des fêtes à Montréal.
     if (source.get("options") or {}).get("filtre_strict"):

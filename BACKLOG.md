@@ -17,7 +17,7 @@ Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées d
 ## Fait (8 novembre 2026)
 
 - [x] Reprise du moteur de l'agenda culturel (Jekyll, scrapers, page Sources, carte, ICS, API), données culturelles vidées.
-- [x] Catégories de la nuit (`_data/categories.yml`) : club, discothèque, cabaret, concert live, bar & lounge,
+- [x] Catégories de la nuit (`_data/categories.yml`) : club, discothèque, cabaret, concert live, bar & lounge, sound system,
       karaoké, stand-up, festival & open air, autre soirée.
 - [x] Tri à l'écriture (`scrapers/commun.py: categorie_nuit`) : le titre donne la catégorie (« DJ » → club,
       « karaoké » → karaoke…) ; films, expos, conférences, ateliers et pièces de théâtre sont écartés.

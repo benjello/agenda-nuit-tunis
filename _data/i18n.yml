@@ -39,6 +39,7 @@ cat.concert: { ar: "حفلات حية", en: "Live music" }
 cat.bar: { ar: "حانات ولاونج", en: "Bars & lounges" }
 cat.karaoke: { ar: "كاريوكي", en: "Karaoke" }
 cat.humour: { ar: "ستاند أب", en: "Stand-up" }
+cat.soundsystem: { ar: "ساوند سيستم", en: "Sound system" }
 cat.festival: { ar: "مهرجانات وسهرات في الهواء الطلق", en: "Festivals & open air" }
 cat.autre: { ar: "سهرات أخرى", en: "Other nights" }
 recherche: { fr: "Chercher un DJ, un club, une soirée…", ar: "ابحث عن دي جي، نادٍ، سهرة…", en: "Search a DJ, a club, a night…" }

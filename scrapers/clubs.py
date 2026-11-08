@@ -36,6 +36,19 @@ TYPES = {"nightclub": "club", "bar": "bar", "pub": "bar", "karaoke_box": "karaok
 
 GENERIQUE = re.compile(r"(?i)\s*(bar|pub|disco(th[eè]que)?|night ?club|club|after work|ملهى ليلي|حانة)\s*")
 
+# Ce qu'OpenStreetMap range parfois en « bar » mais qui n'est pas une sortie de nuit : cafés, restaurants,
+# salles des fêtes, bars d'hôtel réservés aux clients (piscine, hall), noms de ville seuls.
+HORS_SUJET = re.compile(r"(?i)\bcaf[ée]s?\b|coffee|\bsalon\b|\brestaurant\b|\bpizz|\bsnack|\bp[âa]tisserie|\bglacier\b"
+                        r"|\bpool bar\b|\blobby\b|\bh[ôo]tel\b|\bespace\b|^\s*(tozeur|djerba|sousse|monastir|tunis|sfax|nabeul|hammamet)\s*$"
+                        r"|مقهى|قهوة|مطعم")
+
+def hors_sujet(nom: str) -> bool:
+    """Vrai pour un café, un restaurant, un bar d'hôtel… Un « café-bar » (brasserie de Tunis) reste un bar."""
+    if re.search(r"(?i)\bcaf[ée]\b", nom) and re.search(r"(?i)\bbar\b", nom) and not re.search(r"(?i)h[ôo]tel|restaurant", nom):
+        return False
+    return bool(HORS_SUJET.search(nom))
+
+
 _JOURS = {"Mo": "lun", "Tu": "mar", "We": "mer", "Th": "jeu", "Fr": "ven", "Sa": "sam", "Su": "dim", "PH": "fériés"}
 
 
@@ -75,7 +88,7 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
     for el in elements:
         t = el.get("tags") or {}
         nom = (t.get("name:fr") or t.get("name") or t.get("name:en") or "").strip()
-        if not nom or GENERIQUE.fullmatch(nom):  # « Discotheque », « Bar » : pas un nom de lieu
+        if not nom or GENERIQUE.fullmatch(nom) or hors_sujet(nom):  # « Discotheque », « Go Café », « Pool Bar »
             continue
         adresse = ", ".join(x for x in (
             " ".join(y for y in (t.get("addr:housenumber"), t.get("addr:street")) if y),

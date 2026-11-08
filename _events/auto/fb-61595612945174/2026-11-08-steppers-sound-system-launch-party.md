@@ -4,7 +4,7 @@ date: 2026-11-08 12:00
 end_time: "21:00"
 venue: "Dar Ziqua, Zaghouan"
 ville: "autres"
-category: "club"
+category: "soundsystem"
 price: "40 DT"
 link: "https://www.facebook.com/61595612945174/posts/122107469277520431"
 source: "fb-61595612945174"

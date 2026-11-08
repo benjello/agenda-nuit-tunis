@@ -8,5 +8,6 @@ concert:     { label: "Concert live",    color: "#1565c0", aide: "Concerts du so
 bar:         { label: "Bar & lounge",    color: "#00796b", aide: "Bars musicaux, pubs, lounges, rooftops, afterworks" }
 karaoke:     { label: "Karaoké",         color: "#e65100", aide: "Soirées karaoké et open mic chanté" }
 humour:      { label: "Stand-up",        color: "#5d4037", aide: "Stand-up et comédie en soirée" }
+soundsystem: { label: "Sound system",    color: "#6d4c41", aide: "Soirées sound system : dub, reggae, bass music, souvent en plein air ou dans des lieux éphémères" }
 festival:    { label: "Festival & open air", color: "#2e7d32", aide: "Festivals électro, open air, day parties" }
 autre:       { label: "Autre soirée",    color: "#555555" }

@@ -244,8 +244,9 @@ _CATEGORIES_DU_TITRE = [
     ("humour", r"stand[- ]?up|\bcomedy\b|\bhumou?r\b|one[- ]man[- ]show|\bcom[ée]die club\b|open mic"),
     ("cabaret", r"\bcabaret\b|d[îi]ner[- ]spectacle|\brevue\b|\bburlesque\b|soir[ée]e orientale|\bbelly ?dance\b|danse orientale"),
     ("festival", r"\bfestival\b|\bopen[- ]air\b|day ?party|\bfest\b|\bboat party\b|pool ?party|beach party"),
+    ("soundsystem", r"\bsound ?system\b|\bsoundsystem\b|\bdub\b|\breggae\b|\bsteppers?\b|\bbass music\b|\broots\b"),
     ("club", r"\bdj\b|\bdjs\b|\btechno\b|\bhouse\b|\bafro ?house\b|\bclub(?:bing)?\b|\brave\b|\bb2b\b|\ball night long\b"
-             r"|\bdisco\b|\bamapiano\b|\bdrum ?(?:&|and|n) ?bass\b|\bsound ?system\b|\bsecret vibes\b"),
+             r"|\bdisco\b|\bamapiano\b|\bdrum ?(?:&|and|n) ?bass\b|\bsecret vibes\b"),
     ("bar", r"\bafterwork\b|after[- ]work|\brooftop\b|\blounge\b|\bhappy hour\b|\bpub\b|\bsunset\b"),
     ("discotheque", r"\bdiscoth[èe]que\b|\bnight ?club\b|\bbo[îi]te de nuit\b|ann[ée]es? (?:80|90|2000)|\bladies night\b|soir[ée]e [àa] th[èe]me"),
     ("concert", r"\bconcert\b|\blive\b|\bjazz\b|\brap\b|\bmalouf\b|\bmezoued\b|\bmizwed\b|\brock\b|\bblues\b|\bgnawa\b|\bstambali\b"),

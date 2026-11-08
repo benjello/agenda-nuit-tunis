@@ -3,23 +3,6 @@
  "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
  "lieux": [
   {
-   "nom": "Espace Meziana",
-   "type": "bar",
-   "ville": "autres",
-   "adresse": "شارع السلوم, القصرين",
-   "lat": 35.164063,
-   "lon": 8.8327802,
-   "osm": "https://www.openstreetmap.org/node/9823537977"
-  },
-  {
-   "nom": "Go CAfé",
-   "type": "bar",
-   "ville": "autres",
-   "lat": 35.6775875,
-   "lon": 10.1024618,
-   "osm": "https://www.openstreetmap.org/node/11830495170"
-  },
-  {
    "nom": "Membressa",
    "type": "bar",
    "ville": "autres",
@@ -34,14 +17,6 @@
    "lat": 36.9542433,
    "lon": 8.7575446,
    "osm": "https://www.openstreetmap.org/way/1430352404"
-  },
-  {
-   "nom": "Salon Des Fêtes Honey Moon",
-   "type": "club",
-   "ville": "autres",
-   "lat": 35.1663251,
-   "lon": 8.8516961,
-   "osm": "https://www.openstreetmap.org/node/6189973655"
   },
   {
    "nom": "The Palm Garden Bar",
@@ -86,22 +61,6 @@
    "osm": "https://www.openstreetmap.org/node/2306836074"
   },
   {
-   "nom": "Lobby bar",
-   "type": "bar",
-   "ville": "monastir",
-   "lat": 35.5367627,
-   "lon": 11.0316851,
-   "osm": "https://www.openstreetmap.org/node/11978056469"
-  },
-  {
-   "nom": "Pool Bar",
-   "type": "bar",
-   "ville": "monastir",
-   "lat": 35.5400199,
-   "lon": 11.0319232,
-   "osm": "https://www.openstreetmap.org/way/1088021199"
-  },
-  {
    "nom": "Bar Jasmin",
    "type": "bar",
    "ville": "nabeul",
@@ -125,14 +84,6 @@
    "lat": 36.4039473,
    "lon": 10.5694656,
    "osm": "https://www.openstreetmap.org/node/6287074343"
-  },
-  {
-   "nom": "Bar Restaurant",
-   "type": "bar",
-   "ville": "nabeul",
-   "lat": 36.4614441,
-   "lon": 10.7293097,
-   "osm": "https://www.openstreetmap.org/node/6302382981"
   },
   {
    "nom": "Bar Semi Ramis",
@@ -287,22 +238,6 @@
    "osm": "https://www.openstreetmap.org/node/1734545070"
   },
   {
-   "nom": "Hotel beach drinks hut",
-   "type": "bar",
-   "ville": "nabeul",
-   "lat": 36.4189565,
-   "lon": 10.6710263,
-   "osm": "https://www.openstreetmap.org/node/6268842900"
-  },
-  {
-   "nom": "Hôtel Caribbean World Nabeul",
-   "type": "bar",
-   "ville": "nabeul",
-   "lat": 36.4424648,
-   "lon": 10.7458516,
-   "osm": "https://www.openstreetmap.org/node/1859404265"
-  },
-  {
    "nom": "Iberostar",
    "type": "bar",
    "ville": "nabeul",
@@ -318,14 +253,6 @@
    "lat": 36.445427,
    "lon": 10.7250128,
    "osm": "https://www.openstreetmap.org/node/6335865946"
-  },
-  {
-   "nom": "Java Café",
-   "type": "bar",
-   "ville": "nabeul",
-   "lat": 36.4443134,
-   "lon": 10.7245087,
-   "osm": "https://www.openstreetmap.org/node/6343247606"
   },
   {
    "nom": "Jobi Beach Hammamet",
@@ -619,15 +546,6 @@
    "manuel": true
   },
   {
-   "nom": "Café De Tunis",
-   "type": "bar",
-   "ville": "sfax",
-   "adresse": "صفاقس",
-   "lat": 34.7326938,
-   "lon": 10.7641539,
-   "osm": "https://www.openstreetmap.org/node/4639995433"
-  },
-  {
    "nom": "L'ahbab",
    "type": "bar",
    "ville": "sfax",
@@ -662,14 +580,6 @@
    "osm": "https://www.openstreetmap.org/node/1228007226"
   },
   {
-   "nom": "Cafe de Paris",
-   "type": "bar",
-   "ville": "sousse",
-   "lat": 35.8317645,
-   "lon": 10.6407243,
-   "osm": "https://www.openstreetmap.org/node/12343256701"
-  },
-  {
    "nom": "Caruso",
    "type": "bar",
    "ville": "sousse",
@@ -686,14 +596,6 @@
    "lat": 35.8543843,
    "lon": 10.6160499,
    "osm": "https://www.openstreetmap.org/node/3268965066"
-  },
-  {
-   "nom": "El Menchia Hôtel Restaurant & Bar",
-   "type": "bar",
-   "ville": "sousse",
-   "lat": 35.8676013,
-   "lon": 10.6106909,
-   "osm": "https://www.openstreetmap.org/node/1277096779"
   },
   {
    "nom": "Golf Bräu",
@@ -872,30 +774,12 @@
    "ambiance": "terrasse"
   },
   {
-   "nom": "Restaurant Sidi Ali Chez Adel",
-   "type": "bar",
-   "ville": "sud",
-   "horaires": "lun-dim 12h-22h",
-   "telephone": "+216 21 805 506",
-   "lat": 33.7735804,
-   "lon": 11.0374506,
-   "osm": "https://www.openstreetmap.org/node/4271404389"
-  },
-  {
    "nom": "Sunset Beach Bar Djerba",
    "type": "bar",
    "ville": "sud",
    "lat": 33.8635366,
    "lon": 10.9746574,
    "osm": "https://www.openstreetmap.org/node/6396807485"
-  },
-  {
-   "nom": "Tozeur",
-   "type": "bar",
-   "ville": "sud",
-   "lat": 33.9185562,
-   "lon": 8.1255928,
-   "osm": "https://www.openstreetmap.org/node/8557626921"
   },
   {
    "nom": "Osiris Club Djerba",
@@ -1294,14 +1178,6 @@
    "lat": 36.7994742,
    "lon": 10.1822842,
    "osm": "https://www.openstreetmap.org/node/6302251638"
-  },
-  {
-   "nom": "SALON VIP (DEPARTURES LOUNGE)",
-   "type": "bar",
-   "ville": "tunis",
-   "lat": 36.8458648,
-   "lon": 10.2189655,
-   "osm": "https://www.openstreetmap.org/node/6234564338"
   },
   {
    "nom": "Schilling",

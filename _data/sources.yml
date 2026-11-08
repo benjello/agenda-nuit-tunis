@@ -220,7 +220,7 @@
   type: lieu
   genre: collectif
   scraper: facebook_programmes
-  categorie: club
+  categorie: soundsystem
   actif: true
   tous_les_jours: 3
   options:

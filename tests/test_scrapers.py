@@ -254,6 +254,28 @@ class FichesClubs(unittest.TestCase):
         self.assertEqual(site, {"image_site": "https://clubx.tn/x.jpg", "horaires_site": "Th-Sa 23:00-05:00", "prix_site": "$$"})
 
 
+class Nettoyage(unittest.TestCase):
+    """Retour de Mahdi (8 nov. 2026) : des annonces qui ne sont pas des soirées, des cafés dans « Autres »."""
+
+    def test_annonces_hors_nuit(self):
+        from scrapers.ecriture import de_jour
+        self.assertTrue(commun.pas_un_evenement("2 flight tickets to win, to any destination"))
+        self.assertTrue(commun.pas_un_evenement("Jaou Tunis Weekly Guide"))
+        def ev(h, cat):
+            return commun.Evenement(titre="x", debut=dt.datetime(FUTUR, 12, 20, h, 0), lien="x", categorie=cat)
+        self.assertTrue(de_jour(ev(9, "concert")))     # convention du matin
+        self.assertFalse(de_jour(ev(12, "soundsystem")))  # midi : heure par défaut d'une affiche
+        self.assertFalse(de_jour(ev(14, "festival")))  # day party de festival
+        self.assertFalse(de_jour(ev(23, "club")))
+
+    def test_cafes_et_bars_d_hotel(self):
+        from scrapers.clubs import hors_sujet
+        for nom in ("Go CAfé", "Pool Bar", "Lobby bar", "Salon Des Fêtes Honey Moon", "Tozeur", "Restaurant Sidi Ali"):
+            self.assertTrue(hors_sujet(nom), nom)
+        for nom in ("Café Bar de la Lyre", "Le Lido", "Novelty Bar", "Calypso Club Hammamet"):
+            self.assertFalse(hors_sujet(nom), nom)
+
+
 if __name__ == "__main__":
     unittest.main()
 
@@ -847,6 +869,7 @@ class TunisEvents(unittest.TestCase):
         self.assertEqual(categorie_du_titre("Soirée karaoké du jeudi"), "karaoke")
         self.assertEqual(categorie_du_titre("Dîner-spectacle oriental"), "cabaret")
         self.assertEqual(categorie_du_titre("Open mic stand-up"), "humour")
+        self.assertEqual(categorie_du_titre("STEPPERS SOUND SYSTEM Launch party"), "soundsystem")
         self.assertEqual(categorie_du_titre("Becoming The Ocean - BIM'26"), "")
 
     def test_categorie_nuit(self):
