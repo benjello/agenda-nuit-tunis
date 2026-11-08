@@ -230,6 +230,30 @@ class Clubs(unittest.TestCase):
         self.assertIn("Bar Y", [l["nom"] for l in lieux])
 
 
+class FichesClubs(unittest.TestCase):
+    def test_instagram_et_site(self):
+        from bs4 import BeautifulSoup
+        from scrapers import fiches_clubs
+        item = {"username": "clubx", "biography": "Jeu-Sam 23h-5h · Résa DM", "followersCount": 1200,
+                "externalUrl": "https://clubx.tn", "profilePicUrl": "https://cdn/p.jpg",
+                "latestPosts": [{"shortCode": "A1", "displayUrl": "https://cdn/a.jpg", "url": "https://www.instagram.com/p/A1/",
+                                 "timestamp": "2026-11-01T20:00:00Z"},
+                                {"shortCode": "B2", "displayUrl": "https://cdn/b.jpg", "url": "https://www.instagram.com/p/B2/",
+                                 "timestamp": "2026-11-05T20:00:00Z"}]}
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(fiches_clubs, "DOSSIER", Path(d)), \
+                mock.patch.object(fiches_clubs, "enregistrer_image", lambda url, dossier, nom: f"assets/clubs/x/{nom}.jpg"):
+            f = fiches_clubs.depuis_instagram(item, "Club X")
+        self.assertEqual(f["photo"], "assets/clubs/x/profil.jpg")
+        self.assertEqual([a["lien"] for a in f["affiches"]], ["https://www.instagram.com/p/B2/", "https://www.instagram.com/p/A1/"])
+        self.assertEqual(f["bio"], "Jeu-Sam 23h-5h · Résa DM")
+        html = """<html><head><meta property="og:image" content="https://clubx.tn/x.jpg">
+          <script type="application/ld+json">{"@type": "NightClub", "openingHours": ["Th-Sa 23:00-05:00"], "priceRange": "$$"}</script>
+          </head></html>"""
+        with mock.patch.object(fiches_clubs, "page", lambda url: BeautifulSoup(html, "html.parser")):
+            site = fiches_clubs.depuis_site("https://clubx.tn")
+        self.assertEqual(site, {"image_site": "https://clubx.tn/x.jpg", "horaires_site": "Th-Sa 23:00-05:00", "prix_site": "$$"})
+
+
 if __name__ == "__main__":
     unittest.main()
 

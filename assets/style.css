@@ -412,3 +412,8 @@ main:focus { outline: none; }
 .club-liens { display: flex; gap: 10px; flex-wrap: wrap; color: var(--muted); }
 .club-soirees { margin: 6px 0 0; font-size: .9rem; }
 .gamme { font-weight: 700; letter-spacing: .05em; }
+.liste-clubs .club { position: relative; }
+.club-photo { float: right; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; margin: 0 0 6px 10px; }
+.club-bio { font-size: .88rem; margin: 6px 0; color: var(--fg); }
+.club-affiches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 8px; clear: both; }
+.club-affiches img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; display: block; max-width: 100%; }
