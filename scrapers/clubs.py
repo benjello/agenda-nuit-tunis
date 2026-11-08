@@ -34,6 +34,8 @@ out tags center;"""
 # amenity OpenStreetMap → type affiché sur la page (même clés que _data/categories.yml)
 TYPES = {"nightclub": "club", "bar": "bar", "pub": "bar", "karaoke_box": "karaoke", "restaurant": "cabaret"}
 
+GENERIQUE = re.compile(r"(?i)\s*(bar|pub|disco(th[eè]que)?|night ?club|club|after work|ملهى ليلي|حانة)\s*")
+
 _JOURS = {"Mo": "lun", "Tu": "mar", "We": "mer", "Th": "jeu", "Fr": "ven", "Sa": "sam", "Su": "dim", "PH": "fériés"}
 
 
@@ -47,12 +49,33 @@ def horaires_fr(oh: str) -> str:
     return re.sub(r"\s*;\s*", " ; ", t).strip()
 
 
+# Régions de _data/villes.yml par coordonnées (plus sûr que le nom : sans adresse, ville() répond « tunis »).
+_ZONES = [  # (région, lat min, lat max, lon min, lon max), la première qui contient le point gagne
+    ("bizerte", 37.05, 37.6, 9.4, 10.3),
+    ("tunis", 36.6, 37.05, 9.9, 10.45),
+    ("nabeul", 36.2, 37.1, 10.45, 11.2),
+    ("sousse", 35.7, 36.2, 10.2, 10.75),
+    ("monastir", 35.0, 35.8, 10.5, 11.2),
+    ("sfax", 34.4, 35.0, 10.3, 11.4),
+    ("sud", 30.0, 34.4, 7.5, 11.7),
+]
+
+
+def region(lat, lon, *textes: str) -> str:
+    if lat is not None and lon is not None:
+        for nom, a, b, c, d in _ZONES:
+            if a <= lat <= b and c <= lon <= d:
+                return nom
+        return "autres"
+    return ville(*textes)
+
+
 def depuis_osm(elements: list[dict]) -> list[dict]:
     lieux = []
     for el in elements:
         t = el.get("tags") or {}
         nom = (t.get("name:fr") or t.get("name") or t.get("name:en") or "").strip()
-        if not nom:
+        if not nom or GENERIQUE.fullmatch(nom):  # « Discotheque », « Bar » : pas un nom de lieu
             continue
         adresse = ", ".join(x for x in (
             " ".join(y for y in (t.get("addr:housenumber"), t.get("addr:street")) if y),
@@ -62,7 +85,7 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
         lieux.append({
             "nom": nom,
             "type": TYPES.get(t.get("amenity"), "bar"),
-            "ville": ville(nom, adresse, t.get("addr:city", "")),
+            "ville": region(centre.get("lat"), centre.get("lon"), nom, adresse, t.get("addr:city", "")),
             "adresse": adresse,
             "horaires": horaires_fr(t.get("opening_hours", "")),
             "site": t.get("website") or t.get("contact:website") or "",

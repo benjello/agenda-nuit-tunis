@@ -218,7 +218,7 @@ class Clubs(unittest.TestCase):
     def test_horaires_et_fusion(self):
         from scrapers import clubs
         self.assertEqual(clubs.horaires_fr("Th-Sa 23:00-05:00; Su off"), "jeu-sam 23h-5h ; dim fermé")
-        osm = clubs.depuis_osm([{"type": "node", "id": 1, "lat": 36.9, "lon": 10.3, "tags": {
+        osm = clubs.depuis_osm([{"type": "node", "id": 1, "lat": 36.40, "lon": 10.61, "tags": {
             "amenity": "nightclub", "name": "Club X", "addr:city": "Hammamet", "opening_hours": "Fr,Sa 23:30-05:00",
             "music:genre": "house;afro", "outdoor_seating": "yes", "contact:instagram": "https://instagram.com/clubx/"}}])
         self.assertEqual((osm[0]["type"], osm[0]["ville"], osm[0]["instagram"]), ("club", "nabeul", "clubx"))
