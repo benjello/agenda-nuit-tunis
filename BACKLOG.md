@@ -14,9 +14,10 @@ Les points restants sont suivis en issues GitHub : [liste des issues](https://gi
 Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées de ce fichier aux issues ouvertes
 (`scrapers/synchro_tickets.py`) et signale les écarts dans son résumé.
 
-- [ ] Trier les comptes repérés par les hashtags : cocher les faux positifs dans #1 (ticket permanent, refait chaque lundi ; `scrapers/tri_comptes.py`).
 
 ## Fait (8 novembre 2026)
+
+- [x] Premier tri des comptes repérés par les hashtags (#1) : 14 faux positifs écartés, NF Event branché, bars à sport filtrés, lieux cités par les artistes. Un nouveau ticket « tri-comptes » est ouvert chaque lundi s'il n'y en a pas (`scrapers/tri_comptes.py`), hors synchro du backlog.
 
 - [x] Reprise du moteur de l'agenda culturel (Jekyll, scrapers, page Sources, carte, ICS, API), données culturelles vidées.
 - [x] Catégories de la nuit (`_data/categories.yml`) : club, discothèque, cabaret, concert live, bar & lounge, sound system,
