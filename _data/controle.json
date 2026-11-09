@@ -1,5 +1,5 @@
 {
- "date": "2026-11-08",
+ "date": "2026-11-09",
  "corriges": 0,
  "a_verifier": [],
  "granularite": {
@@ -25,9 +25,9 @@
     ]
    },
    "resident-advisor": {
-    "n": 2,
-    "precis": 1,
-    "pourcent": 50,
+    "n": 1,
+    "precis": 0,
+    "pourcent": 0,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -48,9 +48,9 @@
   },
   "scrapers": {
    "resident_advisor": {
-    "n": 2,
-    "precis": 1,
-    "pourcent": 50,
+    "n": 1,
+    "precis": 0,
+    "pourcent": 0,
     "defauts": [
      {
       "code": "lieu_vague",

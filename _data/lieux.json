@@ -2,19 +2,9 @@
  "index": {
   "Dar Ziqua, Zaghouan": "dar-ziqua-zaghouan",
   "Habibi Downtown, Tunis": "habibi-downtown-tunis",
-  "One Resort": "one-resort",
   "B7L9 Art Centre": "b7l9-art-centre"
  },
  "carte": [
-  {
-   "slug": "one-resort",
-   "nom": "One Resort",
-   "type": "club",
-   "ville": "monastir",
-   "lat": 35.76372,
-   "lon": 10.7399,
-   "n": 1
-  },
   {
    "slug": "b7l9-art-centre",
    "nom": "B7L9 Art Centre",

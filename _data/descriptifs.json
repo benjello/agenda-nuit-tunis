@@ -1,16 +1,5 @@
 {
- "artistes": {
-  "hugo-martinez": {
-   "source": "Wikipédia",
-   "texte": "Hugo Rafael Martínez Poveda, né en 1941 à Moniquirá et mort le 22 mars 2020 à Bogota, est un policier colombien, directeur de l’unité spéciale Bloc de recherche, créée à la fin des années 80 pour abattre le narcotrafiquant colombien Pablo Escobar.",
-   "url": "https://fr.wikipedia.org/wiki/Hugo_Mart%C3%ADnez_(policier)"
-  },
-  "james-creed": {
-   "source": "Wikipédia",
-   "texte": "Sir James Creed was an English merchant and politician.",
-   "url": "https://en.wikipedia.org/wiki/James_Creed"
-  }
- },
+ "artistes": {},
  "collectifs": {
   "teskerti": {
    "source": "site officiel",
@@ -108,7 +97,7 @@
   },
   "artistes:emine-2": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "artistes:fares-a": {
    "verifie": "2026-11-08",
@@ -132,7 +121,7 @@
   },
   "artistes:harrison-guyett": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "artistes:hearthug": {
    "verifie": "2026-11-08",
@@ -176,7 +165,7 @@
   },
   "artistes:kian-ok": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "artistes:krol": {
    "verifie": "2026-11-08",
@@ -244,7 +233,7 @@
   },
   "artistes:omar-fayyad": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "artistes:omar-uy": {
    "verifie": "2026-11-08",
@@ -252,11 +241,11 @@
   },
   "artistes:pan-j": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "artistes:picasso": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "artistes:prichindel": {
    "verifie": "2026-11-08",
@@ -308,88 +297,92 @@
   },
   "collectifs:calypso-club-hammamet": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:downtown-vibes": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:echos-electrik": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:eddisco-records": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:evenements-facebook": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:fabrika-festival": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:habibi-downtown": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:hamdi-ryder": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:jaou-tunis": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:kadhem": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
+  },
+  "collectifs:nf-event": {
+   "verifie": "2026-11-09",
+   "vu": "2026-11-09"
   },
   "collectifs:osiris-club-djerba": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:rock-n-rolla-la-goulette": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:steppers-sound-system": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:techno-tunisia": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:teskerti": {
    "source": "site officiel",
    "texte": "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.",
    "url": "https://teskerti.tn/",
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:tunis-events": {
    "source": "site officiel",
    "texte": "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA",
    "url": "https://tunis.events/nightlife",
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:tunisia-comedy-festival": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:tunisian-techno-community": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "collectifs:tunisie-numerique": {
    "source": "site officiel",
    "texte": "Suivez l'actualité en Tunisie en direct . Tunisie Numérique couvre toute l'info politique, économique, sociale et sportive en temps réel.",
    "url": "https://www.tunisienumerique.com",
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "lieux:american-legion-michael-steiner-post-411": {
    "verifie": "2026-11-08",
@@ -397,7 +390,7 @@
   },
   "lieux:b7l9-art-centre": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "lieux:cite-de-la-culture": {
    "langue": "fr",
@@ -409,11 +402,11 @@
   },
   "lieux:dar-ziqua": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "lieux:habibi-downtown": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-08"
+   "vu": "2026-11-09"
   },
   "lieux:insat": {
    "langue": "fr",

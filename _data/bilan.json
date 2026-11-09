@@ -45,5 +45,47 @@
    "ig-habibi-downtown": 1,
    "resident-advisor": 1
   }
+ },
+ {
+  "semaine": "2026-S46",
+  "date": "2026-11-09",
+  "a_venir": 3,
+  "sept_jours": 1,
+  "sources_actives": 21,
+  "sources_avec_evenements": 1,
+  "sources_muettes": [
+   "fb-61595612945174",
+   "fb-recherche-soirees",
+   "ig-calypso-hammamet",
+   "ig-downtown-vibes",
+   "ig-echos-electrik",
+   "ig-eddisco",
+   "ig-fabrika",
+   "ig-hamdi-ryder",
+   "ig-jaou-tunis",
+   "ig-kadhem",
+   "ig-nf-event",
+   "ig-osiris-djerba",
+   "ig-rock-n-rolla",
+   "ig-techno-tunisia",
+   "ig-tn-techno-community",
+   "ig-tunisia-comedy-festival",
+   "resident-advisor",
+   "teskerti",
+   "tn-agenda-du-jour",
+   "tunis-events"
+  ],
+  "par_ville": {
+   "tunis": 1
+  },
+  "par_categorie": {
+   "club": 1
+  },
+  "par_genre": {
+   "lieu": 1
+  },
+  "par_source": {
+   "ig-habibi-downtown": 1
+  }
  }
 ]
