@@ -25,7 +25,7 @@
   {
    "compte": "joia.indoor.restaurant",
    "nom": "Joïa Indoor Restaurant",
-   "soirees": 29,
+   "soirees": 30,
    "cite": 0,
    "hashtags": [
     "tunisnightlife",
@@ -33,12 +33,12 @@
     "soireetunis"
    ],
    "lieux": [
+    "JOÏA Indoor – Menzah 4, Tunis",
     "Menzah 4, Tunis",
-    "JOÏA – Menzah 4, Tunis",
-    "JOÏA Indoor – Menzah 4, Tunis"
+    "JOÏA – Menzah 4, Tunis"
    ],
-   "derniere": "2026-11-06",
-   "exemple": "https://www.instagram.com/p/DfZbdJXFZ8n/",
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhprGwFTXz/",
    "suivi": false
   },
   {
@@ -81,6 +81,24 @@
    "suivi": false
   },
   {
+   "compte": "crush.lounge_tun",
+   "nom": "CRUSH LOUNGE",
+   "soirees": 6,
+   "cite": 0,
+   "hashtags": [
+    "hammamet",
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "Crush Lounge – Hôtel Riva Hammamet 📞 97 290 766 | 26 602 119",
+    "Crush Lounge – Hôtel Riva Hammamet",
+    "Crush Lounge – Hotel Riva Hammamet"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhTjqJB0Bd/",
+   "suivi": false
+  },
+  {
    "compte": "pupput_le_bar",
    "nom": "Pupput Le Bar",
    "soirees": 5,
@@ -115,20 +133,20 @@
    "suivi": false
   },
   {
-   "compte": "crush.lounge_tun",
-   "nom": "CRUSH LOUNGE",
+   "compte": "mila_gammarth",
+   "nom": "MILA Gammarth",
    "soirees": 3,
    "cite": 0,
    "hashtags": [
     "nightlifetunisia",
-    "hammamet"
+    "gammarth"
    ],
    "lieux": [
-    "Crush Lounge – Hôtel Riva Hammamet",
-    "Crush Lounge – Hotel Riva Hammamet"
+    "MILA — La Tour Blanche, Gammarth",
+    "Mila Gammarth — Hôtel La Tour Blanche"
    ],
    "derniere": "2026-11-09",
-   "exemple": "https://www.instagram.com/p/DfhTjqJB0Bd/",
+   "exemple": "https://www.instagram.com/p/Dfhc4Z7MkRa/",
    "suivi": false
   },
   {
@@ -143,7 +161,7 @@
     "Bristol Plazza – Indoor"
    ],
    "derniere": "2026-11-09",
-   "exemple": "https://www.instagram.com/p/DfhN9VWo9ju/",
+   "exemple": "https://www.instagram.com/p/DfhOg5Lo14K/",
    "suivi": false
   },
   {
@@ -177,38 +195,6 @@
    ],
    "derniere": "2026-10-26",
    "exemple": "https://www.instagram.com/p/De9DWDvDdWd/",
-   "suivi": false
-  },
-  {
-   "compte": "mila_gammarth",
-   "nom": "MILA Gammarth",
-   "soirees": 2,
-   "cite": 0,
-   "hashtags": [
-    "nightlifetunisia"
-   ],
-   "lieux": [
-    "MILA — La Tour Blanche, Gammarth",
-    "Mila Gammarth — Hôtel La Tour Blanche"
-   ],
-   "derniere": "2026-11-09",
-   "exemple": "https://www.instagram.com/p/Dfhc4Z7MkRa/",
-   "suivi": false
-  },
-  {
-   "compte": "beehiveclub",
-   "nom": "Bee Hive Club",
-   "soirees": 2,
-   "cite": 0,
-   "hashtags": [
-    "gammarth"
-   ],
-   "lieux": [
-    "Bee Hive Club – Acquaviva Gammarth",
-    "Bee Hive Open Air – Acquaviva Gammarth"
-   ],
-   "derniere": "2026-11-08",
-   "exemple": "https://www.instagram.com/p/DffaytyxI5R/",
    "suivi": false
   },
   {
@@ -279,31 +265,31 @@
    "suivi": false
   },
   {
-   "compte": "challenge.lounge",
-   "nom": "Challenge Lounge Hammamet",
+   "compte": "avantier_club1",
+   "nom": "Avantier Club",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "lamarsa"
+   ],
+   "lieux": [],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhdmdHiL0V/",
+   "suivi": false
+  },
+  {
+   "compte": "elhammra.vip.hammamet",
+   "nom": "El Hammra VIP Hammamet",
    "soirees": 1,
    "cite": 0,
    "hashtags": [
     "hammamet"
    ],
    "lieux": [
-    "Hotel Zenith, Hammamet"
+    "https://maps.app.goo.gl/4Namo7wHrpVCdvLt6"
    ],
    "derniere": "2026-11-09",
-   "exemple": "https://www.instagram.com/p/DfhJRJnCNJ_/",
-   "suivi": false
-  },
-  {
-   "compte": "opiumhammamet",
-   "nom": "OPIUM",
-   "soirees": 1,
-   "cite": 0,
-   "hashtags": [
-    "hammamet"
-   ],
-   "lieux": [],
-   "derniere": "2026-11-09",
-   "exemple": "https://www.instagram.com/p/DfhGcHeDOXI/",
+   "exemple": "https://www.instagram.com/p/Dfhj7aMqEHf/",
    "suivi": false
   },
   {
@@ -322,18 +308,18 @@
    "suivi": false
   },
   {
-   "compte": "sindbadsousse",
-   "nom": "Sindbad resto - lounge sousse",
+   "compte": "beehiveclub",
+   "nom": "Bee Hive Club",
    "soirees": 1,
    "cite": 0,
    "hashtags": [
-    "sousse"
+    "gammarth"
    ],
    "lieux": [
-    "Bd 14 Janvier (en face du Mövenpick), Sousse"
+    "Bee Hive Open Air – Acquaviva Gammarth"
    ],
-   "derniere": "2026-11-09",
-   "exemple": "https://www.instagram.com/p/DfhD3NhlcFQ/",
+   "derniere": "2026-11-08",
+   "exemple": "https://www.instagram.com/p/DffaytyxI5R/",
    "suivi": false
   },
   {
@@ -360,19 +346,6 @@
    "lieux": [],
    "derniere": "2026-11-08",
    "exemple": "https://www.instagram.com/p/DffxI19IQFi/",
-   "suivi": false
-  },
-  {
-   "compte": "chaouanisafar",
-   "nom": "Chaouani Safar",
-   "soirees": 1,
-   "cite": 0,
-   "hashtags": [
-    "monastir"
-   ],
-   "lieux": [],
-   "derniere": "2026-11-08",
-   "exemple": "https://www.instagram.com/p/Dfe7UFsGwcI/",
    "suivi": false
   },
   {
@@ -476,21 +449,6 @@
    ],
    "derniere": "2026-10-17",
    "exemple": "https://www.instagram.com/p/DelpTjNtf-G/",
-   "suivi": false
-  },
-  {
-   "compte": "lagoulue2026",
-   "nom": "La Goulue",
-   "soirees": 1,
-   "cite": 0,
-   "hashtags": [
-    "tunisnightlife"
-   ],
-   "lieux": [
-    "LA GOULUE RESTAURANT & BAR"
-   ],
-   "derniere": "2026-10-16",
-   "exemple": "https://www.instagram.com/p/DekU7d_N295/",
    "suivi": false
   },
   {
