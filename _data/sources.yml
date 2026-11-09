@@ -314,19 +314,20 @@
     lieu: Calypso Club Hammamet
     resultats: 8
 
-# Organisateur repéré par les hashtags (ticket #1) : soirées à La Tour Blanche. Le lieu est relu sur chaque affiche.
+# Organisateur repéré par les hashtags (ticket #1) : une affiche par soir, publiée le jour même, pour le Jetset
+# de l'hôtel La Tour Blanche (Gammarth). Lu chaque jour, sinon la soirée est passée avant d'être lue.
 - id: ig-nf-event
   nom: NF Event (Instagram)
   url: https://www.instagram.com/nfevent.agency/
   type: lieu
   genre: collectif
   scraper: instagram
-  categorie: club
+  categorie: cabaret
   actif: true
-  tous_les_jours: 3
+  tous_les_jours: 1
   options:
     compte: nfevent.agency
-    lieu: La Tour Blanche
+    lieu: Jetset, La Tour Blanche, Gammarth
     resultats: 8
   note: "Discothèque historique de Hammamet (depuis 1971). Surtout l'été. Trouvé par la recherche Instagram le 8 nov. 2026."
 
