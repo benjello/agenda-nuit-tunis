@@ -24,10 +24,13 @@ ETIQUETTE = "tri-comptes"
 TITRE = "Tri des comptes repérés par les hashtags"
 COCHEE = re.compile(r"(?im)^\s*[-*]\s*\[x\]\s*@([\w.]+)")
 ENTETE = """Comptes Instagram qui publient des affiches de soirée sous les hashtags de la nuit, après un premier tri \
-automatique (immobilier, voyages, hôtels, boutiques et comptes inactifs depuis 4 mois déjà retirés).
+automatique (immobilier, voyages, hôtels, boutiques, bars à sport, retransmissions de matchs et comptes inactifs depuis 4 mois déjà retirés).
 
 **Cochez les faux positifs** (ce n'est pas un lieu, un collectif ou un organisateur de soirées). Ils sont retirés \
 de la page Contribuer et ne seront plus proposés. Les cases non cochées restent « à vérifier ».
+
+« Lieux » : les lieux que le compte cite dans ses affiches (utile pour un artiste ou un organisateur). Un lieu cité \
+par d'autres comptes (« at @club ») est proposé lui aussi (« cité N fois »).
 
 Liste refaite chaque lundi par le workflow « Recherche de comptes par hashtags ».
 """
@@ -42,7 +45,9 @@ def corps_du_ticket(comptes: list[dict], lu_le: str) -> str:
     for c in comptes:
         nom = f" · {c['nom']}" if c.get("nom") else ""
         exemple = f" · [dernière]({c['exemple']})" if c.get("exemple") else ""
-        lignes.append(f"- [ ] @{c['compte']}{nom} · {c['soirees']} affiche(s) · {c.get('derniere', '')}{exemple}")
+        cite = f" · cité {c['cite']} fois" if c.get("cite") else ""
+        lieux = f" · lieux : {', '.join(c['lieux'])}" if c.get("lieux") else ""
+        lignes.append(f"- [ ] @{c['compte']}{nom} · {c['soirees']} affiche(s){cite} · {c.get('derniere', '')}{lieux}{exemple}")
     return "\n".join(lignes) + "\n"
 
 

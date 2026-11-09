@@ -290,6 +290,19 @@ class RechercheHashtags(unittest.TestCase):
         self.assertEqual((c[0]["soirees"], c[0]["derniere"], c[0]["exemple"]), (2, "2026-11-07", "https://www.instagram.com/p/2/"))
         self.assertTrue(c[1]["suivi"])
 
+    def test_lieux_cites_et_bars_a_sport(self):
+        from scrapers.recherche_hashtags import classer, lieux_cites
+        self.assertEqual(lieux_cites("DJ set ce soir at @JetSet_TN 🔥\n📍 B7L9, La Marsa #gammarth"), ["@jetset_tn", "B7L9, La Marsa"])
+        pubs = [{"ownerUsername": "dj.x", "caption": "Tonight DJ set at @moods.gammarth", "timestamp": "2026-11-06T20:00:00Z"},
+                {"ownerUsername": "dj.y", "caption": "Party ce soir chez @moods.gammarth", "timestamp": "2026-11-07T20:00:00Z"},
+                {"ownerUsername": "sportbar", "caption": "Ce soir match Champions League, réservez votre table",
+                 "timestamp": "2026-11-07T20:00:00Z"}]
+        c = {x["compte"]: x for x in classer(pubs, set())}
+        self.assertNotIn("sportbar", c)  # une retransmission de match n'est pas une soirée
+        self.assertEqual(c["dj.x"]["lieux"], ["@moods.gammarth"])
+        self.assertEqual((c["moods.gammarth"]["cite"], c["moods.gammarth"]["soirees"]), (2, 0))
+        self.assertEqual(next(iter(c)), "moods.gammarth")  # le plus cité d'abord
+
     def test_prefiltre(self):
         from scrapers.recherche_hashtags import prefiltre
         auj = dt.date(2026, 11, 8)

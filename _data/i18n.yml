@@ -488,5 +488,6 @@ contrib.a_verifier: { ar: "حسابات للتحقق منها", en: "Accounts to
 contrib.a_verifier_intro: { ar: "تنشر هذه الحسابات على إنستغرام ملصقات سهرات تحت وسوم الليل (#gammarth، #hammamet…). هل هو نادٍ أو مجموعة أو منظم؟ إن كان يعلن عن سهراته، اقترحه كمصدر.", en: "These Instagram accounts post party posters under the nightlife hashtags (#gammarth, #hammamet…). Is it a club, a collective, a promoter? If it announces its nights, suggest it as a source." }
 contrib.affiches: { ar: "ملصق", en: "poster(s)" }
 contrib.exemple: { ar: "آخر منشور", en: "latest post" }
+contrib.lieux_cites: { ar: "الأماكن المذكورة:", en: "Venues mentioned:" }
 contrib.brancher: { ar: "هذا مصدر سهرات", en: "It's a source of nights out" }
 contrib.lu_le: { ar: "تُحدَّث القائمة كل إثنين.", en: "List updated every Monday." }

@@ -30,10 +30,16 @@ HASHTAGS = ["gammarth", "lamarsa", "hammametnightlife", "hammamet", "tunisnightl
 PAR_HASHTAG = 40     # publications lues par hashtag (coût Apify : environ 0,2 centime l'une)
 SOIREE = re.compile(r"(?i)\bparty\b|\bsoir[ée]e\b|\bnight\b|\btonight\b|\bce soir\b|\bdj\b|\bclub|\bline ?up\b|\bguest\b"
                     r"|\bresa\b|\br[ée]servation|\btable\b|\bentr[ée]e\b|سهرة|حفل")
+# Retransmissions de matchs (bars à sport) : pas une soirée, même si la publication dit « ce soir » ou « réservez ».
+MATCH = re.compile(r"(?i)\bmatch\b|\bligue\b|champions league|premier league|\bliga\b|\bderby\b|\bfoot(ball)?\b"
+                   r"|coup d'envoi|kick ?off|\bbein\b|\bcan 20\d\d|coupe du monde|world cup|retransmission|مباراة|ماتش")
+# Lieu cité par un artiste ou un organisateur : « 📍 B7L9, La Marsa », « at @jetset_tn », « chez @moods.gammarth »
+EPINGLE = re.compile(r"📍\s*([^\n#]{3,60})")
+CITE = re.compile(r"(?i)(?:\bat|\bà|\bau|\bchez|📍)\s*@([\w.]+)")
 # Préfiltre : comptes qui utilisent les hashtags sans organiser de soirées (immobilier, voyages, hôtels, boutiques…)
 HORS_NUIT = re.compile(r"(?i)immo|remax|voyage|travel|tours?(?![a-z])|trip|wakacj|suitcase|h[ôo]tel|thalasso|residence|palace"
                        r"|beds\b|perfume|parfum|\bmode\b|store|coupon|salon de th|coffee|caf[ée]|magazine|news|booklover"
-                       r"|totebag|smartlab|smart-lab|univers\.a\.i")
+                       r"|totebag|smartlab|smart-lab|univers\.a\.i|sport")
 JOURS_MAX = 120      # un compte qui n'a rien publié depuis 4 mois n'est pas proposé
 EXCLUS = RACINE / "_data" / "comptes_exclus.yml"  # faux positifs cochés dans le ticket de tri (scrapers/tri_comptes.py)
 
@@ -49,6 +55,8 @@ def prefiltre(c: dict, ecartes: set[str], aujourd_hui: dt.date | None = None) ->
         return "faux positif"
     if HORS_NUIT.search(f"{c['compte']} {c['nom']}"):
         return "hors nuit"
+    if c.get("cite") and not c["soirees"]:
+        return ""  # seulement cité par d'autres : à vérifier
     if not c["derniere"] or (aujourd_hui - dt.date.fromisoformat(c["derniere"])).days > JOURS_MAX:
         return "inactif"
     return ""
@@ -67,17 +75,37 @@ def deja_suivis() -> set[str]:
     return comptes
 
 
+def lieux_cites(texte: str) -> list[str]:
+    """Lieux nommés dans une légende : comptes après « at / à / chez / 📍 », puis texte après 📍."""
+    lieux = [f"@{h.lower().rstrip('.')}" for h in CITE.findall(texte)]
+    lieux += [" ".join(m.split()).strip(" ,.-|") for m in EPINGLE.findall(texte) if not m.strip().startswith("@")]
+    return [x for x in dict.fromkeys(lieux) if x]
+
+
 def classer(publications: list[dict], suivis: set[str]) -> list[dict]:
-    """Par compte : nombre de publications de soirée, hashtags où il apparaît, dernière date, exemple."""
+    """Par compte : nombre de publications de soirée, hashtags où il apparaît, dernière date, exemple,
+    et lieux cités (un artiste ou un organisateur annonce le lieu dans sa légende). Un lieu cité par un autre
+    compte (« at @club ») est proposé lui aussi, avec le nombre de fois où il est cité."""
     par_compte: dict[str, dict] = {}
+
+    def fiche(compte: str, nom: str = "") -> dict:
+        return par_compte.setdefault(compte, {"compte": compte, "nom": nom, "soirees": 0, "cite": 0,
+                                              "hashtags": collections.Counter(), "lieux": collections.Counter(),
+                                              "derniere": "", "exemple": ""})
+
     for p in publications:
         compte = (p.get("ownerUsername") or "").lower()
         texte = p.get("caption") or ""
-        if not compte or not (SOIREE.search(texte) or categorie_du_titre(texte)):
+        if not compte or not (SOIREE.search(texte) or categorie_du_titre(texte)) or MATCH.search(texte):
             continue
-        c = par_compte.setdefault(compte, {"compte": compte, "nom": p.get("ownerFullName") or "", "soirees": 0,
-                                           "hashtags": collections.Counter(), "derniere": "", "exemple": ""})
+        c = fiche(compte, p.get("ownerFullName") or "")
+        c["nom"] = c["nom"] or p.get("ownerFullName") or ""
         c["soirees"] += 1
+        for lieu in lieux_cites(texte):
+            if lieu != f"@{compte}":
+                c["lieux"][lieu] += 1
+                if lieu.startswith("@"):
+                    fiche(lieu[1:])["cite"] += 1
         if p.get("_hashtag"):
             c["hashtags"][p["_hashtag"]] += 1
         date = (p.get("timestamp") or "")[:10]
@@ -86,10 +114,11 @@ def classer(publications: list[dict], suivis: set[str]) -> list[dict]:
     sortie = []
     for c in par_compte.values():
         c["hashtags"] = [h for h, _ in c["hashtags"].most_common(4)]
+        c["lieux"] = [x for x, _ in c["lieux"].most_common(3)]
         c["suivi"] = c["compte"] in suivis
         sortie.append(c)
     # les nouveaux d'abord, puis du plus actif au moins actif, puis du plus récent
-    return sorted(sortie, key=lambda c: (c["suivi"], -c["soirees"], "".join(chr(255 - ord(x)) for x in c["derniere"])))
+    return sorted(sortie, key=lambda c: (c["suivi"], -(c["soirees"] + c["cite"]), "".join(chr(255 - ord(x)) for x in c["derniere"])))
 
 
 def main(argv=None) -> int:
@@ -121,10 +150,11 @@ def main(argv=None) -> int:
             comptes.append(c)
     FICHIER.write_text(json.dumps({"lu_le": dt.date.today().isoformat(), "hashtags": hashtags, "comptes": comptes},
                                   ensure_ascii=False, indent=1))
-    lignes = ["| Compte | Nom | Affiches de soirée | Hashtags | Dernière | Déjà suivi |", "|---|---|---|---|---|---|"]
+    lignes = ["| Compte | Nom | Affiches de soirée | Cité | Lieux cités | Hashtags | Dernière | Déjà suivi |",
+              "|---|---|---|---|---|---|---|---|"]
     for c in comptes[:60]:
-        lignes.append(f"| [@{c['compte']}](https://www.instagram.com/{c['compte']}/) | {c['nom']} | {c['soirees']} | "
-                      f"{', '.join('#' + h for h in c['hashtags'])} | {c['derniere']} | {'oui' if c['suivi'] else ''} |")
+        lignes.append(f"| [@{c['compte']}](https://www.instagram.com/{c['compte']}/) | {c['nom']} | {c['soirees']} | {c['cite'] or ''} | "
+                      f"{', '.join(c['lieux'])} | {', '.join('#' + h for h in c['hashtags'])} | {c['derniere']} | {'oui' if c['suivi'] else ''} |")
     texte = "## Comptes repérés par les hashtags\n\n" + "\n".join(lignes) + "\n"
     print(texte)
     if os.environ.get("GITHUB_STEP_SUMMARY"):

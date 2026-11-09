@@ -47,6 +47,7 @@ description: "Les lieux et les pages que l'agenda ne sait pas encore lire : aide
   <li>
     <strong><a href="https://www.instagram.com/{{ c.compte }}/" rel="noopener">@{{ c.compte }}</a></strong>{% if c.nom != "" %} · {{ c.nom }}{% endif %}
     <small class="etat pause">{{ c.soirees }} <span data-t="contrib.affiches">affiche(s)</span></small>
+    {%- if c.lieux and c.lieux.size > 0 %}<p><small><span data-t="contrib.lieux_cites">Lieux cités :</span> {{ c.lieux | join: ", " }}</small></p>{% endif %}
     <p><small>{% for h in c.hashtags %}#{{ h }} {% endfor %}{% if c.exemple != "" %}· <a href="{{ c.exemple }}" rel="noopener" data-t="contrib.exemple">dernière publication</a> ({{ c.derniere | date: "%d/%m" }}){% endif %}</small></p>
     <a class="bouton" rel="noopener" href="{{ nouvelle }}&title={{ 'Source : @' | append: c.compte | url_encode }}&nom={{ c.compte | prepend: 'https://www.instagram.com/' | url_encode }}" data-t="contrib.brancher">C'est une source de soirées</a>
   </li>
