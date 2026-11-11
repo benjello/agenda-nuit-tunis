@@ -48,11 +48,11 @@
  },
  {
   "semaine": "2026-S46",
-  "date": "2026-11-10",
-  "a_venir": 3,
-  "sept_jours": 1,
+  "date": "2026-11-11",
+  "a_venir": 8,
+  "sept_jours": 4,
   "sources_actives": 21,
-  "sources_avec_evenements": 1,
+  "sources_avec_evenements": 3,
   "sources_muettes": [
    "fb-61595612945174",
    "fb-recherche-soirees",
@@ -62,9 +62,7 @@
    "ig-eddisco",
    "ig-fabrika",
    "ig-hamdi-ryder",
-   "ig-jaou-tunis",
    "ig-kadhem",
-   "ig-nf-event",
    "ig-osiris-djerba",
    "ig-rock-n-rolla",
    "ig-techno-tunisia",
@@ -76,16 +74,23 @@
    "tunis-events"
   ],
   "par_ville": {
-   "tunis": 1
+   "tunis": 4
   },
   "par_categorie": {
-   "club": 1
+   "club": 1,
+   "bar": 1,
+   "festival": 1,
+   "cabaret": 1
   },
   "par_genre": {
-   "lieu": 1
+   "lieu": 2,
+   "festival": 1,
+   "collectif": 1
   },
   "par_source": {
-   "ig-habibi-downtown": 1
+   "ig-habibi-downtown": 2,
+   "ig-jaou-tunis": 1,
+   "ig-nf-event": 1
   }
  }
 ]

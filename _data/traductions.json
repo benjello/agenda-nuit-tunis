@@ -1,28 +1,64 @@
 {
  "titres": {
+  "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS": {
+   "ar": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS",
+   "en": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS"
+  },
+  "Art Explora Festival": {
+   "fr": "Festival d'Art Explora",
+   "ar": "مهرجان أكسبلورا"
+  },
+  "JAOU TUNIS 2026": {
+   "ar": "JAOU TUNIS 2026",
+   "en": "JAOU TUNIS 2026"
+  },
+  "Mercredi 11 Novembre": {
+   "ar": "الأربعاء، 11 تشرين الثاني/نوفمبر",
+   "en": "Wednesday, 11 November"
+  },
   "Nōmad Man Festival 2026": {
    "fr": "Nōmad Man Festival 2026",
    "ar": "Nmad Man Festival 2026"
   },
-  "STEPPERS SOUND SYSTEM Launch party": {
-   "fr": "SYSTEME SONDE ÉTAPES Partie de lancement",
-   "ar": "حفلة إطلاق نظام (سيستيم)"
-  },
   "Tunis, get ready for a night of good music & great vibes!": {
    "fr": "Tunis, préparez-vous pour une nuit de bonne musique et de grandes vibrations !",
    "ar": "(تونس) استعدي لليلة من الموسيقى الجيدة"
+  },
+  "Un rooftop, deux artistes, une même scène... et une soirée": {
+   "ar": "على السطح، فنانين، مشهد واحد... وليلة واحدة",
+   "en": "A rooftop, two artists, one scene... and one night"
   }
  },
  "notices": {
-  "_events/auto/fb-61595612945174/2026-11-08-steppers-sound-system-launch-party.md": {
-   "cle": "b935cb5b3e3a",
-   "fr": "Certains des meilleurs sélecteurs djs et producteurs de Bass Music seront en train de jouer.\nNous ne les présentons pas, car l'artiste le plus important est le système sonore que nous construisons depuis quelques années.\nBienvenue à la soirée de lancement du système SOUND STEPPERS.\nLe 8 novembre, à @dar_ziqua à Zaghouan.\nIl y aura de la nourriture, apporter vos boissons et profiter d'une journée de basse lourde de 12h à 21h, dans la nature et de bonnes vibrations.\nContribution 40dt.\nLieu Dar ziqua\nhttps://goo.gl/maps/mnhX4ykuHaf49Ph98",
-   "ar": "بعض من أفضل المختارين من (دي جي) ومنتجي (باس موسيك) سيلعبون\nنحن لا نعرضها، لأن أهم فنان هو النظام الصوتي الذي كنا نبنيه منذ بضع سنوات.\nمرحباً بكم في حفلة إطلاق (ستاربز سووند)\nNovember 8th, at @dar_ziqua in Zaghouan.\nسيكون هناك طعام، وأحضر مشروباتك و استمتع بيوم من الـ12 ساعة إلى الـ21، في الطبيعة و اليقظة الجيدة\nالمساهمة 40dt.\nموقع دار الزكوا\nhttps://goo.gl/maps/mnhX4ykuHaf49Ph98"
-  },
   "_events/auto/ig-habibi-downtown/2026-11-11-tunis-get-ready-for-a-night-of-good-music-great-vibes.md": {
    "cle": "308ab3e0f7cf",
    "fr": "Tunis, préparez-vous pour une nuit de bonne musique et de grandes vibrations !\n- Oui, oui.\nDes beats électroniques, des sons expérimentaux et des influences méditerranéennes se réunissent pour une soirée spéciale de Goethe-Institut Tunis & Habibi Downtown.\nLa ligne d'action\n21 heures — Mariem KMS\nDes beats électroniques éclectiques, de la basse et des sons souterrains du monde arabe et de l'Afrique du Nord.\n22:30 — Taroug (Live)",
    "ar": "(تونس) استعدي لليلة من الموسيقى الجيدة\n?\nالنفوذ الإلكتروني، والأصوات التجريبية &quot; يتجمع تأثيرات البحر الأبيض المتوسط في ليلة خاصة من قبل مؤسسة غويت تونس &quot; في وسط المدينة.\n<unk> LINE-UP\n21:00 - Mariem KMS\nEclectic electronic beats, bass music &quot; underground voice from the Arab world and North Africa.\n22:30 - Taroug (Live) <unk> Germany <unk> Tunis"
+  },
+  "_events/auto/ig-habibi-downtown/2026-11-17-un-rooftop-deux-artistes-une-meme-scene-et-une-soiree.md": {
+   "cle": "27001c57861f",
+   "ar": "فنانين\nكونان\nليلة من الموسيقى بالاسبانية\nوفي 17 تشرين الثاني/نوفمبر، التقى موزغو وبن جيمي في تونس لمساء سيجمع عالمين موسيقيين مختلفين جدا.\nعلى السطح، فنانين، مشهد واحد...\nومساء لاكتشاف الحياة.\nالدخول الحر، في حدود الأماكن المتاحة\nالثلاثاء 17 تشرين الثاني/نوفمبر - الساعة 00/20\n@habibidowntown_\nRooftop of El Hana International Hotel, Tunis\nMüsgö + Benjemy",
+   "en": "Two artists.\nTwo universes.\nA night of music in Spanish.\nOn November 17, Müsgö and BenJemy met in Tunis for an evening that will bring together two very different musical worlds.\nA rooftop, two artists, one scene...\nand an evening to discover live.\nFree entry, within the limits of available places\nTuesday 17 November · 8 p.m.\n@habibidowntown_\nRooftop of El Hana International Hotel, Tunis\nMüsgö + Benjemy"
+  },
+  "_events/auto/ig-jaou-tunis/2026-11-10-art-explora-festival.md": {
+   "cle": "e7eb812949de",
+   "fr": "Festival d'Art Explora\nSous-titre / Contre; Courant\nExposition collective\n25 octobre-31 décembre 2026\nB7L9 Centre d'art\nPrévu par Danielle Makhoul & Amanda Abi Khalil\nCoproduction par @artexplorafestival et @kamel_lazaar_fondation\nCofinancé par l'Union européenne\nLes données sont disponibles à l'adresse suivante :\nBadr El Hammami\nThabrate, 2010-2018\nInstallation sonore, transfert photographique sur cassettes, écouteurs, lecteurs MP3\nDimensions variables\nAvec la permission du Musée national de l'histoire de l'immigration",
+   "ar": "مهرجان أكسبلورا\nتحت الأرض/الوحدة؛\nمعرض جماعي\n25 تشرين الأول/أكتوبر - 31 كانون الأول/ديسمبر 2026\nB7L9 مركز الفنون\nمن قبل دانييل ماخول أماندا أبي خليل\nCo-production by @artexplorafestival and @kamel_lazaar_foundation\nالتمويل المشترك من جانب الاتحاد الأوروبي\n<unk> @mehdi.ben.temessek\nبدر الحممامي\nثابرات، 2010-2018\nالتركيب الصوتي، نقل الصور الفوتوغرافية إلى القسيسات، السماعات، اللاعبين\nالأبعاد المتغيرة\nمحكمــة الموسيــة الوطنيــة للهجــرة"
+  },
+  "_events/auto/ig-jaou-tunis/2026-11-19-aken-a-matter-phase-i-layered-system-dynamics.md": {
+   "cle": "7a12e48f801f",
+   "fr": "AKEN — A:/MATTER — PHASE I: DYNAMIQUES DU SYSTÈME LAYERED\nRejoignez-nous au B7L9 Art Centre pour la soirée de sortie et la session d'écoute immersive du premier album d'Aken.\nEnregistré dans sa chambre à La Marsa, l'album apporte quatre machines à la conversation, explorant rythmes, boucles et motifs changeants.\nPlutôt que de composer des mélodies, Aken les découvre par improvisation, permettant aux machines de façonner la musique au fur et à mesure qu'elle se déploie.",
+   "ar": "AKEN - A:/MATTER - PHASE I: LAYERED SYSTEM DYNAMICS\nانضموا إلينا في مركز الفنون B7L9 لحفل الإفراج وجلسة الاستماع غير الملزمة لألبوم أكين.\nمسجلة في غرفة نومه في لا مارسا الألبوم يجلب أربعة آلات إلى محادثة، يستكشف الإيقاعات، والثغرات، والأنماط المتغيرة.\nبدلاً من تجميع الألغاز، يكتشفها (آكن) عن طريق الارتجال، مما يسمح للآلات بتشكيل الموسيقى كما تتكشف."
+  },
+  "_events/auto/ig-jaou-tunis/2026-11-22-jaou-tunis-2026.md": {
+   "cle": "6cb514567048",
+   "fr": "JAOU TUNIS 2026\nHYPERCULTE\nCONCERT DE VIE\nCréé en 2013, le duo suisse Hyperculte, composé de Simone Aubert et Vincent Bertholet, réunit disco, pop, krautrock, punk et post-rock dans un son distinctif et énergique.\nAnimés par des rythmes aigus, des improvisations musicales et des paroles politiquement engagées, leur travail se déplace entre l'expérimentation, la poésie et une réflexion puissante sur le monde qui nous entoure.\nCentre d'art B7L9\n22 novembre 2026\nRéserver vos billets: lien dans bio",
+   "ar": "JAOU TUNIS 2026\nHYPERCULTE\nالحلقة الخامسة عشرة\nوفي عام 2013، أُنشئت الدوقة السويسرية هيبركولت، المؤلفة من سيمون أوبيرت وفنسنت بيرت هولت، وهي تجمع بين الديسكو والبوب والكروتوك والبانك والروك بعد الصخور في صوت متميز ونشط.\nوتحركت أعمالهم بين التجارب والشعر والتفكير القوي في العالم من حولنا.\n<unk>B7L9 Art Centre\n22 تشرين الثاني/نوفمبر 2026\nاحجزوا تذاكركم وربطوا بيولوجيا"
+  },
+  "_events/auto/ig-nf-event/2026-11-11-mercredi-11-novembre.md": {
+   "cle": "d93091541ab3",
+   "ar": "الأربعاء، 11 تشرين الثاني/نوفمبر\n\"هيلا نور\" تجعل مشهد الهتست يلمع لمساء حيث المواهب، الصمغ والحفلات تلتقي مع النجوم\n■ المادتان هايثيم كوسوري\n■ صلاح شاري\n■ صلاحية النور الدين\n-ماذا؟\nالحفظ:\nمجمّع البرج الأبيض - جامارث\n# جاتسي # مُتَعَدِّد # يَتقدّمُ # غَمَرَث #",
+   "en": "Wednesday, November 11\n\"Hela Nour\" is making the Jetset scene shine for an evening where talent, glamour and party meet together with the stars:\n▪的 Haythem Ksouri\n▪的 Zouhour Chaari\n▪的 Hatem Noureddine\n__\nReservation: 50 468 003 - 54 549 396\nThe White Tower Complex – Gammarth\n#jetset #restaurant #spectacle #gammarth #nightout"
   },
   "_events/auto/resident-advisor/2026-11-27-nomad-man-festival-2026.md": {
    "cle": "074fdd79fce1",

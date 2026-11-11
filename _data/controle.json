@@ -1,17 +1,43 @@
 {
- "date": "2026-11-10",
+ "date": "2026-11-11",
  "corriges": 0,
  "a_verifier": [],
  "granularite": {
   "sources": {
-   "fb-61595612945174": {
-    "n": 1,
-    "precis": 1,
+   "ig-habibi-downtown": {
+    "n": 2,
+    "precis": 2,
     "pourcent": 100,
     "defauts": [],
-    "manques": []
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
+     }
+    ]
    },
-   "ig-habibi-downtown": {
+   "ig-jaou-tunis": {
+    "n": 3,
+    "precis": 2,
+    "pourcent": 67,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 1,
+      "exemple": "Art Explora Festival"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 2
+     }
+    ]
+   },
+   "ig-nf-event": {
     "n": 1,
     "precis": 1,
     "pourcent": 100,
@@ -61,23 +87,23 @@
     ],
     "manques": []
    },
-   "facebook_programmes": {
-    "n": 1,
-    "precis": 1,
-    "pourcent": 100,
-    "defauts": [],
-    "manques": []
-   },
    "instagram": {
-    "n": 1,
-    "precis": 1,
-    "pourcent": 100,
-    "defauts": [],
+    "n": 6,
+    "precis": 5,
+    "pourcent": 83,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 1,
+      "exemple": "Art Explora Festival"
+     }
+    ],
     "manques": [
      {
       "code": "sans_heure",
       "texte": "heure",
-      "n": 1
+      "n": 4
      }
     ]
    },

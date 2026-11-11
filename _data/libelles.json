@@ -19,10 +19,20 @@
   "fr": "93, rue Muhammad V, Tunisie",
   "en": "93 Muhammad V Street, Tunisia"
  },
+ "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS": {
+  "de": "fr",
+  "ar": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS",
+  "en": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS"
+ },
  "Agendas et billetteries": {
   "de": "fr",
   "ar": "جداول الأعمال والتذاكر",
   "en": "Agendas and ticketing"
+ },
+ "Art Explora Festival": {
+  "de": "en",
+  "fr": "Festival d'Art Explora",
+  "ar": "مهرجان أكسبلورا"
  },
  "Autre soirée": {
   "de": "fr",
@@ -274,6 +284,11 @@
   "ar": "التجمعات والجمعيات ورجال الدين والفنانين",
   "en": "Collectives, associations, DJs and artists"
  },
+ "Complexe La Tour Blanche – Gammarth": {
+  "de": "fr",
+  "ar": "مجمّع البرج الأبيض - جامارث",
+  "en": "The White Tower Complex – Gammarth"
+ },
  "Concert live": {
   "de": "en",
   "fr": "Concert en direct",
@@ -308,16 +323,6 @@
   "de": "fr",
   "ar": "دار سيباستيان، حمممت",
   "en": "Dar Sébastien, Hammamet"
- },
- "Dar Ziqua": {
-  "de": "fr",
-  "ar": "Dar Ziqua",
-  "en": "Dar Ziqua"
- },
- "Dar Ziqua, Zaghouan": {
-  "de": "fr",
-  "ar": "دار زيكو، زاغوان",
-  "en": "Dar Ziqua, Zaghuan"
  },
  "Disco Galaxy": {
   "de": "fr",
@@ -518,6 +523,11 @@
   "de": "fr",
   "ar": "المعاهد والمراكز الثقافية",
   "en": "Cultural institutes and centres"
+ },
+ "JAOU TUNIS 2026": {
+  "de": "fr",
+  "ar": "JAOU TUNIS 2026",
+  "en": "JAOU TUNIS 2026"
  },
  "Jaou Tunis (Instagram)": {
   "de": "fr",
@@ -724,6 +734,11 @@
   "ar": "نادي المايا",
   "en": "Maya Club"
  },
+ "Mercredi 11 Novembre": {
+  "de": "fr",
+  "ar": "الأربعاء، 11 تشرين الثاني/نوفمبر",
+  "en": "Wednesday, 11 November"
+ },
  "Monastir": {
   "de": "fr",
   "ar": "الدير",
@@ -918,11 +933,6 @@
   "de": "fr",
   "ar": "بغداد",
   "en": "Baghdad Street"
- },
- "STEPPERS SOUND SYSTEM Launch party": {
-  "de": "en",
-  "fr": "SYSTEME SONDE ÉTAPES Partie de lancement",
-  "ar": "حفلة إطلاق نظام (سيستيم)"
  },
  "Salsa Disco Djerba": {
   "de": "fr",
@@ -1129,6 +1139,11 @@
   "ar": "تونس",
   "en": "Twist Tunisia"
  },
+ "Un rooftop, deux artistes, une même scène... et une soirée": {
+  "de": "fr",
+  "ar": "على السطح، فنانين، مشهد واحد... وليلة واحدة",
+  "en": "A rooftop, two artists, one scene... and one night"
+ },
  "Unidos Club by El Pacha": {
   "de": "en",
   "fr": "Unidos Club par El Pacha",
@@ -1153,11 +1168,6 @@
   "de": "fr",
   "ar": "يوكا تونس",
   "en": "Yüka Tunis"
- },
- "Zaghouan": {
-  "de": "fr",
-  "ar": "Zaghuan",
-  "en": "Zaghuan"
  },
  "harrison guyett": {
   "de": "fr",
@@ -1198,6 +1208,11 @@
   "de": "ar",
   "fr": "La rue Hadi Shaker.",
   "en": "Hadi Shaker Street."
+ },
+ "مركز الفنون B7L9": {
+  "de": "ar",
+  "fr": "Centre des arts B7L9",
+  "en": "Arts Centre B7L9"
  },
  "نهج علي باشا, حلق الوادي": {
   "de": "ar",
