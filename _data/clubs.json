@@ -1,5 +1,5 @@
 {
- "lu_le": "2026-11-08",
+ "lu_le": "2026-11-15",
  "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
  "lieux": [
   {
@@ -65,11 +65,11 @@
    "type": "bar",
    "ville": "nabeul",
    "horaires": "tous les jours, 24 h/24",
+   "horaires_en": "every day, 24/7",
+   "horaires_ar": "كل يوم، 24/24",
    "lat": 36.4002513,
    "lon": 10.5767993,
-   "osm": "https://www.openstreetmap.org/node/12002676494",
-   "horaires_en": "every day, 24/7",
-   "horaires_ar": "كل يوم، 24/24"
+   "osm": "https://www.openstreetmap.org/node/12002676494"
   },
   {
    "nom": "Bar piscine Sultan",
@@ -373,11 +373,11 @@
    "type": "bar",
    "ville": "nabeul",
    "horaires": "lun-dim 7h-21h30",
+   "horaires_en": "Mon-Sun 07:00-21:30",
+   "horaires_ar": "الإثنين-الأحد 07:00-21:30",
    "lat": 36.4444415,
    "lon": 10.7340346,
-   "osm": "https://www.openstreetmap.org/node/6201364015",
-   "horaires_en": "Mon-Sun 07:00-21:30",
-   "horaires_ar": "الإثنين-الأحد 07:00-21:30"
+   "osm": "https://www.openstreetmap.org/node/6201364015"
   },
   {
    "nom": "Pool Party Club Hammamet",
@@ -579,11 +579,11 @@
    "type": "bar",
    "ville": "sousse",
    "horaires": "tous les jours, 24 h/24",
+   "horaires_en": "every day, 24/7",
+   "horaires_ar": "كل يوم، 24/24",
    "lat": 35.8485357,
    "lon": 10.6177656,
-   "osm": "https://www.openstreetmap.org/node/1228007226",
-   "horaires_en": "every day, 24/7",
-   "horaires_ar": "كل يوم، 24/24"
+   "osm": "https://www.openstreetmap.org/node/1228007226"
   },
   {
    "nom": "Caruso",
@@ -591,11 +591,11 @@
    "ville": "sousse",
    "adresse": "شارع هدي شاكر",
    "horaires": "lun-dim 9h-0h",
+   "horaires_en": "Mon-Sun 09:00-00:00",
+   "horaires_ar": "الإثنين-الأحد 09:00-00:00",
    "lat": 35.8362934,
    "lon": 10.6367263,
-   "osm": "https://www.openstreetmap.org/node/5847201685",
-   "horaires_en": "Mon-Sun 09:00-00:00",
-   "horaires_ar": "الإثنين-الأحد 09:00-00:00"
+   "osm": "https://www.openstreetmap.org/node/5847201685"
   },
   {
    "nom": "Edge Bar",
@@ -663,6 +663,14 @@
    "lat": 35.8009806,
    "lon": 10.5973106,
    "osm": "https://www.openstreetmap.org/node/7099580085"
+  },
+  {
+   "nom": "لونج",
+   "type": "bar",
+   "ville": "sousse",
+   "lat": 35.9004628,
+   "lon": 10.5877375,
+   "osm": "https://www.openstreetmap.org/way/219132460"
   },
   {
    "nom": "Bananas",
@@ -923,11 +931,11 @@
    "type": "bar",
    "ville": "tunis",
    "horaires": "lun-sam 12h-2h30",
+   "horaires_en": "Mon-Sat 12:00-02:30",
+   "horaires_ar": "الإثنين-السبت 12:00-02:30",
    "lat": 36.800357,
    "lon": 10.1824403,
-   "osm": "https://www.openstreetmap.org/node/11504046285",
-   "horaires_en": "Mon-Sat 12:00-02:30",
-   "horaires_ar": "الإثنين-السبت 12:00-02:30"
+   "osm": "https://www.openstreetmap.org/node/11504046285"
   },
   {
    "nom": "Club 71",
@@ -983,11 +991,11 @@
    "type": "bar",
    "ville": "tunis",
    "horaires": "lun-sam 15h-1h",
+   "horaires_en": "Mon-Sat 15:00-01:00",
+   "horaires_ar": "الإثنين-السبت 15:00-01:00",
    "lat": 36.8227077,
    "lon": 10.1933627,
-   "osm": "https://www.openstreetmap.org/node/6819154487",
-   "horaires_en": "Mon-Sat 15:00-01:00",
-   "horaires_ar": "الإثنين-السبت 15:00-01:00"
+   "osm": "https://www.openstreetmap.org/node/6819154487"
   },
   {
    "nom": "Grand Italia",
@@ -1119,12 +1127,12 @@
    "ville": "tunis",
    "adresse": "4",
    "horaires": "lun-sam 0h-24h",
+   "horaires_en": "Mon-Sat 00:00-24:00",
+   "horaires_ar": "الإثنين-السبت 00:00-24:00",
    "telephone": "+216 56 574 949",
    "lat": 36.8491605,
    "lon": 10.3272792,
-   "osm": "https://www.openstreetmap.org/node/11005563005",
-   "horaires_en": "Mon-Sat 00:00-24:00",
-   "horaires_ar": "الإثنين-السبت 00:00-24:00"
+   "osm": "https://www.openstreetmap.org/node/11005563005"
   },
   {
    "nom": "Maison Bleue",
@@ -1216,13 +1224,13 @@
    "ville": "tunis",
    "adresse": "نهج صور, menzah 8",
    "horaires": "19h-4h",
+   "horaires_en": "19:00-4:00",
+   "horaires_ar": "19:00-4:00",
    "lat": 36.8572521,
    "lon": 10.1729297,
    "osm": "https://www.openstreetmap.org/node/9635030202",
    "ambiance": "terrasse",
-   "age_min": "15",
-   "horaires_en": "19:00-04:00",
-   "horaires_ar": "19:00-04:00"
+   "age_min": "15"
   },
   {
    "nom": "Sinbad Resto Lounge",
@@ -1302,10 +1310,10 @@
    "nom": "Cercle Club",
    "type": "club",
    "ville": "tunis",
+   "instagram": "cercle.club",
    "lat": 36.9264237,
    "lon": 10.2780708,
    "osm": "https://www.openstreetmap.org/node/10901588496",
-   "instagram": "cercle.club",
    "manuel": true
   },
   {

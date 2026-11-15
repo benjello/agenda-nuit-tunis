@@ -48,11 +48,11 @@
  },
  {
   "semaine": "2026-S46",
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "a_venir": 6,
-  "sept_jours": 3,
+  "sept_jours": 5,
   "sources_actives": 21,
-  "sources_avec_evenements": 2,
+  "sources_avec_evenements": 3,
   "sources_muettes": [
    "fb-61595612945174",
    "fb-recherche-soirees",
@@ -71,23 +71,25 @@
    "ig-tunisia-comedy-festival",
    "resident-advisor",
    "teskerti",
-   "tn-agenda-du-jour",
-   "tunis-events"
+   "tn-agenda-du-jour"
   ],
   "par_ville": {
-   "tunis": 3
+   "tunis": 5
   },
   "par_categorie": {
-   "festival": 2,
-   "bar": 1
+   "festival": 3,
+   "bar": 1,
+   "concert": 1
   },
   "par_genre": {
-   "festival": 2,
-   "lieu": 1
+   "festival": 3,
+   "lieu": 1,
+   "agenda": 1
   },
   "par_source": {
-   "ig-jaou-tunis": 2,
-   "ig-habibi-downtown": 1
+   "ig-jaou-tunis": 3,
+   "ig-habibi-downtown": 1,
+   "tunis-events": 1
   }
  }
 ]
