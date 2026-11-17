@@ -479,6 +479,11 @@
   "ar": "النحلة",
   "en": "El bey"
  },
+ "European, Tunisian": {
+  "de": "fr",
+  "ar": "أوروبا، تونس",
+  "en": "European, Tunisian"
+ },
  "Evening bar": {
   "de": "fr",
   "ar": "حانة المساء",
@@ -528,6 +533,11 @@
   "de": "fr",
   "ar": "التلفزيون الأول",
   "en": "First TV"
+ },
+ "French, Italian, Tunisian": {
+  "de": "fr",
+  "ar": "الفرنسية والإيطالية وتونسية",
+  "en": "French, Italian, Tunisian"
  },
  "Frida Bar": {
   "de": "fr",
@@ -618,6 +628,11 @@
   "de": "fr",
   "ar": "Jaou Tunis (Instagram)",
   "en": "Jaou Tunis (Instagram)"
+ },
+ "Japanese, sushi": {
+  "de": "fr",
+  "ar": "اليابانية، السوشي",
+  "en": "Japanese, sushi"
  },
  "Jobi Beach Hammamet": {
   "de": "fr",
@@ -1354,6 +1369,16 @@
   "ar": "الطائفة التونسية للتكنولوجيا (Instagram)",
   "en": "Tunisian Techno Community (Instagram)"
  },
+ "Tunisian, French": {
+  "de": "fr",
+  "ar": "تونس، الفرنسية",
+  "en": "Tunisian, French"
+ },
+ "Tunisian, seafood, pasta, fish, noodles, octopus": {
+  "de": "fr",
+  "ar": "التونسية، المأكولات البحرية، المعكرونة، الأسماك، الأوعوبتوس",
+  "en": "Tunisian, seafood, pasta, fish, nooodles, octopus"
+ },
  "Tunisie Numérique (agenda du jour)": {
   "de": "fr",
   "ar": "رقم تونس (جدول أعمال اليوم)",
@@ -1414,45 +1439,60 @@
   "ar": "يوكا تونس",
   "en": "Yüka Tunis"
  },
- "burger, salad, pasta, beef & chicken, cheesy saucy poutine": {
+ "burgers, salades, pâtes, beef & chicken, cheesy saucy poutine": {
   "de": "fr",
-  "ar": "برغر، سلطة، معكرة، دجاج لحم، صنوبر نقانق جبنة",
-  "en": "burger, salad, pasta, beef & chicken, cheesey sausage poutine"
+  "ar": "برغر، سلطة، بطاطس، لحم البقر، لحم الخنزير، صنوبر النقانق الجبنة",
+  "en": "burgers, salads, pasta, beef & chicken, cheesey sausage poutine"
  },
- "burger, sandwich, terrasse": {
+ "burgers, salads, pasta, beef & chicken, cheesy saucy poutine": {
   "de": "fr",
-  "ar": "برجر، شطيرة، تراس",
-  "en": "burger, sandwich, terrace"
+  "ar": "برغر، سلطة، بطاطس، لحم البقر، لحم الخنزير، صنوبر النقانق الجبنة",
+  "en": "burgers, salads, pasta, beef & chicken, cheesey sausage poutine"
  },
- "european, tunisian": {
+ "burgers, sandwiches": {
   "de": "fr",
-  "ar": "أوروبا، تونس",
-  "en": "European, Tunisian"
+  "ar": "شطائر، شطائر",
+  "en": "burgers, sandwiches"
  },
- "fine dining, french": {
+ "burgers, sandwichs": {
   "de": "fr",
-  "ar": "عشاء جيد، فرنسي",
-  "en": "fine dining, french"
+  "ar": "البرغر، السندويشات",
+  "en": "Burgers, sandwiches"
+ },
+ "européenne, tunisienne": {
+  "de": "fr",
+  "ar": "الاتحاد الأوروبي، تونس",
+  "en": "European Union, Tunisia"
+ },
+ "fine dining, French": {
+  "de": "fr",
+  "ar": "عشاء غرامي، فرنسي",
+  "en": "fine dining, French"
  },
  "fish, seafood": {
   "de": "fr",
   "ar": "الأسماك، والمأكولات البحرية",
   "en": "fish, seafood"
  },
- "french, italian, local": {
+ "française, italienne, tunisienne": {
   "de": "fr",
-  "ar": "الفرنسية، الإيطالية، المحلية",
-  "en": "french, italian, local"
+  "ar": "الفرنسية والإيطالية وتونسية",
+  "en": "French, Italian, Tunisian"
+ },
+ "gastronomique, française": {
+  "de": "fr",
+  "ar": "البنزين، الفرنسية",
+  "en": "gastronomic, French"
  },
  "harrison guyett": {
   "de": "fr",
   "ar": "هاريسون ماينت",
   "en": "harrison guyett"
  },
- "japanese, sushi": {
+ "japonaise, sushis": {
   "de": "fr",
-  "ar": "ياباني، سوشي",
-  "en": "Japanese, sushi"
+  "ar": "اليابانية، السوشي",
+  "en": "japanese, sushi"
  },
  "les indécis": {
   "de": "fr",
@@ -1464,35 +1504,55 @@
   "ar": "البيت mrad",
   "en": "house mrad"
  },
- "pizza, chicken, coffee shop, sandwich, seafood, kebab": {
+ "pizza, chicken, coffee shop, sandwiches, seafood, kebab": {
   "de": "fr",
-  "ar": "بيتزا، دجاج، مقهى، شطيرة، مأكولات بحرية، كباب",
-  "en": "pizza, chicken, coffee shop, sandwich, seafood, kebab"
+  "ar": "البيتزا، الدجاج، المقهى، السندويشات، المأكولات البحرية، الكباب",
+  "en": "pizza, chicken, coffee shop, sandwiches, seafood, kebab"
  },
- "regional, french": {
+ "pizza, poulet, café, sandwichs, poisson et fruits de mer, kebab": {
   "de": "fr",
-  "ar": "إقليمي، فرنسي",
-  "en": "Regional, French"
+  "ar": "البيتزا، الدجاج، القهوة، السندويشات، الأسماك والمأكولات البحرية، الكاباب",
+  "en": "pizza, chicken, coffee, sandwiches, fish and seafood, kebab"
  },
- "regional, seafood, pasta, fish, noodle, octopus": {
+ "poisson et fruits de mer, burgers, européenne": {
   "de": "fr",
-  "ar": "إقليمي، مأكولات بحرية، مراعي، سمك، نودل، خطبوط",
-  "en": "regional, seafood, pasta, fish, noodle, octopus"
+  "ar": "الأسماك والمأكولات البحرية، والبرجر، والأوروبية",
+  "en": "fish and seafood, burgers, European"
  },
- "seafood, burger, european": {
+ "poisson et fruits de mer, pizza, tunisienne, burgers, poulet, grillades, italienne": {
   "de": "fr",
-  "ar": "مأكولات بحرية، برجر، أوروبيان",
-  "en": "seafood, burger, european"
+  "ar": "الأسماك والمأكولات البحرية، البيتزا، تونس، البرغر، الدجاج، الشحوم، الإيطالية",
+  "en": "fish and seafood, pizza, Tunisian, burgers, chicken, grilled, Italian"
  },
- "seafood, pizza, regional, burger, chicken, steak house, italian, terrasse": {
+ "poisson, poisson et fruits de mer": {
   "de": "fr",
-  "ar": "مأكولات بحرية، بيتزا، برجر إقليمي، دجاج، بيت لحم، إيطالي، تراس",
-  "en": "seafood, pizza, regional, burger, chicken, steak house, italian, terrace"
+  "ar": "الأسماك والأسماك والمأكولات البحرية",
+  "en": "fish, fish and seafood"
+ },
+ "seafood, burgers, European": {
+  "de": "fr",
+  "ar": "المأكولات البحرية والبرق والأوروبية",
+  "en": "seafood, burgers, European"
+ },
+ "seafood, pizza, Tunisian, burgers, chicken, steakhouse, Italian": {
+  "de": "fr",
+  "ar": "مأكولات بحرية، بيتزا، تونس، برجر، دجاج، شرائح لحم، إيطالي",
+  "en": "seafood, pizza, Tunisian, burgers, chicken, steakhouse, Italian"
  },
  "tunis.events (agenda)": {
   "de": "fr",
   "ar": "المناسبات (البند من جدول الأعمال)",
   "en": "tunis.events (agenda)"
+ },
+ "tunisienne, française": {
+  "de": "fr",
+  "ar": "تونس، الفرنسية",
+  "en": "Tunisian, French"
+ },
+ "tunisienne, poisson et fruits de mer, pâtes, poisson, nouilles, poulpe": {
+  "de": "fr",
+  "ar": "تونسي، الأسماك والمأكولات البحرية، المعكرونة، الأسماك، العقيدات، الأوكتوبوس",
+  "en": "Tunisian, fish and seafood, pasta, fish, noodles, octopus"
  },
  "wet flamingo": {
   "de": "fr",

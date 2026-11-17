@@ -1,5 +1,6 @@
 {
  "lu_le": "2026-11-17",
+ "version": 2,
  "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
  "lieux": [
   {
@@ -100,7 +101,8 @@
    "lat": 35.2945508,
    "lon": 10.7082035,
    "osm": "https://www.openstreetmap.org/node/11761036639",
-   "ambiance": "pizza"
+   "cuisine": "pizza",
+   "cuisine_en": "pizza"
   },
   {
    "nom": "Bar Jasmin",
@@ -613,7 +615,8 @@
    "lat": 36.3946776,
    "lon": 10.616448,
    "osm": "https://www.openstreetmap.org/node/7623017185",
-   "ambiance": "local"
+   "cuisine": "tunisienne",
+   "cuisine_en": "Tunisian"
   },
   {
    "nom": "Rooh El Medina",
@@ -686,7 +689,8 @@
    "lat": 34.7435508,
    "lon": 11.2984223,
    "osm": "https://www.openstreetmap.org/node/2500113041",
-   "ambiance": "regional, seafood, pasta, fish, noodle, octopus"
+   "cuisine": "tunisienne, poisson et fruits de mer, pâtes, poisson, nouilles, poulpe",
+   "cuisine_en": "Tunisian, seafood, pasta, fish, noodles, octopus"
   },
   {
    "nom": "Restaurant Ton Ton",
@@ -919,7 +923,9 @@
    "lat": 35.8364117,
    "lon": 10.5959867,
    "osm": "https://www.openstreetmap.org/node/6359816489",
-   "ambiance": "seafood, pizza, regional, burger, chicken, steak house, italian, terrasse"
+   "cuisine": "poisson et fruits de mer, pizza, tunisienne, burgers, poulet, grillades, italienne",
+   "cuisine_en": "seafood, pizza, Tunisian, burgers, chicken, steakhouse, Italian",
+   "ambiance": "terrasse"
   },
   {
    "nom": "Farmer's Steakhouse",
@@ -934,7 +940,8 @@
    "lat": 35.8427406,
    "lon": 10.624814,
    "osm": "https://www.openstreetmap.org/node/3915998119",
-   "ambiance": "international"
+   "cuisine": "internationale",
+   "cuisine_en": "international"
   },
   {
    "nom": "L'imprévu",
@@ -960,7 +967,8 @@
    "lat": 35.8461551,
    "lon": 10.6020954,
    "osm": "https://www.openstreetmap.org/node/13098765901",
-   "ambiance": "french, italian, local"
+   "cuisine": "française, italienne, tunisienne",
+   "cuisine_en": "French, Italian, Tunisian"
   },
   {
    "nom": "La Daurade",
@@ -972,7 +980,8 @@
    "lat": 35.8946724,
    "lon": 10.5987539,
    "osm": "https://www.openstreetmap.org/way/232001337",
-   "ambiance": "regional, french"
+   "cuisine": "tunisienne, française",
+   "cuisine_en": "Tunisian, French"
   },
   {
    "nom": "Le Méditerranée",
@@ -987,7 +996,8 @@
    "lat": 35.8930291,
    "lon": 10.5981557,
    "osm": "https://www.openstreetmap.org/node/1202486924",
-   "ambiance": "european, tunisian"
+   "cuisine": "européenne, tunisienne",
+   "cuisine_en": "European, Tunisian"
   },
   {
    "nom": "Le QG",
@@ -1036,7 +1046,8 @@
    "lat": 35.8450535,
    "lon": 10.6247736,
    "osm": "https://www.openstreetmap.org/node/3268621930",
-   "ambiance": "japanese, sushi"
+   "cuisine": "japonaise, sushis",
+   "cuisine_en": "Japanese, sushi"
   },
   {
    "nom": "Dar Ali",
@@ -1091,7 +1102,8 @@
    "lat": 33.46802,
    "lon": 8.9775016,
    "osm": "https://www.openstreetmap.org/node/5300073080",
-   "ambiance": "regional"
+   "cuisine": "tunisienne",
+   "cuisine_en": "Tunisian"
   },
   {
    "nom": "La Grotte",
@@ -1119,7 +1131,8 @@
    "lat": 33.8299459,
    "lon": 10.986523,
    "osm": "https://www.openstreetmap.org/way/998483114",
-   "ambiance": "seafood, burger, european"
+   "cuisine": "poisson et fruits de mer, burgers, européenne",
+   "cuisine_en": "seafood, burgers, European"
   },
   {
    "nom": "Restaurant Haroun",
@@ -1133,7 +1146,8 @@
    "lat": 33.8855914,
    "lon": 10.854848,
    "osm": "https://www.openstreetmap.org/node/5352160921",
-   "ambiance": "fish, seafood"
+   "cuisine": "poisson, poisson et fruits de mer",
+   "cuisine_en": "fish, seafood"
   },
   {
    "nom": "Tozeriana Restaurant - café",
@@ -1148,7 +1162,8 @@
    "lat": 33.9210559,
    "lon": 8.1202951,
    "osm": "https://www.openstreetmap.org/way/1062398508",
-   "ambiance": "pizza, chicken, coffee shop, sandwich, seafood, kebab"
+   "cuisine": "pizza, poulet, café, sandwichs, poisson et fruits de mer, kebab",
+   "cuisine_en": "pizza, chicken, coffee shop, sandwiches, seafood, kebab"
   },
   {
    "nom": "117 Tunis",
@@ -1706,7 +1721,8 @@
    "lat": 36.9256218,
    "lon": 10.2726473,
    "osm": "https://www.openstreetmap.org/node/2609478028",
-   "ambiance": "mediterranean"
+   "cuisine": "méditerranéenne",
+   "cuisine_en": "Mediterranean"
   },
   {
    "nom": "Boston Pizza",
@@ -1718,7 +1734,8 @@
    "lat": 36.8324223,
    "lon": 10.0882333,
    "osm": "https://www.openstreetmap.org/node/6004453177",
-   "ambiance": "pizza"
+   "cuisine": "pizza",
+   "cuisine_en": "pizza"
   },
   {
    "nom": "BURGER STOP - Tunis",
@@ -1733,7 +1750,9 @@
    "lat": 36.8732705,
    "lon": 10.3389254,
    "osm": "https://www.openstreetmap.org/node/9159903979",
-   "ambiance": "burger, sandwich, terrasse"
+   "cuisine": "burgers, sandwichs",
+   "cuisine_en": "burgers, sandwiches",
+   "ambiance": "terrasse"
   },
   {
    "nom": "Club Grill Citroen",
@@ -1746,7 +1765,8 @@
    "lat": 36.8313017,
    "lon": 10.2181479,
    "osm": "https://www.openstreetmap.org/way/101115159",
-   "ambiance": "barbecue"
+   "cuisine": "grillades",
+   "cuisine_en": "barbecue"
   },
   {
    "nom": "Côté Jardin",
@@ -1760,7 +1780,8 @@
    "lat": 36.8434573,
    "lon": 10.2787065,
    "osm": "https://www.openstreetmap.org/node/7185437700",
-   "ambiance": "regional"
+   "cuisine": "tunisienne",
+   "cuisine_en": "Tunisian"
   },
   {
    "nom": "La salle à manger",
@@ -1775,7 +1796,8 @@
    "lat": 36.8219359,
    "lon": 10.1813303,
    "osm": "https://www.openstreetmap.org/node/5339769722",
-   "ambiance": "fine dining, french"
+   "cuisine": "gastronomique, française",
+   "cuisine_en": "fine dining, French"
   },
   {
    "nom": "Le Bambou cuisine asiatique",
@@ -1790,7 +1812,8 @@
    "lat": 36.8590035,
    "lon": 10.1624657,
    "osm": "https://www.openstreetmap.org/node/4353991544",
-   "ambiance": "japanese"
+   "cuisine": "japonaise",
+   "cuisine_en": "Japanese"
   },
   {
    "nom": "Le Grand Café du Theatre",
@@ -1803,7 +1826,8 @@
    "lat": 36.7992942,
    "lon": 10.1811562,
    "osm": "https://www.openstreetmap.org/node/3660718726",
-   "ambiance": "international"
+   "cuisine": "internationale",
+   "cuisine_en": "international"
   },
   {
    "nom": "Le Marquis",
@@ -1816,7 +1840,8 @@
    "lat": 36.8197162,
    "lon": 10.1839647,
    "osm": "https://www.openstreetmap.org/node/4603748890",
-   "ambiance": "mediterranean"
+   "cuisine": "méditerranéenne",
+   "cuisine_en": "Mediterranean"
   },
   {
    "nom": "Le Réservoir Bistro",
@@ -1831,7 +1856,8 @@
    "lat": 36.8466907,
    "lon": 10.1734072,
    "osm": "https://www.openstreetmap.org/node/14207350859",
-   "ambiance": "burger, salad, pasta, beef & chicken, cheesy saucy poutine"
+   "cuisine": "burgers, salades, pâtes, beef & chicken, cheesy saucy poutine",
+   "cuisine_en": "burgers, salads, pasta, beef & chicken, cheesy saucy poutine"
   },
   {
    "nom": "Le safran Ennasr II",
@@ -1845,7 +1871,8 @@
    "lat": 36.8598735,
    "lon": 10.1625753,
    "osm": "https://www.openstreetmap.org/node/12980470034",
-   "ambiance": "turkish"
+   "cuisine": "turque",
+   "cuisine_en": "Turkish"
   },
   {
    "nom": "Le zink",
@@ -1859,7 +1886,8 @@
    "lat": 36.8370433,
    "lon": 10.1772184,
    "osm": "https://www.openstreetmap.org/node/3715292802",
-   "ambiance": "burger"
+   "cuisine": "burgers",
+   "cuisine_en": "burgers"
   },
   {
    "nom": "maison mrad",
@@ -1873,7 +1901,8 @@
    "lat": 36.8285899,
    "lon": 10.1786044,
    "osm": "https://www.openstreetmap.org/node/11819336905",
-   "ambiance": "dessert"
+   "cuisine": "desserts",
+   "cuisine_en": "desserts"
   },
   {
    "nom": "Mess des Officiers",
@@ -1899,7 +1928,8 @@
    "lat": 36.8322105,
    "lon": 10.2305469,
    "osm": "https://www.openstreetmap.org/node/7185461550",
-   "ambiance": "italian"
+   "cuisine": "italienne",
+   "cuisine_en": "Italian"
   },
   {
    "nom": "pizzeria",
@@ -1924,7 +1954,8 @@
    "lat": 36.8481263,
    "lon": 10.269971,
    "osm": "https://www.openstreetmap.org/node/7185452140",
-   "ambiance": "italian"
+   "cuisine": "italienne",
+   "cuisine_en": "Italian"
   },
   {
    "nom": "Villa 78",
@@ -1939,7 +1970,8 @@
    "lat": 36.819256,
    "lon": 10.1818602,
    "osm": "https://www.openstreetmap.org/node/2817718376",
-   "ambiance": "italian"
+   "cuisine": "italienne",
+   "cuisine_en": "Italian"
   }
  ]
 }
