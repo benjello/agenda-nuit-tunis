@@ -1,4 +1,9 @@
 {
+ "Bistro Nippon": {
+  "lu_le": "2026-11-17",
+  "menu_site": "https://bnops.bistronippon.tn/guest/menu/bistronippon/readonly",
+  "site_lu": 2
+ },
  "Calypso Club Hammamet": {
   "abonnes": 77346,
   "affiches": [
@@ -44,12 +49,45 @@
   "lu_le": "2026-11-17",
   "photo": "assets/clubs/cercle-club/profil.jpg"
  },
+ "China Town Resto": {
+  "abonnes": 8610,
+  "affiches": [
+   {
+    "date": "2026-11-16",
+    "image": "assets/clubs/china-town-resto/DfzTkr4DXkq.jpg",
+    "lien": "https://www.instagram.com/p/DfzTkr4DXkq/"
+   },
+   {
+    "date": "2026-11-13",
+    "image": "assets/clubs/china-town-resto/DfrlNszFOfX.jpg",
+    "lien": "https://www.instagram.com/p/DfrlNszFOfX/"
+   },
+   {
+    "date": "2026-11-11",
+    "image": "assets/clubs/china-town-resto/DfmbmNMnNMn.jpg",
+    "lien": "https://www.instagram.com/p/DfmbmNMnNMn/"
+   }
+  ],
+  "bio": "Chinese Food🥢🇨🇳 with Chinese chef🎎\n⏰ Lundi-Dimanche : 11:00-21:30 \n☎: +216 26537777\n📍47 Rue des jasmins , Ain zaghouan, Tunis",
+  "lu_le": "2026-11-17",
+  "photo": "assets/clubs/china-town-resto/profil.jpg"
+ },
  "Farmer's Steakhouse": {
-  "lu_le": "2026-11-17"
+  "lu_le": "2026-11-17",
+  "site_lu": 2
  },
  "Grand Italia": {
   "lu_le": "2026-11-17",
   "site_lu": 2
+ },
+ "L'Astragale": {
+  "cuisine_site": "Internationale, Française, Meditérranéenne ",
+  "image_site": "https://ugc.zenchef.com/3/4/8/6/2/5/1/5/0/0/4/8/8/1501159915_249/2c839c2f714263fd67b8cbf891fd6898.website.jpg",
+  "lu_le": "2026-11-17",
+  "menu_site": "https://www.restaurant-lastragale.com/menus-carte/",
+  "prix_site": "€€€€€",
+  "site_lu": 2,
+  "telephone_site": "+21620328639"
  },
  "L'imprévu": {
   "abonnes": 37876,
@@ -79,6 +117,32 @@
   "image_site": "https://lemediterranee.com.tn/wp-content/uploads/2025/01/restaurant.jpeg",
   "lu_le": "2026-11-17",
   "site_lu": 2
+ },
+ "Munchies": {
+  "abonnes": 18119,
+  "affiches": [
+   {
+    "date": "2026-11-05",
+    "image": "assets/clubs/munchies/DfXH5J0iQD-.jpg",
+    "lien": "https://www.instagram.com/p/DfXH5J0iQD-/"
+   },
+   {
+    "date": "2026-11-01",
+    "image": "assets/clubs/munchies/DfNTkTCCAEZ.jpg",
+    "lien": "https://www.instagram.com/p/DfNTkTCCAEZ/"
+   },
+   {
+    "date": "2026-10-12",
+    "image": "assets/clubs/munchies/DeZKZDJAvma.jpg",
+    "lien": "https://www.instagram.com/p/DeZKZDJAvma/"
+   }
+  ],
+  "bio": "Smashburgers | Fried Chicken | Cookies\nMutuelleville - La Marsa - Utopia📍\nOPEN 7/7 , 11h30-00h00\n🚚 GLOVO - KOOL - YASSIR\nBest Burger 2024 🏆",
+  "lu_le": "2026-11-17",
+  "menu_site": "https://www.munchiestunis.com/_files/ugd/3fe6bb_59a19c91141f4a97a547f4a314b4c74d.pdf",
+  "photo": "assets/clubs/munchies/profil.jpg",
+  "site_lu": 2,
+  "telephone_site": "+21652757233"
  },
  "Osiris Club Djerba": {
   "abonnes": 7631,
@@ -158,5 +222,11 @@
   "bio": "🎶 UNIDOS : Rythme & magie à Hammamet ✨ Ancien Havana Club, toujours en fête depuis '71 ! 🌟🍹\n BY : @el.pacha.hammamet  🌚",
   "lu_le": "2026-11-17",
   "photo": "assets/clubs/unidos-club-by-el-pacha/profil.jpg"
+ },
+ "WONDERFOOD": {
+  "image_site": "https://wonderfood.tn/wp-content/uploads/2026/06/Design-sans-titre-26-1024x683.png",
+  "lu_le": "2026-11-17",
+  "menu_site": "https://wonderfood.tn/menu-fast-food-wonderfood/",
+  "site_lu": 2
  }
 }

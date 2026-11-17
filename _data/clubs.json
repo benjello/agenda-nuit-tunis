@@ -1,6 +1,6 @@
 {
  "lu_le": "2026-11-17",
- "version": 2,
+ "version": 3,
  "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
  "lieux": [
   {
@@ -41,6 +41,20 @@
    "lat": 37.1939754,
    "lon": 10.1413581,
    "osm": "https://www.openstreetmap.org/node/10139312518"
+  },
+  {
+   "nom": "Sahib",
+   "type": "restaurant",
+   "ville": "bizerte",
+   "horaires": "lun-dim 10h-22h",
+   "horaires_en": "Mon-Sun 10:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 10:00-22:00",
+   "lat": 37.2776886,
+   "lon": 9.8699102,
+   "osm": "https://www.openstreetmap.org/node/9456728023",
+   "ferme": "22h",
+   "cuisine": "pizza, sandwichs",
+   "cuisine_en": "pizza, sandwiches"
   },
   {
    "nom": "The Sunset Family Club",
@@ -594,6 +608,43 @@
    "manuel": true
   },
   {
+   "nom": "Ettahrir",
+   "type": "restaurant",
+   "ville": "nabeul",
+   "horaires": "lun-dim 9h30-22h30",
+   "horaires_en": "Mon-Sun 09:30-22:30",
+   "horaires_ar": "الإثنين-الأحد 09:30-22:30",
+   "lat": 36.4009528,
+   "lon": 10.6189155,
+   "osm": "https://www.openstreetmap.org/node/6329687606",
+   "ferme": "22h30"
+  },
+  {
+   "nom": "Flash Back",
+   "type": "restaurant",
+   "ville": "nabeul",
+   "horaires": "lun-dim 7h-22h",
+   "horaires_en": "Mon-Sun 07:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 07:00-22:00",
+   "lat": 36.4448936,
+   "lon": 10.7341109,
+   "osm": "https://www.openstreetmap.org/node/7214412225",
+   "ferme": "22h"
+  },
+  {
+   "nom": "La Piazza",
+   "type": "restaurant",
+   "ville": "nabeul",
+   "adresse": "شارع محمد الخامس, نابل",
+   "horaires": "lun-dim 9h-22h",
+   "horaires_en": "Mon-Sun 09:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 09:00-22:00",
+   "lat": 36.4455572,
+   "lon": 10.7360728,
+   "osm": "https://www.openstreetmap.org/node/7643863734",
+   "ferme": "22h"
+  },
+  {
    "nom": "La Sofra",
    "type": "restaurant",
    "ville": "nabeul",
@@ -1050,6 +1101,24 @@
    "cuisine_en": "Japanese, sushi"
   },
   {
+   "nom": "WONDERFOOD",
+   "type": "restaurant",
+   "ville": "sousse",
+   "adresse": "نهج عبد الحميد السقا, sousse",
+   "horaires": "lun-dim 10h-22h",
+   "horaires_en": "Mon-Sun 10:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 10:00-22:00",
+   "site": "https://wonderfood.tn/",
+   "telephone": "+216 99 728 592",
+   "lat": 35.8140167,
+   "lon": 10.6233646,
+   "osm": "https://www.openstreetmap.org/node/9774387593",
+   "ferme": "22h",
+   "cuisine": "pizza, sandwichs, poulet, tunisienne, kebab",
+   "cuisine_en": "pizza, sandwiches, chicken, Tunisian, kebab",
+   "ambiance": "terrasse"
+  },
+  {
    "nom": "Dar Ali",
    "type": "bar",
    "ville": "sud",
@@ -1133,6 +1202,22 @@
    "osm": "https://www.openstreetmap.org/way/998483114",
    "cuisine": "poisson et fruits de mer, burgers, européenne",
    "cuisine_en": "seafood, burgers, European"
+  },
+  {
+   "nom": "Restaurant Essofra",
+   "type": "restaurant",
+   "ville": "sud",
+   "adresse": "شارع الطيب المهيري",
+   "horaires": "mar-dim 0h-4h, 19h-22h",
+   "horaires_en": "Tue-Sun 00:00-04:00, 19:00-22:00",
+   "horaires_ar": "الثلاثاء-الأحد 00:00-04:00, 19:00-22:00",
+   "telephone": "+216 98 281 049",
+   "lat": 33.8789855,
+   "lon": 10.8593339,
+   "osm": "https://www.openstreetmap.org/node/4781983521",
+   "ferme": "22h",
+   "cuisine": "méditerranéenne",
+   "cuisine_en": "Mediterranean"
   },
   {
    "nom": "Restaurant Haroun",
@@ -1725,6 +1810,20 @@
    "cuisine_en": "Mediterranean"
   },
   {
+   "nom": "Bistro Nippon",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "29 نهج الشيخ الإمام محمد الطاهر بن عاشور",
+   "horaires": "lun-dim 12h-15h, 18h30-22h",
+   "horaires_en": "Mon-Sun 12:00-15:00, 18:30-22:00",
+   "horaires_ar": "الإثنين-الأحد 12:00-15:00, 18:30-22:00",
+   "site": "https://bistronippon.tn/",
+   "lat": 36.8785513,
+   "lon": 10.3249888,
+   "osm": "https://www.openstreetmap.org/node/12422574101",
+   "ferme": "22h"
+  },
+  {
    "nom": "Boston Pizza",
    "type": "restaurant",
    "ville": "tunis",
@@ -1736,6 +1835,20 @@
    "osm": "https://www.openstreetmap.org/node/6004453177",
    "cuisine": "pizza",
    "cuisine_en": "pizza"
+  },
+  {
+   "nom": "Breizh Bistrot",
+   "type": "restaurant",
+   "ville": "tunis",
+   "horaires": "lun-dim 11h-22h",
+   "horaires_en": "Mon-Sun 11:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 11:00-22:00",
+   "lat": 36.8818293,
+   "lon": 10.3325817,
+   "osm": "https://www.openstreetmap.org/node/6188174086",
+   "ferme": "22h",
+   "cuisine": "crepe, breakfast, française",
+   "cuisine_en": "crepe, breakfast, French"
   },
   {
    "nom": "BURGER STOP - Tunis",
@@ -1753,6 +1866,39 @@
    "cuisine": "burgers, sandwichs",
    "cuisine_en": "burgers, sandwiches",
    "ambiance": "terrasse"
+  },
+  {
+   "nom": "Chez Soi",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "نهج العربي الكبادي, تونس",
+   "horaires": "lun-dim 9h-22h",
+   "horaires_en": "Mon-Sun 09:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 09:00-22:00",
+   "site": "https://chezsoi74.tn/",
+   "telephone": "+216 54 681 720",
+   "lat": 36.81568,
+   "lon": 10.167492,
+   "osm": "https://www.openstreetmap.org/node/11761027585",
+   "ferme": "22h",
+   "cuisine": "pizza, burgers",
+   "cuisine_en": "pizza, burgers"
+  },
+  {
+   "nom": "China Town Resto",
+   "type": "restaurant",
+   "ville": "tunis",
+   "horaires": "lun-dim 12h-22h30",
+   "horaires_en": "Mon-Sun 12:00-22:30",
+   "horaires_ar": "الإثنين-الأحد 12:00-22:30",
+   "instagram": "chinatownresto",
+   "telephone": "+216 26 537 777",
+   "lat": 36.8580227,
+   "lon": 10.2856872,
+   "osm": "https://www.openstreetmap.org/node/13043878901",
+   "ferme": "22h30",
+   "cuisine": "chinoise",
+   "cuisine_en": "Chinese"
   },
   {
    "nom": "Club Grill Citroen",
@@ -1784,6 +1930,38 @@
    "cuisine_en": "Tunisian"
   },
   {
+   "nom": "Fresh K Salad Shop",
+   "type": "restaurant",
+   "ville": "tunis",
+   "horaires": "lun-ven 12h-22h, sam 12h-16h",
+   "horaires_en": "Mon-Fri 12:00-22:00, Sat 12:00-16:00",
+   "horaires_ar": "الإثنين-الجمعة 12:00-22:00, السبت 12:00-16:00",
+   "telephone": "+216 29 542 900",
+   "lat": 36.8344671,
+   "lon": 10.2427256,
+   "osm": "https://www.openstreetmap.org/node/3803455676",
+   "ferme": "22h",
+   "cuisine": "salades",
+   "cuisine_en": "salads"
+  },
+  {
+   "nom": "L'Astragale",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "17 Avenue Charles Nicolle",
+   "horaires": "lun-ven 12h-14h,20h-22h ; sam 20h-22h ; Aug fermé",
+   "horaires_en": "Mon-Fri 12:00-14:00,20:00-22:00; Sat 20:00-22:00; Aug closed",
+   "horaires_ar": "الإثنين-الجمعة 12:00-14:00,20:00-22:00; السبت 20:00-22:00; Aug مغلق",
+   "site": "https://www.restaurant-lastragale.com/",
+   "telephone": "+216 71 785 080",
+   "lat": 36.824853,
+   "lon": 10.1790668,
+   "osm": "https://www.openstreetmap.org/way/679063831",
+   "ferme": "22h",
+   "cuisine": "française",
+   "cuisine_en": "French"
+  },
+  {
    "nom": "La salle à manger",
    "type": "restaurant",
    "ville": "tunis",
@@ -1798,6 +1976,22 @@
    "osm": "https://www.openstreetmap.org/node/5339769722",
    "cuisine": "gastronomique, française",
    "cuisine_en": "fine dining, French"
+  },
+  {
+   "nom": "La Suite du Farfalle",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "Les Berges du Lac 1",
+   "horaires": "lun-sam 12h-15h30, 19h30-22h",
+   "horaires_en": "Mon-Sat 12:00-15:30, 19:30-22:00",
+   "horaires_ar": "الإثنين-السبت 12:00-15:30, 19:30-22:00",
+   "telephone": "+216 71 964 945",
+   "lat": 36.8319391,
+   "lon": 10.2321076,
+   "osm": "https://www.openstreetmap.org/node/7185480857",
+   "ferme": "22h",
+   "cuisine": "italienne",
+   "cuisine_en": "Italian"
   },
   {
    "nom": "Le Bambou cuisine asiatique",
@@ -1917,6 +2111,56 @@
    "osm": "https://www.openstreetmap.org/way/151947694"
   },
   {
+   "nom": "Munchies",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "نهج 1 حزيران",
+   "horaires": "mar-dim 12h-15h30, 19h-22h30",
+   "horaires_en": "Tue-Sun 12:00-15:30, 19:00-22:30",
+   "horaires_ar": "الثلاثاء-الأحد 12:00-15:30, 19:00-22:30",
+   "site": "https://www.munchiestunis.com/",
+   "instagram": "munchiestunis",
+   "facebook": "munchies.tunisie",
+   "telephone": "+216 56 166 666",
+   "lat": 36.8311387,
+   "lon": 10.1724838,
+   "osm": "https://www.openstreetmap.org/node/5890698290",
+   "ferme": "22h30",
+   "cuisine": "burgers",
+   "cuisine_en": "burgers"
+  },
+  {
+   "nom": "Oiseau Bleu",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "نهج الجاحظ",
+   "horaires": "lun-dim 12h-22h",
+   "horaires_en": "Mon-Sun 12:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 12:00-22:00",
+   "telephone": "23 563 616",
+   "lat": 36.8290798,
+   "lon": 10.3167912,
+   "osm": "https://www.openstreetmap.org/node/12415927001",
+   "ferme": "22h"
+  },
+  {
+   "nom": "Origami",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "28 شارع الحبيب بورقيبة, المرسى",
+   "horaires": "12h-22h",
+   "horaires_en": "12:00-22:00",
+   "horaires_ar": "12:00-22:00",
+   "site": "https://www.origamisushibar.com/",
+   "telephone": "+216 71 741 400",
+   "lat": 36.8811063,
+   "lon": 10.3268046,
+   "osm": "https://www.openstreetmap.org/node/3787377874",
+   "ferme": "22h",
+   "cuisine": "japonaise",
+   "cuisine_en": "Japanese"
+  },
+  {
    "nom": "Pasta Cosi",
    "type": "restaurant",
    "ville": "tunis",
@@ -1941,6 +2185,38 @@
    "lat": 36.7697667,
    "lon": 10.1014193,
    "osm": "https://www.openstreetmap.org/node/10779606194"
+  },
+  {
+   "nom": "Route 66 Menzah 6",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "17 نهج عمار إبن ياسر, أريانة",
+   "horaires": "lun-dim 10h-22h",
+   "horaires_en": "Mon-Sun 10:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 10:00-22:00",
+   "site": "http://www.facebook.com/R66menzah",
+   "telephone": "+216 96 966 666",
+   "lat": 36.8494103,
+   "lon": 10.1653036,
+   "osm": "https://www.openstreetmap.org/node/7343391058",
+   "ferme": "22h",
+   "cuisine": "burgers, poulet, poisson, italienne, italian pizza, kebab, méditerranéenne",
+   "cuisine_en": "burgers, chicken, fish, Italian, italian pizza, kebab, Mediterranean"
+  },
+  {
+   "nom": "Sultana Muna restaurant",
+   "type": "restaurant",
+   "ville": "tunis",
+   "adresse": "شارع المنجي سليم, العوينة",
+   "horaires": "lun-dim 10h-22h",
+   "horaires_en": "Mon-Sun 10:00-22:00",
+   "horaires_ar": "الإثنين-الأحد 10:00-22:00",
+   "lat": 36.8518414,
+   "lon": 10.2583518,
+   "osm": "https://www.openstreetmap.org/node/10040118085",
+   "ferme": "22h",
+   "cuisine": "shawarma",
+   "cuisine_en": "shawarma"
   },
   {
    "nom": "Via Mercato",
