@@ -5,7 +5,7 @@
 #
 # Champs (tous facultatifs sauf nom) :
 #   nom        nom du lieu
-#   type       club | discotheque | cabaret | concert | bar | karaoke | humour (voir _data/categories.yml)
+#   type       club | discotheque | cabaret | concert | bar | karaoke | humour (voir _data/categories.yml) | restaurant
 #   ville      tunis | nabeul | sousse | monastir | sfax | bizerte | sud | autres (voir _data/villes.yml)
 #   adresse    quartier ou adresse (« Gammarth », « Berges du Lac 2 »)
 #   horaires   jours et heures habituels (« jeu-sam 23h-5h »)
@@ -21,6 +21,8 @@
 #   instagram  nom du compte, sans @
 #   facebook   adresse de la page
 #   site       adresse du site
+#   cuisine    type de cuisine d'un restaurant (« tunisienne, poisson », « italienne »)
+#   menu       lien vers la carte (page du site, PDF, photo Instagram)
 #   cacher     true pour retirer un lieu d'OpenStreetMap fermé ou hors sujet
 
 - nom: Calypso Club Hammamet

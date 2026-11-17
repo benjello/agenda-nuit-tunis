@@ -14,7 +14,9 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import sys
+from urllib.parse import urljoin
 
 from .commun import RACINE, meta, page, slug
 from .sources.facebook import appeler_apify
@@ -26,6 +28,7 @@ DOSSIER = RACINE / "assets" / "clubs"
 JOURS_ENTRE_DEUX = 7
 MAX_INSTAGRAM = 40   # comptes lus par passage (coût Apify)
 AFFICHES = 3
+VERSION_SITE = 2  # 2 : carte (menu) et cuisine lues sur le site ; une fiche plus ancienne est relue
 
 
 def depuis_instagram(item: dict, nom: str) -> dict:
@@ -80,6 +83,20 @@ def depuis_site(url: str) -> dict:
                 fiche["prix_site"] = str(o["priceRange"])
             if o.get("telephone") and "telephone_site" not in fiche:
                 fiche["telephone_site"] = str(o["telephone"])
+            m = o.get("hasMenu") or o.get("menu")
+            m = m.get("url") or m.get("@id") if isinstance(m, dict) else m
+            if isinstance(m, str) and m.startswith("http") and "menu_site" not in fiche:
+                fiche["menu_site"] = m
+            if o.get("servesCuisine") and "cuisine_site" not in fiche:
+                c = o["servesCuisine"]
+                fiche["cuisine_site"] = ", ".join(c) if isinstance(c, list) else str(c)
+    if "menu_site" not in fiche:  # sinon un lien « Menu » / « La carte » de la page d'accueil
+        for a in soup.find_all("a", href=True):
+            texte = " ".join(a.get_text(" ").split()).lower()
+            if re.fullmatch(r"(notre |la |le )?(menus?|carte|nos menus|menu & carte|food menu)|قائمة الطعام|المنيو", texte) \
+                    or re.search(r"(?i)/(menus?|carte|la-carte)(/|\.pdf|$)", a["href"]):
+                fiche["menu_site"] = urljoin(url, a["href"])
+                break
     return fiche
 
 
@@ -125,14 +142,15 @@ def main(argv=None) -> int:
     # 2. Sites des lieux (gratuit)
     for x in lieux:
         site = x.get("site")
-        if not site or not a_relire(x["nom"]) or "instagram.com" in site or "facebook.com" in site:
+        deja = (fiches.get(x["nom"]) or {}).get("site_lu") == VERSION_SITE
+        if not site or (deja and not a_relire(x["nom"])) or "instagram.com" in site or "facebook.com" in site:
             continue
         try:
             infos = depuis_site(site)
         except Exception as exc:  # noqa: BLE001 — site en panne : on passe au suivant
             print(f"  {x['nom']} : site illisible ({exc})")
             continue
-        fiches[x["nom"]] = {**(fiches.get(x["nom"]) or {}), **infos, "lu_le": aujourd_hui.isoformat()}
+        fiches[x["nom"]] = {**(fiches.get(x["nom"]) or {}), **infos, "site_lu": VERSION_SITE, "lu_le": aujourd_hui.isoformat()}
 
     FICHIER.write_text(json.dumps(fiches, ensure_ascii=False, indent=1, sort_keys=True))
     print(f"fiches clubs : {len(fiches)} fiche(s), dont {sum('photo' in f for f in fiches.values())} avec photo Instagram "

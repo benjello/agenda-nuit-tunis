@@ -54,6 +54,8 @@ description: "Les clubs, discothèques, cabarets, bars et restaurants ouverts ta
       {%- if fi.bio %}<p class="club-bio">{{ fi.bio | escape | newline_to_br }}</p>{% endif %}
       <dl class="club-infos">
         {%- if m.horaires %}<dt data-t="clubs.horaires">Horaires</dt><dd{% if m.horaires_en %} data-tr-en="{{ m.horaires_en | escape }}"{% endif %}{% if m.horaires_ar %} data-tr-ar="{{ m.horaires_ar | escape }}"{% endif %}>{{ m.horaires }}</dd>{% elsif fi.horaires_site %}<dt data-t="clubs.horaires">Horaires</dt><dd>{{ fi.horaires_site }} <small data-t="clubs.du_site">(site du lieu)</small></dd>{% endif %}
+        {%- assign cuis = m.cuisine | default: fi.cuisine_site -%}
+        {%- if cuis %}<dt data-t="clubs.cuisine">Cuisine</dt><dd{% if m.cuisine_en %} data-tr-en="{{ m.cuisine_en | escape }}"{% endif %}>{{ cuis }}</dd>{% endif %}
         {%- if m.ambiance %}<dt data-t="clubs.ambiance">Ambiance</dt><dd>{{ m.ambiance }}</dd>{% endif %}
         {%- if m.public or m.age_min %}<dt data-t="clubs.public">Public</dt><dd>{{ m.public }}{% if m.age_min %}{% if m.public %} · {% endif %}{{ m.age_min }} <span data-t="clubs.ans_plus">ans et plus</span>{% endif %}</dd>{% endif %}
         {%- assign prix_vus = evts | map: "price" | compact | uniq -%}
@@ -71,6 +73,8 @@ description: "Les clubs, discothèques, cabarets, bars et restaurants ouverts ta
         {%- if m.facebook %}<a href="{% if m.facebook contains 'http' %}{{ m.facebook }}{% else %}https://www.facebook.com/{{ m.facebook }}{% endif %}" rel="noopener">Facebook</a> {% endif %}
         {%- assign site_l = m.site | default: fi.site_insta -%}
         {%- if site_l %}<a href="{{ site_l }}" rel="noopener" data-t="site_web">Site</a> {% endif %}
+        {%- assign menu_l = m.menu | default: fi.menu_site -%}
+        {%- if menu_l %}<a href="{{ menu_l }}" rel="noopener" data-t="clubs.menu">Menu</a> {% endif %}
         {%- if m.telephone %}<span>{{ m.telephone }}</span> {% endif %}
         {%- if m.osm %}<a href="{{ m.osm }}" rel="noopener" title="Corriger les horaires sur OpenStreetMap" data-t-title="clubs.corriger_osm">OSM</a>{% endif %}
       </small>

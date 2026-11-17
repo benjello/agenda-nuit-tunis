@@ -227,8 +227,22 @@ class Clubs(unittest.TestCase):
                 "tags": {"amenity": "restaurant", "name": "Le Ritz", "cuisine": "cabaret"}}]
         lieux = {x["nom"]: x for x in depuis_osm(els)}
         self.assertEqual(set(lieux), {"Restaurant Le Golfe", "Le Ritz"})  # fermé à 21 h : écarté
-        self.assertEqual((lieux["Restaurant Le Golfe"]["type"], lieux["Restaurant Le Golfe"]["ambiance"]), ("restaurant", "seafood"))
         self.assertEqual(lieux["Le Ritz"]["type"], "cabaret")
+        g = lieux["Restaurant Le Golfe"]
+        self.assertEqual((g["type"], g["cuisine"], g["cuisine_en"]), ("restaurant", "poisson et fruits de mer", "seafood"))
+        from scrapers.clubs import cuisine, lien_menu
+        self.assertEqual(cuisine("regional;local;steak_house;octopus_bar"), "tunisienne, grillades, octopus bar")
+        self.assertEqual(lien_menu({"website:menu": "https://x.tn/menu.pdf"}), "https://x.tn/menu.pdf")
+        self.assertEqual(lien_menu({"menu": "yes"}), "")
+
+    def test_menu_du_site(self):
+        from bs4 import BeautifulSoup
+        from scrapers import fiches_clubs
+        html = """<html><head><script type="application/ld+json">{"@type": "Restaurant", "servesCuisine": ["Tunisienne", "Poisson"]}</script></head>
+                  <body><a href="/contact">Contact</a><a href="/la-carte/">Notre carte</a></body></html>"""
+        with mock.patch.object(fiches_clubs, "page", return_value=BeautifulSoup(html, "html.parser")):
+            f = fiches_clubs.depuis_site("https://resto.tn/")
+        self.assertEqual((f["menu_site"], f["cuisine_site"]), ("https://resto.tn/la-carte/", "Tunisienne, Poisson"))
 
     """Page Clubs & bars : lieux d'OpenStreetMap, horaires en français, corrections de clubs.yml."""
 

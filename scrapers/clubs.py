@@ -22,6 +22,7 @@ from .villes import ville
 FICHIER = RACINE / "_data" / "clubs.json"
 MANUEL = RACINE / "_data" / "clubs.yml"
 JOURS_ENTRE_DEUX = 7
+VERSION = 2  # à augmenter quand on lit un nouveau champ : la liste est alors relue tout de suite
 
 REQUETE = """[out:json][timeout:120];
 area["ISO3166-1"="TN"][admin_level=2]->.tn;
@@ -37,6 +38,40 @@ TYPES = {"nightclub": "club", "bar": "bar", "pub": "bar", "karaoke_box": "karaok
 # Un restaurant (hors cabaret) n'est gardé que s'il ferme à 23 h ou plus tard : type « restaurant »
 # (_data/types_clubs.yml, propre à la page /clubs/, pas une catégorie d'événement).
 SOIR = 23
+
+
+# Valeurs OpenStreetMap de cuisine=* → (français, anglais). Une valeur inconnue est gardée telle quelle.
+CUISINES = {
+    "regional": ("tunisienne", "Tunisian"), "local": ("tunisienne", "Tunisian"), "tunisian": ("tunisienne", "Tunisian"),
+    "oriental": ("orientale", "Middle Eastern"), "lebanese": ("libanaise", "Lebanese"), "turkish": ("turque", "Turkish"),
+    "moroccan": ("marocaine", "Moroccan"), "arab": ("arabe", "Arab"), "mediterranean": ("méditerranéenne", "Mediterranean"),
+    "italian": ("italienne", "Italian"), "pizza": ("pizza", "pizza"), "pasta": ("pâtes", "pasta"),
+    "french": ("française", "French"), "fine_dining": ("gastronomique", "fine dining"), "european": ("européenne", "European"),
+    "international": ("internationale", "international"), "spanish": ("espagnole", "Spanish"), "greek": ("grecque", "Greek"),
+    "seafood": ("poisson et fruits de mer", "seafood"), "fish": ("poisson", "fish"), "octopus": ("poulpe", "octopus"),
+    "steak_house": ("grillades", "steakhouse"), "barbecue": ("grillades", "barbecue"), "grill": ("grillades", "grill"),
+    "burger": ("burgers", "burgers"), "chicken": ("poulet", "chicken"), "kebab": ("kebab", "kebab"),
+    "sandwich": ("sandwichs", "sandwiches"), "salad": ("salades", "salads"), "dessert": ("desserts", "desserts"),
+    "japanese": ("japonaise", "Japanese"), "sushi": ("sushis", "sushi"), "asian": ("asiatique", "Asian"),
+    "chinese": ("chinoise", "Chinese"), "thai": ("thaïe", "Thai"), "indian": ("indienne", "Indian"),
+    "mexican": ("mexicaine", "Mexican"), "american": ("américaine", "American"), "noodle": ("nouilles", "noodles"),
+    "coffee_shop": ("café", "coffee shop"), "tapas": ("tapas", "tapas"), "vegetarian": ("végétarienne", "vegetarian"),
+}
+
+
+def cuisine(valeur: str, langue: str = "fr") -> str:
+    """« seafood;pizza;regional » → « poisson et fruits de mer, pizza, tunisienne » (sans doublon)."""
+    i = 1 if langue == "en" else 0
+    mots = [CUISINES.get(v.strip().lower(), (v.strip().replace("_", " "),) * 2)[i] for v in (valeur or "").split(";") if v.strip()]
+    return ", ".join(dict.fromkeys(mots))
+
+
+def lien_menu(t: dict) -> str:
+    """Lien vers la carte, s'il est dans OpenStreetMap (website:menu, menu:url…)."""
+    for k in ("website:menu", "menu:url", "contact:menu", "url:menu", "menu"):
+        if str(t.get(k, "")).startswith("http"):
+            return t[k]
+    return ""
 
 
 def ouvert_le_soir(oh: str) -> bool:
@@ -141,8 +176,10 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
             "lat": centre.get("lat"), "lon": centre.get("lon"),
             "osm": f"https://www.openstreetmap.org/{el.get('type', 'node')}/{el.get('id')}",
             # Ambiance : style de musique (music:genre, peu rempli) et terrasse ; le reste vient de clubs.yml.
+            "cuisine": cuisine(t.get("cuisine", "")) if restaurant else "",
+            "cuisine_en": cuisine(t.get("cuisine", ""), "en") if restaurant else "",
+            "menu": lien_menu(t),
             "ambiance": ", ".join(x for x in ((t.get("music:genre") or t.get("music") or "").replace(";", ", "),
-                                              (t.get("cuisine") or "").replace(";", ", ").replace("_", " ") if restaurant else "",
                                               "terrasse" if t.get("outdoor_seating") == "yes" else "") if x),
             "age_min": t.get("min_age", ""),
         })
@@ -171,7 +208,7 @@ def main(argv=None) -> int:
         ancien = json.loads(FICHIER.read_text())
     except (FileNotFoundError, json.JSONDecodeError):
         ancien = {}
-    if ancien.get("lu_le") and "--force" not in argv:
+    if ancien.get("lu_le") and ancien.get("version") == VERSION and "--force" not in argv:
         age = (dt.date.today() - dt.date.fromisoformat(ancien["lu_le"])).days
         if age < JOURS_ENTRE_DEUX:
             print(f"clubs : liste lue il y a {age} jour(s), pas de nouvelle lecture.")
@@ -183,7 +220,7 @@ def main(argv=None) -> int:
         print(f"clubs : OpenStreetMap illisible ({exc}), ancienne liste gardée.")
         return 0
     lieux = fusionner(osm, manuel)
-    FICHIER.write_text(json.dumps({"lu_le": dt.date.today().isoformat(), "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
+    FICHIER.write_text(json.dumps({"lu_le": dt.date.today().isoformat(), "version": VERSION, "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
                                    "lieux": lieux}, ensure_ascii=False, indent=1))
     avec_insta = [x for x in lieux if x.get("instagram")]
     print(f"clubs : {len(lieux)} lieu(x), dont {sum(bool(x.get('horaires')) for x in lieux)} avec horaires "

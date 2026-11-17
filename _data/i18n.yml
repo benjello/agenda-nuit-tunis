@@ -465,6 +465,8 @@ clubs_vide: { ar: "قائمة الأماكن تصل مع المرور القاد
 clubs_soirees: { ar: "سهرات معلنة:", en: "Nights announced:" }
 clubs.horaires: { ar: "المواعيد", en: "Hours" }
 clubs.ambiance: { ar: "الأجواء", en: "Vibe" }
+clubs.cuisine: { ar: "المطبخ", en: "Cuisine" }
+clubs.menu: { ar: "قائمة الطعام", en: "Menu" }
 clubs.public: { ar: "الجمهور", en: "Crowd" }
 clubs.gamme: { ar: "الأسعار", en: "Prices" }
 clubs.entree: { ar: "الدخول", en: "Entry" }
