@@ -239,7 +239,7 @@ class Clubs(unittest.TestCase):
         from bs4 import BeautifulSoup
         from scrapers import fiches_clubs
         html = """<html><head><script type="application/ld+json">{"@type": "Restaurant", "servesCuisine": ["Tunisienne", "Poisson"]}</script></head>
-                  <body><a href="/contact">Contact</a><a href="/la-carte/">Notre carte</a></body></html>"""
+                  <body><a href="#">Menu</a><a href="/contact">Contact</a><a href="/la-carte/">Notre carte</a></body></html>"""
         with mock.patch.object(fiches_clubs, "page", return_value=BeautifulSoup(html, "html.parser")):
             f = fiches_clubs.depuis_site("https://resto.tn/")
         self.assertEqual((f["menu_site"], f["cuisine_site"]), ("https://resto.tn/la-carte/", "Tunisienne, Poisson"))

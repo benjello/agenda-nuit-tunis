@@ -95,8 +95,10 @@ def depuis_site(url: str) -> dict:
             texte = " ".join(a.get_text(" ").split()).lower()
             if re.fullmatch(r"(notre |la |le )?(menus?|carte|nos menus|menu & carte|food menu)|قائمة الطعام|المنيو", texte) \
                     or re.search(r"(?i)/(menus?|carte|la-carte)(/|\.pdf|$)", a["href"]):
-                fiche["menu_site"] = urljoin(url, a["href"])
-                break
+                lien = urljoin(url, a["href"]).split("#")[0]
+                if lien.rstrip("/") != url.rstrip("/"):  # un bouton « Menu » qui ouvre la navigation du site
+                    fiche["menu_site"] = lien
+                    break
     return fiche
 
 
