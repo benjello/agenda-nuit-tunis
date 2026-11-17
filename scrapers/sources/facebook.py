@@ -43,7 +43,7 @@ def url_evenements(page: str) -> str:
 def appeler_apify(acteur: str, entree: dict, cle: str) -> list[dict]:
     r = requests.post(
         f"https://api.apify.com/v2/acts/{acteur.replace('/', '~')}/run-sync-get-dataset-items",
-        params={"token": cle}, json=entree, timeout=320)
+        headers={"Authorization": f"Bearer {cle}"}, json=entree, timeout=320)  # pas dans l'URL : elle finit dans les messages d'erreur
     r.raise_for_status()
     return r.json()
 

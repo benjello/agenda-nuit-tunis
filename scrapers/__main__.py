@@ -12,6 +12,7 @@ _data/etat_sources.json.
 from __future__ import annotations
 
 import argparse
+import re
 import datetime as dt
 import importlib
 import sys
@@ -81,7 +82,8 @@ def main(argv=None) -> int:
             print(f"… {s['id']} : en attente ({exc})")
         except Exception as exc:  # noqa: BLE001 — une source en panne ne doit pas arrêter les autres
             echecs += 1
-            e.update(ok=False, erreur=f"{type(exc).__name__}: {exc}"[:300])
+            # une clé dans une URL (?token=…) ne doit jamais finir dans etat_sources.json (publié)
+            e.update(ok=False, erreur=re.sub(r"(?i)(token|key|access_token)=[^&\s)'\"]+", r"\1=***", f"{type(exc).__name__}: {exc}")[:300])
             print(f"✗ {s['id']} : {e['erreur']}", file=sys.stderr)
             if args.debug:
                 traceback.print_exc()

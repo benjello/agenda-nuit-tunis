@@ -22,7 +22,7 @@ SEUIL = 80
 
 
 def lire(token: str) -> dict:
-    r = requests.get("https://api.apify.com/v2/users/me/limits", params={"token": token}, timeout=30)
+    r = requests.get("https://api.apify.com/v2/users/me/limits", headers={"Authorization": f"Bearer {token}"}, timeout=30)
     r.raise_for_status()
     d = r.json().get("data") or {}
     depense = float((d.get("current") or {}).get("monthlyUsageUsd") or 0)
