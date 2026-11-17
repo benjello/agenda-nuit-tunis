@@ -1,4 +1,4 @@
-"""Clubs, discothèques, bars et pubs de Tunisie, avec leurs horaires, pour la page /clubs/.
+"""Clubs, discothèques, bars, pubs et restaurants ouverts tard en Tunisie, avec leurs horaires, pour la page /clubs/.
 
 Ce sont les lieux de sortie « habituels » : ils ouvrent chaque semaine, même sans soirée spéciale annoncée.
 Source : OpenStreetMap (Overpass, licence ODbL), complété et corrigé à la main par `_data/clubs.yml`.
@@ -28,11 +28,26 @@ area["ISO3166-1"="TN"][admin_level=2]->.tn;
 (
   nwr["amenity"~"^(nightclub|bar|pub|karaoke_box)$"](area.tn);
   nwr["amenity"="restaurant"]["cuisine"~"cabaret"](area.tn);
+  nwr["amenity"="restaurant"]["opening_hours"](area.tn);
 );
 out tags center;"""
 
 # amenity OpenStreetMap → type affiché sur la page (même clés que _data/categories.yml)
 TYPES = {"nightclub": "club", "bar": "bar", "pub": "bar", "karaoke_box": "karaoke", "restaurant": "cabaret"}
+# Un restaurant (hors cabaret) n'est gardé que s'il ferme à 23 h ou plus tard : type « restaurant »
+# (_data/types_clubs.yml, propre à la page /clubs/, pas une catégorie d'événement).
+SOIR = 23
+
+
+def ouvert_le_soir(oh: str) -> bool:
+    """Vrai si une plage d'horaires OpenStreetMap finit à 23 h ou plus tard (ou après minuit)."""
+    if "24/7" in (oh or ""):
+        return True
+    for debut, fin in re.findall(r"(\d{1,2}):\d{2}\s*-\s*(\d{1,2}):\d{2}", oh or ""):
+        debut, fin = int(debut), int(fin)
+        if fin >= SOIR or fin < debut or fin == 0:
+            return True
+    return False
 
 GENERIQUE = re.compile(r"(?i)\s*(bar|pub|disco(th[eè]que)?|night ?club|club|after work|ملهى ليلي|حانة)\s*")
 
@@ -100,7 +115,11 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
     for el in elements:
         t = el.get("tags") or {}
         nom = (t.get("name:fr") or t.get("name") or t.get("name:en") or "").strip()
-        if not nom or GENERIQUE.fullmatch(nom) or hors_sujet(nom):  # « Discotheque », « Go Café », « Pool Bar »
+        restaurant = t.get("amenity") == "restaurant" and "cabaret" not in (t.get("cuisine") or "")
+        if restaurant:
+            if not nom or re.fullmatch(r"(?i)\s*(restaurant|مطعم)\s*", nom) or not ouvert_le_soir(t.get("opening_hours", "")):
+                continue
+        elif not nom or GENERIQUE.fullmatch(nom) or hors_sujet(nom):  # « Discotheque », « Go Café », « Pool Bar »
             continue
         adresse = ", ".join(x for x in (
             " ".join(y for y in (t.get("addr:housenumber"), t.get("addr:street")) if y),
@@ -109,7 +128,7 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
         insta = t.get("contact:instagram") or t.get("instagram") or ""
         lieux.append({
             "nom": nom,
-            "type": TYPES.get(t.get("amenity"), "bar"),
+            "type": "restaurant" if restaurant else TYPES.get(t.get("amenity"), "bar"),
             "ville": region(centre.get("lat"), centre.get("lon"), nom, adresse, t.get("addr:city", "")),
             "adresse": adresse,
             "horaires": horaires_fr(t.get("opening_hours", "")),
@@ -123,6 +142,7 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
             "osm": f"https://www.openstreetmap.org/{el.get('type', 'node')}/{el.get('id')}",
             # Ambiance : style de musique (music:genre, peu rempli) et terrasse ; le reste vient de clubs.yml.
             "ambiance": ", ".join(x for x in ((t.get("music:genre") or t.get("music") or "").replace(";", ", "),
+                                              (t.get("cuisine") or "").replace(";", ", ").replace("_", " ") if restaurant else "",
                                               "terrasse" if t.get("outdoor_seating") == "yes" else "") if x),
             "age_min": t.get("min_age", ""),
         })

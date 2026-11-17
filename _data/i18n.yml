@@ -38,6 +38,7 @@ cat.cabaret: { ar: "كباريه", en: "Cabaret" }
 cat.concert: { ar: "حفلات حية", en: "Live music" }
 cat.bar: { ar: "حانات ولاونج", en: "Bars & lounges" }
 cat.karaoke: { ar: "كاريوكي", en: "Karaoke" }
+cat.restaurant: { ar: "مطاعم تفتح حتى وقت متأخر", en: "Late-night restaurants" }
 cat.humour: { ar: "ستاند أب", en: "Stand-up" }
 cat.soundsystem: { ar: "ساوند سيستم", en: "Sound system" }
 cat.festival: { ar: "مهرجانات وسهرات في الهواء الطلق", en: "Festivals & open air" }

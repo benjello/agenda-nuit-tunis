@@ -2,7 +2,7 @@
 layout: default
 title: Clubs & bars
 permalink: /clubs/
-description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent chaque semaine : horaires, ambiance, public, prix et dress code."
+description: "Les clubs, discothèques, cabarets, bars et restaurants ouverts tard de Tunisie qui ouvrent chaque semaine : horaires, ambiance, public, prix et dress code."
 ---
 <section class="intro">
   <h1 data-t="clubs_titre">Clubs & bars</h1>
@@ -13,6 +13,8 @@ description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent 
 <div class="filters" id="clubs-types" role="group" aria-label="Type de lieu">
   <button class="active" data-type="tous" data-t="tout">Tout</button>
   {%- for c in site.data.categories %}{% assign n = site.data.clubs.lieux | where: "type", c[0] %}{% if n.size > 0 %}
+  <button data-type="{{ c[0] }}" data-t="cat.{{ c[0] }}">{{ c[1].label }}</button>{% endif %}{% endfor %}
+  {%- for c in site.data.types_clubs %}{% assign n = site.data.clubs.lieux | where: "type", c[0] %}{% if n.size > 0 %}
   <button data-type="{{ c[0] }}" data-t="cat.{{ c[0] }}">{{ c[1].label }}</button>{% endif %}{% endfor %}
   <button data-type="horaires" data-t="clubs_avec_horaires">Avec horaires</button>
   <button data-type="$" title="Moins de 20 DT la soirée" data-t-title="clubs.g1">$</button>
@@ -32,7 +34,7 @@ description: "Les clubs, discothèques, cabarets et bars de Tunisie qui ouvrent 
   <h2 data-t="ville.{{ v.id }}">{{ v.nom }}</h2>
   <ul class="liste-clubs">
   {%- for m in ls %}
-    {%- assign cat = site.data.categories[m.type] | default: site.data.categories.autre -%}
+    {%- assign cat = site.data.categories[m.type] | default: site.data.types_clubs[m.type] | default: site.data.categories.autre -%}
     {%- assign nom_bas = m.nom | downcase -%}
     {%- assign evts = "" | split: "" -%}
     {%- for e in tous -%}{%- assign jour = e.end_date | default: e.date | date: "%Y-%m-%d" -%}

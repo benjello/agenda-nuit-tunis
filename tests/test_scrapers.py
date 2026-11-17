@@ -213,6 +213,23 @@ class RechercheLarge(unittest.TestCase):
 
 
 class Clubs(unittest.TestCase):
+    def test_restaurants_ouverts_tard(self):
+        from scrapers.clubs import depuis_osm, ouvert_le_soir
+        self.assertTrue(ouvert_le_soir("Mo-Su 12:00-15:00,19:00-23:30"))
+        self.assertTrue(ouvert_le_soir("Fr-Sa 20:00-02:00"))
+        self.assertFalse(ouvert_le_soir("Mo-Sa 08:00-22:00"))
+        self.assertFalse(ouvert_le_soir(""))
+        els = [{"type": "node", "id": 1, "lat": 36.9, "lon": 10.3,
+                "tags": {"amenity": "restaurant", "name": "Restaurant Le Golfe", "opening_hours": "Mo-Su 19:00-00:00", "cuisine": "seafood"}},
+               {"type": "node", "id": 2, "lat": 36.8, "lon": 10.2,
+                "tags": {"amenity": "restaurant", "name": "Chez Ali", "opening_hours": "Mo-Sa 11:00-21:00"}},
+               {"type": "node", "id": 3, "lat": 36.8, "lon": 10.2,
+                "tags": {"amenity": "restaurant", "name": "Le Ritz", "cuisine": "cabaret"}}]
+        lieux = {x["nom"]: x for x in depuis_osm(els)}
+        self.assertEqual(set(lieux), {"Restaurant Le Golfe", "Le Ritz"})  # fermé à 21 h : écarté
+        self.assertEqual((lieux["Restaurant Le Golfe"]["type"], lieux["Restaurant Le Golfe"]["ambiance"]), ("restaurant", "seafood"))
+        self.assertEqual(lieux["Le Ritz"]["type"], "cabaret")
+
     """Page Clubs & bars : lieux d'OpenStreetMap, horaires en français, corrections de clubs.yml."""
 
     def test_horaires_et_fusion(self):

@@ -102,7 +102,9 @@ def main(argv=None) -> int:
 
     # 1. Instagram, en un seul appel Apify pour tous les comptes à relire
     cle = (os.environ.get("APIFY_TOKEN") or "").strip()
-    comptes = {x["instagram"]: x["nom"] for x in lieux if x.get("instagram") and a_relire(x["nom"])}
+    # les restaurants passent après les clubs et bars (MAX_INSTAGRAM comptes par passage)
+    ordre = sorted(lieux, key=lambda x: x.get("type") == "restaurant")
+    comptes = {x["instagram"]: x["nom"] for x in ordre if x.get("instagram") and a_relire(x["nom"])}
     comptes = dict(list(comptes.items())[:MAX_INSTAGRAM])
     if comptes and cle:
         try:
