@@ -1,2 +1,2 @@
 # Types de la page /clubs/ qui ne sont pas des catégories d'événements (voir categories.yml).
-restaurant: { label: "Restaurant tard le soir", color: "#8d6e63", aide: "Restaurants qui servent jusqu'à 23 h ou plus tard (horaires OpenStreetMap)" }
+restaurant: { label: "Restaurant", color: "#8d6e63", aide: "Restaurants qui servent jusqu'à 23 h ou plus tard (horaires OpenStreetMap)" }
