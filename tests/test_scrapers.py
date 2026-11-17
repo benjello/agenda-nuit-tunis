@@ -213,6 +213,17 @@ class RechercheLarge(unittest.TestCase):
 
 
 class Clubs(unittest.TestCase):
+    def test_reponse_tronquee_garde_la_liste(self):
+        from scrapers import clubs
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "clubs.json"
+            ancien = {"lu_le": "2026-01-01", "lieux": [{"nom": f"Bar {i}", "type": "bar"} for i in range(20)]}
+            f.write_text(json.dumps(ancien))
+            with mock.patch.object(clubs, "FICHIER", f), mock.patch.object(clubs, "MANUEL", Path(d) / "rien.yml"), \
+                 mock.patch.object(clubs, "_overpass", return_value=[]):
+                clubs.main([])
+            self.assertEqual(json.loads(f.read_text()), ancien)
+
     def test_restaurants_ouverts_tard(self):
         from scrapers.clubs import depuis_osm, ouvert_le_soir
         self.assertTrue(ouvert_le_soir("Mo-Su 12:00-15:00,19:00-23:30"))

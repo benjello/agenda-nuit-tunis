@@ -236,6 +236,10 @@ def main(argv=None) -> int:
     except Exception as exc:  # noqa: BLE001 — Overpass saturé : on garde l'ancienne liste
         print(f"clubs : OpenStreetMap illisible ({exc}), ancienne liste gardée.")
         return 0
+    avant = sum(1 for x in ancien.get("lieux") or [] if not x.get("manuel"))
+    if len(osm) < avant / 2:  # réponse vide ou tronquée d'Overpass (délai dépassé) : on ne vide pas la page
+        print(f"clubs : OpenStreetMap n'a renvoyé que {len(osm)} lieu(x) contre {avant} avant, ancienne liste gardée.")
+        return 0
     lieux = fusionner(osm, manuel)
     FICHIER.write_text(json.dumps({"lu_le": dt.date.today().isoformat(), "version": VERSION, "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
                                    "lieux": lieux}, ensure_ascii=False, indent=1))
