@@ -467,6 +467,7 @@ clubs.horaires: { ar: "المواعيد", en: "Hours" }
 clubs.ambiance: { ar: "الأجواء", en: "Vibe" }
 clubs.cuisine: { ar: "المطبخ", en: "Cuisine" }
 clubs.menu: { ar: "قائمة الطعام", en: "Menu" }
+clubs.ferme_a: { ar: "يغلق على", en: "closes at" }
 clubs.public: { ar: "الجمهور", en: "Crowd" }
 clubs.gamme: { ar: "الأسعار", en: "Prices" }
 clubs.entree: { ar: "الدخول", en: "Entry" }

@@ -217,7 +217,10 @@ class Clubs(unittest.TestCase):
         from scrapers.clubs import depuis_osm, ouvert_le_soir
         self.assertTrue(ouvert_le_soir("Mo-Su 12:00-15:00,19:00-23:30"))
         self.assertTrue(ouvert_le_soir("Fr-Sa 20:00-02:00"))
-        self.assertFalse(ouvert_le_soir("Mo-Sa 08:00-22:00"))
+        self.assertTrue(ouvert_le_soir("Mo-Sa 08:00-22:00"))
+        self.assertFalse(ouvert_le_soir("Mo-Sa 08:00-21:30"))
+        from scrapers.clubs import ferme_tot
+        self.assertEqual((ferme_tot("Mo-Sa 12:00-22:30"), ferme_tot("Mo-Sa 19:00-22:00"), ferme_tot("Fr 20:00-02:00")), ("22h30", "22h", ""))
         self.assertFalse(ouvert_le_soir(""))
         els = [{"type": "node", "id": 1, "lat": 36.9, "lon": 10.3,
                 "tags": {"amenity": "restaurant", "name": "Restaurant Le Golfe", "opening_hours": "Mo-Su 19:00-00:00", "cuisine": "seafood"}},

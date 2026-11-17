@@ -48,7 +48,8 @@ description: "Les clubs, discothèques, cabarets, bars et restaurants ouverts ta
       {%- endif %}
       <div class="club-tete">
         <strong>{% if m.lat %}<a href="https://www.google.com/maps/search/?api=1&query={{ m.lat }},{{ m.lon }}" rel="noopener">{{ m.nom }}</a>{% else %}<a href="https://www.google.com/maps/search/?api=1&query={{ m.nom | append: ', ' | append: m.adresse | append: ', Tunisie' | url_encode }}" rel="noopener">{{ m.nom }}</a>{% endif %}</strong>
-        <span class="pastille" style="--c: {{ cat.color }}" data-t="cat.{{ m.type }}">{{ cat.label }}</span>
+        <span class="pastille" style="--c: {{ cat.color }}" data-t="cat.{{ m.type }}">{{ cat.label }}</span>{% if m.ferme %}
+        <small class="etat pause"><span data-t="clubs.ferme_a">ferme à</span> {{ m.ferme }}</small>{% endif %}
       </div>
       {%- if m.adresse %}<small>{{ m.adresse }}</small>{% endif %}
       {%- if fi.bio %}<p class="club-bio">{{ fi.bio | escape | newline_to_br }}</p>{% endif %}

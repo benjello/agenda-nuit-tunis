@@ -22,7 +22,7 @@ from .villes import ville
 FICHIER = RACINE / "_data" / "clubs.json"
 MANUEL = RACINE / "_data" / "clubs.yml"
 JOURS_ENTRE_DEUX = 7
-VERSION = 2  # à augmenter quand on lit un nouveau champ : la liste est alors relue tout de suite
+VERSION = 3  # à augmenter quand on lit un nouveau champ : la liste est alors relue tout de suite
 
 REQUETE = """[out:json][timeout:120];
 area["ISO3166-1"="TN"][admin_level=2]->.tn;
@@ -35,9 +35,11 @@ out tags center;"""
 
 # amenity OpenStreetMap → type affiché sur la page (même clés que _data/categories.yml)
 TYPES = {"nightclub": "club", "bar": "bar", "pub": "bar", "karaoke_box": "karaoke", "restaurant": "cabaret"}
-# Un restaurant (hors cabaret) n'est gardé que s'il ferme à 23 h ou plus tard : type « restaurant »
+# Un restaurant (hors cabaret) n'est gardé que s'il ferme à 22 h ou plus tard : type « restaurant » ;
+# s'il ferme avant 23 h, la page le signale (« ferme à 22h30 »)
 # (_data/types_clubs.yml, propre à la page /clubs/, pas une catégorie d'événement).
-SOIR = 23
+SOIR = 22
+TARD = 23
 
 
 # Valeurs OpenStreetMap de cuisine=* → (français, anglais). Une valeur inconnue est gardée telle quelle.
@@ -74,15 +76,29 @@ def lien_menu(t: dict) -> str:
     return ""
 
 
-def ouvert_le_soir(oh: str) -> bool:
-    """Vrai si une plage d'horaires OpenStreetMap finit à 23 h ou plus tard (ou après minuit)."""
+def fermeture(oh: str) -> tuple[int, int] | None:
+    """Heure de fermeture la plus tardive (h, min), après minuit comptée 24 h et plus ; None si inconnue."""
     if "24/7" in (oh or ""):
-        return True
-    for debut, fin in re.findall(r"(\d{1,2}):\d{2}\s*-\s*(\d{1,2}):\d{2}", oh or ""):
-        debut, fin = int(debut), int(fin)
-        if fin >= SOIR or fin < debut or fin == 0:
-            return True
-    return False
+        return (48, 0)
+    plus_tard = None
+    for dh, fh, fm in re.findall(r"(\d{1,2}):\d{2}\s*-\s*(\d{1,2}):(\d{2})", oh or ""):
+        dh, fh, fm = int(dh), int(fh), int(fm)
+        if fh < dh or (fh == 0 and fm == 0):
+            fh += 24
+        plus_tard = max(plus_tard or (fh, fm), (fh, fm))
+    return plus_tard
+
+
+def ouvert_le_soir(oh: str) -> bool:
+    """Vrai si une plage d'horaires OpenStreetMap finit à 22 h ou plus tard (ou après minuit)."""
+    f = fermeture(oh)
+    return bool(f and f[0] >= SOIR)
+
+
+def ferme_tot(oh: str) -> str:
+    """« 22h30 » pour un lieu qui ferme entre 22 h et 23 h (affiché sur la page), sinon ""."""
+    f = fermeture(oh)
+    return f"{f[0]}h{f[1]:02d}".replace("h00", "h") if f and SOIR <= f[0] < TARD else ""
 
 GENERIQUE = re.compile(r"(?i)\s*(bar|pub|disco(th[eè]que)?|night ?club|club|after work|ملهى ليلي|حانة)\s*")
 
@@ -176,6 +192,7 @@ def depuis_osm(elements: list[dict]) -> list[dict]:
             "lat": centre.get("lat"), "lon": centre.get("lon"),
             "osm": f"https://www.openstreetmap.org/{el.get('type', 'node')}/{el.get('id')}",
             # Ambiance : style de musique (music:genre, peu rempli) et terrasse ; le reste vient de clubs.yml.
+            "ferme": ferme_tot(t.get("opening_hours", "")) if restaurant else "",
             "cuisine": cuisine(t.get("cuisine", "")) if restaurant else "",
             "cuisine_en": cuisine(t.get("cuisine", ""), "en") if restaurant else "",
             "menu": lien_menu(t),
