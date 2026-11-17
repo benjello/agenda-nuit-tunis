@@ -141,6 +141,9 @@ def main(argv=None) -> int:
         for i in items:
             i["_hashtag"] = h
         publications += items
+    if not publications:  # clé refusée, Apify en panne : on garde la liste d'avant
+        print("Aucune publication lue : liste précédente gardée.")
+        return 1
     comptes, ecartes = [], exclus()
     for c in classer(publications, deja_suivis()):
         raison = "" if c["suivi"] else prefiltre(c, ecartes)

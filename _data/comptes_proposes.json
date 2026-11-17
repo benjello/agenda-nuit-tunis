@@ -1,5 +1,5 @@
 {
- "lu_le": "2026-11-16",
+ "lu_le": "2026-11-09",
  "hashtags": [
   "gammarth",
   "lamarsa",
@@ -21,5 +21,631 @@
   "afrohousetunisia",
   "yasminehammamet"
  ],
- "comptes": []
+ "comptes": [
+  {
+   "compte": "joia.indoor.restaurant",
+   "nom": "Joïa Indoor Restaurant",
+   "soirees": 30,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife",
+    "tunisnight",
+    "soireetunis"
+   ],
+   "lieux": [
+    "JOÏA Indoor – Menzah 4, Tunis",
+    "Menzah 4, Tunis",
+    "JOÏA – Menzah 4, Tunis"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhprGwFTXz/",
+   "suivi": false
+  },
+  {
+   "compte": "gentlemens_club_tn",
+   "nom": "GENTLEMEN’S CLUB TUNIS ©️",
+   "soirees": 20,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia",
+    "tunisnight",
+    "soireetunis",
+    "tunisiannightlife"
+   ],
+   "lieux": [
+    "Av. Khaireddine Pacha — Tunis",
+    "Avenue Khaireddine Pacha – Tunis",
+    "Av. Khaireddine Pacha – Tunis"
+   ],
+   "derniere": "2026-11-04",
+   "exemple": "https://www.instagram.com/p/DfTLm8rCjqK/",
+   "suivi": false
+  },
+  {
+   "compte": "moods.gammarth",
+   "nom": "MOODS.lOUNGE.GAMMARTH",
+   "soirees": 16,
+   "cite": 0,
+   "hashtags": [
+    "tunisparty",
+    "nightlifetunisia",
+    "gammarth"
+   ],
+   "lieux": [
+    "Moods Club Gammarth",
+    "MOODS Club Gammarth – Terrasse",
+    "MOODS CLUB GAMMARTH"
+   ],
+   "derniere": "2026-11-08",
+   "exemple": "https://www.instagram.com/p/DffrBccCARF/",
+   "suivi": false
+  },
+  {
+   "compte": "crush.lounge_tun",
+   "nom": "CRUSH LOUNGE",
+   "soirees": 6,
+   "cite": 0,
+   "hashtags": [
+    "hammamet",
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "Crush Lounge – Hôtel Riva Hammamet 📞 97 290 766 | 26 602 119",
+    "Crush Lounge – Hôtel Riva Hammamet",
+    "Crush Lounge – Hotel Riva Hammamet"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhTjqJB0Bd/",
+   "suivi": false
+  },
+  {
+   "compte": "pupput_le_bar",
+   "nom": "Pupput Le Bar",
+   "soirees": 5,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia",
+    "hammametnightlife"
+   ],
+   "lieux": [
+    "Pupput Le Bar | Ouverture dès midi"
+   ],
+   "derniere": "2026-11-01",
+   "exemple": "https://www.instagram.com/p/DfMkNMTCn-r/",
+   "suivi": false
+  },
+  {
+   "compte": "the_wave_hammamet",
+   "nom": "THE WAVE LOUNGE HAMMAMET",
+   "soirees": 4,
+   "cite": 0,
+   "hashtags": [
+    "hammametnightlife",
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "The Wave Lounge — Hôtel Zenith, Mrezga, Hammamet",
+    "The Wave Lounge — Hammamet",
+    "The Wave Lounge — Mrezga, Hammamet"
+   ],
+   "derniere": "2026-10-12",
+   "exemple": "https://www.instagram.com/p/DeaaJP9CmiC/",
+   "suivi": false
+  },
+  {
+   "compte": "mila_gammarth",
+   "nom": "MILA Gammarth",
+   "soirees": 3,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia",
+    "gammarth"
+   ],
+   "lieux": [
+    "MILA — La Tour Blanche, Gammarth",
+    "Mila Gammarth — Hôtel La Tour Blanche"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/Dfhc4Z7MkRa/",
+   "suivi": false
+  },
+  {
+   "compte": "bristolsousse",
+   "nom": "Bristol Sousse",
+   "soirees": 3,
+   "cite": 0,
+   "hashtags": [
+    "sousse"
+   ],
+   "lieux": [
+    "Bristol Plazza – Indoor"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhOg5Lo14K/",
+   "suivi": false
+  },
+  {
+   "compte": "theb2bloungetunis",
+   "nom": "The B2B Lounge Tunis",
+   "soirees": 3,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife"
+   ],
+   "lieux": [
+    "B2B Lounge – Business Hôtel Tunis",
+    "The B2B Lounge – Business Hotel Tunis"
+   ],
+   "derniere": "2026-10-26",
+   "exemple": "https://www.instagram.com/p/De9I95ol1wm/",
+   "suivi": false
+  },
+  {
+   "compte": "thelunaskylounge",
+   "nom": "The Luna sky Lounge Tunis",
+   "soirees": 3,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife",
+    "tunisnight"
+   ],
+   "lieux": [
+    "Luna Sky Rooftop – Business Hôtel Tunis",
+    "Luna Sky"
+   ],
+   "derniere": "2026-10-26",
+   "exemple": "https://www.instagram.com/p/De9DWDvDdWd/",
+   "suivi": false
+  },
+  {
+   "compte": "biwai_vibe",
+   "nom": "",
+   "soirees": 2,
+   "cite": 0,
+   "hashtags": [
+    "lamarsa"
+   ],
+   "lieux": [],
+   "derniere": "2026-11-07",
+   "exemple": "https://www.instagram.com/p/Dfb4o8dMNz4/",
+   "suivi": false
+  },
+  {
+   "compte": "l.etage_tunis",
+   "nom": "L’etage Tunis",
+   "soirees": 2,
+   "cite": 0,
+   "hashtags": [
+    "tunisnight",
+    "soireetunis"
+   ],
+   "lieux": [
+    "L'étage Resto Club (Hôtel Lafayette, Tunis)",
+    "Hotel Lafayette, Tunis"
+   ],
+   "derniere": "2026-07-27",
+   "exemple": "https://www.instagram.com/p/DbT0d3SDbXr/",
+   "suivi": false
+  },
+  {
+   "compte": "alg_paris",
+   "nom": "",
+   "soirees": 0,
+   "cite": 1,
+   "hashtags": [],
+   "lieux": [],
+   "derniere": "",
+   "exemple": "",
+   "suivi": false
+  },
+  {
+   "compte": "le.grand.boeuf",
+   "nom": "",
+   "soirees": 0,
+   "cite": 1,
+   "hashtags": [],
+   "lieux": [],
+   "derniere": "",
+   "exemple": "",
+   "suivi": false
+  },
+  {
+   "compte": "chiraz.dhk",
+   "nom": "ChiChi Dkh",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "gammarth"
+   ],
+   "lieux": [
+    "Golden Carthage Hotel & Residence — La Marsa / Gammarth"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/Dfg1jI2gtSJ/",
+   "suivi": false
+  },
+  {
+   "compte": "avantier_club1",
+   "nom": "Avantier Club",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "lamarsa"
+   ],
+   "lieux": [],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhdmdHiL0V/",
+   "suivi": false
+  },
+  {
+   "compte": "elhammra.vip.hammamet",
+   "nom": "El Hammra VIP Hammamet",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "hammamet"
+   ],
+   "lieux": [
+    "https://maps.app.goo.gl/4Namo7wHrpVCdvLt6"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/Dfhj7aMqEHf/",
+   "suivi": false
+  },
+  {
+   "compte": "powerstarfitness",
+   "nom": "POWERSTARFITNESS",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "sousse"
+   ],
+   "lieux": [
+    "Adresse : Av. Khalifa El Karoui, Khzema gharbia, Sousse"
+   ],
+   "derniere": "2026-11-09",
+   "exemple": "https://www.instagram.com/p/DfhbammorL8/",
+   "suivi": false
+  },
+  {
+   "compte": "beehiveclub",
+   "nom": "Bee Hive Club",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "gammarth"
+   ],
+   "lieux": [
+    "Bee Hive Open Air – Acquaviva Gammarth"
+   ],
+   "derniere": "2026-11-08",
+   "exemple": "https://www.instagram.com/p/DffaytyxI5R/",
+   "suivi": false
+  },
+  {
+   "compte": "worldgymmarsa",
+   "nom": "Worldgym Marsa",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "lamarsa"
+   ],
+   "lieux": [],
+   "derniere": "2026-11-08",
+   "exemple": "https://www.instagram.com/p/DffVgHllcNr/",
+   "suivi": false
+  },
+  {
+   "compte": "walid.mf",
+   "nom": "Walid",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "monastir"
+   ],
+   "lieux": [],
+   "derniere": "2026-11-08",
+   "exemple": "https://www.instagram.com/p/DffxI19IQFi/",
+   "suivi": false
+  },
+  {
+   "compte": "jolene1.0_",
+   "nom": "Jolene",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife"
+   ],
+   "lieux": [],
+   "derniere": "2026-11-05",
+   "exemple": "https://www.instagram.com/p/DfXESedICoD/",
+   "suivi": false
+  },
+  {
+   "compte": "boa_pool",
+   "nom": "Boa Pool",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "Lieu : Boulevard 14 Janvier Hammam Sousse, Hotel La Roseraie"
+   ],
+   "derniere": "2026-11-04",
+   "exemple": "https://www.instagram.com/p/DfUp2rinYAL/",
+   "suivi": false
+  },
+  {
+   "compte": "wissemsouifi",
+   "nom": "Wissem Souifi",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife"
+   ],
+   "lieux": [
+    "Atrium Resto-Lounge – Golden Carthage Hotel & Residence Tuni"
+   ],
+   "derniere": "2026-11-01",
+   "exemple": "https://www.instagram.com/p/DfMUXmXjPoY/",
+   "suivi": false
+  },
+  {
+   "compte": "golden_hammamet_officiel",
+   "nom": "Golden Hammamet",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "hammametnightlife"
+   ],
+   "lieux": [
+    "Golden Hammamet – Avenue Moncef Bey"
+   ],
+   "derniere": "2026-10-30",
+   "exemple": "https://www.instagram.com/p/DfIAWnXiPJJ/",
+   "suivi": false
+  },
+  {
+   "compte": "cherilounge",
+   "nom": "Cheri Lounge",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "CHÉRI LOUNGE — Carthage Thalasso, Gammarth"
+   ],
+   "derniere": "2026-10-23",
+   "exemple": "https://www.instagram.com/p/De2BbLNxlcb/",
+   "suivi": false
+  },
+  {
+   "compte": "win.theb",
+   "nom": "Win Theb",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "soireetunis"
+   ],
+   "lieux": [
+    "Hôtel Sidi Bou Saïd, Sidi Dhrif"
+   ],
+   "derniere": "2026-10-20",
+   "exemple": "https://www.instagram.com/p/DeuNHQngNBl/",
+   "suivi": false
+  },
+  {
+   "compte": "lebistrottunis",
+   "nom": "Le bistrot de Tunis",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife"
+   ],
+   "lieux": [
+    "LE BISTRO TUNIS – LOUNGE"
+   ],
+   "derniere": "2026-10-17",
+   "exemple": "https://www.instagram.com/p/DelpTjNtf-G/",
+   "suivi": false
+  },
+  {
+   "compte": "dark_side_manouba",
+   "nom": "DARK_SIDE_MANOUBA 🎃",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisparty"
+   ],
+   "lieux": [
+    "Manouba — Secret Location"
+   ],
+   "derniere": "2026-10-14",
+   "exemple": "https://www.instagram.com/p/Dee3xlNulF9/",
+   "suivi": false
+  },
+  {
+   "compte": "tunisian_rooom",
+   "nom": "Tunisian_Room",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisiannightlife"
+   ],
+   "lieux": [
+    "Secret location"
+   ],
+   "derniere": "2026-10-14",
+   "exemple": "https://www.instagram.com/p/DefWoKOtuDA/",
+   "suivi": false
+  },
+  {
+   "compte": "platiniummetalikaofficiel",
+   "nom": "Platinium Metalika Officiel",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "Hôtel Golf Résidence Sousse"
+   ],
+   "derniere": "2026-10-13",
+   "exemple": "https://www.instagram.com/p/Deb-YElOki_/",
+   "suivi": false
+  },
+  {
+   "compte": "lucullus_goulette",
+   "nom": "Lucullus",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "1 Avenue Habib Bourguiba, La Goulette"
+   ],
+   "derniere": "2026-10-13",
+   "exemple": "https://www.instagram.com/p/Debp6I4N39l/",
+   "suivi": false
+  },
+  {
+   "compte": "jalloul8",
+   "nom": "Jalloul Jlassi",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife"
+   ],
+   "lieux": [
+    "Selena La Soukra — Le Bœuf sur le Toit"
+   ],
+   "derniere": "2026-10-09",
+   "exemple": "https://www.instagram.com/p/DeRO35rlSNq/",
+   "suivi": false
+  },
+  {
+   "compte": "jasmine.bar_lounge",
+   "nom": "Jasmine Bar Lounge",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "djerbanight"
+   ],
+   "lieux": [
+    "Hôtel Diar Yassin – Djerba"
+   ],
+   "derniere": "2026-09-23",
+   "exemple": "https://www.instagram.com/p/Ddo1FTPOOTI/",
+   "suivi": false
+  },
+  {
+   "compte": "karimbenamor",
+   "nom": "Karim Benamor",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisiannightlife"
+   ],
+   "lieux": [
+    "Habibi Downtown, 49 av. Habib Bourguiba"
+   ],
+   "derniere": "2026-09-09",
+   "exemple": "https://www.instagram.com/p/DdE-Ot4DKcQ/",
+   "suivi": false
+  },
+  {
+   "compte": "theface_sousse",
+   "nom": "The Face Sousse",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnight"
+   ],
+   "lieux": [
+    "The Face"
+   ],
+   "derniere": "2026-08-31",
+   "exemple": "https://www.instagram.com/p/DctapGXjJC_/",
+   "suivi": false
+  },
+  {
+   "compte": "majorelle_bistrot",
+   "nom": "Majorelle",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnight"
+   ],
+   "lieux": [
+    "Majorelle"
+   ],
+   "derniere": "2026-08-14",
+   "exemple": "https://www.instagram.com/p/DcBcQJpjQi9/",
+   "suivi": false
+  },
+  {
+   "compte": "bellinisousse",
+   "nom": "Bellini Sousse",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "nightlifetunisia"
+   ],
+   "lieux": [
+    "Lieu : Le Vicomte, Av. 14 Janvier - Zone Touristique, Sousse"
+   ],
+   "derniere": "2026-08-06",
+   "exemple": "https://www.instagram.com/p/DbterzfxoJK/",
+   "suivi": false
+  },
+  {
+   "compte": "unidos_by_elpacha",
+   "nom": "UNIDOS CLUB BY EL PACHA HAMMAMET",
+   "soirees": 2,
+   "cite": 0,
+   "hashtags": [
+    "hammametnightlife"
+   ],
+   "lieux": [
+    "**Lieu** : UNIDOS by EL PACHA CLUB, Hammamet",
+    "**Lieu :** UNIDOS CLUB by El Pacha, Hammamet"
+   ],
+   "derniere": "2024-10-14",
+   "exemple": "https://www.instagram.com/p/DBG73nLoXDS/",
+   "suivi": true
+  },
+  {
+   "compte": "habibidowntown_",
+   "nom": "Habibi",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "tunisnightlife"
+   ],
+   "lieux": [
+    "Habibi Downtown, Tunis"
+   ],
+   "derniere": "2026-11-05",
+   "exemple": "https://www.instagram.com/p/DfXq8FUlUXr/",
+   "suivi": true
+  },
+  {
+   "compte": "the_moon_club_djerba",
+   "nom": "THE MOON CLUB DJERBA",
+   "soirees": 1,
+   "cite": 0,
+   "hashtags": [
+    "djerbanight"
+   ],
+   "lieux": [
+    "The Moon Club Djerba"
+   ],
+   "derniere": "2026-09-25",
+   "exemple": "https://www.instagram.com/p/DdsrLmzDQKs/",
+   "suivi": true
+  }
+ ]
 }
