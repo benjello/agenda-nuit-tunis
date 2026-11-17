@@ -57,6 +57,8 @@ CUISINES = {
     "japanese": ("japonaise", "Japanese"), "sushi": ("sushis", "sushi"), "asian": ("asiatique", "Asian"),
     "chinese": ("chinoise", "Chinese"), "thai": ("thaïe", "Thai"), "indian": ("indienne", "Indian"),
     "mexican": ("mexicaine", "Mexican"), "american": ("américaine", "American"), "noodle": ("nouilles", "noodles"),
+    "crepe": ("crêpes", "crêpes"), "breakfast": ("petit-déjeuner", "breakfast"), "ice_cream": ("glaces", "ice cream"),
+    "fast_food": ("restauration rapide", "fast food"), "brunch": ("brunch", "brunch"), "couscous": ("couscous", "couscous"),
     "coffee_shop": ("café", "coffee shop"), "tapas": ("tapas", "tapas"), "vegetarian": ("végétarienne", "vegetarian"),
 }
 

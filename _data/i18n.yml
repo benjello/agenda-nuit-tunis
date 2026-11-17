@@ -456,9 +456,15 @@ installer.autre: { fr: "Dans le menu de votre navigateur, cherchez « Installer 
 programmes_facebook: { ar: "برامج منشورة على فيسبوك", en: "Programmes posted on Facebook" }
 publie_le: { ar: "نُشر في", en: "posted on" }
 voir_publication: { ar: "انظر المنشور على فيسبوك", en: "See the post on Facebook" }
-nav.clubs: { ar: "نوادٍ وحانات", en: "Clubs & bars" }
-clubs_titre: { ar: "نوادٍ وحانات", en: "Clubs & bars" }
-clubs_intro: { ar: "الأماكن التي تفتح كل أسبوع، حتى دون سهرة خاصة: المواعيد، الأجواء، الجمهور، الأسعار وشروط الدخول.", en: "Places that open every week, even with no special night announced: hours, vibe, crowd, prices and door policy." }
+nav.clubs: { ar: "النوادي", en: "Clubs" }
+nav.bars: { ar: "الحانات", en: "Bars" }
+nav.restaurants: { ar: "المطاعم", en: "Restaurants" }
+clubs_titre: { ar: "النوادي", en: "Clubs" }
+bars_titre: { ar: "الحانات", en: "Bars" }
+restos_titre: { ar: "المطاعم", en: "Restaurants" }
+bars_intro: { ar: "حانات وبابات ولاونج وأسطح، تفتح كل أسبوع: المواعيد، الأجواء، الأسعار وشروط الدخول.", en: "Bars, pubs, lounges and rooftops open every week: hours, vibe, prices and door policy." }
+restos_intro: { ar: "مطاعم مفتوحة في المساء، حتى العاشرة ليلا على الأقل: المواعيد، نوع المطبخ، الأسعار وقائمة الطعام إن وُجدت. نشير إلى التي تغلق قبل الحادية عشرة.", en: "Restaurants open in the evening, until 10 pm at least: hours, cuisine, prices and menu when we find it. Those closing before 11 pm are flagged." }
+clubs_intro: { ar: "نوادٍ ومراقص وكباريهات وكاريوكي تفتح كل أسبوع، حتى دون سهرة خاصة: المواعيد، الأجواء، الجمهور، الأسعار وشروط الدخول.", en: "Clubs, nightclubs, cabarets and karaoke bars open every week, even with no special night announced: hours, vibe, crowd, prices and door policy." }
 clubs_verifier: { ar: "المواعيد تقريبية: تحقق من حساب المكان قبل الذهاب.", en: "Hours are a guide: check the venue's account before you go." }
 clubs_avec_horaires: { ar: "مع المواعيد", en: "With hours" }
 clubs_vide: { ar: "قائمة الأماكن تصل مع المرور القادم (أوبن ستريت ماب، كل أسبوع).", en: "The list of venues arrives with the next update (OpenStreetMap, weekly)." }
