@@ -4,25 +4,60 @@
   "fr": "03 États-Unis Rue",
   "en": "03 U.S. Street"
  },
+ "1 نهج صالح بن محمود": {
+  "de": "ar",
+  "fr": "1 approche Salih bin Mahmoud",
+  "en": "1 Salih bin Mahmoud approach"
+ },
  "141 شارع الحرية, تونس": {
   "de": "ar",
   "fr": "141 rue Freedom, Tunisie",
   "en": "141 Freedom Street, Tunisia"
+ },
+ "24 نهج الديمقراطية, تونس": {
+  "de": "ar",
+  "fr": "24 Approches de démocratisation, Tunisie",
+  "en": "24 Democratization approaches, Tunisia"
+ },
+ "3 نهج الإمام سحنون": {
+  "de": "ar",
+  "fr": "Trois approches de l'Imam sont en cours.",
+  "en": "Three Imam approaches are in the process."
  },
  "32 نهج المعز, تونس": {
   "de": "ar",
   "fr": "32 approches pour les chèvres, Tunisie",
   "en": "32 goat approaches, Tunisia"
  },
+ "75 Av. Hédi Nouira, Ariana": {
+  "de": "fr",
+  "ar": "75 Av. Hedi Nouira, Ariana",
+  "en": "75 Av. Hedi Nouira, Ariana"
+ },
+ "78 ممر محمد الخامس, تونس": {
+  "de": "ar",
+  "fr": "78 Muser Muhammad V, Tunisie",
+  "en": "78 Muser Muhammad V, Tunisia"
+ },
  "93 شارع محمد الخامس, تونس": {
   "de": "ar",
   "fr": "93, rue Muhammad V, Tunisie",
   "en": "93 Muhammad V Street, Tunisia"
  },
+ "98191329 شارع اﻹمام مسلم إبن الحجاج": {
+  "de": "ar",
+  "fr": "98191329 Imam Muslam Al-Bajjj",
+  "en": "98191329 Imam Muslam Al-Bajjj"
+ },
  "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS": {
   "de": "fr",
   "ar": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS",
   "en": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS"
+ },
+ "ASECHS": {
+  "de": "fr",
+  "ar": "ASECHS",
+  "en": "ASECHS"
  },
  "Agendas et billetteries": {
   "de": "fr",
@@ -54,6 +89,26 @@
   "ar": "Avenue Fattouma Bourguiba",
   "en": "Avenue Fattouma Bourguiba"
  },
+ "Avenue Habib Bourguiba, El Jem": {
+  "de": "fr",
+  "ar": "Habib Bourguiba Avenue, El Jem",
+  "en": "Habib Bourguiba Avenue, El Jem"
+ },
+ "Avenue Hédi Nouira, Ennasr 2": {
+  "de": "fr",
+  "ar": "Hedi Nouira Avenue, Ennasr 2",
+  "en": "Hedi Nouira Avenue, Ennasr 2"
+ },
+ "Axel D. Bodega": {
+  "de": "fr",
+  "ar": "(أكسل دي) Bodega",
+  "en": "Axel D. Bodega"
+ },
+ "AÏNA": {
+  "de": "fr",
+  "ar": "AINA",
+  "en": "AINA"
+ },
  "B7L9 Art Centre": {
   "de": "fr",
   "ar": "B7L9 مركز الفنون",
@@ -63,6 +118,16 @@
   "de": "fr",
   "ar": "BORA BORA Disco",
   "en": "BORA BORA Disco"
+ },
+ "BOUNCY CLUB - Third Edition": {
+  "de": "fr",
+  "ar": "BOUNCY CLUB - Third Edition",
+  "en": "BOUNCY CLUB - Third Edition"
+ },
+ "BURGER STOP - Tunis": {
+  "de": "fr",
+  "ar": "BURGER STOP - Tunis",
+  "en": "BURGER STOP - Tunis"
  },
  "Bar & lounge": {
   "de": "fr",
@@ -153,6 +218,16 @@
   "de": "fr",
   "ar": "Bolivar Beach Bar",
   "en": "Bolivar Beach Bar"
+ },
+ "Boston Pizza": {
+  "de": "fr",
+  "ar": "بوسطن بيتزا",
+  "en": "Boston Pizza"
+ },
+ "Boulevard du leader Yasser Arafat, Sahloul": {
+  "de": "fr",
+  "ar": "Boulevard du leader Yasser Arafat, Sahloul",
+  "en": "Boulevard du leader Yasser Arafat, Sahloul"
  },
  "Boîtes de nuit généralistes, soirées à thème, hôtels et resorts": {
   "de": "fr",
@@ -269,6 +344,11 @@
   "ar": "نادي جينجر",
   "en": "Club Ginger"
  },
+ "Club Grill Citroen": {
+  "de": "fr",
+  "ar": "نادي غريل سيتروين",
+  "en": "Club Grill Citroen"
+ },
  "Club, bar": {
   "de": "fr",
   "ar": "نادي، حانة",
@@ -309,6 +389,11 @@
   "ar": "حانة مريحة",
   "en": "Cozy bar"
  },
+ "Côté Jardin": {
+  "de": "fr",
+  "ar": "جانب الحديقة",
+  "en": "Garden side"
+ },
  "DJ live, lounge et cocktails": {
   "de": "fr",
   "ar": "Live DJ, lounge and cocktails",
@@ -318,6 +403,11 @@
   "de": "fr",
   "ar": "دار علي",
   "en": "Dar Ali"
+ },
+ "Dar El Bey": {
+  "de": "fr",
+  "ar": "دار البيرة",
+  "en": "Dar El Bey"
  },
  "Dar Sébastien, Hammamet": {
   "de": "fr",
@@ -369,6 +459,11 @@
   "ar": "El Borj",
   "en": "El Borj"
  },
+ "El Capo Pizza": {
+  "de": "fr",
+  "ar": "El Capo Pizza",
+  "en": "El Capo Pizza"
+ },
  "El Catador Tapis Bar": {
   "de": "fr",
   "ar": "El Catador Carpet Bar",
@@ -389,6 +484,11 @@
   "ar": "El Torito",
   "en": "El Torito"
  },
+ "El bey": {
+  "de": "fr",
+  "ar": "النحلة",
+  "en": "El bey"
+ },
  "Evening bar": {
   "de": "fr",
   "ar": "حانة المساء",
@@ -403,6 +503,11 @@
   "de": "fr",
   "ar": "نقابة الأسرة",
   "en": "Family Bar"
+ },
+ "Farmer's Steakhouse": {
+  "de": "fr",
+  "ar": "مزرعة ستاكهاوس",
+  "en": "Farmer's Steakhouse"
  },
  "Festival & open air": {
   "de": "en",
@@ -448,6 +553,11 @@
   "de": "fr",
   "ar": "Galleries",
   "en": "Galleries"
+ },
+ "Gammarth": {
+  "de": "fr",
+  "ar": "Gammarth",
+  "en": "Gammarth"
  },
  "Goa Private Beach": {
   "de": "fr",
@@ -584,10 +694,25 @@
   "fr": "L'ancora Le Bleu",
   "ar": "L'ancora The Blue"
  },
+ "La Bouffe": {
+  "de": "fr",
+  "ar": "الغذاء",
+  "en": "The Food"
+ },
  "La Cité de la culture ou cité de la culture Chedli-Klibi est un complexe culturel tunisien de neuf hectares situé en plein centre de la ville de Tunis, à l'emplacement de l'ancienne Foire internationale de Tunis sur l'avenue Mohammed-V.": {
   "de": "fr",
   "ar": "The City of Culture or City of Culture Chedli-Klibi is a nine-hectare Tunisian cultural complex located in the centre of Tunis, at the location of the former Tunis International Fair on Mohammed V Avenue.",
   "en": "The City of Culture or City of Culture Chedli-Klibi is a nine-hectare Tunisian cultural complex located in the centre of Tunis, at the location of the former Tunis International Fair on Mohammed V Avenue."
+ },
+ "La Daurade": {
+  "de": "fr",
+  "ar": "\"الدورادي\"",
+  "en": "The Daurade"
+ },
+ "La Grotte": {
+  "de": "fr",
+  "ar": "الكهف",
+  "en": "The Cave"
  },
  "La Marsa": {
   "de": "fr",
@@ -619,6 +744,11 @@
   "ar": "The Regency",
   "en": "The Regency"
  },
+ "La Sofra": {
+  "de": "fr",
+  "ar": "\"السوفا\"",
+  "en": "The Sofra"
+ },
  "La Villa Beach": {
   "de": "fr",
   "ar": "Villa Beach",
@@ -628,6 +758,11 @@
   "de": "fr",
   "ar": "الصفحة",
   "en": "Official page"
+ },
+ "La salle à manger": {
+  "de": "fr",
+  "ar": "غرفة الطعام",
+  "en": "The dining room"
  },
  "Laroussi & Stacy Beach": {
   "de": "fr",
@@ -643,6 +778,11 @@
   "de": "fr",
   "ar": "ليالي القمار",
   "en": "Layali el Qamar"
+ },
+ "Le Bambou cuisine asiatique": {
+  "de": "fr",
+  "ar": "مطبخ بامبو الآسيوي",
+  "en": "The Bamboo Asian cuisine"
  },
  "Le Before": {
   "de": "fr",
@@ -669,6 +809,11 @@
   "ar": "\"الدوبليكس\"",
   "en": "The Duplex"
  },
+ "Le Grand Café du Theatre": {
+  "de": "fr",
+  "ar": "المقهى الكبير للمسرح",
+  "en": "The Grand Café du Theatre"
+ },
  "Le JOBI": {
   "de": "fr",
   "ar": "The JOBI",
@@ -689,25 +834,65 @@
   "ar": "(ماديسون)",
   "en": "The Madison"
  },
+ "Le Marquis": {
+  "de": "fr",
+  "ar": "\"الماركي\"",
+  "en": "The Marquis"
+ },
  "Le Must": {
   "de": "fr",
   "ar": "يجب أن",
   "en": "The Must"
+ },
+ "Le Méditerranée": {
+  "de": "fr",
+  "ar": "البحر الأبيض المتوسط",
+  "en": "The Mediterranean"
  },
  "Le Pub Gentleman": {
   "de": "fr",
   "ar": "\"الرجل النبيل\"",
   "en": "The Gentleman Pub"
  },
+ "Le QG": {
+  "de": "fr",
+  "ar": "المقر",
+  "en": "HQ"
+ },
  "Le Roi": {
   "de": "fr",
   "ar": "الملك",
   "en": "The King"
  },
+ "Le Réservoir Bistro": {
+  "de": "fr",
+  "ar": "مخزن بيسترو",
+  "en": "The Bistro Reservoir"
+ },
  "Le Vieux Port": {
   "de": "fr",
   "ar": "الميناء القديم",
   "en": "The Old Port"
+ },
+ "Le safran Ennasr II": {
+  "de": "fr",
+  "ar": "(الزعفران إناسر الثاني)",
+  "en": "The saffron Ennasr II"
+ },
+ "Le zink": {
+  "de": "fr",
+  "ar": "الزنك",
+  "en": "The zink"
+ },
+ "Les Berges du Lac 1": {
+  "de": "fr",
+  "ar": "The Berges du Lac 1",
+  "en": "The Berges du Lac 1"
+ },
+ "Les Berges du Lac 2": {
+  "de": "fr",
+  "ar": "The Berges du Lac 2",
+  "en": "The Berges du Lac 2"
  },
  "Lieu": {
   "de": "fr",
@@ -738,6 +923,11 @@
   "de": "fr",
   "ar": "الأربعاء، 11 تشرين الثاني/نوفمبر",
   "en": "Wednesday, 11 November"
+ },
+ "Mess des Officiers": {
+  "de": "fr",
+  "ar": "أعضاء المكتب",
+  "en": "Officers' Mess"
  },
  "Monastir": {
   "de": "fr",
@@ -854,6 +1044,11 @@
   "ar": "Pabaya Beach",
   "en": "Papaya Beach"
  },
+ "Pasta Cosi": {
+  "de": "fr",
+  "ar": "Pasta Cosi",
+  "en": "Pasta Cosi"
+ },
  "Picasso": {
   "de": "fr",
   "ar": "Picasso",
@@ -863,6 +1058,16 @@
   "de": "fr",
   "ar": "Pinky Bistro",
   "en": "Pinky Bistro"
+ },
+ "Pizza Hot Sousse": {
+  "de": "fr",
+  "ar": "Pizza Hot Sousse",
+  "en": "Pizza Hot Sousse"
+ },
+ "Plancha Avenue": {
+  "de": "fr",
+  "ar": "Plancha Avenue",
+  "en": "Plancha Avenue"
  },
  "Platinum Metalika Sousse": {
   "de": "fr",
@@ -909,6 +1114,31 @@
   "ar": "مستشار مقيم (تونس)",
   "en": "Resident Advisor (Tunisia)"
  },
+ "Restaurant Chez Achour": {
+  "de": "fr",
+  "ar": "المطاعم تشيز أكراو",
+  "en": "Restaurant Chez Achour"
+ },
+ "Restaurant Haroun": {
+  "de": "fr",
+  "ar": "المطاعم هارون",
+  "en": "Restaurant Haroun"
+ },
+ "Restaurant Le Bonheur": {
+  "de": "fr",
+  "ar": "Restaurant Le Bonheur",
+  "en": "Restaurant Le Bonheur"
+ },
+ "Restaurant Le Régal": {
+  "de": "fr",
+  "ar": "Restaurant Le Regal",
+  "en": "Restaurant Le Regal"
+ },
+ "Restaurant Ton Ton": {
+  "de": "fr",
+  "ar": "مطعم تون تون",
+  "en": "Ton Ton Restaurant"
+ },
  "Rock'n'Rolla": {
   "de": "fr",
   "ar": "Rock'n'Rolla",
@@ -918,6 +1148,11 @@
   "de": "fr",
   "ar": "روك أن رولا لا غوليت (Instagram)",
   "en": "Rock'n'Rolla La Goulette (Instagram)"
+ },
+ "Rooh El Medina": {
+  "de": "fr",
+  "ar": "Rooh El Medina",
+  "en": "Rooh El Medina"
  },
  "Rossini palace": {
   "de": "fr",
@@ -933,6 +1168,11 @@
   "de": "fr",
   "ar": "بغداد",
   "en": "Baghdad Street"
+ },
+ "Rue El moustakbel": {
+  "de": "fr",
+  "ar": "El Mustakbel Street",
+  "en": "El Mustakbel Street"
  },
  "Salsa Disco Djerba": {
   "de": "fr",
@@ -1049,10 +1289,20 @@
   "ar": "Sunset Beach Bar Djerba",
   "en": "Sunset Beach Bar Djerba"
  },
+ "TBA - studio 52": {
+  "de": "fr",
+  "ar": "TBA - Stu 52",
+  "en": "TBA - studio 52"
+ },
  "Tangerine Rooftop": {
   "de": "fr",
   "ar": "Tangerine Rooftop",
   "en": "Tangerine Rooftop"
+ },
+ "Tao Sushi bar": {
+  "de": "fr",
+  "ar": "حانة تاو سوشي",
+  "en": "Tao Sushi bar"
  },
  "Techno Tunisia (Instagram)": {
   "de": "fr",
@@ -1089,6 +1339,11 @@
   "fr": "Le jardin secret",
   "ar": "الحديقة السرية"
  },
+ "The Sunset Family Club": {
+  "de": "en",
+  "fr": "Le club de la famille Sunset",
+  "ar": "نادي عائلة (سنت)"
+ },
  "Théâtre": {
   "de": "fr",
   "ar": "المسرح",
@@ -1103,6 +1358,11 @@
   "de": "fr",
   "ar": "Tiki Bar",
   "en": "Tiki Bar"
+ },
+ "Tozeriana Restaurant - café": {
+  "de": "fr",
+  "ar": "مطعم تورزيانا - مقهى",
+  "en": "Tozeriana Restaurant - café"
  },
  "Trois Cent Soixante": {
   "de": "fr",
@@ -1139,6 +1399,11 @@
   "ar": "تونس",
   "en": "Twist Tunisia"
  },
+ "Two M Pizzeria": {
+  "de": "fr",
+  "ar": "2 M Pizzeria",
+  "en": "Two M Pizzeria"
+ },
  "Un rooftop, deux artistes, une même scène... et une soirée": {
   "de": "fr",
   "ar": "على السطح، فنانين، مشهد واحد... وليلة واحدة",
@@ -1153,6 +1418,16 @@
   "de": "fr",
   "ar": "Vape - Store",
   "en": "Vape - Store"
+ },
+ "Via Mercato": {
+  "de": "fr",
+  "ar": "Via Mercato",
+  "en": "Via Mercato"
+ },
+ "W7CQ+4W5, Gammarth, Gammarth": {
+  "de": "fr",
+  "ar": "W7CQ+4W5, Gammarth, Gammarth",
+  "en": "W7CQ+4W5, Gammarth, Gammarth"
  },
  "Yasmine Hammamet Bar": {
   "de": "fr",
@@ -1169,15 +1444,80 @@
   "ar": "يوكا تونس",
   "en": "Yüka Tunis"
  },
+ "burger, salad, pasta, beef & chicken, cheesy saucy poutine": {
+  "de": "fr",
+  "ar": "برغر، سلطة، معكرة، دجاج لحم البقر، صنوبر النقانق الجبنة",
+  "en": "burger, salad, pasta, beef & chicken, cheesey sausage poutine"
+ },
+ "burger, sandwich, terrasse": {
+  "de": "fr",
+  "ar": "برجر، شطيرة، تراس",
+  "en": "burger, sandwich, terrace"
+ },
+ "european, tunisian": {
+  "de": "fr",
+  "ar": "أوروبا، تونس",
+  "en": "European, Tunisian"
+ },
+ "fine dining, french": {
+  "de": "fr",
+  "ar": "عشاء غرامي، فرنسي",
+  "en": "fine dining, french"
+ },
+ "fish, seafood": {
+  "de": "fr",
+  "ar": "الأسماك، والمأكولات البحرية",
+  "en": "fish, seafood"
+ },
+ "french, italian, local": {
+  "de": "fr",
+  "ar": "الفرنسية، الإيطالية، المحلية",
+  "en": "french, italian, local"
+ },
  "harrison guyett": {
   "de": "fr",
   "ar": "هاريسون ماينت",
   "en": "harrison guyett"
  },
+ "japanese, sushi": {
+  "de": "fr",
+  "ar": "اليابانية، السوشي",
+  "en": "Japanese, sushi"
+ },
  "les indécis": {
   "de": "fr",
   "ar": "غير مقدّمة",
   "en": "Undecided"
+ },
+ "maison mrad": {
+  "de": "fr",
+  "ar": "البيت mrad",
+  "en": "house mrad"
+ },
+ "pizza, chicken, coffee shop, sandwich, seafood, kebab": {
+  "de": "fr",
+  "ar": "بيتزا، دجاج، مقهى، شطيرة، مأكولات بحرية، كباب",
+  "en": "pizza, chicken, coffee shop, sandwich, seafood, kebab"
+ },
+ "regional, french": {
+  "de": "fr",
+  "ar": "إقليمي، فرنسي",
+  "en": "Regional, French"
+ },
+ "regional, seafood, pasta, fish, noodle, octopus": {
+  "de": "fr",
+  "ar": "المأكولات البحرية الإقليمية، المعكرونة، الأسماك، العقيدة، الأخطبوط",
+  "en": "regional, seafood, pasta, fish, noodle, octopus"
+ },
+ "seafood, burger, european": {
+  "de": "fr",
+  "ar": "المأكولات البحرية، البرجر، أوروبا",
+  "en": "seafood, burger, European"
+ },
+ "seafood, pizza, regional, burger, chicken, steak house, italian, terrasse": {
+  "de": "fr",
+  "ar": "مأكولات بحرية، بيتزا، برجر إقليمي، دجاج، بيت لحم، إيطالي، تراس",
+  "en": "seafood, pizza, regional, burger, chicken, steak house, italian, terrace"
  },
  "tunis.events (agenda)": {
   "de": "fr",
@@ -1199,20 +1539,55 @@
   "ar": "أحداث فيسبوك (البحث عن مغامرات)",
   "en": "Facebook events (search \"Events\")"
  },
+ "ساحة فرحات حشاد, سوسة": {
+  "de": "ar",
+  "fr": "Farhat Hahadah Square, Sussa",
+  "en": "Farhat Hahadah Square, Sussa"
+ },
+ "شارع البيئة, حومة السوق": {
+  "de": "ar",
+  "fr": "Rue de l'environnement, barrière du marché.",
+  "en": "Environmental Street, Market Barrier."
+ },
  "شارع الحبيب بورقيبة": {
   "de": "ar",
   "fr": "La rue Habib, Burgabat.",
   "en": "Habib Street, Burgabat."
+ },
+ "شارع علي البلهوان, الحمامات": {
+  "de": "ar",
+  "fr": "Ali al-Blahwan Street, salle de bains.",
+  "en": "Ali al-Blahwan Street, bathrooms."
+ },
+ "شارع مجيدة بوليلة": {
+  "de": "ar",
+  "fr": "Bonne rue, Paulie.",
+  "en": "Good street, Paulie."
  },
  "شارع هدي شاكر": {
   "de": "ar",
   "fr": "La rue Hadi Shaker.",
   "en": "Hadi Shaker Street."
  },
+ "طريق الشاطئ سونين": {
+  "de": "ar",
+  "fr": "Une route ensoleillée.",
+  "en": "Sunin beach road."
+ },
  "مركز الفنون B7L9": {
   "de": "ar",
   "fr": "Centre des arts B7L9",
   "en": "Arts Centre B7L9"
+ },
+ "نهج 2 مارس 1934": {
+  "de": "ar",
+  "fr": "Approche 2 mars 1934",
+  "en": "Approach 2 March 1934"
+ },
+ "نهج ساحل العاج, تونس": {
+  "de": "ar",
+  "fr": "Approche apocalypse, Tunisie",
+  "en": "Apocalypse approach, Tunisia"
  },
  "نهج علي باشا, حلق الوادي": {
   "de": "ar",

@@ -8,6 +8,10 @@
    "fr": "Festival d'Art Explora",
    "ar": "مهرجان أكسبلورا"
   },
+  "BOUNCY CLUB - Third Edition": {
+   "ar": "BOUNCY CLUB - Third Edition",
+   "en": "BOUNCY CLUB - Third Edition"
+  },
   "JAOU TUNIS 2026": {
    "ar": "JAOU TUNIS 2026",
    "en": "JAOU TUNIS 2026"
@@ -64,6 +68,16 @@
    "cle": "074fdd79fce1",
    "fr": "Linéaire : Emine (2), Harrison Guyett, Kian OK, Omar Fayyad, Pan-J, Picasso\nPas de précipitation, pas de signal, juste être pleinement présent dans les dunes avec de bonnes personnes.\nNous avons réuni quatre jours d'écoute profonde, de matinées lentes, de pratiques somatiques et de lumière du désert, en gardant les choses simples et intentionnelles.\nFait par des amis, pour des amis.\nNé d'un amour partagé pour le Sahara, Nōmad Man est une retraite intime et sélective où les âmes se rencontrent et se connectent sans aucune distraction extérieure.",
    "ar": "Line-up : Emine (2), harrison manett, Kian OK, Omar Fayyad, Pan-J, Picasso\nلا داعي للعجلة، لا اشارة، مجرد وجود كامل في الكثبان مع الناس الطيبين.\nلقد جمعنا أربعة أيام من الإستماع العميق، وبطء الصباح، والممارسات الصوفية، وضوء الصحراء، وبقينا الأمور بسيطة ومتعمدة.\nمصنوعة من قبل الأصدقاء، للأصدقاء.\nوُلد من حب مشترك للصحراء، إنّ (ناماد مان) هو معتكفٌ عنيف وانتقائي حيث تلتقي الأرواح وتتواصل بدون أيّ إلهاء خارجي."
+  },
+  "_events/auto/resident-advisor/2026-11-28-bouncy-club-third-edition.md": {
+   "cle": "6bd2d78510d5",
+   "fr": "Linéarité : ASECHS\nOrganisé par T.T.C\nVous l'attendiez.\nNous revoilà !\nBOUNCY CLUB - Troisième édition samedi 28.11.2026 STUDIO 52 - Hôtel Les Ambassadeurs, Tunis Un nouveau chapitre, la même énergie.\nPréparez-vous pour une autre nuit de rebond pur.\nLine-up: -ASECHS -EMOU -IDO -UKIYO Rendez-vous sur le dancefloor.\n.\n.\n.\n.\n.\n.\n.\n.\nTTC",
+   "ar": "Line-up : ASECHS\nOrganisé par T.T.C\nلقد كنت في انتظار ذلك.\nلقد عدنا!\nBOUNCY CLUB - Third Edition Saturday, 28.11.2026 STUDIO 52 - Hôtel Les Ambassadeurs, Tunis A new chapter, the same energy.\nاستعدوا لليلة أخرى من القفز النقي.\n(آسيتشيس) - (إيدو) - (أوكيو) -\n.\n.\n.\n.\n.\n.\n.\n.\nTTC"
+  },
+  "_events/auto/tunis-events/2026-11-21-connivences-21-11-26.md": {
+   "cle": "491631c3c83a",
+   "fr": "21.11.2026\nDes signaux silencieux, des fréquences profondes, et cette complicité silencieuse sur le dancefloor.\nConnectez-vous à travers le rythme.\nCONNEXIONS\nEmine\nFarès A.\nMélkart\nMoez\nAïna - Complexe Le Cap, Gammarth\nPréventes: 30 DT Porte: 40/50 DT",
+   "ar": "21-11-2026\nإشارات صامتة، ترددات عميقة، وهذا التواطؤ الهادئ على قاعة الرقص.\nإربطْ خلال الإيقاعِ.\nCONNIVENCES\nEmine\nFarès A.\nMelkart\nMoez\nAïna - Complexe Le Cap, Gammarth\n<unk> Presales: 30 DT Door: 40/50 DT"
   },
   "_events/auto/tunis-events/2026-11-22-hyperculte.md": {
    "cle": "765042cd5525",

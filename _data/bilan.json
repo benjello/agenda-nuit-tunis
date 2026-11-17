@@ -95,8 +95,8 @@
  {
   "semaine": "2026-S47",
   "date": "2026-11-17",
-  "a_venir": 6,
-  "sept_jours": 5,
+  "a_venir": 8,
+  "sept_jours": 6,
   "sources_actives": 21,
   "sources_avec_evenements": 3,
   "sources_muettes": [
@@ -120,22 +120,23 @@
    "tn-agenda-du-jour"
   ],
   "par_ville": {
-   "tunis": 5
+   "tunis": 6
   },
   "par_categorie": {
    "festival": 3,
    "bar": 1,
+   "club": 1,
    "concert": 1
   },
   "par_genre": {
    "festival": 3,
-   "lieu": 1,
-   "agenda": 1
+   "agenda": 2,
+   "lieu": 1
   },
   "par_source": {
    "ig-jaou-tunis": 3,
-   "ig-habibi-downtown": 1,
-   "tunis-events": 1
+   "tunis-events": 2,
+   "ig-habibi-downtown": 1
   }
  }
 ]

@@ -47,6 +47,10 @@
  "Grand Italia": {
   "lu_le": "2026-11-15"
  },
+ "Le Méditerranée": {
+  "image_site": "https://lemediterranee.com.tn/wp-content/uploads/2025/01/restaurant.jpeg",
+  "lu_le": "2026-11-17"
+ },
  "Osiris Club Djerba": {
   "abonnes": 7621,
   "affiches": [
@@ -70,6 +74,10 @@
   "lu_le": "2026-11-08",
   "photo": "assets/clubs/osiris-club-djerba/profil.jpg"
  },
+ "Restaurant Ton Ton": {
+  "image_site": "https://tonton.tn/wp-content/uploads/2024/01/12.png",
+  "lu_le": "2026-11-17"
+ },
  "The Moon Club Djerba": {
   "abonnes": 478,
   "affiches": [
@@ -92,6 +100,10 @@
   "bio": "La page officielle",
   "lu_le": "2026-11-08",
   "photo": "assets/clubs/the-moon-club-djerba/profil.jpg"
+ },
+ "The Sunset Family Club": {
+  "image_site": "https://thesunsetfamilyclub.com/og-image.jpg",
+  "lu_le": "2026-11-17"
  },
  "Unidos Club by El Pacha": {
   "abonnes": 8282,

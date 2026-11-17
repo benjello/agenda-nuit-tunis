@@ -51,9 +51,9 @@
     ]
    },
    "resident-advisor": {
-    "n": 1,
-    "precis": 0,
-    "pourcent": 0,
+    "n": 2,
+    "precis": 1,
+    "pourcent": 50,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -65,8 +65,8 @@
     "manques": []
    },
    "tunis-events": {
-    "n": 1,
-    "precis": 1,
+    "n": 2,
+    "precis": 2,
     "pourcent": 100,
     "defauts": [],
     "manques": []
@@ -74,9 +74,9 @@
   },
   "scrapers": {
    "resident_advisor": {
-    "n": 1,
-    "precis": 0,
-    "pourcent": 0,
+    "n": 2,
+    "precis": 1,
+    "pourcent": 50,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -108,8 +108,8 @@
     ]
    },
    "tunis_events": {
-    "n": 1,
-    "precis": 1,
+    "n": 2,
+    "precis": 2,
     "pourcent": 100,
     "defauts": [],
     "manques": []
