@@ -49,11 +49,6 @@
   "fr": "98191329 Imam Muslam Al-Sabajaj",
   "en": "98191329 Imam Muslam Al-Sabajaj"
  },
- "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS": {
-  "de": "fr",
-  "ar": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS",
-  "en": "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS"
- },
  "ASECHS": {
   "de": "fr",
   "ar": "ASECHS",
@@ -104,6 +99,11 @@
   "ar": "(أكسل دي) Bodega",
   "en": "Axel D. Bodega"
  },
+ "AÏNA": {
+  "de": "fr",
+  "ar": "AINA",
+  "en": "AINA"
+ },
  "B7L9 Art Centre": {
   "de": "fr",
   "ar": "B7L9 مركز الفنون",
@@ -113,6 +113,11 @@
   "de": "fr",
   "ar": "BORA BORA Disco",
   "en": "BORA BORA Disco"
+ },
+ "BOUNCY CLUB - Third Edition": {
+  "de": "fr",
+  "ar": "BOUNCY CLUB - Third Edition",
+  "en": "BOUNCY CLUB - Third Edition"
  },
  "BURGER STOP - Tunis": {
   "de": "fr",
@@ -574,20 +579,10 @@
   "ar": "تونس الكبرى (باردو، الوردية، العمران، الموروج)",
   "en": "Greater Tunis (Bardo, El Ouardia, El Omrane, El Mourouj...)"
  },
- "Habibi Downtown": {
-  "de": "fr",
-  "ar": "حابي وسط المدينة",
-  "en": "Habibi Downtown"
- },
  "Habibi Downtown (Instagram)": {
   "de": "fr",
   "ar": "Habi Downtown, Instagram",
   "en": "Habibi Downtown, Instagram"
- },
- "Habibi Downtown, Tunis": {
-  "de": "fr",
-  "ar": "حبيبى داونتاون، تونس",
-  "en": "Habibi Downtown, Tunis"
  },
  "Hamdi RydEr (Instagram)": {
   "de": "fr",
@@ -618,11 +613,6 @@
   "de": "fr",
   "ar": "المعاهد والمراكز الثقافية",
   "en": "Cultural institutes and centres"
- },
- "JAOU TUNIS 2026": {
-  "de": "fr",
-  "ar": "JAOU TUNIS 2026",
-  "en": "JAOU TUNIS 2026"
  },
  "Jaou Tunis (Instagram)": {
   "de": "fr",
@@ -903,11 +893,6 @@
   "de": "fr",
   "ar": "نادي المايا",
   "en": "Maya Club"
- },
- "Mess des Officiers": {
-  "de": "fr",
-  "ar": "أعضاء المكتب",
-  "en": "Officers' Mess"
  },
  "Mess des Officiers": {
   "de": "fr",
@@ -1359,16 +1344,6 @@
   "ar": "ثلاثمائة وستون",
   "en": "Three hundred and sixty"
  },
- "Tunis": {
-  "de": "fr",
-  "ar": "تونس",
-  "en": "Tunis"
- },
- "Tunis, get ready for a night of good music & great vibes!": {
-  "de": "en",
-  "fr": "Tunis, préparez-vous pour une nuit de bonne musique et de grandes vibrations !",
-  "ar": "(تونس) استعدي لليلة من الموسيقى الجيدة"
- },
  "Tunisia Comedy Festival (Instagram)": {
   "de": "en",
   "fr": "Festival de la comédie tunisienne (Instagram)",
@@ -1414,6 +1389,11 @@
   "ar": "Via Mercato",
   "en": "Via Mercato"
  },
+ "W7CQ+4W5, Gammarth, Gammarth": {
+  "de": "fr",
+  "ar": "W7CQ+4W5, Gammarth, Gammarth",
+  "en": "W7CQ+4W5, Gammarth, Gammarth"
+ },
  "Yasmine Hammamet Bar": {
   "de": "fr",
   "ar": "Yasmine Hammamet Bar",
@@ -1423,6 +1403,11 @@
   "de": "fr",
   "ar": "نادي ياسمين للشاطئ",
   "en": "Yassmine Beach Club"
+ },
+ "You’ve been waiting for it. We’re back !": {
+  "de": "en",
+  "fr": "Vous l'attendiez. Nous sommes de retour !",
+  "ar": "وقد كنت تنتظر ذلك. لقد عدنا!"
  },
  "Yüka Tunis": {
   "de": "fr",
@@ -1558,11 +1543,6 @@
   "de": "ar",
   "fr": "Route de plage ensoleillée.",
   "en": "Sunin beach road."
- },
- "مركز الفنون B7L9": {
-  "de": "ar",
-  "fr": "Centre des arts B7L9",
-  "en": "Arts Centre B7L9"
  },
  "نهج 2 مارس 1934": {
   "de": "ar",

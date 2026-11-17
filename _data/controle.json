@@ -5,22 +5,16 @@
  "granularite": {
   "sources": {
    "ig-habibi-downtown": {
-    "n": 2,
-    "precis": 2,
+    "n": 1,
+    "precis": 1,
     "pourcent": 100,
     "defauts": [],
-    "manques": [
-     {
-      "code": "sans_heure",
-      "texte": "heure",
-      "n": 1
-     }
-    ]
+    "manques": []
    },
    "ig-jaou-tunis": {
-    "n": 3,
-    "precis": 2,
-    "pourcent": 67,
+    "n": 1,
+    "precis": 0,
+    "pourcent": 0,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -29,11 +23,25 @@
       "exemple": "Art Explora Festival"
      }
     ],
+    "manques": []
+   },
+   "ig-tn-techno-community": {
+    "n": 1,
+    "precis": 0,
+    "pourcent": 0,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 1,
+      "exemple": "You’ve been waiting for it. We’re back !"
+     }
+    ],
     "manques": [
      {
       "code": "sans_heure",
       "texte": "heure",
-      "n": 2
+      "n": 1
      }
     ]
    },
@@ -60,6 +68,26 @@
    }
   },
   "scrapers": {
+   "instagram": {
+    "n": 3,
+    "precis": 1,
+    "pourcent": 33,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 2,
+      "exemple": "Art Explora Festival"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
+     }
+    ]
+   },
    "resident_advisor": {
     "n": 2,
     "precis": 1,
@@ -73,26 +101,6 @@
      }
     ],
     "manques": []
-   },
-   "instagram": {
-    "n": 5,
-    "precis": 4,
-    "pourcent": 80,
-    "defauts": [
-     {
-      "code": "lieu_vague",
-      "texte": "lieu à préciser",
-      "n": 1,
-      "exemple": "Art Explora Festival"
-     }
-    ],
-    "manques": [
-     {
-      "code": "sans_heure",
-      "texte": "heure",
-      "n": 3
-     }
-    ]
    },
    "tunis_events": {
     "n": 2,
