@@ -48,7 +48,8 @@
   "lu_le": "2026-11-17"
  },
  "Grand Italia": {
-  "lu_le": "2026-11-15"
+  "lu_le": "2026-11-17",
+  "site_lu": 2
  },
  "L'imprévu": {
   "abonnes": 37876,
@@ -76,7 +77,9 @@
  },
  "Le Méditerranée": {
   "image_site": "https://lemediterranee.com.tn/wp-content/uploads/2025/01/restaurant.jpeg",
-  "lu_le": "2026-11-17"
+  "lu_le": "2026-11-17",
+  "menu_site": "https://www.lemediterranee.com.tn/",
+  "site_lu": 2
  },
  "Osiris Club Djerba": {
   "abonnes": 7631,
@@ -103,7 +106,8 @@
  },
  "Restaurant Ton Ton": {
   "image_site": "https://tonton.tn/wp-content/uploads/2024/01/12.png",
-  "lu_le": "2026-11-17"
+  "lu_le": "2026-11-17",
+  "site_lu": 2
  },
  "The Moon Club Djerba": {
   "abonnes": 631,
@@ -130,7 +134,8 @@
  },
  "The Sunset Family Club": {
   "image_site": "https://thesunsetfamilyclub.com/og-image.jpg",
-  "lu_le": "2026-11-17"
+  "lu_le": "2026-11-17",
+  "site_lu": 2
  },
  "Unidos Club by El Pacha": {
   "abonnes": 8269,
