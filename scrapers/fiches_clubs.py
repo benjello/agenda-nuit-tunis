@@ -85,7 +85,7 @@ def depuis_site(url: str) -> dict:
                 fiche["telephone_site"] = str(o["telephone"])
             m = o.get("hasMenu") or o.get("menu")
             m = m.get("url") or m.get("@id") if isinstance(m, dict) else m
-            if isinstance(m, str) and m.startswith("http") and "menu_site" not in fiche:
+            if isinstance(m, str) and m.startswith("http") and m.rstrip("/") != url.rstrip("/") and "menu_site" not in fiche:
                 fiche["menu_site"] = m
             if o.get("servesCuisine") and "cuisine_site" not in fiche:
                 c = o["servesCuisine"]
