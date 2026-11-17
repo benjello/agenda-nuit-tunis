@@ -117,5 +117,8 @@ description: "Les clubs, discothèques, cabarets, bars et restaurants ouverts ta
     });
   });
   document.addEventListener('ville', f); f();
+  // Lien direct vers un type : …/clubs/#restaurant (bouton « Restaurant » de l'agenda)
+  var choisi = document.querySelector('#clubs-types button[data-type="' + location.hash.slice(1) + '"]');
+  if (choisi) choisi.click();
 })();
 </script>

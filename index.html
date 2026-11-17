@@ -35,6 +35,8 @@ layout: default
 <div class="filters" id="filters">
   <button class="active" data-filter="all" data-t="tout">Tout</button>
   {% for c in site.data.categories %}<button data-filter="{{ c[0] }}" data-t="cat.{{ c[0] }}"{% if c[1].aide %} title="{{ c[1].aide | escape }}"{% endif %}>{{ c[1].label }}</button>{% endfor %}
+  {%- comment -%} Les restaurants ne sont pas des événements : le bouton mène à leur liste sur la page Clubs & bars. {%- endcomment %}
+  {%- for c in site.data.types_clubs %}<a class="lien-filtre" href="{{ '/clubs/' | relative_url }}#{{ c[0] }}" data-t="cat.{{ c[0] }}"{% if c[1].aide %} title="{{ c[1].aide | escape }}"{% endif %}>{{ c[1].label }}</a>{% endfor %}
 </div>
 <div class="cases">
   <label><input type="checkbox" id="gratuit"> <span data-t="seul_gratuit">Gratuit</span></label>

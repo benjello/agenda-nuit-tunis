@@ -20,6 +20,8 @@ main { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; }
 .filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .filters button { border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: .9rem; cursor: pointer; }
 .filters button.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.filters a.lien-filtre { border: 1px dashed var(--line); background: var(--card); color: var(--fg); border-radius: 999px; padding: 4px 12px; font-size: .9rem; text-decoration: none; display: inline-flex; align-items: center; }
+.filters a.lien-filtre::after { content: " →"; white-space: pre; }
 .month h2 { font-size: 1.1rem; margin: 28px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .event { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
 .event-date { flex: 0 0 48px; text-align: center; line-height: 1.1; }
@@ -228,7 +230,7 @@ a.bouton { border: 1px solid var(--line); padding: 6px 12px; border-radius: 8px;
   .panneau-filtres { position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow-y: auto; display: flex; flex-direction: column;
     background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
   .panneau-filtres .recherche { order: -1; margin-top: 0; }
-  .panneau-filtres .filters button { font-size: .85rem; padding: 3px 10px; }
+  .panneau-filtres .filters button, .panneau-filtres .filters a.lien-filtre { font-size: .85rem; padding: 3px 10px; }
   .panneau-filtres .cases { flex-direction: column; margin-top: 6px; }
   .titre-filtre { display: block; margin: 10px 0 4px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
   .colonne-agenda > .month:first-of-type h2, #en-cours h2 { margin-top: 8px; }
@@ -331,7 +333,7 @@ main:focus { outline: none; }
   /* Filtres : « Quand » en une rangée qui défile ; le reste dans le tiroir « Filtres » */
   .panneau-filtres .titre-filtre { display: none; }
   .moments { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
-  .moments button, .filters button { flex: 0 0 auto; min-height: 40px; }
+  .moments button, .filters button, .filters a.lien-filtre { flex: 0 0 auto; min-height: 40px; }
   .bouton-filtres { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 0 0 8px; padding: 6px 16px; font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 999px; cursor: pointer; }
   .bouton-filtres[aria-expanded="true"] { border-color: var(--fg); }
   .nb-filtres { background: var(--accent); color: #fff; border-radius: 999px; font-size: .75rem; min-width: 20px; padding: 0 6px; text-align: center; }
