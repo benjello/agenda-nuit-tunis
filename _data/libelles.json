@@ -21,8 +21,8 @@
  },
  "3 نهج الإمام سحنون": {
   "de": "ar",
-  "fr": "Trois approches de l'Imam sont en cours.",
-  "en": "Three Imam approaches are in the process."
+  "fr": "L'approche de l'Imam est en baisse.",
+  "en": "The Imam's approach is going down."
  },
  "32 نهج المعز, تونس": {
   "de": "ar",
@@ -36,8 +36,8 @@
  },
  "78 ممر محمد الخامس, تونس": {
   "de": "ar",
-  "fr": "78 Muser Muhammad V, Tunisie",
-  "en": "78 Muser Muhammad V, Tunisia"
+  "fr": "78 couloir Muhamed V, Tunisie",
+  "en": "78 Muhamed V corridor, Tunisia"
  },
  "93 شارع محمد الخامس, تونس": {
   "de": "ar",
@@ -46,8 +46,8 @@
  },
  "98191329 شارع اﻹمام مسلم إبن الحجاج": {
   "de": "ar",
-  "fr": "98191329 Imam Muslam Al-Bajjj",
-  "en": "98191329 Imam Muslam Al-Bajjj"
+  "fr": "98191329 Imam Muslam Al-Sabajaj",
+  "en": "98191329 Imam Muslam Al-Sabajaj"
  },
  "AKEN A: MATTER PHASE I: LAYERED SYSTEM DYNAMICS": {
   "de": "fr",
@@ -104,11 +104,6 @@
   "ar": "(أكسل دي) Bodega",
   "en": "Axel D. Bodega"
  },
- "AÏNA": {
-  "de": "fr",
-  "ar": "AINA",
-  "en": "AINA"
- },
  "B7L9 Art Centre": {
   "de": "fr",
   "ar": "B7L9 مركز الفنون",
@@ -118,11 +113,6 @@
   "de": "fr",
   "ar": "BORA BORA Disco",
   "en": "BORA BORA Disco"
- },
- "BOUNCY CLUB - Third Edition": {
-  "de": "fr",
-  "ar": "BOUNCY CLUB - Third Edition",
-  "en": "BOUNCY CLUB - Third Edition"
  },
  "BURGER STOP - Tunis": {
   "de": "fr",
@@ -363,11 +353,6 @@
   "de": "fr",
   "ar": "التجمعات والجمعيات ورجال الدين والفنانين",
   "en": "Collectives, associations, DJs and artists"
- },
- "Complexe La Tour Blanche – Gammarth": {
-  "de": "fr",
-  "ar": "مجمّع البرج الأبيض - جامارث",
-  "en": "The White Tower Complex – Gammarth"
  },
  "Concert live": {
   "de": "en",
@@ -706,8 +691,8 @@
  },
  "La Daurade": {
   "de": "fr",
-  "ar": "\"الدورادي\"",
-  "en": "The Daurade"
+  "ar": "\"الدورايد\"",
+  "en": "The Dauride"
  },
  "La Grotte": {
   "de": "fr",
@@ -881,7 +866,7 @@
  },
  "Le zink": {
   "de": "fr",
-  "ar": "الزنك",
+  "ar": "\"الزنك\"",
   "en": "The zink"
  },
  "Les Berges du Lac 1": {
@@ -919,10 +904,10 @@
   "ar": "نادي المايا",
   "en": "Maya Club"
  },
- "Mercredi 11 Novembre": {
+ "Mess des Officiers": {
   "de": "fr",
-  "ar": "الأربعاء، 11 تشرين الثاني/نوفمبر",
-  "en": "Wednesday, 11 November"
+  "ar": "أعضاء المكتب",
+  "en": "Officers' Mess"
  },
  "Mess des Officiers": {
   "de": "fr",
@@ -1179,6 +1164,11 @@
   "ar": "Salsa Disco Djerba",
   "en": "Salsa Disco Djerba"
  },
+ "Saveurs créatives, ambiance authentique. Bienvenue à L’Imprévu. By l’aromate\nRéservation +21693207204": {
+  "de": "en",
+  "fr": "Saveurs créatifs, ambiance authentique.\nBienvenue à L'Imprévu.\nPar aromate\nRéservation +21693207204",
+  "ar": "أنقذوا المجازيّات، الطموحات.\nBienvenue à L’Imprévu.\nعن طريق &quot; لام &quot;\nRéservation +21693207204"
+ },
  "Secret Room": {
   "de": "fr",
   "ar": "الغرفة السرية",
@@ -1341,7 +1331,7 @@
  },
  "The Sunset Family Club": {
   "de": "en",
-  "fr": "Le club de la famille Sunset",
+  "fr": "Le Club de la famille Sunset",
   "ar": "نادي عائلة (سنت)"
  },
  "Théâtre": {
@@ -1361,7 +1351,7 @@
  },
  "Tozeriana Restaurant - café": {
   "de": "fr",
-  "ar": "مطعم تورزيانا - مقهى",
+  "ar": "مطاعم تورزيانا - مقهى",
   "en": "Tozeriana Restaurant - café"
  },
  "Trois Cent Soixante": {
@@ -1424,11 +1414,6 @@
   "ar": "Via Mercato",
   "en": "Via Mercato"
  },
- "W7CQ+4W5, Gammarth, Gammarth": {
-  "de": "fr",
-  "ar": "W7CQ+4W5, Gammarth, Gammarth",
-  "en": "W7CQ+4W5, Gammarth, Gammarth"
- },
  "Yasmine Hammamet Bar": {
   "de": "fr",
   "ar": "Yasmine Hammamet Bar",
@@ -1446,7 +1431,7 @@
  },
  "burger, salad, pasta, beef & chicken, cheesy saucy poutine": {
   "de": "fr",
-  "ar": "برغر، سلطة، معكرة، دجاج لحم البقر، صنوبر النقانق الجبنة",
+  "ar": "برغر، سلطة، معكرة، دجاج لحم، صنوبر نقانق جبنة",
   "en": "burger, salad, pasta, beef & chicken, cheesey sausage poutine"
  },
  "burger, sandwich, terrasse": {
@@ -1461,7 +1446,7 @@
  },
  "fine dining, french": {
   "de": "fr",
-  "ar": "عشاء غرامي، فرنسي",
+  "ar": "عشاء جيد، فرنسي",
   "en": "fine dining, french"
  },
  "fish, seafood": {
@@ -1481,7 +1466,7 @@
  },
  "japanese, sushi": {
   "de": "fr",
-  "ar": "اليابانية، السوشي",
+  "ar": "ياباني، سوشي",
   "en": "Japanese, sushi"
  },
  "les indécis": {
@@ -1506,13 +1491,13 @@
  },
  "regional, seafood, pasta, fish, noodle, octopus": {
   "de": "fr",
-  "ar": "المأكولات البحرية الإقليمية، المعكرونة، الأسماك، العقيدة، الأخطبوط",
+  "ar": "إقليمي، مأكولات بحرية، مراعي، سمك، نودل، خطبوط",
   "en": "regional, seafood, pasta, fish, noodle, octopus"
  },
  "seafood, burger, european": {
   "de": "fr",
-  "ar": "المأكولات البحرية، البرجر، أوروبا",
-  "en": "seafood, burger, European"
+  "ar": "مأكولات بحرية، برجر، أوروبيان",
+  "en": "seafood, burger, european"
  },
  "seafood, pizza, regional, burger, chicken, steak house, italian, terrasse": {
   "de": "fr",
@@ -1571,7 +1556,7 @@
  },
  "طريق الشاطئ سونين": {
   "de": "ar",
-  "fr": "Une route ensoleillée.",
+  "fr": "Route de plage ensoleillée.",
   "en": "Sunin beach road."
  },
  "مركز الفنون B7L9": {

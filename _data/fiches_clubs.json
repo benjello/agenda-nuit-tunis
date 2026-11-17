@@ -1,6 +1,6 @@
 {
  "Calypso Club Hammamet": {
-  "abonnes": 77531,
+  "abonnes": 77346,
   "affiches": [
    {
     "date": "2026-09-19",
@@ -19,11 +19,11 @@
    }
   ],
   "bio": "Since 1971 ✨\nWhere Else?\n📩 DM for Reservations",
-  "lu_le": "2026-11-08",
+  "lu_le": "2026-11-17",
   "photo": "assets/clubs/calypso-club-hammamet/profil.jpg"
  },
  "Cercle Club": {
-  "abonnes": 6399,
+  "abonnes": 6381,
   "affiches": [
    {
     "date": "2025-07-17",
@@ -41,37 +41,61 @@
     "lien": "https://www.instagram.com/p/DMFnssbop0h/"
    }
   ],
-  "lu_le": "2026-11-08",
+  "lu_le": "2026-11-17",
   "photo": "assets/clubs/cercle-club/profil.jpg"
  },
  "Grand Italia": {
   "lu_le": "2026-11-15"
+ },
+ "L'imprévu": {
+  "abonnes": 37876,
+  "affiches": [
+   {
+    "date": "2026-11-14",
+    "image": "assets/clubs/l-imprevu/DfvScyUCdnE.jpg",
+    "lien": "https://www.instagram.com/p/DfvScyUCdnE/"
+   },
+   {
+    "date": "2026-11-11",
+    "image": "assets/clubs/l-imprevu/DfnP-JQnHsI.jpg",
+    "lien": "https://www.instagram.com/p/DfnP-JQnHsI/"
+   },
+   {
+    "date": "2026-11-07",
+    "image": "assets/clubs/l-imprevu/Dfbx4rGqy21.jpg",
+    "lien": "https://www.instagram.com/p/Dfbx4rGqy21/"
+   }
+  ],
+  "bio": "Saveurs créatives, ambiance authentique. Bienvenue à L’Imprévu. By l’aromate\nRéservation +21693207204",
+  "lu_le": "2026-11-17",
+  "photo": "assets/clubs/l-imprevu/profil.jpg",
+  "site_insta": "https://maps.app.goo.gl/PkX9afD23oxwFi2t8"
  },
  "Le Méditerranée": {
   "image_site": "https://lemediterranee.com.tn/wp-content/uploads/2025/01/restaurant.jpeg",
   "lu_le": "2026-11-17"
  },
  "Osiris Club Djerba": {
-  "abonnes": 7621,
+  "abonnes": 7631,
   "affiches": [
    {
-    "date": "2026-11-07",
-    "image": "assets/clubs/osiris-club-djerba/Dfck0nnEl9d.jpg",
-    "lien": "https://www.instagram.com/p/Dfck0nnEl9d/"
+    "date": "2026-11-16",
+    "image": "assets/clubs/osiris-club-djerba/DfzypF4mcUB.jpg",
+    "lien": "https://www.instagram.com/p/DfzypF4mcUB/"
    },
    {
-    "date": "2026-11-06",
-    "image": "assets/clubs/osiris-club-djerba/DfZxPUrDN_G.jpg",
-    "lien": "https://www.instagram.com/p/DfZxPUrDN_G/"
+    "date": "2026-11-14",
+    "image": "assets/clubs/osiris-club-djerba/DfuwrpkDPvc.jpg",
+    "lien": "https://www.instagram.com/p/DfuwrpkDPvc/"
    },
    {
-    "date": "2026-11-05",
-    "image": "assets/clubs/osiris-club-djerba/DfYBmLwEQtu.jpg",
-    "lien": "https://www.instagram.com/p/DfYBmLwEQtu/"
+    "date": "2026-11-11",
+    "image": "assets/clubs/osiris-club-djerba/Dfm7cCRDTv-.jpg",
+    "lien": "https://www.instagram.com/p/Dfm7cCRDTv-/"
    }
   ],
   "bio": "OSIRIS CLUB – Djerba\n✨ Nights to remember • Soirées inoubliables\n🎧 DJ Live | 🍸 Lounge & Cocktails | 💃 Ambiance unique\n🌙 أسطورة الليل في جربة",
-  "lu_le": "2026-11-08",
+  "lu_le": "2026-11-17",
   "photo": "assets/clubs/osiris-club-djerba/profil.jpg"
  },
  "Restaurant Ton Ton": {
@@ -79,26 +103,26 @@
   "lu_le": "2026-11-17"
  },
  "The Moon Club Djerba": {
-  "abonnes": 478,
+  "abonnes": 631,
   "affiches": [
    {
-    "date": "2026-11-08",
-    "image": "assets/clubs/the-moon-club-djerba/DfeWoZCAFTR.jpg",
-    "lien": "https://www.instagram.com/p/DfeWoZCAFTR/"
+    "date": "2026-11-17",
+    "image": "assets/clubs/the-moon-club-djerba/Df1oD49Pxdv.jpg",
+    "lien": "https://www.instagram.com/p/Df1oD49Pxdv/"
    },
    {
-    "date": "2026-11-07",
-    "image": "assets/clubs/the-moon-club-djerba/Dfccv03ktTV.jpg",
-    "lien": "https://www.instagram.com/p/Dfccv03ktTV/"
+    "date": "2026-11-17",
+    "image": "assets/clubs/the-moon-club-djerba/Df0t2TsBrXh.jpg",
+    "lien": "https://www.instagram.com/p/Df0t2TsBrXh/"
    },
    {
-    "date": "2026-11-07",
-    "image": "assets/clubs/the-moon-club-djerba/DfcRvZQj2Vf.jpg",
-    "lien": "https://www.instagram.com/p/DfcRvZQj2Vf/"
+    "date": "2026-11-16",
+    "image": "assets/clubs/the-moon-club-djerba/DfzhJDKDtoM.jpg",
+    "lien": "https://www.instagram.com/p/DfzhJDKDtoM/"
    }
   ],
   "bio": "La page officielle",
-  "lu_le": "2026-11-08",
+  "lu_le": "2026-11-17",
   "photo": "assets/clubs/the-moon-club-djerba/profil.jpg"
  },
  "The Sunset Family Club": {
@@ -106,7 +130,7 @@
   "lu_le": "2026-11-17"
  },
  "Unidos Club by El Pacha": {
-  "abonnes": 8282,
+  "abonnes": 8269,
   "affiches": [
    {
     "date": "2024-12-03",
@@ -125,7 +149,7 @@
    }
   ],
   "bio": "🎶 UNIDOS : Rythme & magie à Hammamet ✨ Ancien Havana Club, toujours en fête depuis '71 ! 🌟🍹\n BY : @el.pacha.hammamet  🌚",
-  "lu_le": "2026-11-08",
+  "lu_le": "2026-11-17",
   "photo": "assets/clubs/unidos-club-by-el-pacha/profil.jpg"
  }
 }

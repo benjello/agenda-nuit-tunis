@@ -37,19 +37,6 @@
      }
     ]
    },
-   "ig-nf-event": {
-    "n": 1,
-    "precis": 1,
-    "pourcent": 100,
-    "defauts": [],
-    "manques": [
-     {
-      "code": "sans_heure",
-      "texte": "heure",
-      "n": 1
-     }
-    ]
-   },
    "resident-advisor": {
     "n": 2,
     "precis": 1,
@@ -88,9 +75,9 @@
     "manques": []
    },
    "instagram": {
-    "n": 6,
-    "precis": 5,
-    "pourcent": 83,
+    "n": 5,
+    "precis": 4,
+    "pourcent": 80,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -103,7 +90,7 @@
      {
       "code": "sans_heure",
       "texte": "heure",
-      "n": 4
+      "n": 3
      }
     ]
    },

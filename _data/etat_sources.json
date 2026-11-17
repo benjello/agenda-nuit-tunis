@@ -108,13 +108,12 @@
   "ig-nf-event": {
     "attente": null,
     "dernier_non_vide": "2026-11-11T12:46:08",
-    "dernier_passage": "2026-11-17T11:07:33",
-    "dernier_succes": "2026-11-11T12:46:08",
-    "erreur": "HTTPError: 401 Client Error: Unauthorized for url: https://api.apify.com/v2/acts/apify~instagram-scraper/run-sync-get-dataset-items",
-    "nb": 1,
-    "ok": false,
-    "premier_passage": "2026-11-09T13:43:39",
-    "sans_heure": 1
+    "dernier_passage": "2026-11-17T11:17:43",
+    "dernier_succes": "2026-11-17T11:17:43",
+    "erreur": null,
+    "nb": 0,
+    "ok": true,
+    "premier_passage": "2026-11-09T13:43:39"
   },
   "ig-osiris-djerba": {
     "attente": null,
