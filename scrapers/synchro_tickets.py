@@ -66,9 +66,10 @@ def issues_ouvertes(depot, jeton):
         })
         with urllib.request.urlopen(requete, timeout=30) as reponse:
             lot = json.load(reponse)
-        # le ticket de tri des comptes (refait chaque lundi par tri_comptes.py) n'est pas un point du backlog
+        # le ticket de tri des comptes (refait chaque lundi par tri_comptes.py) et les alertes ouvertes
+        # et fermées seules par le workflow des scrapers (alerte.py, suivi.py) ne sont pas des points du backlog
         issues += [{"number": i["number"], "title": i["title"]} for i in lot if "pull_request" not in i
-                   and "tri-comptes" not in {e.get("name") for e in i.get("labels") or []}]
+                   and not {"tri-comptes", "alerte"} & {e.get("name") for e in i.get("labels") or []}]
         if len(lot) < 100:
             return issues
         page += 1

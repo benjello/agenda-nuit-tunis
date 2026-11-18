@@ -23,6 +23,10 @@ Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées d
 
 ## Fait (18 novembre 2026)
 
+- [x] Suivi automatique : une issue « Source en panne : <id> » par source en échec deux passages de suite,
+      mise à jour et fermée par le workflow des scrapers (`scrapers/suivi.py`) ; les alertes (étiquette `alerte`)
+      sortent de la synchro du backlog. Une tâche Claude, chaque soir, relit les alertes, propose les correctifs
+      clairs en PR (fusionnés seuls si tests verts, pour une correction ciblée de source) et envoie un résumé.
 - [x] Instagram : « Ce jeudi : live de ZANZANA », « ce soir », « demain » donnent la date quand l'affiche n'en donne pas
       (Rock'n'Rolla : 2 soirées comprises sur 6 publications avant, 6 sur 6 après) ; le titre ne garde plus
       « Dimanche 15 Novembre » ni le « avec » d'un compte cité (`scrapers/lecteurs.py`).

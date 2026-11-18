@@ -182,6 +182,19 @@ bundle exec jekyll serve
 
 Puis ouvrez http://localhost:4000/agenda-nuit-tunis/
 
+## Suivi automatique
+
+Après chaque passage quotidien, le workflow des scrapers tient trois sortes d'issues (étiquette `alerte`),
+ouvertes, mises à jour et fermées sans intervention :
+
+- « Source en panne : <id> », une par source dont la lecture échoue deux passages de suite (`scrapers/suivi.py`) ;
+- « Sources silencieuses », la liste des sources muettes depuis 14 jours (`scrapers/alerte.py`) ;
+- « Crédit Apify », à 80 % de la limite du mois (`scrapers/credit_apify.py`).
+
+Une tâche Claude programmée chaque soir relit ces issues, ouvre une PR quand la correction est claire
+(« Closes #N ») et envoie un résumé à Mahdi. Une correction ciblée d'un scraper ou d'une source est fusionnée
+seule quand les tests sont verts ; tout le reste (workflows, mise en page) attend la relecture de Mahdi.
+
 ## Prochaines étapes
 
 Le suivi détaillé (état de chaque source, marche à suivre pour vérifier une nouvelle source) est dans [BACKLOG.md](BACKLOG.md).
@@ -189,5 +202,4 @@ Le suivi détaillé (état de chaque source, marche à suivre pour vérifier une
 
 - Formulaire de contribution (issue GitHub préremplie, ou Google Form) pour signaler un événement.
 - Brancher les sources « à étudier » du registre.
-- Contrôle de santé : alerte automatique quand une source meurt.
 - Pages Facebook : lire aussi les publications (affiches) et en extraire les séances.
