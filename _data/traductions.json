@@ -8,6 +8,10 @@
    "ar": "BOUNCY CLUB - Third Edition",
    "en": "BOUNCY CLUB - Third Edition"
   },
+  "ChichBich Au Sous-Sol 21 Novembre": {
+   "ar": "تشيتشيبيتش في سوب سول تشرين الثاني/نوفمبر 21",
+   "en": "ChichBich In Sub-Sol November 21"
+  },
   "Nōmad Man Festival 2026": {
    "fr": "Nōmad Man Festival 2026",
    "ar": "Nmad Man Festival 2026"
@@ -46,6 +50,11 @@
    "cle": "6bd2d78510d5",
    "fr": "Linéarité : ASECHS\nOrganisé par T.T.C\nVous l'attendiez.\nNous revoilà !\nBOUNCY CLUB - Troisième édition samedi 28.11.2026 STUDIO 52 - Hôtel Les Ambassadeurs, Tunis Un nouveau chapitre, la même énergie.\nPréparez-vous pour une autre nuit de rebond pur.\nLine-up: -ASECHS -EMOU -IDO -UKIYO Rendez-vous sur le dancefloor.\n.\n.\n.\n.\n.\n.\n.\n.\nTTC",
    "ar": "Line-up : ASECHS\nOrganisé par T.T.C\nلقد كنت في انتظار ذلك.\nلقد عدنا!\nBOUNCY CLUB - Third Edition Saturday, 28.11.2026 STUDIO 52 - Hôtel Les Ambassadeurs, Tunis A new chapter, the same energy.\nاستعدوا لليلة أخرى من القفز النقي.\n(آسيتشيس) - (إيدو) - (أوكيو) -\n.\n.\n.\n.\n.\n.\n.\n.\nTTC"
+  },
+  "_events/auto/tunis-events/2026-11-21-chichbich-au-sous-sol-21-novembre.md": {
+   "cle": "ac89b52658e9",
+   "ar": "سيّدي، نحن ذاهبون إلى (سباسول)!\nفرقة (تشيتش بيك) الحية تصل لمساء مليء بالموسيقى، مزاج جيد ومشاركة!\nيوم السبت، 21 تشرين الثاني/نوفمبر من الساعة 00/8 إلى الساعة 00/11 لا فيريري - منضه 7 بيس\nبالنسبة للتحفظات على شخصين، يمكنك أن تتشارك طاولة مع زوجين آخرين.\nThe Sub-Sol encourages meetings and sharing in a friendly atmosphere.\nLOS\nو دائماً في روح الـ (سوبر سول) أمسية إحتفالية و ودودة",
+   "en": "SAY, WE'RE GOING BACK TO SUBSOL!\nChichBich Live Band arrives for an evening full of music, good mood and sharing!\nLive Band Saturday, November 21 From 8pm to 11pm La Verrière – Menzah 7 Bis\nNB: For reservations of 2 people, you may share your table with another couple.\nThe Sub-Sol encourages meetings and sharing in a friendly atmosphere.\n的\nAnd always in the spirit of the Sub-Sol: a festive, friendly evening"
   },
   "_events/auto/tunis-events/2026-11-21-connivences-21-11-26.md": {
    "cle": "491631c3c83a",

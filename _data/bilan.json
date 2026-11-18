@@ -94,11 +94,11 @@
  },
  {
   "semaine": "2026-S47",
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "a_venir": 7,
   "sept_jours": 4,
   "sources_actives": 21,
-  "sources_avec_evenements": 3,
+  "sources_avec_evenements": 2,
   "sources_muettes": [
    "fb-61595612945174",
    "fb-recherche-soirees",
@@ -107,6 +107,7 @@
    "ig-echos-electrik",
    "ig-eddisco",
    "ig-fabrika",
+   "ig-habibi-downtown",
    "ig-hamdi-ryder",
    "ig-kadhem",
    "ig-nf-event",
@@ -123,19 +124,16 @@
    "tunis": 4
   },
   "par_categorie": {
-   "bar": 1,
+   "concert": 2,
    "festival": 1,
-   "club": 1,
-   "concert": 1
+   "club": 1
   },
   "par_genre": {
-   "agenda": 2,
-   "lieu": 1,
+   "agenda": 3,
    "festival": 1
   },
   "par_source": {
-   "tunis-events": 2,
-   "ig-habibi-downtown": 1,
+   "tunis-events": 3,
    "ig-jaou-tunis": 1
   }
  }

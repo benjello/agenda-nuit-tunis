@@ -1,5 +1,5 @@
 {
- "date": "2026-11-17",
+ "date": "2026-11-18",
  "corriges": 0,
  "a_verifier": [],
  "granularite": {
@@ -60,8 +60,8 @@
     "manques": []
    },
    "tunis-events": {
-    "n": 2,
-    "precis": 2,
+    "n": 3,
+    "precis": 3,
     "pourcent": 100,
     "defauts": [],
     "manques": []
@@ -103,8 +103,8 @@
     "manques": []
    },
    "tunis_events": {
-    "n": 2,
-    "precis": 2,
+    "n": 3,
+    "precis": 3,
     "pourcent": 100,
     "defauts": [],
     "manques": []

@@ -79,6 +79,11 @@
   "ar": "جداول الأعمال والتذاكر",
   "en": "Agendas and ticketing"
  },
+ "Ariana": {
+  "de": "fr",
+  "ar": "Ariana",
+  "en": "Ariana"
+ },
  "Art Explora Festival": {
   "de": "en",
   "fr": "Festival d'Art Explora",
@@ -348,6 +353,11 @@
   "de": "fr",
   "ar": "عند (زاك)",
   "en": "At Zak's"
+ },
+ "ChichBich Au Sous-Sol 21 Novembre": {
+  "de": "fr",
+  "ar": "تشيتشيبيتش في سوب سول تشرين الثاني/نوفمبر 21",
+  "en": "ChichBich In Sub-Sol November 21"
  },
  "China Town Resto": {
   "de": "fr",
@@ -808,6 +818,11 @@
   "de": "fr",
   "ar": "The Farfalle Suite",
   "en": "The Farfalle Suite"
+ },
+ "La Verrière (Le sous-sol)- Café Resto": {
+  "de": "fr",
+  "ar": "La Verrière (The basement) - Café Resto",
+  "en": "La Verrière (The basement) - Café Resto"
  },
  "La Villa Beach": {
   "de": "fr",
@@ -1498,6 +1513,11 @@
   "de": "en",
   "fr": "Unidos Club par El Pacha",
   "ar": "نادي (إل باشا)"
+ },
+ "V532+42X, Ariana, Ariana": {
+  "de": "fr",
+  "ar": "V532+42X, Ariana, Ariana",
+  "en": "V532+42X, Ariana, Ariana"
  },
  "Vape - Store": {
   "de": "fr",
