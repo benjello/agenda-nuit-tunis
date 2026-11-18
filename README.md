@@ -30,6 +30,11 @@ address: "Adresse, Tunis"     # facultatif
 category: club                # voir la liste ci-dessus
 price: "20 DT"                # facultatif
 link: "https://…"             # page d'origine : Facebook, site du lieu, billetterie…
+age_min: "18"                 # facultatif : âge minimum (sinon lu dans le texte : « 18+ »)
+dress_code: "Tenue correcte"  # facultatif
+liste: "Entrée sur liste"     # facultatif : « Sur invitation », « Réservation obligatoire »
+tarif_nuit: "20 DT avant minuit · 30 DT après"   # facultatif
+reservation: "+216 20 000 000"                   # facultatif : numéro pour réserver (appel, WhatsApp)
 ---
 Une courte description de l'événement (facultatif).
 ```
@@ -40,6 +45,10 @@ Une courte description de l'événement (facultatif).
 [`_data/categories.yml`](_data/categories.yml).
 
 Les événements passés disparaissent automatiquement de la page d'accueil. Pas besoin de les supprimer.
+
+**Soirée de chaque semaine** (live du mercredi, karaoké du mardi) : une entrée dans
+[`_data/recurrentes.yml`](_data/recurrentes.yml) suffit ; les deux semaines à venir sont publiées automatiquement,
+tant que `verifie_le` (dernière annonce du lieu) a moins de 60 jours.
 
 **Par le formulaire** : [Proposer un événement](https://github.com/benjello/agenda-nuit-tunis/issues/new?template=evenement.yml).
 Pour le publier, poser l'étiquette `valide` sur l'issue : le fichier est créé dans `_events/propositions/` et l'issue fermée.

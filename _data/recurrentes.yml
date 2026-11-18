@@ -1,0 +1,14 @@
+# Soirées récurrentes (scrapers/sources/recurrentes.py) : un rendez-vous fixe d'un lieu,
+# noté une fois, publié chaque semaine pour les deux semaines à venir.
+# `verifie_le` : date de la dernière preuve (publication du lieu, appel). Sans preuve depuis 60 jours,
+# la soirée n'est plus publiée. Mettre la date à jour quand le lieu l'annonce de nouveau.
+# `jours` : lundi … dimanche, un seul ou une liste. `fin` le lendemain si plus tôt que `heure`.
+
+- titre: Rywa Live Band
+  lieu: Rock'n'Rolla, La Goulette
+  jours: mercredi
+  heure: "21:00"
+  categorie: concert
+  lien: https://www.instagram.com/rocknrollagoulettepub/
+  description: "Live band chaque mercredi au Rock'n'Rolla, happy hour sur les bières jusqu'à 21 h. Réservation conseillée."
+  verifie_le: 2026-11-11   # « Ce mercredi, au Rock'n'Rolla : Rywa Live Band » (3 et 11 novembre)

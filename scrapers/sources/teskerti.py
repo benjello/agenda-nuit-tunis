@@ -109,6 +109,25 @@ def lire_fiche(url: str, categorie: str) -> Evenement | None:
                      seances=dates, lien=url, lieu=lieu, adresse=adresse, categorie=categorie, prix=prix)
 
 
+def categorie_rubrique(nom: str, defaut: str) -> str:
+    nom = slug(nom)
+    return next((v for k, v in CATEGORIES.items() if k in nom), defaut)
+
+
+def liens_accueil(soup, defaut: str) -> list[tuple[str, str]]:
+    """(fiche, catégorie) pour chaque lien /evenement/ de l'accueil ; la catégorie vient du titre
+    de rubrique (h2, h3, h4) qui précède le lien, sinon de la source."""
+    res, vus = [], set()
+    for a in soup.find_all("a", href=True):
+        url = urljoin(BASE, a["href"]).split("#")[0].split("?")[0]
+        if "/evenement/" not in url or url in vus:
+            continue
+        vus.add(url)
+        titre = a.find_previous("h2") or a.find_previous(["h3", "h4"])
+        res.append((url, categorie_rubrique(titre.get_text(" ") if titre else "", defaut)))
+    return res
+
+
 def recuperer(source: dict) -> list[Evenement]:
     opts = source.get("options") or {}
     exclues = {slug(c) for c in opts.get("categories_exclues", EXCLUES)}
@@ -117,12 +136,14 @@ def recuperer(source: dict) -> list[Evenement]:
     a_lire: dict[str, str] = {}
     for url_cat, _ in categories:
         nom = url_cat.rstrip("/").split("/")[-1]
-        cat = next((v for k, v in CATEGORIES.items() if k in nom), source.get("categorie", "theatre"))
+        cat = categorie_rubrique(nom, source.get("categorie", "theatre"))
         for url_ev, _ in liens(page(url_cat), "/evenement/"):
             a_lire.setdefault(url_ev, cat)
         time.sleep(0.5)
-    if not categories:  # si les catégories ne sont pas trouvées, on se contente de l'accueil
-        a_lire = {u: source.get("categorie", "theatre") for u, _ in liens(accueil, "/evenement/")}
+    # La page d'une rubrique ne montre pas tout (rubrique « Clubbing » restée sur une soirée passée,
+    # « Spectacle » chargée en JavaScript) : l'accueil, rangé par rubrique, complète la liste.
+    for url_ev, cat in liens_accueil(accueil, source.get("categorie", "theatre")):
+        a_lire.setdefault(url_ev, cat)
     if not a_lire:
         raise RuntimeError("aucun lien /evenement/ trouvé sur teskerti.tn (site modifié ?)")
     evenements = []

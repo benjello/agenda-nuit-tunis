@@ -10,6 +10,15 @@ layout: default
   <p>{% if tl and tl.id != "autre" %}<a href="{{ '/lieux/' | relative_url }}" data-t="type_lieu_un.{{ tl.id }}">{{ tl.un }}</a> · {% endif %}{% if page.adresse %}{{ page.adresse }} · {% endif %}{{ v.nom }}
   {%- capture q %}{{ page.title }}{% if page.adresse %}, {{ page.adresse }}{% endif %}, Tunisie{% endcapture %}
   · <a class="carte" href="{% if page.lat %}https://www.openstreetmap.org/?mlat={{ page.lat }}&mlon={{ page.lon }}#map=17/{{ page.lat }}/{{ page.lon }}{% else %}https://www.openstreetmap.org/search?query={{ q | strip | url_encode }}{% endif %}" data-q="{% if page.lat %}{{ page.lat }},{{ page.lon }}{% else %}{{ q | strip | escape }}{% endif %}" rel="noopener">📍 <span data-t="voir_carte">Voir sur la carte</span></a></p>
+  {%- if page.telephone or page.horaires or page.site_web %}
+  {%- assign tel = page.telephone | remove: " " | remove: "-" | remove: "." -%}
+  <p class="infos-osm">
+    {%- if page.telephone %}<a class="bouton reserver" href="tel:{{ tel }}">📞 <span data-t="reserver">Réserver</span> · {{ page.telephone }}</a> <a class="bouton whatsapp" href="https://wa.me/{{ tel | remove: "+" }}" rel="noopener">WhatsApp</a>{% endif %}
+    {%- if page.horaires %} <span>🕒 <span data-t="horaires">Horaires</span> : {{ page.horaires | escape }}</span>{% endif %}
+    {%- if page.site_web %} {% if page.horaires %}· {% endif %}<a href="{{ page.site_web }}" rel="noopener">🔗 <span data-t="site_web">Site web</span></a>{% endif %}
+    <small> <a href="{{ page.osm | default: 'https://www.openstreetmap.org/copyright' }}" rel="noopener">© OpenStreetMap</a></small>
+  </p>
+  {%- endif %}
   {%- capture cle %}lieu:{{ page.slug }}{% endcapture %}{% include enrichi.html cle=cle nom=page.title %}
   {%- assign d = site.data.descriptifs.lieux[page.slug] -%}{% include descriptif.html d=d %}
 </section>

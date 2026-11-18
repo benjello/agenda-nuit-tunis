@@ -14,6 +14,33 @@ Les points restants sont suivis en issues GitHub : [liste des issues](https://gi
 Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées de ce fichier aux issues ouvertes
 (`scrapers/synchro_tickets.py`) et signale les écarts dans son résumé.
 
+- #2 Tri des comptes repérés par les hashtags (rouvert chaque lundi par `scrapers/tri_comptes.py`)
+- #3 Brancher les clubs de Gammarth, La Marsa, Hammamet, Sousse et Monastir
+- #4 Brancher cabarets, bars à programmation, karaokés et scènes de stand-up
+- #5 Filtre « Public » sur l'accueil
+- #6 Compléter les soirées de chaque semaine (`_data/recurrentes.yml`)
+
+
+## Fait (18 novembre 2026)
+
+- [x] Instagram : « Ce jeudi : live de ZANZANA », « ce soir », « demain » donnent la date quand l'affiche n'en donne pas
+      (Rock'n'Rolla : 2 soirées comprises sur 6 publications avant, 6 sur 6 après) ; le titre ne garde plus
+      « Dimanche 15 Novembre » ni le « avec » d'un compte cité (`scrapers/lecteurs.py`).
+- [x] Teskerti : la rubrique « Clubbing » restait sur une soirée passée et « Spectacle » se charge en JavaScript ;
+      l'accueil, rangé par rubrique, complète la liste (`scrapers/sources/teskerti.py: liens_accueil`).
+- [x] Soirées de chaque semaine : `_data/recurrentes.yml` (scraper `recurrentes`), publiées deux semaines à l'avance,
+      retirées sans preuve depuis 60 jours.
+- [x] Sources silencieuses : alerte après 14 jours sans annonce (30 avant).
+- [x] Une soirée qui finit après minuit reste dans « Ce soir » jusqu'à sa fin : jusqu'à 6 h, l'agenda montre encore
+      la nuit de la veille.
+- [x] Champs de la nuit lus dans l'annonce (`scrapers/commun.py: infos_nuit`, posés par `scrapers/ranger.py`) :
+      âge minimum, dress code, entrée sur liste, tarif avant / après minuit, numéro de réservation.
+      Une valeur saisie à la main dans `_events/` n'est pas remplacée.
+- [x] Filtre « À quelle heure » : début de soirée (17 h – 23 h), nuit (23 h – 3 h), after.
+- [x] Boutons « Réserver » (appel ou WhatsApp : numéro de l'annonce, sinon celui du lieu) et « Partager sur WhatsApp ».
+- [x] Fiches lieux : téléphone, horaires et site repris de la liste OpenStreetMap des clubs et bars, quand le nom
+      est le même (`scrapers/pages.py: club_osm`) ; adresse visible aussi sur téléphone.
+- [x] Clé `APIFY_TOKEN` : configurée dans les secrets du dépôt (crédit suivi chaque jour, alerte à 80 %).
 
 ## Fait (8 novembre 2026)
 
@@ -30,15 +57,11 @@ Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées d
 
 ## À faire
 
-- [ ] Brancher les clubs et discothèques de Gammarth, La Marsa, Hammamet, Sousse et Monastir (comptes Instagram),
+- [ ] #3 Brancher les clubs et discothèques de Gammarth, La Marsa, Hammamet, Sousse et Monastir (comptes Instagram),
       voir `_data/sources_recherchees.yml`.
-- [ ] Brancher les cabarets et dîners-spectacles, les bars à programmation, les karaokés et les scènes de stand-up.
-- [ ] Champs propres à la nuit sur chaque fiche : âge minimum, tarif avant / après minuit, dress code, entrée sur liste.
-- [ ] Filtre « Public » sur l'accueil : étudiants, 25 ans et plus, famille (day parties, cabarets), entrée gratuite.
-- [ ] Filtre par heure : début de soirée (avant 23 h), nuit, after.
-- [ ] Une soirée qui finit après minuit reste dans « Ce soir » jusqu'à sa fin (aujourd'hui elle passe au lendemain à minuit).
-- [ ] Clé `APIFY_TOKEN` dans les secrets du dépôt (lecture Instagram et Facebook) : même compte que l'agenda culturel
-      ou un compte à part ? À décider avec Mahdi.
+- [ ] #4 Brancher les cabarets et dîners-spectacles, les bars à programmation, les karaokés et les scènes de stand-up.
+- [ ] #5 Filtre « Public » sur l'accueil : étudiants, 25 ans et plus, famille (day parties, cabarets), entrée gratuite.
+- [ ] #6 Noter les rendez-vous fixes des lieux suivis dans `_data/recurrentes.yml` (live, karaoké, open mic…).
 
 ## Vérifier une nouvelle source (à refaire pour chaque entrée)
 

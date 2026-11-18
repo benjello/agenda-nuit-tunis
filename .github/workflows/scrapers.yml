@@ -114,7 +114,7 @@ jobs:
             sleep 5
           done
           exit 1
-      - name: Alerte « Sources silencieuses » (rien depuis 30 jours)
+      - name: Alerte « Sources silencieuses » (rien depuis 14 jours)
         if: github.ref == 'refs/heads/main'
         continue-on-error: true
         env:
@@ -128,7 +128,7 @@ jobs:
             else gh label create alerte --color B5442F --force >/dev/null 2>&1 || true
                  gh issue create --title "$titre" --label alerte --body-file alerte.md; fi
           elif [ -n "$num" ]; then
-            gh issue close "$num" --comment "Toutes les sources ont de nouveau annoncé quelque chose ces 30 derniers jours."
+            gh issue close "$num" --comment "Toutes les sources ont de nouveau annoncé quelque chose ces 14 derniers jours."
           fi
       - name: Alerte « Crédit Apify » (80 % de la limite du mois)
         if: github.ref == 'refs/heads/main'

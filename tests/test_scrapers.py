@@ -113,6 +113,13 @@ class Teskerti(unittest.TestCase):
         self.assertEqual(par_titre["Poids plume"].lieu, "Le Rio")
 
 
+    def test_accueil_complete_les_rubriques(self):
+        # La rubrique « Clubbing » ne montre rien, mais l'accueil range la soirée sous « Clubbing ».
+        with faux_reseau({"teskerti.tn": "teskerti-accueil-rubriques.html", "/category/clubbing": "teskerti-cat-clubbing-vide.html",
+                          "/evenement/taha-desouky": "teskerti-taha.html"}), mock.patch("time.sleep"):
+            evs = teskerti.recuperer({"id": "teskerti", "nom": "Teskerti", "url": "https://teskerti.tn/"})
+        self.assertEqual([e.categorie for e in evs], ["club"])
+
     def test_ignore_les_liens_de_menu(self):
         with faux_reseau({"/evenement/mirage": "teskerti-espace-pro.html"}):
             e = teskerti.lire_fiche("https://teskerti.tn/evenement/mirage", "theatre")
@@ -987,6 +994,30 @@ class TunisEvents(unittest.TestCase):
 
 
 class Instagram(unittest.TestCase):
+    def test_jours_relatifs(self):
+        from scrapers import lecteurs
+        dim = dt.date(2026, 11, 15)  # un dimanche
+        self.assertEqual(lecteurs.jours_relatifs("Ce mardi : Open Mic", dim), ["2026-11-17"])
+        self.assertEqual(lecteurs.jours_relatifs("Ce dimanche, au Rock'n'Rolla", dim), ["2026-11-15"])
+        self.assertEqual(lecteurs.jours_relatifs("Rendez-vous ce soir", dim), ["2026-11-15"])
+        self.assertEqual(lecteurs.jours_relatifs("See you tomorrow", dim), ["2026-11-16"])
+
+    def test_ce_jeudi_et_titre_sans_date(self):
+        from scrapers import lecteurs
+        auj = dt.date.today()
+        pubs = [{"lien": "https://instagram.com/p/1", "date": auj.isoformat(), "images": [],
+                 "texte": "Ce jeudi : Open Mic Karaoke avec @karroumakiki 🎸\nHappy Hour jusqu'à 21h", "ocr": ""},
+                {"lien": "https://instagram.com/p/2", "date": auj.isoformat(), "images": [],
+                 "texte": "𝐒𝐚𝐦𝐞𝐝𝐢 𝟐𝟖 𝐍𝐨𝐯𝐞𝐦𝐛𝐫𝐞✨\nLa splendide Hela Nour au Jetset", "ocr": ""}]
+        evts = lecteurs.une_affiche_par_evenement(pubs, [], "Rock'n'Rolla")
+        titres = {e.titre for e in evts}
+        self.assertIn("Open Mic Karaoke", titres)
+        jeudi = [e for e in evts if e.titre == "Open Mic Karaoke"][0]
+        self.assertEqual(jeudi.debut.weekday(), 3)
+        self.assertGreaterEqual(jeudi.debut.date(), auj)
+        if dt.date(auj.year, 11, 28) >= auj:  # la date de l'affiche doit être à venir
+            self.assertIn("La splendide Hela Nour au Jetset", titres)
+
     def test_affiche_par_evenement(self):
         from scrapers import lecteurs
         auj = dt.date.today()
@@ -1433,3 +1464,30 @@ class Libelles(unittest.TestCase):
         avant = Faux.appels
         libelles.traduire_libelles(Faux(), cache, {"Médiathèque de Tunis"})
         self.assertEqual(Faux.appels, avant)
+
+
+class InfosNuit(unittest.TestCase):
+    def test_infos_de_l_annonce(self):
+        from scrapers.commun import infos_nuit
+        i = infos_nuit("Soirée 18+ · Dress code : chic · Guest list",
+                       "20 DT avant minuit, 30 DT après minuit. Réservation 📲 28 306 587")
+        self.assertEqual(i, {"age_min": "18", "dress_code": "Chic", "liste": "Entrée sur liste",
+                             "tarif_nuit": "20 DT avant minuit · 30 DT après", "reservation": "+216 28 306 587"})
+
+    def test_rien_d_inventé(self):
+        from scrapers.commun import infos_nuit
+        # Un indicatif (+216), une heure ou un prix de bière ne disent ni l'âge, ni le tarif, ni le numéro de réservation
+        self.assertEqual(infos_nuit("Appel +216 50 468 003", "Happy Hour jusqu'à 21h, 10xCeltia = 60 dt"), {})
+
+    def test_tenue_et_blanc(self):
+        from scrapers.commun import infos_nuit
+        self.assertEqual(infos_nuit("Tenue correcte exigée")["dress_code"], "Tenue correcte")
+        self.assertEqual(infos_nuit("ALL WHITE PARTY")["dress_code"], "Tout en blanc")
+
+
+class ClubOsm(unittest.TestCase):
+    def test_nom_identique_seulement(self):
+        from scrapers import pages
+        clubs = [{"nom": "Rock'n'Rolla", "telephone": "+216 20 077 078"}, {"nom": "Habibi"}]
+        self.assertEqual(pages.club_osm(["Rock'n'Rolla, La Goulette"], clubs)["telephone"], "+216 20 077 078")
+        self.assertIsNone(pages.club_osm(["Habibi Downtown"], clubs))  # pas le Habibi de Gammarth

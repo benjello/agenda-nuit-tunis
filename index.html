@@ -38,6 +38,13 @@ layout: default
   {%- comment -%} Les restaurants ne sont pas des événements : le bouton mène à la page Restaurants. {%- endcomment %}
   {%- for c in site.data.types_clubs %}<a class="lien-filtre" href="{{ '/restaurants/' | relative_url }}" data-t="cat.{{ c[0] }}"{% if c[1].aide %} title="{{ c[1].aide | escape }}"{% endif %}>{{ c[1].label }}</a>{% endfor %}
 </div>
+<p class="titre-filtre" data-t="filtre_heure">À quelle heure</p>
+<div class="filters" id="heures" role="group" aria-label="À quelle heure">
+  <button class="active" data-heure="toutes" data-t="heure.toutes">Toute la nuit</button>
+  <button data-heure="debut" data-t="heure.debut" title="De 17 h à 23 h">Début de soirée</button>
+  <button data-heure="nuit" data-t="heure.nuit" title="De 23 h à 3 h">La nuit</button>
+  <button data-heure="after" data-t="heure.after" title="Après 3 h, ou annoncé « after »">After</button>
+</div>
 <div class="cases">
   <label><input type="checkbox" id="gratuit"> <span data-t="seul_gratuit">Gratuit</span></label>
   <label><input type="checkbox" id="famille"> <span data-t="seul_famille">En famille</span></label>
@@ -183,9 +190,11 @@ layout: default
 (function () {
   // Le site n'est reconstruit qu'une fois par jour et une source peut tomber en panne :
   // on masque ici ce qui est passé, et on signale ce qui n'a pas été vérifié récemment.
+  // La nuit ne finit pas à minuit : jusqu'à 6 h du matin, « aujourd'hui » est encore la veille,
+  // pour qu'une soirée commencée à 23 h reste affichée (heure de Tunis, celle du navigateur).
   function jour(decalage) {
-    var d = new Date(); d.setDate(d.getDate() + (decalage || 0));
-    return d.toISOString().slice(0, 10);
+    var d = new Date(Date.now() - 6 * 3600 * 1000); d.setDate(d.getDate() + (decalage || 0));
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
   }
   var today = jour();
   // Une expo commencée en octobre et qui dure encore : on la met dans « En ce moment »,
@@ -280,6 +289,26 @@ layout: default
   var caseFavoris = document.getElementById('favoris');
   [caseGratuit, caseFamille, caseFavoris].forEach(function (c) { if (c) c.addEventListener('change', function () { refresh(); }); });
   document.addEventListener('favoris', function () { if (caseFavoris && caseFavoris.checked) refresh(); });
+  // Filtre par heure de début : début de soirée (17 h – 23 h), nuit (23 h – 3 h), after (3 h – midi, ou « after » dans le titre).
+  // Un événement sans heure connue n'apparaît que sous « Toute la nuit ».
+  var heureChoisie = 'toutes', blocHeures = document.getElementById('heures');
+  function dansHeure(el) {
+    if (heureChoisie === 'toutes') return true;
+    var h = el.dataset.heure || '';
+    if (heureChoisie === 'after' && /\bafter\b/i.test(el.dataset.titre || '')) return true;
+    if (!h) return false;
+    if (heureChoisie === 'debut') return h >= '17:00' && h < '23:00';
+    if (heureChoisie === 'nuit') return h >= '23:00' || h < '03:00';
+    return h >= '03:00' && h < '12:00';
+  }
+  function choisirHeure(x) {
+    heureChoisie = x;
+    if (blocHeures) blocHeures.querySelectorAll('button').forEach(function (b) { b.classList.toggle('active', b.dataset.heure === x); });
+  }
+  if (blocHeures) blocHeures.addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    choisirHeure(b.dataset.heure); refresh();
+  });
   // Filtre par moment. Un événement va du jour de début (data-debut) au jour de fin (data-date).
   var moment = 'tout';
   var demain = jour(1), dans7 = jour(6);
@@ -381,7 +410,7 @@ layout: default
     var v = document.documentElement.dataset.ville || 'toutes';
     return el.dataset.date >= today && (filter === 'all' || el.dataset.category === filter) &&
       (v === 'toutes' || (el.dataset.ville || 'tunis') === v) && correspond(el) &&
-      (!choixQuartier || quartierDe(el) === choixQuartier) &&
+      (!choixQuartier || quartierDe(el) === choixQuartier) && dansHeure(el) &&
       (!caseGratuit || !caseGratuit.checked || el.hasAttribute('data-gratuit')) &&
       (!caseFamille || !caseFamille.checked || el.hasAttribute('data-famille')) &&
       (!caseFavoris || !caseFavoris.checked || favs.indexOf(el.dataset.id) >= 0);
@@ -425,12 +454,12 @@ layout: default
   function tt(k, d) { return window.t ? window.t(k, d) : d; }
   function majAide(n) {
     if (n !== undefined) dernierN = n;
-    var actifs = (filter !== 'all' ? 1 : 0) + (choixQuartier ? 1 : 0) + [caseGratuit, caseFamille, caseFavoris].filter(function (c) { return c && c.checked; }).length;
+    var actifs = (filter !== 'all' ? 1 : 0) + (choixQuartier ? 1 : 0) + (heureChoisie !== 'toutes' ? 1 : 0) + [caseGratuit, caseFamille, caseFavoris].filter(function (c) { return c && c.checked; }).length;
     var aFiltre = actifs > 0 || moment !== 'tout' || mots.length > 0;
     if (cCompteur) cCompteur.textContent = dernierN === 1 ? tt('compteur_un', '1 événement') : tt('compteur_n', '{n} événements').replace('{n}', dernierN);
     if (bEffacer) bEffacer.hidden = !aFiltre;
     if (nbF) { nbF.hidden = !actifs; nbF.textContent = actifs; }
-    document.querySelectorAll('#filters button, #moments button, #villes button, #bande-rapide button, #bande-dates button').forEach(function (b) {
+    document.querySelectorAll('#filters button, #heures button, #moments button, #villes button, #bande-rapide button, #bande-dates button').forEach(function (b) {
       b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
     });
   }
@@ -438,6 +467,7 @@ layout: default
   if (bEffacer) bEffacer.addEventListener('click', function () {
     mots = []; if (champ) champ.value = '';
     choixQuartier = ''; if (selQ) selQ.value = '';
+    choisirHeure('toutes');
     [caseGratuit, caseFamille, caseFavoris].forEach(function (c) { if (c) c.checked = false; });
     filter = 'all';
     document.querySelectorAll('#filters button').forEach(function (x) { x.classList.toggle('active', x.dataset.filter === 'all'); });

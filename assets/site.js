@@ -484,23 +484,31 @@
   (function () {
     var zone = document.getElementById('ce-soir'), liste = document.getElementById('ce-soir-liste');
     if (!zone || !liste) return;
-    var aujourdhui = iso(new Date()), maintenant = new Date(), vus = {}, items = [];
+    // Jusqu'à 6 h du matin, la soirée de la veille est encore « ce soir » (fin après minuit).
+    var maintenant = new Date(), aujourdhui = iso(new Date(maintenant.getTime() - 6 * 3600 * 1000)), vus = {}, items = [];
     document.querySelectorAll('#agenda .event, #en-cours .event').forEach(function (c) {
       var h = c.dataset.heure;
       if (!h || c.dataset.debut !== aujourdhui || c.dataset.date !== aujourdhui || vus[c.dataset.id]) return;
       if (c.classList.contains('discret') || c.hasAttribute('hidden')) return;
       vus[c.dataset.id] = 1;
-      var hm = h.split(':'), debut = new Date(); debut.setHours(+hm[0], +hm[1], 0, 0);
-      // Commencé depuis plus de 2 h : on ne le propose plus
-      if (maintenant - debut > 2 * 3600 * 1000) return;
+      var hm = h.split(':'), debut = new Date(aujourdhui + 'T00:00:00'); debut.setHours(+hm[0], +hm[1], 0, 0);
+      if (+hm[0] < 6) debut.setDate(debut.getDate() + 1);  // « 01h » : la nuit d'après
+      // Fin connue : on la propose jusqu'à la fin (le lendemain si elle est plus tôt que le début).
+      // Sans fin : jusqu'à 4 h après le début (une soirée de club dure).
+      var fin = new Date(debut.getTime() + 4 * 3600 * 1000);
+      if (c.dataset.heureFin) {
+        var hf = c.dataset.heureFin.split(':'); fin = new Date(debut); fin.setHours(+hf[0], +hf[1], 0, 0);
+        if (fin <= debut) fin.setDate(fin.getDate() + 1);
+      }
+      if (maintenant > fin) return;
       items.push({ c: c, h: h, debut: debut });
     });
     if (!items.length) return;
-    items.sort(function (a, b) { return a.h < b.h ? -1 : a.h > b.h ? 1 : 0; });
+    items.sort(function (a, b) { return a.debut - b.debut; });  // « 01h » après « 23h »
     // Le titre suit l'heure des événements affichés : « Ce matin » (avant 12 h), « Cet après-midi » (12 h à 17 h),
     // « Ce soir » (à partir de 17 h) ; « Aujourd'hui » si la liste mêle plusieurs moments de la journée.
     var affiches = items.slice(0, 8);
-    var moments = affiches.map(function (it) { return it.h < '12:00' ? 'matin' : it.h < '17:00' ? 'apres_midi' : 'soir'; });
+    var moments = affiches.map(function (it) { return it.h < '06:00' ? 'soir' : it.h < '12:00' ? 'matin' : it.h < '17:00' ? 'apres_midi' : 'soir'; });
     var cleTitre = moments.every(function (m) { return m === moments[0]; })
       ? { matin: 'ce_soir_matin', apres_midi: 'ce_soir_apres_midi', soir: 'ce_soir_titre' }[moments[0]] : 'ce_soir_jour';
     var titre = zone.querySelector('[data-t]');

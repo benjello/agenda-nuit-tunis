@@ -60,7 +60,7 @@ description: "L'état de chaque source de l'agenda : à jour, silencieuse, en pa
   {%- endfor %}
   </tbody>
 </table>
-<p class="updated" data-th="sante_note">« Silencieuse » : la source se lit bien mais n'a rien annoncé depuis plus de 30 jours. Les sources en pause sont repérées mais pas encore branchées, ou leur adresse est à vérifier (voir <code>_data/sources.yml</code>).</p>
+<p class="updated" data-th="sante_note">« Silencieuse » : la source se lit bien mais n'a rien annoncé depuis plus de 14 jours. Les sources en pause sont repérées mais pas encore branchées, ou leur adresse est à vérifier (voir <code>_data/sources.yml</code>).</p>
 
 {%- assign ctl = site.data.controle -%}
 {%- if ctl %}
@@ -100,7 +100,7 @@ description: "L'état de chaque source de l'agenda : à jour, silencieuse, en pa
 <script>
 (function () {
   var auj = new Date(), lignes = Array.prototype.slice.call(document.querySelectorAll('#sante-lignes tr'));
-  var limite = new Date(auj.getTime() - 30 * 864e5).toISOString().slice(0, 10);
+  var limite = new Date(auj.getTime() - 14 * 864e5).toISOString().slice(0, 10);
   var compte = { ok: 0, vide: 0, silence: 0, ko: 0, pause: 0, attente: 0 };
   lignes.forEach(function (tr) {
     var st = tr.dataset.statut;

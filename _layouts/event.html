@@ -12,7 +12,7 @@ layout: default
   {%- if page.image %}{% if page.image contains "://" %}{% assign img = page.image %}{% else %}{% assign img = page.image | relative_url %}{% endif %}
   <img class="affiche-grande" src="{{ img }}" alt="Affiche : {{ page.title | escape }}" decoding="async">
   {%- endif %}
-  <span class="tag" style="background: {{ cat.color }}" data-t="cat.{{ page.category | default: 'autre' }}">{{ cat.label }}</span>{% if page.famille %} <span class="tag famille" data-t="famille">En famille</span>{% endif %}{% if page.age %} <span class="tag age" data-tn="{% if page.age contains "-" %}age.plage{% else %}age.des{% endif %}" data-n="{{ page.age }}" data-tn-fr="{% if page.age contains "-" %}%n ans{% else %}dès %n ans{% endif %}">{% if page.age contains "-" %}{{ page.age }} ans{% else %}dès {{ page.age }} ans{% endif %}</span>{% endif %}{% for l in page.langues %} <span class="tag langue" data-t="langue.{{ l }}">{% case l %}{% when "ar" %}En arabe{% when "fr" %}En français{% when "en" %}En anglais{% when "vo" %}VO sous-titrée{% endcase %}</span>{% endfor %}
+  <span class="tag" style="background: {{ cat.color }}" data-t="cat.{{ page.category | default: 'autre' }}">{{ cat.label }}</span>{% if page.famille %} <span class="tag famille" data-t="famille">En famille</span>{% endif %}{% if page.age_min %} <span class="tag age-min" data-t-title="age_min" title="Âge minimum">{{ page.age_min }}+</span>{% endif %}{% if page.liste %} <span class="tag liste" data-t="liste.{{ page.liste | slugify: "latin" }}">{{ page.liste }}</span>{% endif %}{% if page.age %} <span class="tag age" data-tn="{% if page.age contains "-" %}age.plage{% else %}age.des{% endif %}" data-n="{{ page.age }}" data-tn-fr="{% if page.age contains "-" %}%n ans{% else %}dès %n ans{% endif %}">{% if page.age contains "-" %}{{ page.age }} ans{% else %}dès {{ page.age }} ans{% endif %}</span>{% endif %}{% for l in page.langues %} <span class="tag langue" data-t="langue.{{ l }}">{% case l %}{% when "ar" %}En arabe{% when "fr" %}En français{% when "en" %}En anglais{% when "vo" %}VO sous-titrée{% endcase %}</span>{% endfor %}
   {%- assign tr = site.data.traductions.titres[page.title] -%}
   <h1{% for l in tr %} data-tr-{{ l[0] }}="{{ l[1] | escape }}"{% endfor %}>{{ page.title }}</h1>
   <dl class="details">
@@ -21,13 +21,23 @@ layout: default
     <dt data-t="ou">Où</dt>
     <dd>{% include lien-carte.html lieu=page.venue adresse=page.address %}{% if page.address %}<br><small>{{ page.address }}</small>{% endif %}</dd>
     {% if page.price %}<dt data-t="prix">Prix</dt><dd>{{ page.price }}</dd>{% endif %}
+    {% if page.tarif_nuit %}<dt data-t="tarif_nuit">Tarif selon l'heure</dt><dd>{{ page.tarif_nuit }}</dd>{% endif %}
+    {% if page.age_min %}<dt data-t="age_min">Âge minimum</dt><dd>{{ page.age_min }} <span data-t="ans">ans</span></dd>{% endif %}
+    {% if page.dress_code %}<dt data-t="dress_code">Dress code</dt><dd>{{ page.dress_code }}</dd>{% endif %}
+    {% if page.liste %}<dt data-t="entree">Entrée</dt><dd data-t="liste.{{ page.liste | slugify: "latin" }}">{{ page.liste }}</dd>{% endif %}
     {% if page.link %}<dt data-t="source">Source</dt><dd><a href="{{ page.link }}" rel="noopener">{{ page.source_name | default: page.link }}</a>{% for a in page.autres_sources %} · <a href="{{ a.link }}" rel="noopener">{{ a.name }}</a>{% endfor %}</dd>{% endif %}
     {% if src %}{% if src.genre == "presse" %}<dt data-t="lu_dans">Article dans</dt>{% else %}<dt data-t="organisateur">Annoncé par</dt>{% endif %}<dd><a href="{% assign fiche = src.fiche | default: src.id %}{{ '/collectifs/' | append: fiche | append: '/' | relative_url }}">{{ src.nom }}</a></dd>{% endif %}
   </dl>
   <p class="actions grandes">
     {%- if billet != "" %}<a class="billets" href="{{ billet }}" rel="noopener"><span data-t="billets">🎟 Billets</span>{% if page.price %} · {{ page.price }}{% endif %}</a>{% endif %}
     <button type="button" class="ajout-agenda bouton" data-t="agenda_long">📅 Ajouter à mon agenda</button>
-    <a class="bouton google-agenda" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ page.title | url_encode }}&dates={{ page.date | date: '%Y%m%d' }}{% if heure != '' %}T{{ page.date | date: '%H%M' }}00{% endif %}/{% if page.end_date %}{{ page.end_date | date: '%Y%m%d' }}{% else %}{{ page.date | date: '%Y%m%d' }}{% endif %}{% if heure_fin != '' %}T{{ heure_fin | remove: ':' }}00{% elsif heure != '' %}T{{ page.date | date: '%H%M' }}00{% endif %}&ctz=Africa/Tunis&location={{ page.venue | append: ', ' | append: page.address | url_encode }}&details={{ page.url | absolute_url | url_encode }}">Google Agenda</a>
+    <a class="bouton google-agenda" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ page.title | url_encode }}&dates={{ page.date | date: '%Y%m%d' }}{% if heure != '' %}T{{ page.date | date: '%H%M' }}00{% endif %}/{% if page.end_date %}{{ page.end_date | date: '%Y%m%d' }}{% elsif heure_fin != '' and heure_fin < heure %}{{ page.date | date: '%s' | plus: 86400 | date: '%Y%m%d' }}{% else %}{{ page.date | date: '%Y%m%d' }}{% endif %}{% if heure_fin != '' %}T{{ heure_fin | remove: ':' }}00{% elsif heure != '' %}T{{ page.date | date: '%H%M' }}00{% endif %}&ctz=Africa/Tunis&location={{ page.venue | append: ', ' | append: page.address | url_encode }}&details={{ page.url | absolute_url | url_encode }}">Google Agenda</a>
+    {%- comment -%} Réserver : le numéro donné dans l'annonce, sinon celui du lieu (OpenStreetMap, fiche lieu). {%- endcomment -%}
+    {%- assign fiche_lieu = site.lieux | where_exp: "l", "l.noms contains page.venue" | first -%}
+    {%- assign tel = page.reservation | default: fiche_lieu.telephone | default: "" | remove: " " | remove: "-" | remove: "." -%}
+    {%- if tel != "" %}<a class="bouton reserver" href="tel:{{ tel }}"><span data-t="reserver_long">📞 Réserver</span></a> <a class="bouton whatsapp" href="https://wa.me/{{ tel | remove: "+" }}" rel="noopener" data-t="reserver_whatsapp">Réserver sur WhatsApp</a>{% endif %}
+    {%- capture msg_wa %}{{ page.title }} · {% include date-fr.html date=page.date %} · {{ page.venue }} {{ page.url | absolute_url }}{% endcapture %}
+    <a class="bouton whatsapp" href="https://wa.me/?text={{ msg_wa | strip_html | strip_newlines | strip | url_encode }}" rel="noopener" data-t="partager_whatsapp">Partager sur WhatsApp</a>
     <button type="button" class="partager bouton" data-t="partager_long">↗ Partager</button>
     <button type="button" class="fav bouton" data-t-title="favori" title="Garder en favori">☆</button>
   </p>

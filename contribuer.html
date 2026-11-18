@@ -100,8 +100,8 @@ description: "Les lieux et les pages que l'agenda ne sait pas encore lire : aide
   });
 })();
 (function () {
-  // Une source « à jour » n'est montrée que si elle n'a rien annoncé depuis 30 jours (même règle que la page Santé).
-  var limite = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
+  // Une source « à jour » n'est montrée que si elle n'a rien annoncé depuis 14 jours (même règle que la page Santé).
+  var limite = new Date(Date.now() - 14 * 864e5).toISOString().slice(0, 10);
   document.querySelectorAll('#a-reparer-lignes tr[data-statut="ok"]').forEach(function (tr) {
     if (tr.dataset.nouveau && tr.dataset.nouveau < limite) tr.hidden = false; else tr.remove();
   });

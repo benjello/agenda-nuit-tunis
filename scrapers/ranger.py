@@ -11,7 +11,7 @@ import subprocess
 
 import yaml
 
-from .commun import RACINE, age_conseille, est_famille, langues_annoncees
+from .commun import RACINE, age_conseille, est_famille, infos_nuit, langues_annoncees
 from .villes import ville
 
 
@@ -54,6 +54,14 @@ def ranger(f, enfants: set[str] = frozenset()) -> bool:
     nouvelle = _poser(nouvelle, "age", f'"{age}"' if age else None)
     langues = langues_annoncees(champ("title"), corps)
     nouvelle = _poser(nouvelle, "langues", "[" + ", ".join(f'"{x}"' for x in langues) + "]" if langues else None)
+    # Infos de la nuit : âge minimum, dress code, entrée sur liste, tarif avant / après minuit, numéro de réservation.
+    # Une valeur saisie à la main (« dress_code: … » dans un événement de _events/) n'est pas remplacée.
+    infos = infos_nuit(champ("title"), champ("price"), corps)
+    auto = re.search(r"^auto: true", tete, re.M)
+    for cle in ("age_min", "dress_code", "liste", "tarif_nuit", "reservation"):
+        if auto or not champ(cle):
+            v = infos.get(cle)
+            nouvelle = _poser(nouvelle, cle, '"' + v.replace('"', "'") + '"' if v else None)
     if not re.search(r"^ajoute: ", nouvelle, re.M):
         nouvelle = _poser(nouvelle, "ajoute", f'"{_date_ajout(f)}"')
     if nouvelle == tete:
