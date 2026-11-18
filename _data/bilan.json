@@ -97,7 +97,7 @@
   "date": "2026-11-18",
   "a_venir": 7,
   "sept_jours": 4,
-  "sources_actives": 21,
+  "sources_actives": 22,
   "sources_avec_evenements": 2,
   "sources_muettes": [
    "fb-61595612945174",
@@ -116,6 +116,7 @@
    "ig-techno-tunisia",
    "ig-tn-techno-community",
    "ig-tunisia-comedy-festival",
+   "recurrentes",
    "resident-advisor",
    "teskerti",
    "tn-agenda-du-jour"

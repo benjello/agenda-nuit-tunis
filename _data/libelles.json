@@ -1329,6 +1329,11 @@
   "ar": "مساءات الرقة",
   "en": "Evenings of Raqqada"
  },
+ "Soirées de chaque semaine": {
+  "de": "fr",
+  "ar": "مساءات أسبوعية",
+  "en": "Weekly evenings"
+ },
  "Soirées karaoké et open mic chanté": {
   "de": "fr",
   "ar": "مساءات الكاريوكي وفتح ميك سونغ",
@@ -1458,6 +1463,11 @@
   "de": "fr",
   "ar": "Tiki Bar",
   "en": "Tiki Bar"
+ },
+ "ToNight Tunis : l'agenda de la nuit. Contribute to benjello/agenda-nuit-tunis development by creating an account on GitHub.": {
+  "de": "fr",
+  "ar": "ToNight Tunis: the agenda of the night المساهمة في تنمية البنجيلو/البدلة من جدول الأعمال عن طريق إنشاء حساب عن جيت هوب.",
+  "en": "ToNight Tunis: the agenda of the night. Contribute to benjello/agenda-nuit-tunis development by creating an account on GitHub."
  },
  "Tozeriana Restaurant - café": {
   "de": "fr",

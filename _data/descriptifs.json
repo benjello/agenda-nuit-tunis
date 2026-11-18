@@ -1,6 +1,11 @@
 {
  "artistes": {},
  "collectifs": {
+  "recurrentes": {
+   "source": "site officiel",
+   "texte": "ToNight Tunis : l'agenda de la nuit. Contribute to benjello/agenda-nuit-tunis development by creating an account on GitHub.",
+   "url": "https://github.com/benjello/agenda-nuit-tunis/blob/main/_data/recurrentes.yml"
+  },
   "teskerti": {
    "source": "site officiel",
    "texte": "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.",
@@ -349,6 +354,13 @@
   },
   "collectifs:rock-n-rolla-la-goulette": {
    "verifie": "2026-11-08",
+   "vu": "2026-11-18"
+  },
+  "collectifs:soirees-de-chaque-semaine": {
+   "source": "site officiel",
+   "texte": "ToNight Tunis : l'agenda de la nuit. Contribute to benjello/agenda-nuit-tunis development by creating an account on GitHub.",
+   "url": "https://github.com/benjello/agenda-nuit-tunis/blob/main/_data/recurrentes.yml",
+   "verifie": "2026-11-18",
    "vu": "2026-11-18"
   },
   "collectifs:steppers-sound-system": {
