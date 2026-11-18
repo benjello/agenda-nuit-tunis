@@ -136,6 +136,7 @@ td.precision small.manques { display: block; }
 /* Carte d'événement : vignette, outils (favori, agenda, partage) */
 .event-body { flex: 1; min-width: 0; }
 .vignette { flex: 0 0 76px; align-self: flex-start; }
+.vignette[hidden], .affiche-grande[hidden] { display: none; }
 .vignette img { width: 76px; height: 96px; object-fit: cover; border-radius: 6px; background: var(--line); display: block; }
 .outils { margin-inline-start: auto; display: inline-flex; gap: 2px; }
 .outils button, .bouton { font: inherit; border: 1px solid transparent; background: none; color: var(--muted); cursor: pointer; border-radius: 6px; padding: 1px 6px; font-size: .95rem; line-height: 1.4; }

@@ -39,7 +39,7 @@
     {%- assign fi = site.data.fiches_clubs[m.nom] -%}
     <li class="club" data-type="{{ m.type }}" data-gamme="{{ m.gamme }}" data-horaires="{% if m.horaires %}oui{% endif %}">
       {%- if fi.photo or fi.image_site %}
-      <img class="club-photo" src="{% if fi.photo %}{{ fi.photo | prepend: '/' | relative_url }}{% else %}{{ fi.image_site }}{% endif %}" alt="" loading="lazy" width="56" height="56">
+      <img class="club-photo" src="{% if fi.photo %}{{ fi.photo | prepend: '/' | relative_url }}{% else %}{{ fi.image_site }}{% endif %}" alt="" loading="lazy" width="56" height="56" referrerpolicy="no-referrer" onerror="this.hidden=true">
       {%- endif %}
       <div class="club-tete">
         <strong>{% if m.lat %}<a href="https://www.google.com/maps/search/?api=1&query={{ m.lat }},{{ m.lon }}" rel="noopener">{{ m.nom }}</a>{% else %}<a href="https://www.google.com/maps/search/?api=1&query={{ m.nom | append: ', ' | append: m.adresse | append: ', Tunisie' | url_encode }}" rel="noopener">{{ m.nom }}</a>{% endif %}</strong>

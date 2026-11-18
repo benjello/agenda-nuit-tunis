@@ -420,7 +420,7 @@
     if (lieu) lignes.push('📍 ' + esc(lieu));
     if (c.hasAttribute('data-gratuit')) lignes.push('✓ ' + esc(t('gratuit', 'Gratuit')));
     else if (prix) lignes.push('🎟 ' + esc(prix));
-    return (c.dataset.image ? '<img src="' + esc(c.dataset.image) + '" alt="" loading="lazy">' : '') +
+    return (c.dataset.image ? '<img src="' + esc(c.dataset.image) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '') +
       '<div class="bulle-corps"><span class="tag" style="background:' + esc(c.dataset.couleur) + '">' + esc(c.dataset.categorie) + '</span>' +
       '<strong>' + esc((titre && titre.textContent.trim()) || c.dataset.titre) + '</strong>' +
       (lignes.length ? '<p class="bulle-infos">' + lignes.join(' · ') + '</p>' : (meta ? '<p class="bulle-infos">' + esc(meta.textContent.trim()) + '</p>' : '')) +

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" role="img" aria-label="Concert live">
+<defs><linearGradient id="g" x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stop-color="#1565c0"/><stop offset="1" stop-color="#0d0b1a"/></linearGradient></defs>
+<rect width="120" height="150" fill="url(#g)"/>
+<g fill="#fff" fill-opacity=".7"><circle cx="16" cy="18" r="1.4"/><circle cx="100" cy="14" r="1.1"/><circle cx="92" cy="104" r="1.2"/><circle cx="22" cy="96" r="1"/><circle cx="106" cy="64" r="0.9"/><circle cx="12" cy="56" r="1.1"/></g>
+<g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="50" y="30" width="20" height="34" rx="10"/><path d="M42 56c0 12 8 20 18 20s18-8 18-20M60 76v16M48 92h24"/></g>
+<text x="60" y="132" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing=".5" fill="#fff" fill-opacity=".92">CONCERT LIVE</text>
+</svg>
