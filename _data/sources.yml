@@ -31,6 +31,17 @@
   note: 'Billetterie nationale. Seules les rubriques clubbing, concerts et humour sont gardées ; théâtre, cinéma
     et jeune public sont écartés (catégorie par défaut : theatre, hors agenda).'
 
+- id: recurrentes
+  nom: Soirées de chaque semaine
+  url: https://github.com/benjello/agenda-nuit-tunis/blob/main/_data/recurrentes.yml
+  type: agenda
+  genre: agenda
+  scraper: recurrentes
+  categorie: autre
+  actif: true
+  note: Rendez-vous fixes des lieux (live du mercredi, karaoké du mardi…), notés à la main dans _data/recurrentes.yml
+    avec la date de la dernière preuve. Une soirée sans preuve depuis 60 jours n'est plus publiée.
+
 - id: tunis-events
   nom: tunis.events (agenda)
   url: https://tunis.events/nightlife
