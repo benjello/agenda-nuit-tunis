@@ -17,7 +17,7 @@ on:
 
 permissions:
   contents: write
-  issues: write   # alerte « Sources silencieuses »
+  issues: write   # alertes « Sources silencieuses », « Source en panne », « Crédit Apify »
 
 concurrency:
   group: scrapers
@@ -145,6 +145,12 @@ jobs:
           elif [ -n "$num" ] && grep -q "\"jour\": \"$(date +%F)\"" _data/apify.json 2>/dev/null; then
             gh issue close "$num" --comment "La consommation Apify est repassée sous 80 %."
           fi
+      - name: Alerte « Source en panne » (une issue par source, fermée quand elle relit)
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -m scrapers.suivi
       - name: Signaler l'échec
         if: steps.run.outcome == 'failure'
         run: echo "::error::Toutes les sources ont échoué, voir l'étape « Lancer les scrapers »." && exit 1
