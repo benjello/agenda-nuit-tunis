@@ -65,6 +65,26 @@ def jours_sans_annee(texte: str, ref: dt.date) -> list[str]:
     return sorted(res)
 
 
+JOURS_SEMAINE = {"lundi": 0, "mardi": 1, "mercredi": 2, "jeudi": 3, "vendredi": 4, "samedi": 5, "dimanche": 6,
+                 "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3, "friday": 4, "saturday": 5, "sunday": 6}
+_RE_CE_JOUR = re.compile(r"\b(?:ce|cette|this)\s+(" + "|".join(JOURS_SEMAINE) + r")\b", re.I)
+_RE_CE_SOIR = re.compile(r"\b(?:ce soir|tonight|aujourd.hui|today)\b", re.I)
+_RE_DEMAIN = re.compile(r"\b(?:demain|tomorrow)\b", re.I)
+
+
+def jours_relatifs(texte: str, ref: dt.date) -> list[str]:
+    """« Ce mardi : Open Mic » publié le dimanche 15 → le mardi 17 ; « ce soir » → le jour de la publication,
+    « demain » → le lendemain. Le jour nommé est le premier à partir de la publication (le jour même compris)."""
+    res = set()
+    for nom in _RE_CE_JOUR.findall(texte):
+        res.add((ref + dt.timedelta(days=(JOURS_SEMAINE[nom.lower()] - ref.weekday()) % 7)).isoformat())
+    if _RE_CE_SOIR.search(texte):
+        res.add(ref.isoformat())
+    if _RE_DEMAIN.search(texte):
+        res.add((ref + dt.timedelta(days=1)).isoformat())
+    return sorted(res)
+
+
 def periode(texte: str) -> list[str]:
     """« du 02 au 09 Novembre 2026 » → tous les jours de la période."""
     m = _RE_PERIODE.search(texte)
@@ -167,6 +187,14 @@ _RE_HEURE = re.compile(r"(?<!\d)([01]?\d|2[0-3])\s*[hH:](?:\s*([0-5]\d))?(?!\d)"
 _NOM_SOIREE = re.compile(r"(?:welcome to (?:the )?|bienvenue (?:à|a) (?:la )?)?(.{3,60}?\b(?:launch party|release party|party|soirée|showcase)\b)", re.I)
 
 
+# Une ligne qui ne donne que la date (« Dimanche 15 Novembre », « Ce mardi : ») n'est pas un titre.
+_DATE_SEULE = re.compile(r"^(?:(?:ce|cette|this)\s+)?(?:" + "|".join(JOURS_SEMAINE) + r")?\s*(?:\d{1,2}(?:er)?\s*(?:"
+                         + _MOIS + r")?\.?\s*(?:\d{4})?)?\s*[:,.-]?\s*$", re.I)
+
+
+_PREFIXE_JOUR = re.compile(r"^(?:ce|cette|this)\s+(?:" + "|".join(JOURS_SEMAINE) + r")\s*[:,-]\s*(?:au\s+[^:]{2,30}?\s*:\s*)?", re.I)
+
+
 def _titre_affiche(texte: str) -> str:
     """Première ligne parlante d'une légende : sans #hashtags, @comptes ni émojis.
     Si elle est longue (une phrase), on prend plutôt le nom de la soirée quand la légende le donne
@@ -175,7 +203,8 @@ def _titre_affiche(texte: str) -> str:
     for ligne in normaliser(texte).splitlines():
         l = re.sub(r"[#@]\S+", " ", ligne)
         l = propre(re.sub(r"[^\w\s'’&:!?.,()+-]", " ", l))
-        if len(re.findall(r"[^\W\d_]", l)) >= 3:
+        l = _PREFIXE_JOUR.sub("", l)  # « Ce mardi : Open Mic Karaoke » → « Open Mic Karaoke »
+        if len(re.findall(r"[^\W\d_]", l)) >= 3 and not _DATE_SEULE.match(l):
             lignes.append(l)
     if not lignes:
         return ""
@@ -184,7 +213,8 @@ def _titre_affiche(texte: str) -> str:
             m = _NOM_SOIREE.search(l)
             if m and len(l) <= 90:
                 return propre(m.group(1)).rstrip(" .,:-")
-    return lignes[0][:90].rstrip(" .,:-")
+    # « Open Mic Karaoke avec @karroumakiki » : le compte cité est retiré, le « avec » qui restait aussi
+    return re.sub(r"\s+(?:avec|with|feat\.?|ft\.?|x|&|de|by|par)$", "", lignes[0][:90].rstrip(" .,:-"), flags=re.I)
 
 
 # Publications qui ne sont pas des événements : recrutement, horaires, cours à l'année…
@@ -271,6 +301,8 @@ def une_affiche_par_evenement(publications: list[dict], connus: list[str], lieu:
                 jours.add(dt.date(_annee(int(m), ref), int(m), int(j)))
             except ValueError:
                 continue
+        if not jours:  # « Ce jeudi : live de ZANZANA » : seulement si l'affiche ne donne pas de date
+            jours = {dt.date.fromisoformat(j) for j in jours_relatifs(texte[:300], ref)}
         # Une exposition dure : le vernissage peut être passé alors qu'on peut encore la voir.
         if _EXPO.search(texte[:300] + "\n" + ocr[:300]):
             e = _exposition(p, texte, ocr, tout, jours, ref, aujourd_hui, lieu)

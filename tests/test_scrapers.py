@@ -113,6 +113,13 @@ class Teskerti(unittest.TestCase):
         self.assertEqual(par_titre["Poids plume"].lieu, "Le Rio")
 
 
+    def test_accueil_complete_les_rubriques(self):
+        # La rubrique « Clubbing » ne montre rien, mais l'accueil range la soirée sous « Clubbing ».
+        with faux_reseau({"teskerti.tn": "teskerti-accueil-rubriques.html", "/category/clubbing": "teskerti-cat-clubbing-vide.html",
+                          "/evenement/taha-desouky": "teskerti-taha.html"}), mock.patch("time.sleep"):
+            evs = teskerti.recuperer({"id": "teskerti", "nom": "Teskerti", "url": "https://teskerti.tn/"})
+        self.assertEqual([e.categorie for e in evs], ["club"])
+
     def test_ignore_les_liens_de_menu(self):
         with faux_reseau({"/evenement/mirage": "teskerti-espace-pro.html"}):
             e = teskerti.lire_fiche("https://teskerti.tn/evenement/mirage", "theatre")
@@ -987,6 +994,30 @@ class TunisEvents(unittest.TestCase):
 
 
 class Instagram(unittest.TestCase):
+    def test_jours_relatifs(self):
+        from scrapers import lecteurs
+        dim = dt.date(2026, 11, 15)  # un dimanche
+        self.assertEqual(lecteurs.jours_relatifs("Ce mardi : Open Mic", dim), ["2026-11-17"])
+        self.assertEqual(lecteurs.jours_relatifs("Ce dimanche, au Rock'n'Rolla", dim), ["2026-11-15"])
+        self.assertEqual(lecteurs.jours_relatifs("Rendez-vous ce soir", dim), ["2026-11-15"])
+        self.assertEqual(lecteurs.jours_relatifs("See you tomorrow", dim), ["2026-11-16"])
+
+    def test_ce_jeudi_et_titre_sans_date(self):
+        from scrapers import lecteurs
+        auj = dt.date.today()
+        pubs = [{"lien": "https://instagram.com/p/1", "date": auj.isoformat(), "images": [],
+                 "texte": "Ce jeudi : Open Mic Karaoke avec @karroumakiki 🎸\nHappy Hour jusqu'à 21h", "ocr": ""},
+                {"lien": "https://instagram.com/p/2", "date": auj.isoformat(), "images": [],
+                 "texte": "𝐒𝐚𝐦𝐞𝐝𝐢 𝟐𝟖 𝐍𝐨𝐯𝐞𝐦𝐛𝐫𝐞✨\nLa splendide Hela Nour au Jetset", "ocr": ""}]
+        evts = lecteurs.une_affiche_par_evenement(pubs, [], "Rock'n'Rolla")
+        titres = {e.titre for e in evts}
+        self.assertIn("Open Mic Karaoke", titres)
+        jeudi = [e for e in evts if e.titre == "Open Mic Karaoke"][0]
+        self.assertEqual(jeudi.debut.weekday(), 3)
+        self.assertGreaterEqual(jeudi.debut.date(), auj)
+        if dt.date(auj.year, 11, 28) >= auj:  # la date de l'affiche doit être à venir
+            self.assertIn("La splendide Hela Nour au Jetset", titres)
+
     def test_affiche_par_evenement(self):
         from scrapers import lecteurs
         auj = dt.date.today()
