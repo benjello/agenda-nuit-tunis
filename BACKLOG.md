@@ -23,6 +23,13 @@ Chaque lundi, le workflow « Synchro tickets » compare les cases non cochées d
 
 ## Fait (18 novembre 2026)
 
+- [x] Vignettes vides : plus de cadre vide sur les cartes. `scrapers/images.py` (repris de l'agenda culturel, après
+      chaque passage) copie chaque image dans `assets/images/` (les liens Instagram, Facebook et billetterie qui
+      expirent ne cassent plus la carte) ; une image cassée est remplacée par le visuel de la page de l'annonce
+      (og:image, schema.org), d'une autre source ou d'une autre fiche du même événement, puis par la photo du club
+      (`_data/fiches_clubs.json`) ou du lieu, et en dernier recours par l'illustration de la catégorie
+      (`assets/categories/*.svg`, dessinées par `scrapers/illustrations.py`). Dans le navigateur, une image qui ne
+      charge pas, ou un événement sans affiche, montre aussitôt cette illustration. Bilan dans `_data/images.json`.
 - [x] Suivi automatique : une issue « Source en panne : <id> » par source en échec deux passages de suite,
       mise à jour et fermée par le workflow des scrapers (`scrapers/suivi.py`) ; les alertes (étiquette `alerte`)
       sortent de la synchro du backlog. Une tâche Claude, chaque soir, relit les alertes, propose les correctifs

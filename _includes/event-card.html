@@ -67,7 +67,15 @@
       </span>
     </p>
   </div>
-  {%- if e.image and e.film != true %}{% if e.image contains "://" %}{% assign img = e.image %}{% else %}{% assign img = e.image | relative_url %}{% endif %}
-  <a class="vignette" href="{{ e.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ img }}" alt="" loading="lazy" decoding="async"></a>
+  {%- comment -%}
+    Vignette : l'affiche de l'événement ; sans affiche, ou si elle ne charge plus (lien Instagram expiré…),
+    l'illustration de sa catégorie (assets/categories/, scrapers/illustrations.py) : pas de cadre vide.
+    scrapers/images.py remplace ensuite l'image cassée par la vraie affiche quand il la retrouve.
+  {%- endcomment -%}
+  {%- if e.film != true %}
+  {%- assign illus_cat = "autre" -%}{%- if site.data.categories[e.category] -%}{%- assign illus_cat = e.category -%}{%- endif -%}
+  {%- assign repli = '/assets/categories/' | append: illus_cat | append: '.svg' | relative_url -%}
+  {%- if e.image and e.image != "" %}{% if e.image contains "://" %}{% assign img = e.image %}{% else %}{% assign img = e.image | relative_url %}{% endif %}{% else %}{% assign img = repli %}{% endif %}
+  <a class="vignette" href="{{ e.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ img }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-repli="{{ repli }}" onerror="if(this.src.indexOf(this.dataset.repli)<0){this.src=this.dataset.repli}else{this.parentNode.hidden=true}"></a>
   {%- endif %}
 </article>
