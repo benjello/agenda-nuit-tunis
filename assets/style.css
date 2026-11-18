@@ -187,6 +187,11 @@ a.bouton { border: 1px solid var(--line); padding: 6px 12px; border-radius: 8px;
 
 /* Page Enfants */
 .tag.age { background: #2f7d8c; }
+.tag.age-min { background: #8c2f3d; }
+.tag.liste { background: #5b4a8a; }
+.prix.tarif-nuit { white-space: nowrap; }
+a.bouton.whatsapp { border-color: #25d366; }
+a.bouton.reserver { font-weight: 600; }
 .enf-we { border: 2px solid #1d6b3a; border-radius: 10px; padding: .6rem 1rem; margin: 1rem 0; }
 .enf-we h2 { margin: .2rem 0 .4rem; font-size: 1.1rem; }
 .enf-we ul, .enf-festivals { margin: 0; padding-inline-start: 1.2rem; }
@@ -329,6 +334,7 @@ main:focus { outline: none; }
   /* Premier écran : titre court, sans texte d'intro ; les événements arrivent plus vite */
   .intro h1 { margin: 8px 0 8px; font-size: 1.35rem; }
   .intro p { display: none; }
+  .intro.fiche p { display: block; }  /* fiche lieu, collectif, artiste : adresse, téléphone, horaires restent visibles */
 
   /* Filtres : « Quand » en une rangée qui défile ; le reste dans le tiroir « Filtres » */
   .panneau-filtres .titre-filtre { display: none; }

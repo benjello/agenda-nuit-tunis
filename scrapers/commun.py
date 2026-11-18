@@ -349,6 +349,59 @@ def age_conseille(*textes: str) -> str | None:
     return None
 
 
+# --- Infos pratiques de la nuit, lues dans l'annonce : âge minimum, dress code, entrée sur liste, tarif avant minuit ---
+_AGE_NUIT = re.compile(r"(?<![\d+])\+\s?(18|21|25)(?!\d)|(?<![\d+])(18|21|25)\s?\+(?!\d)|"
+                       r"(?:interdit aux |r[ée]serv[ée]e? aux )?(?:moins de|under|plus de)\s*(18|21|25)\s*(?:ans|years)|"
+                       r"\b(18|21|25)\s*ans\s*(?:et plus|minimum|r[ée]volus)|\b(?:[âa]ge|age)\s*min(?:imum)?\s*:?\s*(18|21|25)\b", re.I)
+_DRESS = re.compile(r"dress\s*-?\s*code\s*[:：-]?\s*([^\n.!|•·#@,;]{3,30})", re.I)
+_TENUE = re.compile(r"\btenue\s+(correcte|chic|[ée]l[ée]gante|de soir[ée]e|blanche|exig[ée]e)", re.I)
+_TOUT_BLANC = re.compile(r"\b(?:all\s+white|white\s+party|soir[ée]e\s+blanche|tout\s+en\s+blanc)\b", re.I)
+_LISTE = [(re.compile(r"\bguest\s*-?\s*list\b|\bsur liste\b|\bentr[ée]e sur liste\b", re.I), "Entrée sur liste"),
+          (re.compile(r"\bsur invitation\b|\binvitation only\b|\bpriv[ée]e?s? party\b", re.I), "Sur invitation"),
+          (re.compile(r"r[ée]servation\s+(?:obligatoire|exig[ée]e|indispensable)|\breservation only\b", re.I), "Réservation obligatoire")]
+_MINUIT = r"(?:minuit|midnight|00\s*[h:]\s*(?:00)?|0\s*h|12\s*am)"
+_PRIX_N = r"(\d{1,3})\s*(?:dt|tnd|dinars?)"
+_AVANT = re.compile(_PRIX_N + r"\s*(?:avant|before)\s*" + _MINUIT + r"|(?:avant|before)\s*" + _MINUIT + r"\s*[:=-]?\s*" + _PRIX_N, re.I)
+_APRES = re.compile(_PRIX_N + r"\s*(?:apr[èe]s|after)\s*" + _MINUIT + r"|(?:apr[èe]s|after)\s*" + _MINUIT + r"\s*[:=-]?\s*" + _PRIX_N, re.I)
+
+
+_TEL = re.compile(r"(?:r[ée]serv\w*|resa|infoline|info\s*line|t[ée]l(?:[ée]phone)?|whatsapp|📲|📞|☎\ufe0f?)\s*[:：.]?\s*"
+                  r"(?:\+?\s?216\s?)?([2-9]\d)\s?(\d{3})\s?(\d{3})(?!\d)", re.I)
+
+
+def infos_nuit(*textes: str) -> dict:
+    """{"age_min": "18", "dress_code": "Tenue correcte", "liste": "Entrée sur liste",
+    "tarif_nuit": "20 DT avant minuit · 30 DT après", "reservation": "+216 28 306 587"} : seulement ce que l'annonce dit clairement."""
+    t = unicodedata.normalize("NFKC", "\n".join(x or "" for x in textes))
+    res = {}
+    m = _AGE_NUIT.search(t)
+    if m:
+        res["age_min"] = next(g for g in m.groups() if g)
+    m = _DRESS.search(t)
+    if m:
+        res["dress_code"] = propre(m.group(1)).rstrip(" -:").capitalize()
+    elif _TOUT_BLANC.search(t):
+        res["dress_code"] = "Tout en blanc"
+    elif _TENUE.search(t):
+        res["dress_code"] = "Tenue " + _TENUE.search(t).group(1).lower().replace("exigee", "exigée")
+    for motif, texte in _LISTE:
+        if motif.search(t):
+            res["liste"] = texte
+            break
+    avant, apres = _AVANT.search(t), _APRES.search(t)
+    parts = []
+    if avant:
+        parts.append(f"{avant.group(1) or avant.group(2)} DT avant minuit")
+    if apres:
+        parts.append(f"{apres.group(1) or apres.group(2)} DT après" + ("" if avant else " minuit"))
+    if parts:
+        res["tarif_nuit"] = " · ".join(parts)
+    m = _TEL.search(t)
+    if m:  # numéro de réservation donné par l'annonce (Tunisie : 8 chiffres)
+        res["reservation"] = "+216 " + " ".join(m.groups())
+    return res
+
+
 def est_famille(*textes: str) -> bool:
     """Spectacle, atelier ou film pour les enfants ou à voir en famille."""
     titre, *notices = textes or [""]

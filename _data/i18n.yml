@@ -501,3 +501,22 @@ contrib.exemple: { ar: "آخر منشور", en: "latest post" }
 contrib.lieux_cites: { ar: "الأماكن المذكورة:", en: "Venues mentioned:" }
 contrib.brancher: { ar: "هذا مصدر سهرات", en: "It's a source of nights out" }
 contrib.lu_le: { ar: "تُحدَّث القائمة كل إثنين.", en: "List updated every Monday." }
+
+# Agenda de la nuit : heure, infos pratiques, réservation, partage
+filtre_heure: { ar: "في أي ساعة", en: "What time" }
+heure.toutes: { ar: "طوال الليل", en: "All night" }
+heure.debut: { ar: "بداية السهرة", en: "Early evening" }
+heure.nuit: { ar: "الليل", en: "Late night" }
+heure.after: { ar: "آفتر", en: "After" }
+age_min: { ar: "السن الأدنى", en: "Minimum age" }
+ans: { ar: "سنة", en: "years" }
+dress_code: { ar: "قواعد اللباس", en: "Dress code" }
+entree: { ar: "الدخول", en: "Entry" }
+tarif_nuit: { ar: "السعر حسب الساعة", en: "Price by arrival time" }
+liste.entree-sur-liste: { ar: "الدخول بالقائمة", en: "Guest list" }
+liste.sur-invitation: { ar: "بدعوة", en: "By invitation" }
+liste.reservation-obligatoire: { ar: "الحجز إجباري", en: "Booking required" }
+reserver: { ar: "احجز", en: "Book" }
+reserver_long: { ar: "📞 احجز", en: "📞 Book" }
+reserver_whatsapp: { ar: "احجز عبر واتساب", en: "Book on WhatsApp" }
+partager_whatsapp: { ar: "شارك عبر واتساب", en: "Share on WhatsApp" }

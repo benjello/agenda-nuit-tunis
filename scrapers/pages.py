@@ -219,10 +219,31 @@ def _osm_lieux() -> dict:
         return {}
 
 
+def _clubs_osm() -> list[dict]:
+    """Clubs, bars et restaurants de nuit lus sur OpenStreetMap par scrapers/clubs.py (_data/clubs.json)."""
+    try:
+        return json.loads((RACINE / "_data" / "clubs.json").read_text()).get("lieux") or []
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+
+def club_osm(noms, clubs: list[dict]) -> dict | None:
+    """Le lieu d'OpenStreetMap qui porte le même nom : « Rock'n'Rolla, La Goulette » → « Rock'n'Rolla ».
+    Seulement un nom identique (avant la virgule) : « Habibi Downtown » n'est pas le « Habibi » de Gammarth."""
+    par_cle = {}
+    for c in clubs:
+        par_cle.setdefault(_cle(c.get("nom")), c)
+    for nom in noms:
+        tete = _cle(str(nom).split(",")[0])
+        if len(tete) >= 3 and tete in par_cle:
+            return par_cle[tete]
+    return None
+
+
 def ecrire_lieux(groupes: dict[str, dict], geo: dict) -> dict:
     LIEUX.mkdir(exist_ok=True)
     manuels = {_cle(k): v for k, v in (yaml.safe_load((RACINE / "_data" / "lieux_coords.yml").read_text()) or {}).items()}
-    config, osm = types_lieux(), _osm_lieux()
+    config, osm, clubs = types_lieux(), _osm_lieux(), _clubs_osm()
     index, carte, fichiers = {}, [], set()
     for cle, g in groupes.items():
         nom = g["nom"] or g["noms"].most_common(1)[0][0]
@@ -234,8 +255,16 @@ def ecrire_lieux(groupes: dict[str, dict], geo: dict) -> dict:
         t = type_lieu(nom, s, config, osm)
         if g.get("type") in {r["id"] for r in config.get("types") or []}:
             t = g["type"]  # type donné par _data/lieux_references.yml
-        _ecrire(fichier, {"title": nom, "noms": noms, "type": t, "adresse": g["adresse"], "ville": g["ville"],
-                          "lat": point[0] if point else None, "lon": point[1] if point else None})
+        # Téléphone, horaires et site du lieu quand OpenStreetMap le connaît (liste des clubs et bars)
+        club = club_osm(noms, clubs) or {}
+        if t == "autre" and club.get("type") in ("club", "bar", "discotheque"):
+            t = "club"  # bar ou club d'après OpenStreetMap
+        if not point and club.get("lat"):
+            point = [club["lat"], club["lon"]]
+        _ecrire(fichier, {"title": nom, "noms": noms, "type": t, "adresse": g["adresse"] or club.get("adresse"),
+                          "ville": g["ville"], "lat": point[0] if point else None, "lon": point[1] if point else None,
+                          "telephone": club.get("telephone"), "horaires": club.get("horaires"),
+                          "site_web": club.get("site"), "osm": club.get("osm")})
         for n in noms:
             index[n] = s
         if point:

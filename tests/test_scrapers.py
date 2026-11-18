@@ -1464,3 +1464,30 @@ class Libelles(unittest.TestCase):
         avant = Faux.appels
         libelles.traduire_libelles(Faux(), cache, {"Médiathèque de Tunis"})
         self.assertEqual(Faux.appels, avant)
+
+
+class InfosNuit(unittest.TestCase):
+    def test_infos_de_l_annonce(self):
+        from scrapers.commun import infos_nuit
+        i = infos_nuit("Soirée 18+ · Dress code : chic · Guest list",
+                       "20 DT avant minuit, 30 DT après minuit. Réservation 📲 28 306 587")
+        self.assertEqual(i, {"age_min": "18", "dress_code": "Chic", "liste": "Entrée sur liste",
+                             "tarif_nuit": "20 DT avant minuit · 30 DT après", "reservation": "+216 28 306 587"})
+
+    def test_rien_d_inventé(self):
+        from scrapers.commun import infos_nuit
+        # Un indicatif (+216), une heure ou un prix de bière ne disent ni l'âge, ni le tarif, ni le numéro de réservation
+        self.assertEqual(infos_nuit("Appel +216 50 468 003", "Happy Hour jusqu'à 21h, 10xCeltia = 60 dt"), {})
+
+    def test_tenue_et_blanc(self):
+        from scrapers.commun import infos_nuit
+        self.assertEqual(infos_nuit("Tenue correcte exigée")["dress_code"], "Tenue correcte")
+        self.assertEqual(infos_nuit("ALL WHITE PARTY")["dress_code"], "Tout en blanc")
+
+
+class ClubOsm(unittest.TestCase):
+    def test_nom_identique_seulement(self):
+        from scrapers import pages
+        clubs = [{"nom": "Rock'n'Rolla", "telephone": "+216 20 077 078"}, {"nom": "Habibi"}]
+        self.assertEqual(pages.club_osm(["Rock'n'Rolla, La Goulette"], clubs)["telephone"], "+216 20 077 078")
+        self.assertIsNone(pages.club_osm(["Habibi Downtown"], clubs))  # pas le Habibi de Gammarth
