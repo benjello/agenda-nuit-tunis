@@ -192,7 +192,8 @@ ouvertes, mises à jour et fermées sans intervention :
 - « Crédit Apify », à 80 % de la limite du mois (`scrapers/credit_apify.py`).
 
 Une tâche Claude programmée chaque soir relit ces issues, ouvre une PR quand la correction est claire
-(« Closes #N », jamais fusionnée seule) et envoie un résumé à Mahdi.
+(« Closes #N ») et envoie un résumé à Mahdi. Une correction ciblée d'un scraper ou d'une source est fusionnée
+seule quand les tests sont verts ; tout le reste (workflows, mise en page) attend la relecture de Mahdi.
 
 ## Prochaines étapes
 
