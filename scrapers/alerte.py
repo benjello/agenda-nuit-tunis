@@ -1,4 +1,4 @@
-"""Sources silencieuses : rien annoncé depuis 30 jours (lieu fermé, compte changé, scraper cassé).
+"""Sources silencieuses : rien annoncé depuis 14 jours (lieu fermé, compte changé, scraper cassé).
 
 Écrit la liste en Markdown sur la sortie standard (vide s'il n'y en a pas). Le workflow
 des scrapers en fait une issue GitHub « Sources silencieuses », mise à jour chaque jour
@@ -15,7 +15,7 @@ import yaml
 from .commun import RACINE
 from .ecriture import lire_etat
 
-JOURS = 30
+JOURS = 14  # la nuit bouge vite : un lieu actif annonce au moins toutes les deux semaines
 
 
 def silencieuses(maintenant: dt.datetime | None = None) -> list[tuple[dict, dict, int]]:
