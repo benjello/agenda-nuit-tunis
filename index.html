@@ -183,9 +183,11 @@ layout: default
 (function () {
   // Le site n'est reconstruit qu'une fois par jour et une source peut tomber en panne :
   // on masque ici ce qui est passé, et on signale ce qui n'a pas été vérifié récemment.
+  // La nuit ne finit pas à minuit : jusqu'à 6 h du matin, « aujourd'hui » est encore la veille,
+  // pour qu'une soirée commencée à 23 h reste affichée (heure de Tunis, celle du navigateur).
   function jour(decalage) {
-    var d = new Date(); d.setDate(d.getDate() + (decalage || 0));
-    return d.toISOString().slice(0, 10);
+    var d = new Date(Date.now() - 6 * 3600 * 1000); d.setDate(d.getDate() + (decalage || 0));
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
   }
   var today = jour();
   // Une expo commencée en octobre et qui dure encore : on la met dans « En ce moment »,
