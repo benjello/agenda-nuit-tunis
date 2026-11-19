@@ -94,11 +94,11 @@
  },
  {
   "semaine": "2026-S47",
-  "date": "2026-11-18",
-  "a_venir": 7,
-  "sept_jours": 4,
+  "date": "2026-11-19",
+  "a_venir": 12,
+  "sept_jours": 6,
   "sources_actives": 22,
-  "sources_avec_evenements": 2,
+  "sources_avec_evenements": 4,
   "sources_muettes": [
    "fb-61595612945174",
    "fb-recherche-soirees",
@@ -116,26 +116,26 @@
    "ig-techno-tunisia",
    "ig-tn-techno-community",
    "ig-tunisia-comedy-festival",
-   "recurrentes",
    "resident-advisor",
-   "teskerti",
    "tn-agenda-du-jour"
   ],
   "par_ville": {
-   "tunis": 4
+   "tunis": 6
   },
   "par_categorie": {
-   "concert": 2,
-   "festival": 1,
-   "club": 1
+   "concert": 3,
+   "club": 2,
+   "festival": 1
   },
   "par_genre": {
-   "agenda": 3,
+   "agenda": 5,
    "festival": 1
   },
   "par_source": {
    "tunis-events": 3,
-   "ig-jaou-tunis": 1
+   "ig-jaou-tunis": 1,
+   "recurrentes": 1,
+   "teskerti": 1
   }
  }
 ]

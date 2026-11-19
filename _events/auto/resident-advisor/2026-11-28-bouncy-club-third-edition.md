@@ -8,7 +8,7 @@ price: "20"
 link: "https://ra.co/events/2585403"
 source: "resident-advisor"
 source_name: "Resident Advisor (Tunisie)"
-image: "https://images.ra.co/5e85db421bf17f5279edd9f272af554c622d6ff6.png"
+image: "assets/images/842559d791c6.png"
 artists: ["ASECHS"]
 ajoute: "2026-11-17"
 auto: true

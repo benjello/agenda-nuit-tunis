@@ -10,7 +10,7 @@ price: "25 TND"
 link: "https://tunis.events/events/mE2Ov3/chichbich-au-sous-sol-21-novembre-la-verriere-le-sous-sol-cafe-resto"
 source: "tunis-events"
 source_name: "tunis.events (agenda)"
-image: "https://tunis.events/storage/e6c1b361a921fbb8ff0fdeb52bc7dfd2.jpg"
+image: "assets/images/86836cb9615b.png"
 ajoute: "2026-11-18"
 auto: true
 ---

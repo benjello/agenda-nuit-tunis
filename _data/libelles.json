@@ -314,6 +314,11 @@
   "ar": "Carpe Diem",
   "en": "Carpe Diem"
  },
+ "Carthage Thalasso Resort": {
+  "de": "fr",
+  "ar": "Carthage Thalasso Resort",
+  "en": "Carthage Thalasso Resort"
+ },
  "Centre culturel": {
   "de": "fr",
   "ar": "المركز الثقافي",
@@ -413,6 +418,11 @@
   "de": "fr",
   "ar": "التجمعات والجمعيات ورجال الدين والفنانين",
   "en": "Collectives, associations, DJs and artists"
+ },
+ "Complexe La Tour Blanche – Gammarth": {
+  "de": "fr",
+  "ar": "مجمّع البرج الأبيض - جامارث",
+  "en": "The White Tower Complex – Gammarth"
  },
  "Concert live": {
   "de": "en",
@@ -609,6 +619,16 @@
   "ar": "Frida Bar",
   "en": "Frida Bar"
  },
+ "GAMMARTH. LES COTES DE CARTHAGE. BP720. 2070 TUNISIA Gammarth": {
+  "de": "fr",
+  "ar": "(غامارث) (كارتاج كوتس) BP720 2070 TUNISIA Gammarth",
+  "en": "GAMMARTH. CARTHAGE COTES. BP720. 2070 TUNISIA Gammarth"
+ },
+ "GAMMARTH. LES COTES DE CARTHAGE. BP720. 2070 TUNISIA Gammarth, 2070": {
+  "de": "fr",
+  "ar": "(غامارث) (كارتاج كوتس) BP720 2070 TUNISIA Gammarth, 2070",
+  "en": "GAMMARTH. CARTHAGE COTES. BP720. 2070 TUNISIA Gammarth, 2070"
+ },
  "Galerie": {
   "de": "fr",
   "ar": "معرض",
@@ -623,6 +643,11 @@
   "de": "fr",
   "ar": "Gammarth",
   "en": "Gammarth"
+ },
+ "Generation 90 | ora club 19/11": {
+  "de": "fr",
+  "ar": "التوليد 90",
+  "en": "Generation 90"
  },
  "Goa Private Beach": {
   "de": "fr",
@@ -653,6 +678,16 @@
   "de": "fr",
   "ar": "تونس الكبرى (باردو، الوردية، العمران، الموروج)",
   "en": "Greater Tunis (Bardo, El Ouardia, El Omrane, El Mourouj...)"
+ },
+ "HOPE FESTIVAL INVITES TIF": {
+  "de": "en",
+  "fr": "FESTIVAL DE L'HOPE INVITE TIF",
+  "ar": "HOPE FESTIVAL INVITES TIFT"
+ },
+ "HOPE Festival returns on 28 November 2026 at Carthage Thalasso, Gammarth, for a new edition.\nAlongside the live music, guests can explore a photography exhibition showcasing selected tunisian photographers’ perspectives, as well as an exhibition space featuring independent brands.": {
+  "de": "en",
+  "fr": "HOPE Festival revient le 28 novembre 2026 à Carthage Thalasso, Gammarth, pour une nouvelle édition.\nEn plus de la musique live, vous pourrez découvrir une exposition de photographie présentant des perspectives tunisiennes sélectionnées, ainsi qu'un espace d'exposition avec des marques indépendantes.",
+  "ar": "HOPE Festival returns on 28 November 2026 at Carthage Thalasso, Gammarth, for a new edition.\nوإلى جانب الموسيقى الحية، يمكن للضيوف أن يستكشفوا معرضا للصور الفوتوغرافية يعرض مناظير مصورين تونيزيين مختارة، فضلا عن فضاء للمعارضة يشمل علامات تجارية مستقلة."
  },
  "Habibi Downtown (Instagram)": {
   "de": "fr",
@@ -769,6 +804,11 @@
   "ar": "\"الدورايد\"",
   "en": "The Dauride"
  },
+ "La Goulette": {
+  "de": "fr",
+  "ar": "The Goulette",
+  "en": "The Goulette"
+ },
  "La Grotte": {
   "de": "fr",
   "ar": "الكهف",
@@ -778,6 +818,11 @@
   "de": "fr",
   "ar": "La Marsa",
   "en": "La Marsa"
+ },
+ "La Marsa 2070": {
+  "de": "fr",
+  "ar": "La Marsa 2070",
+  "en": "La Marsa 2070"
  },
  "La Marsa, La Marsa": {
   "de": "fr",
@@ -1229,6 +1274,11 @@
   "ar": "روك أن رولا لا غوليت (Instagram)",
   "en": "Rock'n'Rolla La Goulette (Instagram)"
  },
+ "Rock'n'Rolla, La Goulette": {
+  "de": "fr",
+  "ar": "Rock'n'Rolla, La Goulette",
+  "en": "Rock'n'Rolla, La Goulette"
+ },
  "Rooh El Medina": {
   "de": "fr",
   "ar": "Rooh El Medina",
@@ -1244,6 +1294,16 @@
   "ar": "Route 66 Menzah 6",
   "en": "Route 66 Menzah 6"
  },
+ "Route de Gammarth": {
+  "de": "fr",
+  "ar": "Gammarth Road",
+  "en": "Gammarth Road"
+ },
+ "Route de Gammarth, La Marsa 2070": {
+  "de": "fr",
+  "ar": "Gammarth Road, La Marsa 2070",
+  "en": "Gammarth Road, La Marsa 2070"
+ },
  "Route de la Plage": {
   "de": "fr",
   "ar": "طريق الشاطئ",
@@ -1258,6 +1318,11 @@
   "de": "fr",
   "ar": "El Mustakbel Street",
   "en": "El Mustakbel Street"
+ },
+ "Rywa Live Band": {
+  "de": "en",
+  "fr": "Rywa Bande en direct",
+  "ar": "Rywa Live Band"
  },
  "Salsa Disco Djerba": {
   "de": "fr",
@@ -1544,6 +1609,11 @@
   "ar": "W7CQ+4W5, Gammarth, Gammarth",
   "en": "W7CQ+4W5, Gammarth, Gammarth"
  },
+ "Walid Salhi débarque au Jetset pour une soirée pleine de rythme et de folie. Une ambiance": {
+  "de": "fr",
+  "ar": "ويصل (وليد سالهي) إلى (الجيتسيت) لمساء مليء بالإيقاع والجنون الغلاف الجوي",
+  "en": "Walid Salhi arrives at the Jetset for an evening full of rhythm and madness. An atmosphere"
+ },
  "Yasmine Hammamet Bar": {
   "de": "fr",
   "ar": "Yasmine Hammamet Bar",
@@ -1593,6 +1663,11 @@
   "de": "fr",
   "ar": "شطائر، شطائر",
   "en": "burgers, sandwiches"
+ },
+ "complexe le relais": {
+  "de": "fr",
+  "ar": "عمليات النقل المعقدة",
+  "en": "complex relay"
  },
  "crepe, breakfast, French": {
   "de": "fr",

@@ -1,7 +1,18 @@
 {
- "date": "2026-11-18",
+ "date": "2026-11-19",
  "corriges": 0,
- "a_verifier": [],
+ "a_verifier": [
+  {
+   "fichier": "ig-nf-event/2026-11-28-walid-salhi-debarque-au-jetset-pour-une-soiree-pleine-de-ryt.md",
+   "source": "ig-nf-event",
+   "titre": "Walid Salhi débarque au Jetset pour une soirée pleine de rythme et de folie. Une ambiance",
+   "date": "2026-11-28",
+   "lien": "https://www.instagram.com/p/Df45cUTNNnw/",
+   "problemes": [
+    "titre trop long (début d'une légende ?)"
+   ]
+  }
+ ],
  "granularite": {
   "sources": {
    "ig-habibi-downtown": {
@@ -25,6 +36,19 @@
     ],
     "manques": []
    },
+   "ig-nf-event": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
+     }
+    ]
+   },
    "ig-tn-techno-community": {
     "n": 1,
     "precis": 0,
@@ -45,6 +69,26 @@
      }
     ]
    },
+   "recurrentes": {
+    "n": 2,
+    "precis": 0,
+    "pourcent": 0,
+    "defauts": [
+     {
+      "code": "lien_general",
+      "texte": "lien vers une page générale (programme, PDF, accueil), pas une fiche",
+      "n": 2,
+      "exemple": "Rywa Live Band"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_image",
+      "texte": "image",
+      "n": 2
+     }
+    ]
+   },
    "resident-advisor": {
     "n": 2,
     "precis": 1,
@@ -59,6 +103,24 @@
     ],
     "manques": []
    },
+   "teskerti": {
+    "n": 2,
+    "precis": 2,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_image",
+      "texte": "image",
+      "n": 2
+     },
+     {
+      "code": "sans_notice",
+      "texte": "notice",
+      "n": 2
+     }
+    ]
+   },
    "tunis-events": {
     "n": 3,
     "precis": 3,
@@ -68,10 +130,30 @@
    }
   },
   "scrapers": {
+   "recurrentes": {
+    "n": 2,
+    "precis": 0,
+    "pourcent": 0,
+    "defauts": [
+     {
+      "code": "lien_general",
+      "texte": "lien vers une page générale (programme, PDF, accueil), pas une fiche",
+      "n": 2,
+      "exemple": "Rywa Live Band"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_image",
+      "texte": "image",
+      "n": 2
+     }
+    ]
+   },
    "instagram": {
-    "n": 3,
-    "precis": 1,
-    "pourcent": 33,
+    "n": 4,
+    "precis": 2,
+    "pourcent": 50,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -84,7 +166,7 @@
      {
       "code": "sans_heure",
       "texte": "heure",
-      "n": 1
+      "n": 2
      }
     ]
    },
@@ -108,6 +190,24 @@
     "pourcent": 100,
     "defauts": [],
     "manques": []
+   },
+   "teskerti": {
+    "n": 2,
+    "precis": 2,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
+     {
+      "code": "sans_image",
+      "texte": "image",
+      "n": 2
+     },
+     {
+      "code": "sans_notice",
+      "texte": "notice",
+      "n": 2
+     }
+    ]
    }
   }
  }

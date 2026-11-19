@@ -9,7 +9,7 @@ price: "475"
 link: "https://ra.co/events/2539551"
 source: "resident-advisor"
 source_name: "Resident Advisor (Tunisie)"
-image: "https://images.ra.co/0f6c17b04753100d599d3a5c11c3c5cdb20d85dd.jpg"
+image: "assets/images/b0f14f7736b2.jpg"
 artists: ["Emine (2)", "harrison guyett", "Kian OK", "Omar Fayyad", "Pan-J", "Picasso"]
 ajoute: "2026-11-08"
 auto: true

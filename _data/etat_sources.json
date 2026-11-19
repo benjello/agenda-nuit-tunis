@@ -12,8 +12,8 @@
   "fb-recherche-soirees": {
     "attente": null,
     "dernier_non_vide": "2026-11-08T11:49:35",
-    "dernier_passage": "2026-11-17T11:28:46",
-    "dernier_succes": "2026-11-17T11:28:46",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
     "erreur": null,
     "nb": 0,
     "ok": true,
@@ -107,13 +107,14 @@
   },
   "ig-nf-event": {
     "attente": null,
-    "dernier_non_vide": "2026-11-11T12:46:08",
-    "dernier_passage": "2026-11-18T14:04:25",
-    "dernier_succes": "2026-11-18T14:04:25",
+    "dernier_non_vide": "2026-11-19T14:28:38",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
     "erreur": null,
-    "nb": 0,
+    "nb": 1,
     "ok": true,
-    "premier_passage": "2026-11-09T13:43:39"
+    "premier_passage": "2026-11-09T13:43:39",
+    "sans_heure": 1
   },
   "ig-osiris-djerba": {
     "attente": null,
@@ -162,11 +163,22 @@
     "ok": true,
     "premier_passage": "2026-11-08T12:28:28"
   },
+  "recurrentes": {
+    "attente": null,
+    "dernier_non_vide": "2026-11-19T14:28:38",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
+    "erreur": null,
+    "nb": 2,
+    "ok": true,
+    "premier_passage": "2026-11-19T14:28:38",
+    "sans_heure": 0
+  },
   "resident-advisor": {
     "attente": null,
-    "dernier_non_vide": "2026-11-18T16:46:17",
-    "dernier_passage": "2026-11-18T16:46:17",
-    "dernier_succes": "2026-11-18T16:46:17",
+    "dernier_non_vide": "2026-11-19T14:28:38",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
     "erreur": null,
     "nb": 2,
     "ok": true,
@@ -175,17 +187,19 @@
   },
   "teskerti": {
     "attente": null,
-    "dernier_passage": "2026-11-18T14:04:25",
-    "dernier_succes": "2026-11-18T14:04:25",
+    "dernier_non_vide": "2026-11-19T14:28:38",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
     "erreur": null,
-    "nb": 0,
+    "nb": 2,
     "ok": true,
-    "premier_passage": "2026-11-08T11:38:40"
+    "premier_passage": "2026-11-08T11:38:40",
+    "sans_heure": 0
   },
   "tn-agenda-du-jour": {
     "attente": null,
-    "dernier_passage": "2026-11-18T19:05:24",
-    "dernier_succes": "2026-11-18T19:05:24",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
     "erreur": null,
     "nb": 0,
     "ok": true,
@@ -193,9 +207,9 @@
   },
   "tunis-events": {
     "attente": null,
-    "dernier_non_vide": "2026-11-18T14:04:25",
-    "dernier_passage": "2026-11-18T14:04:25",
-    "dernier_succes": "2026-11-18T14:04:25",
+    "dernier_non_vide": "2026-11-19T14:28:38",
+    "dernier_passage": "2026-11-19T14:28:38",
+    "dernier_succes": "2026-11-19T14:28:38",
     "erreur": null,
     "nb": 3,
     "ok": true,
