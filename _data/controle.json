@@ -1,7 +1,17 @@
 {
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "corriges": 0,
  "a_verifier": [
+  {
+   "fichier": "ig-habibi-downtown/2026-11-22-playing-some-experimental-hypnotic-ambient-this-sunday-for-c.md",
+   "source": "ig-habibi-downtown",
+   "titre": "Playing some Experimental Hypnotic Ambient this Sunday for closing event, alongside my man",
+   "date": "2026-11-22",
+   "lien": "https://www.instagram.com/p/Df7YHlfCA4m/",
+   "problemes": [
+    "titre trop long (début d'une légende ?)"
+   ]
+  },
   {
    "fichier": "ig-nf-event/2026-11-28-walid-salhi-debarque-au-jetset-pour-une-soiree-pleine-de-ryt.md",
    "source": "ig-nf-event",
@@ -15,7 +25,28 @@
  ],
  "granularite": {
   "sources": {
+   "ig-eddisco": {
+    "n": 2,
+    "precis": 2,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
+   },
+   "ig-fabrika": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
+   },
    "ig-habibi-downtown": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
+   },
+   "ig-hamdi-ryder": {
     "n": 1,
     "precis": 1,
     "pourcent": 100,
@@ -24,17 +55,16 @@
    },
    "ig-jaou-tunis": {
     "n": 1,
-    "precis": 0,
-    "pourcent": 0,
-    "defauts": [
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": [
      {
-      "code": "lieu_vague",
-      "texte": "lieu à préciser",
-      "n": 1,
-      "exemple": "Art Explora Festival"
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 1
      }
-    ],
-    "manques": []
+    ]
    },
    "ig-nf-event": {
     "n": 1,
@@ -48,6 +78,13 @@
       "n": 1
      }
     ]
+   },
+   "ig-rock-n-rolla": {
+    "n": 1,
+    "precis": 1,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
    },
    "ig-tn-techno-community": {
     "n": 1,
@@ -104,15 +141,15 @@
     "manques": []
    },
    "teskerti": {
-    "n": 2,
-    "precis": 2,
+    "n": 1,
+    "precis": 1,
     "pourcent": 100,
     "defauts": [],
     "manques": [
      {
       "code": "sans_image",
       "texte": "image",
-      "n": 2
+      "n": 1
      },
      {
       "code": "sans_notice",
@@ -150,26 +187,6 @@
      }
     ]
    },
-   "instagram": {
-    "n": 4,
-    "precis": 2,
-    "pourcent": 50,
-    "defauts": [
-     {
-      "code": "lieu_vague",
-      "texte": "lieu à préciser",
-      "n": 2,
-      "exemple": "Art Explora Festival"
-     }
-    ],
-    "manques": [
-     {
-      "code": "sans_heure",
-      "texte": "heure",
-      "n": 2
-     }
-    ]
-   },
    "resident_advisor": {
     "n": 2,
     "precis": 1,
@@ -184,6 +201,26 @@
     ],
     "manques": []
    },
+   "instagram": {
+    "n": 9,
+    "precis": 8,
+    "pourcent": 89,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 1,
+      "exemple": "You’ve been waiting for it. We’re back !"
+     }
+    ],
+    "manques": [
+     {
+      "code": "sans_heure",
+      "texte": "heure",
+      "n": 3
+     }
+    ]
+   },
    "tunis_events": {
     "n": 3,
     "precis": 3,
@@ -192,15 +229,15 @@
     "manques": []
    },
    "teskerti": {
-    "n": 2,
-    "precis": 2,
+    "n": 1,
+    "precis": 1,
     "pourcent": 100,
     "defauts": [],
     "manques": [
      {
       "code": "sans_image",
       "texte": "image",
-      "n": 2
+      "n": 1
      },
      {
       "code": "sans_notice",

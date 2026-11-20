@@ -69,6 +69,11 @@
   "fr": "98191329 Imam Muslam Al-Sabajaj",
   "en": "98191329 Imam Muslam Al-Sabajaj"
  },
+ "AINA": {
+  "de": "fr",
+  "ar": "AINA",
+  "en": "AINA"
+ },
  "ASECHS": {
   "de": "fr",
   "ar": "ASECHS",
@@ -83,11 +88,6 @@
   "de": "fr",
   "ar": "Ariana",
   "en": "Ariana"
- },
- "Art Explora Festival": {
-  "de": "en",
-  "fr": "Festival d'Art Explora",
-  "ar": "مهرجان أكسبلورا"
  },
  "Autre soirée": {
   "de": "fr",
@@ -644,11 +644,6 @@
   "ar": "Gammarth",
   "en": "Gammarth"
  },
- "Generation 90 | ora club 19/11": {
-  "de": "fr",
-  "ar": "التوليد 90",
-  "en": "Generation 90"
- },
  "Goa Private Beach": {
   "de": "fr",
   "ar": "Goa Private Beach",
@@ -694,6 +689,16 @@
   "ar": "Habi Downtown, Instagram",
   "en": "Habibi Downtown, Instagram"
  },
+ "Habibi Downtown (av. de Paris": {
+  "de": "fr",
+  "ar": "(هابي داون تاون) of Paris",
+  "en": "Habibi Downtown (av. of Paris"
+ },
+ "Habibi Downtown (av. de Paris, Tunis)": {
+  "de": "fr",
+  "ar": "(هابي داون تاون) باريس، تونس",
+  "en": "Habibi Downtown (av. Paris, Tunis)"
+ },
  "Hamdi RydEr (Instagram)": {
   "de": "fr",
   "ar": "حمدي ريدير (Instagram)",
@@ -729,10 +734,20 @@
   "ar": "International, French, Mediterranean",
   "en": "International, French, Mediterranean"
  },
+ "It’s time to erupt": {
+  "de": "fr",
+  "ar": "حان وقت الاستراحة",
+  "en": "Is time to break"
+ },
  "Jaou Tunis (Instagram)": {
   "de": "fr",
   "ar": "Jaou Tunis (Instagram)",
   "en": "Jaou Tunis (Instagram)"
+ },
+ "Jaou Tunis 2026 From Idea to Image Video Making": {
+  "de": "en",
+  "fr": "Jaou Tunis 2026 De l'idée à la vidéo",
+  "ar": "Jaou Tunis 2026 From Idea to Image Video Making"
  },
  "Japanese, sushi": {
   "de": "fr",
@@ -819,11 +834,6 @@
   "ar": "La Marsa",
   "en": "La Marsa"
  },
- "La Marsa 2070": {
-  "de": "fr",
-  "ar": "La Marsa 2070",
-  "en": "La Marsa 2070"
- },
  "La Marsa, La Marsa": {
   "de": "fr",
   "ar": "La Marsa, La Marsa",
@@ -883,6 +893,11 @@
   "de": "fr",
   "ar": "غرفة الطعام",
   "en": "The dining room"
+ },
+ "Lafayette Tunis": {
+  "de": "fr",
+  "ar": "Lafayette Tunis",
+  "en": "Lafayette Tunis"
  },
  "Laroussi & Stacy Beach": {
   "de": "fr",
@@ -1014,6 +1029,11 @@
   "ar": "The Berges du Lac 2",
   "en": "The Berges du Lac 2"
  },
+ "Les SELTIKA sur scène ce vendredi": {
+  "de": "fr",
+  "ar": "سيلتيكا على المسرح هذا الجمعة",
+  "en": "The Seltika on stage this Friday"
+ },
  "Lieu": {
   "de": "fr",
   "ar": "الموقع",
@@ -1144,6 +1164,21 @@
   "ar": "عمر فاياد",
   "en": "Omar Fayyad"
  },
+ "One Resort": {
+  "de": "fr",
+  "ar": "إعادة واحدة",
+  "en": "One Resort"
+ },
+ "One Resort, Monastir": {
+  "de": "fr",
+  "ar": "إعادة واحدة، موناستير",
+  "en": "One Resort, Monastir"
+ },
+ "Opening Act: kicks off Tunis Is a Frequency with a live modular set!": {
+  "de": "en",
+  "fr": "Acte d'ouverture : commence Tunis est une fréquence avec un ensemble modulaire en direct !",
+  "ar": "القانون الافتتاحي: إن الركلات قبالة تونس هي تواتر مع مجموعة نموذجية حية!"
+ },
  "Osiris Club Djerba": {
   "de": "fr",
   "ar": "نادي أوزيريس ديربا",
@@ -1194,6 +1229,11 @@
   "ar": "Platinum Metalika Foam",
   "en": "Platinum Metalika Foam"
  },
+ "Playing some Experimental Hypnotic Ambient this Sunday for closing event, alongside my man": {
+  "de": "en",
+  "fr": "Ce dimanche, j'ai joué à l'événement de clôture avec mon mari.",
+  "ar": "ألعب بعض المُستشفيات المُستهلّسة هذا الأحد للحدث المُغلق، إلى جانب رجلي"
+ },
  "Pool Party Club Hammamet": {
   "de": "en",
   "fr": "Pool Party Club Hammamet",
@@ -1223,6 +1263,11 @@
   "de": "fr",
   "ar": "قناديل رمضان",
   "en": "Qanadil Ramadan"
+ },
+ "Quechlet El Attarine": {
+  "de": "fr",
+  "ar": "Quechlet El Attarine",
+  "en": "Quechlet El Attarine"
  },
  "Ramadan du Beït ech-chaâr": {
   "de": "fr",
@@ -1293,16 +1338,6 @@
   "de": "fr",
   "ar": "Route 66 Menzah 6",
   "en": "Route 66 Menzah 6"
- },
- "Route de Gammarth": {
-  "de": "fr",
-  "ar": "Gammarth Road",
-  "en": "Gammarth Road"
- },
- "Route de Gammarth, La Marsa 2070": {
-  "de": "fr",
-  "ar": "Gammarth Road, La Marsa 2070",
-  "en": "Gammarth Road, La Marsa 2070"
  },
  "Route de la Plage": {
   "de": "fr",
@@ -1579,11 +1614,6 @@
   "ar": "2 M Pizzeria",
   "en": "Two M Pizzeria"
  },
- "Un rooftop, deux artistes, une même scène... et une soirée": {
-  "de": "fr",
-  "ar": "على السطح، فنانين، مشهد واحد... وليلة واحدة",
-  "en": "A rooftop, two artists, one scene... and one night"
- },
  "Unidos Club by El Pacha": {
   "de": "en",
   "fr": "Unidos Club par El Pacha",
@@ -1613,6 +1643,11 @@
   "de": "fr",
   "ar": "ويصل (وليد سالهي) إلى (الجيتسيت) لمساء مليء بالإيقاع والجنون الغلاف الجوي",
   "en": "Walid Salhi arrives at the Jetset for an evening full of rhythm and madness. An atmosphere"
+ },
+ "We’re not done celebrating": {
+  "de": "fr",
+  "ar": "لم يتم الاحتفال",
+  "en": "Were not done celebrating"
  },
  "Yasmine Hammamet Bar": {
   "de": "fr",
@@ -1663,11 +1698,6 @@
   "de": "fr",
   "ar": "شطائر، شطائر",
   "en": "burgers, sandwiches"
- },
- "complexe le relais": {
-  "de": "fr",
-  "ar": "عمليات النقل المعقدة",
-  "en": "complex relay"
  },
  "crepe, breakfast, French": {
   "de": "fr",
