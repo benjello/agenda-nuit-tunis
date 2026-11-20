@@ -10,8 +10,8 @@ source: "ig-rock-n-rolla"
 source_name: "Rock'n'Rolla La Goulette (Instagram)"
 image: "assets/programmes/ig-rock-n-rolla/ae3dbf981cbc.jpg"
 ajoute: "2026-11-20"
-auto: true
 reservation: "+216 28 306 587"
+auto: true
 ---
 
 Les SELTIKA sur scène ce vendredi 🔥🎶

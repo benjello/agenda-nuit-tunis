@@ -150,11 +150,6 @@
       "code": "sans_image",
       "texte": "image",
       "n": 1
-     },
-     {
-      "code": "sans_notice",
-      "texte": "notice",
-      "n": 1
      }
     ]
    },
@@ -237,11 +232,6 @@
      {
       "code": "sans_image",
       "texte": "image",
-      "n": 1
-     },
-     {
-      "code": "sans_notice",
-      "texte": "notice",
       "n": 1
      }
     ]
