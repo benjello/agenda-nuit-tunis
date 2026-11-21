@@ -1,5 +1,5 @@
 {
- "date": "2026-11-20",
+ "date": "2026-11-21",
  "corriges": 0,
  "a_verifier": [
   {
@@ -150,6 +150,11 @@
       "code": "sans_image",
       "texte": "image",
       "n": 1
+     },
+     {
+      "code": "sans_notice",
+      "texte": "notice",
+      "n": 1
      }
     ]
    },
@@ -232,6 +237,11 @@
      {
       "code": "sans_image",
       "texte": "image",
+      "n": 1
+     },
+     {
+      "code": "sans_notice",
+      "texte": "notice",
       "n": 1
      }
     ]

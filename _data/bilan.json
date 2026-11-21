@@ -94,11 +94,11 @@
  },
  {
   "semaine": "2026-S47",
-  "date": "2026-11-20",
-  "a_venir": 17,
-  "sept_jours": 10,
+  "date": "2026-11-21",
+  "a_venir": 16,
+  "sept_jours": 13,
   "sources_actives": 22,
-  "sources_avec_evenements": 8,
+  "sources_avec_evenements": 10,
   "sources_muettes": [
    "fb-61595612945174",
    "fb-recherche-soirees",
@@ -107,38 +107,39 @@
    "ig-echos-electrik",
    "ig-eddisco",
    "ig-kadhem",
-   "ig-nf-event",
    "ig-osiris-djerba",
+   "ig-rock-n-rolla",
    "ig-techno-tunisia",
-   "ig-tn-techno-community",
    "ig-tunisia-comedy-festival",
-   "teskerti",
    "tn-agenda-du-jour"
   ],
   "par_ville": {
-   "tunis": 9,
+   "tunis": 12,
    "monastir": 1
   },
   "par_categorie": {
-   "concert": 4,
-   "festival": 3,
-   "club": 3
+   "club": 5,
+   "festival": 4,
+   "concert": 3,
+   "cabaret": 1
   },
   "par_genre": {
-   "agenda": 5,
+   "agenda": 7,
+   "collectif": 3,
    "festival": 2,
-   "lieu": 2,
-   "collectif": 1
+   "lieu": 1
   },
   "par_source": {
    "tunis-events": 3,
+   "resident-advisor": 2,
    "ig-fabrika": 1,
    "ig-habibi-downtown": 1,
    "ig-hamdi-ryder": 1,
    "ig-jaou-tunis": 1,
-   "ig-rock-n-rolla": 1,
+   "ig-nf-event": 1,
+   "ig-tn-techno-community": 1,
    "recurrentes": 1,
-   "resident-advisor": 1
+   "teskerti": 1
   }
  }
 ]
