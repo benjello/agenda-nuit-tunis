@@ -4,13 +4,12 @@
   "One Resort, Monastir": "one-resort-monastir",
   "Habibi Downtown (av. de Paris, Tunis)": "habibi-downtown-av-de-paris-tunis",
   "AINA": "aina",
-  "AÏNA": "aina",
   "Quechlet El Attarine": "quechlet-el-attarine",
   "Complexe La Tour Blanche – Gammarth": "complexe-la-tour-blanche-gammarth",
   "Rock'n'Rolla, La Goulette": "rock-n-rolla-la-goulette",
   "TBA - studio 52": "tba-studio-52",
+  "Hôtel Belvédère Fourati": "hotel-belvedere-fourati",
   "Carthage Thalasso Resort": "carthage-thalasso-resort",
-  "La Verrière (Le sous-sol)- Café Resto": "la-verriere-le-sous-sol-cafe-resto",
   "B7L9 Art Centre": "b7l9-art-centre"
  },
  "carte": [
@@ -39,6 +38,15 @@
    "ville": "monastir",
    "lat": 35.76372,
    "lon": 10.7399,
+   "n": 1
+  },
+  {
+   "slug": "hotel-belvedere-fourati",
+   "nom": "Hôtel Belvédère Fourati",
+   "type": "autre",
+   "ville": "tunis",
+   "lat": 36.81563,
+   "lon": 10.17782,
    "n": 1
   },
   {

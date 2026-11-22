@@ -1,7 +1,6 @@
 ---
 title: "AINA"
-noms: ["AINA", "AÏNA"]
+noms: ["AINA"]
 type: "autre"
-adresse: "W7CQ+4W5, Gammarth, Gammarth"
 ville: "tunis"
 ---
