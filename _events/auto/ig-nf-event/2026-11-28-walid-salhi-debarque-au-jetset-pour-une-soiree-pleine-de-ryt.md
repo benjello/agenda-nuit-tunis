@@ -9,8 +9,8 @@ source: "ig-nf-event"
 source_name: "NF Event (Instagram)"
 image: "assets/programmes/ig-nf-event/3975a4d50067.jpg"
 ajoute: "2026-11-19"
-auto: true
 reservation: "+216 50 468 003"
+auto: true
 ---
 
 𝐒𝐚𝐦𝐞𝐝𝐢 𝟐𝟖 𝐍𝐨𝐯𝐞𝐦𝐛𝐫𝐞✨
