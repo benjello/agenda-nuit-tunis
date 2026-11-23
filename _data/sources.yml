@@ -318,7 +318,7 @@
   genre: lieu
   scraper: instagram
   categorie: discotheque
-  actif: false  # club d'été, fermé l'hiver : à remettre à true au printemps (décision du 23 novembre 2026, #10)
+  actif: true
   tous_les_jours: 3
   options:
     compte: calypsotunisiaofficial
@@ -349,7 +349,7 @@
   genre: lieu
   scraper: instagram
   categorie: club
-  actif: false  # club d'été, fermé l'hiver : à remettre à true au printemps (décision du 23 novembre 2026, #10)
+  actif: true
   tous_les_jours: 3
   options:
     compte: osirisclubdjerba
