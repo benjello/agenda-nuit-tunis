@@ -59,6 +59,16 @@
   "fr": "32 approches pour les chèvres, Tunisie",
   "en": "32 goat approaches, Tunisia"
  },
+ "34 Av. de La Liberté": {
+  "de": "fr",
+  "ar": "34 Av. of Liberty",
+  "en": "34 Av. of Liberty"
+ },
+ "34 Av. de La Liberté, Tunis 1002, Tunis": {
+  "de": "fr",
+  "ar": "34 Av. Freedom, Tunis 1002, Tunis",
+  "en": "34 Av. Freedom, Tunis 1002, Tunis"
+ },
  "75 Av. Hédi Nouira, Ariana": {
   "de": "fr",
   "ar": "75 Av. Hedi Nouira, Ariana",
@@ -128,11 +138,6 @@
   "de": "fr",
   "ar": "(أكسل دي) Bodega",
   "en": "Axel D. Bodega"
- },
- "B7L9 Art Centre": {
-  "de": "fr",
-  "ar": "B7L9 مركز الفنون",
-  "en": "B7L9 Art Centre"
  },
  "BORA BORA Disco": {
   "de": "fr",
@@ -744,11 +749,6 @@
   "ar": "Jaou Tunis (Instagram)",
   "en": "Jaou Tunis (Instagram)"
  },
- "Jaou Tunis 2026 From Idea to Image Video Making": {
-  "de": "en",
-  "fr": "Jaou Tunis 2026 De l'idée à la vidéo",
-  "ar": "Jaou Tunis 2026 From Idea to Image Video Making"
- },
  "Japanese, sushi": {
   "de": "fr",
   "ar": "ياباني، سوشي",
@@ -828,16 +828,6 @@
   "de": "fr",
   "ar": "الكهف",
   "en": "The Cave"
- },
- "La Marsa": {
-  "de": "fr",
-  "ar": "La Marsa",
-  "en": "La Marsa"
- },
- "La Marsa, La Marsa": {
-  "de": "fr",
-  "ar": "La Marsa, La Marsa",
-  "en": "La Marsa, La Marsa"
  },
  "La Perla Beach": {
   "de": "fr",
@@ -1024,11 +1014,6 @@
   "ar": "The Berges du Lac 2",
   "en": "The Berges du Lac 2"
  },
- "Les SELTIKA sur scène ce vendredi": {
-  "de": "fr",
-  "ar": "سيلتيكا على المسرح هذا الجمعة",
-  "en": "The Seltika on stage this Friday"
- },
  "Lieu": {
   "de": "fr",
   "ar": "الموقع",
@@ -1159,16 +1144,6 @@
   "ar": "عمر فاياد",
   "en": "Omar Fayyad"
  },
- "One Resort": {
-  "de": "fr",
-  "ar": "إعادة واحدة",
-  "en": "One Resort"
- },
- "One Resort, Monastir": {
-  "de": "fr",
-  "ar": "إعادة واحدة، موناستير",
-  "en": "One Resort, Monastir"
- },
  "Opening Act: kicks off Tunis Is a Frequency with a live modular set!": {
   "de": "en",
   "fr": "Acte d'ouverture : commence Tunis est une fréquence avec un ensemble modulaire en direct !",
@@ -1204,6 +1179,11 @@
   "ar": "Picasso",
   "en": "Picasso"
  },
+ "Pierre et le Loup (S. Prokofiev)": {
+  "de": "fr",
+  "ar": "(بيتر) و(الذئب) Prokofiev",
+  "en": "Peter and the Wolf (S. Prokofiev)"
+ },
  "Pinky Bistro": {
   "de": "fr",
   "ar": "Pinky Bistro",
@@ -1223,11 +1203,6 @@
   "de": "fr",
   "ar": "Platinum Metalika Foam",
   "en": "Platinum Metalika Foam"
- },
- "Playing some Experimental Hypnotic Ambient this Sunday for closing event, alongside my man": {
-  "de": "en",
-  "fr": "Ce dimanche, j'ai joué à l'événement de clôture avec mon mari.",
-  "ar": "ألعب بعض المُستشفيات المُستهلّسة هذا الأحد للحدث المُغلق، إلى جانب رجلي"
  },
  "Pool Party Club Hammamet": {
   "de": "en",
@@ -1258,11 +1233,6 @@
   "de": "fr",
   "ar": "قناديل رمضان",
   "en": "Qanadil Ramadan"
- },
- "Quechlet El Attarine": {
-  "de": "fr",
-  "ar": "Quechlet El Attarine",
-  "en": "Quechlet El Attarine"
  },
  "Ramadan du Beït ech-chaâr": {
   "de": "fr",
@@ -1348,6 +1318,11 @@
   "de": "fr",
   "ar": "El Mustakbel Street",
   "en": "El Mustakbel Street"
+ },
+ "Russian House": {
+  "de": "fr",
+  "ar": "الدار الروسية",
+  "en": "Russian House"
  },
  "Rywa Live Band": {
   "de": "en",
@@ -1574,6 +1549,11 @@
   "ar": "ثلاثمائة وستون",
   "en": "Three hundred and sixty"
  },
+ "Tunis": {
+  "de": "fr",
+  "ar": "تونس",
+  "en": "Tunis"
+ },
  "Tunisia Comedy Festival (Instagram)": {
   "de": "en",
   "fr": "Festival de la comédie tunisienne (Instagram)",
@@ -1593,11 +1573,6 @@
   "de": "fr",
   "ar": "تونسي، المأكولات البحرية، المعكرونة، الأسماك، النبلاء، الأخطبوط",
   "en": "Tunisian, seafood, pasta, fish, nobles, octopus"
- },
- "Tunisie Numérique (agenda du jour)": {
-  "de": "fr",
-  "ar": "رقم تونس (جدول أعمال اليوم)",
-  "en": "Tunisia Digital (agenda of the day)"
  },
  "Twist Tunisia": {
   "de": "fr",
@@ -1629,11 +1604,6 @@
   "ar": "ويصل (وليد سالهي) إلى (الجيتسيت) لمساء مليء بالإيقاع والجنون الغلاف الجوي",
   "en": "Walid Salhi arrives at the Jetset for an evening full of rhythm and madness. An atmosphere"
  },
- "We’re not done celebrating": {
-  "de": "fr",
-  "ar": "لم يتم الاحتفال",
-  "en": "Were not done celebrating"
- },
  "Yasmine Hammamet Bar": {
   "de": "fr",
   "ar": "Yasmine Hammamet Bar",
@@ -1653,6 +1623,11 @@
   "de": "fr",
   "ar": "يوكا تونس",
   "en": "Yüka Tunis"
+ },
+ "Zanzana Revival, lundi 23 novembre au Habibi Downtown, Tunis": {
+  "de": "fr",
+  "ar": "زانزانا ريفيفال، الاثنين، 23 تشرين الثاني/نوفمبر في حابي داونتاون، تونس",
+  "en": "Zanzana Revival, Monday, November 23 at Habibi Downtown, Tunis"
  },
  "burgers, chicken, fish, Italian, italian pizza, kebab, Mediterranean": {
   "de": "fr",

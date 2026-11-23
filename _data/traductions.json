@@ -16,14 +16,6 @@
    "ar": "حان وقت الاستراحة",
    "en": "Is time to break"
   },
-  "Jaou Tunis 2026 From Idea to Image Video Making": {
-   "fr": "Jaou Tunis 2026 De l'idée à la vidéo",
-   "ar": "Jaou Tunis 2026 From Idea to Image Video Making"
-  },
-  "Les SELTIKA sur scène ce vendredi": {
-   "ar": "سيلتيكا على المسرح هذا الجمعة",
-   "en": "The Seltika on stage this Friday"
-  },
   "Nōmad Man Festival 2026": {
    "fr": "Nōmad Man Festival 2026",
    "ar": "Nmad Man Festival 2026"
@@ -32,9 +24,9 @@
    "fr": "Acte d'ouverture : commence Tunis est une fréquence avec un ensemble modulaire en direct !",
    "ar": "القانون الافتتاحي: إن الركلات قبالة تونس هي تواتر مع مجموعة نموذجية حية!"
   },
-  "Playing some Experimental Hypnotic Ambient this Sunday for closing event, alongside my man": {
-   "fr": "Ce dimanche, j'ai joué à l'événement de clôture avec mon mari.",
-   "ar": "ألعب بعض المُستشفيات المُستهلّسة هذا الأحد للحدث المُغلق، إلى جانب رجلي"
+  "Pierre et le Loup (S. Prokofiev)": {
+   "ar": "(بيتر) و(الذئب) Prokofiev",
+   "en": "Peter and the Wolf (S. Prokofiev)"
   },
   "Rywa Live Band": {
    "fr": "Rywa Bande en direct",
@@ -44,13 +36,13 @@
    "ar": "ويصل (وليد سالهي) إلى (الجيتسيت) لمساء مليء بالإيقاع والجنون الغلاف الجوي",
    "en": "Walid Salhi arrives at the Jetset for an evening full of rhythm and madness. An atmosphere"
   },
-  "We’re not done celebrating": {
-   "ar": "لم يتم الاحتفال",
-   "en": "Were not done celebrating"
-  },
   "You’ve been waiting for it. We’re back !": {
    "fr": "Vous l'attendiez. Nous sommes de retour !",
    "ar": "وقد كنت تنتظر ذلك. لقد عدنا!"
+  },
+  "Zanzana Revival, lundi 23 novembre au Habibi Downtown, Tunis": {
+   "ar": "زانزانا ريفيفال، الاثنين، 23 تشرين الثاني/نوفمبر في حابي داونتاون، تونس",
+   "en": "Zanzana Revival, Monday, November 23 at Habibi Downtown, Tunis"
   }
  },
  "notices": {
@@ -64,35 +56,20 @@
    "fr": "L'acte d'ouverture : @blitz.40s lance Tunis est une fréquence avec un ensemble modulaire en direct !\nCurated by @eddisco_records - Hôted by @lecurie.tn\nLiens de billets dans la bio\nSamedi 5 décembre 2026\nUn billet.\nUne nuit.\nCinq lieux.\nUne fréquence.\n* *\nLafayette Tunis\nTunis est une fréquence !\nUn festival multi-places par Tunis Nouveau Club.\n\\#TunisIsAFrequency #TnNvClb #Tunis #ElectronicMusic #TunisianScene",
    "ar": "القانون الافتتاحي: @blitz.40s يركل من تونس هو تواتر مع مجموعة نموذجية حية!\nمن إعداد @eddisco_records - Hosted by @lecurie.tn\n<unk> Tickets link in the bio <unk>\nالسبت 5 ديسمبر 2026\nتذكرة واحدة\nليلة واحدة\nخمسة أماكن\nتردد واحد\n?\n<unk> Lafayette Tunis\n\"تونس\" هي التردد!\nA Festival multi-venues by Tunis Nouveau Club.\n#TunisIsAFrequency #TnvClb #Tunis #ElectronicMusic #TunisianScene"
   },
-  "_events/auto/ig-fabrika/2026-11-22-were-not-done-celebrating.md": {
-   "cle": "21fa77b25970",
-   "fr": "Nous n'avons pas fini de célébrer.\nCe dimanche, nous sommes réunis à @aina.tunis avec @aminetrabelsi___ , @bedoui___ , @formiqqq , @gusikmusic , @hearthug_ et @soohigh_l , pour une journée de plus avec les gens qui ont rendu Fabrika 14 inoubliable.\nVenez boire un verre, apporter vos amis et votre meilleure histoire de festival.\nDimanche 22 novembre · Portes ouvertes à 14h\nOeuvre réalisée par @azyzkabada",
-   "ar": "ونحن لم ننتهي من الاحتفال.\nهذا الأحد، نجتمع على العنوان التالي: @aina.tunis with @aminetrabelsi__, @bedoui____, @formiqq, @gusikmusic, @hearthug_ and @soohigh_l, for one more day with the people who made Fabrika 14 unforgettable.\nتعال شاركني في الشراب وأحضر أصدقائك وقصتك الأفضل في المهرجان\nيوم الأحد 22 تشرين الثاني/نوفمبر - باب مفتوح في 2PM <unk>\nArtwork crafted by @azyzkabada"
-  },
-  "_events/auto/ig-habibi-downtown/2026-11-22-playing-some-experimental-hypnotic-ambient-this-sunday-for-c.md": {
-   "cle": "d17b630b0ce8",
-   "fr": "Jouer à un événement expérimental/hypnotique/ambient ce dimanche pour la clôture de @jaoutunis, aux côtés de mon homme @ograman.\nLa liste des points à traiter est la suivante:\nLieu : @habibidowntown_\nDate : 22.11.26\nL'événement commence à 19h\nEntrée libre\nOeuvre de : @tdyfrtmrrw\n* *",
-   "ar": "نلعب بعض التجارب/التنويم المغناطيسي/الأحد لحدث إغلاق @jaoutunis، إلى جانب رجلي @ograman.\n!\nالموقع: @habibidowntown_\nالتاريخ: 22-11.26\nالحدث يبدأ في 7 إم بي\nدخول مجاني\nArtwork by : @tdyfrtmrrw\n?"
+  "_events/auto/ig-habibi-downtown/2026-11-23-zanzana-revival-lundi-23-novembre-au-habibi-downtown-tunis.md": {
+   "cle": "07be0909a7a2",
+   "ar": "زانزانا ريفيفال، الاثنين، 23 تشرين الثاني/نوفمبر في حابي داونتاون، تونس\nومن عام 2000 إلى عام 2010، ومن عام 2015 إلى عام 2020، كان زانزانا هو برنامج إذاعة الصخور والمعادن.\nالإثنين، أنا أُعيدُها خلف اللوحاتِ.\nOn the programme: Led Zeppelin and Hendrix, the Tunisian and Arab scene with Myrath, Carthagods, Hemlyn and Znous, the anthems of Maiden, AC/DC and Metallica, a rap metal sequence, an indus trial sequence with Rammstein, and a final to sing",
+   "en": "Zanzana Revival, Monday, November 23 at Habibi Downtown, Tunis\nFrom 2000 to 2010, then from 2015 to 2020, ZanZanA was the rock and metal radio show.\nMonday, I'm reviving her behind the plates.\nOn the programme: Led Zeppelin and Hendrix, the Tunisian and Arab scene with Myrath, Carthagods, Hemlyn and Znous, the anthems of Maiden, AC/DC and Metallica, a rap metal sequence, an indus trial sequence with Rammstein, and a final to sing"
   },
   "_events/auto/ig-hamdi-ryder/2026-11-26-its-time-to-erupt.md": {
    "cle": "291238b02195",
    "fr": "C'est l'heure d'éclater.\n* *\nERUZIONI débarque à AINA pour une nuit où la musique prend le dessus et l'énergie ne tombe jamais.\n• BRUKI • CHAG • SADOK • JEUNESSE\nAINE\n26 NOVEMBRE\n21 heures — 04 heures\nLa nuit est à toi.\nFais-le compter.\nUne nuit.\nTOUTES LES NUIT",
    "ar": "وقد حان وقت الاندلاع.\n?\nتهبط (أروزيون) في (آينا) لليلة تستلم فيها الموسيقى و الطاقة لا تسقط أبداً\n<unk> HAMDIRYDER • BRIKI • CHAG • SADOK • YouCEF A\n<unk> AINA\n26 تشرين الثاني/نوفمبر\n<unk> 21:00 - 04:00\nالليلة لك\nاجعلها تحسب\nليلة واحدة\nكلّ ليلة"
   },
-  "_events/auto/ig-jaou-tunis/2026-11-21-jaou-tunis-2026-from-idea-to-image-video-making.md": {
-   "cle": "baf0651098ee",
-   "fr": "De l'idée à l'image – La vidéo\nUn retour sur notre atelier vidéo pratique avec Momen Gharbi, où les participants ont exploré les différentes étapes de la création vidéo, du développement d'une idée au tournage et à l'édition de leurs propres séquences courtes.\nUne expérience créative combinant expérimentation, conte et apprentissage par la pratique.\nQuechlet El Attarine\n18-21 novembre\nPartie de Jaou Tunis 2026.\n___\nLe nom de l'organisation est le suivant :",
-   "ar": "Jaou Tunis 2026 <unk> from Idea to Image — Video Making\nA look back at our hands-on video workshop with Momen Gharbi, where participants explored the different stages of video creation, from developing an idea to filming and editing their own short sequences.\nA creative experience combining experimentation, storytelling and learning through practice.\nكويشلي العتارين\n18-21 تشرين الثاني/نوفمبر\nجزء من تونس 2026.\n_\n2026 <unk> <unk> من أجل الوصول إلى الأماكن - وحملات في مجال النقل"
-  },
   "_events/auto/ig-nf-event/2026-11-28-walid-salhi-debarque-au-jetset-pour-une-soiree-pleine-de-ryt.md": {
    "cle": "29e83251d530",
    "ar": "السبت، 28 تشرين الثاني/نوفمبر\n(سالهي) (سالهي) (سالهي) - (وايد سالهي) - (وعيد صالحي) - (وايد سالهي)\n100% من الالتباس التونسي مع التشويشات الحية و الطاقة الزائدة.\n-ماذا؟\nالحفظ:\nمجمّع البرج الأبيض - جامارث\n# جاتسي # مُتَعَدِّد # # يَتقدّمُ # غَمَرَث #",
    "en": "Saturday, November 28\n\"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi\" - \"Walid Salhi Salhi\" - \"Walid Salhi Salhi Salhi\" - \"Walid Salhi Salhi Salhi Salhi Salhi\" - \"Walid Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Salhi Sali\nA 100% Tunisian-style ambiance, with lively choruses and overflowing energy.\n__\nReservation: 50 468 003 - 54 549 396\nThe White Tower Complex – Gammarth\n#jetset #restaurant #spectacle #gammarth #nightout"
-  },
-  "_events/auto/ig-rock-n-rolla/2026-11-20-les-seltika-sur-scene-ce-vendredi.md": {
-   "cle": "154744fb2d1a",
-   "ar": "سيلتيكا على المسرح يوم الجمعة\nساعة سعيدة للجعة حتى الساعة التاسعة مساءً\n10xCeltia = 60 dt\n10x Amstel = 60 dt\n10x Becks = 70 dt\n10x Heineken = 70 dt\nالحفظ المرغوب فيه إلى حد بعيد\n28 306 587",
-   "en": "The SELTIKA on stage this Friday\nHappy Hour for beers until 9pm\n10xCeltia = 60 dt\n10x Amstel = 60 dt\n10x Becks = 70 dt\n10x Heineken = 70 dt\nReservation highly desired\n.28 306 587"
   },
   "_events/auto/ig-tn-techno-community/2026-11-28-youve-been-waiting-for-it-were-back.md": {
    "cle": "fbdd8ab38ec4",
@@ -124,10 +101,10 @@
    "fr": "HOPE Festival revient le 28 novembre 2026 à Carthage Thalasso, Gammarth, pour une nouvelle édition.\nEn plus de la musique live, vous pourrez découvrir une exposition de photographie présentant des perspectives tunisiennes sélectionnées, ainsi qu'un espace d'exposition avec des marques indépendantes.",
    "ar": "HOPE Festival returns on 28 November 2026 at Carthage Thalasso, Gammarth, for a new edition.\nوإلى جانب الموسيقى الحية، يمكن للضيوف أن يستكشفوا معرضا للصور الفوتوغرافية يعرض مناظير مصورين تونيزيين مختارة، فضلا عن فضاء للمعارضة يشمل علامات تجارية مستقلة."
   },
-  "_events/auto/tunis-events/2026-11-22-hyperculte.md": {
-   "cle": "765042cd5525",
-   "fr": "Hyperculte, formé en 2013, avec Simone Aubert à la batterie, à la guitare et à la voix, et Vincent Bertholet à la contrebasse et à la voix. Le duo crée un mélange de disco, pop, krautrock, punk et post-rock. Animés par des rythmes aigus, des compositions inventives et des paroles poétiques mais politiquement engagées, les albums d'Hyperculte sont conçus à partir d'improvisations musicales, de fragments de textes littéraires et de slogans politiques pour témoigner de la vision aiguë et intransigeante des deux musiciens à notre époque. br",
-   "ar": "Hyperculte, formed in 2013, with Simone Aubert on drums, guitar, and vocals, and Vincent Bertholet on double bass and vocals. الدوق يخلق مزيجاً من الديسكو والبوب والكروتوك والثروة مدفوعاً بنظائر حادة، تركيبة ابتكارية، وشعرية ومع ذلك منخرطة سياسياً، ألبومات (هايبركولت) مصممة من الإرتجالات الموسيقية، وشظايا النصوص الأدبية، وشعارات سياسية للشاهد على النظرة الموسيقية الحادة والثابتة في عصرنا. br"
+  "_events/auto/tunis-events/2026-11-29-pierre-et-le-loup-s-prokofiev.md": {
+   "cle": "34195303151a",
+   "ar": "في 29 نوفمبر في الساعة السادسة مساءً، سيستضيف البيت الروسي في تونس العرض الموسيقي \"بيير و لوب\" الذي أعدته ناتا فورت (ناتاليا إيفانشي) وطلابها من معهد تونس العالي للموسيقى.\nويصادف هذا العام الذكرى الـ 135 لميلاد سيرغي بروكوفيف، وهي أحد أشهر المركبين الروس في القرن العشرين.\nلقد كتب \"بيير و لوب\" بناء على طلب ناتاليا ساتس من أجل تقديم الأطفال للموسيقى والآلات\nلكن العمل يغوي الآخرين",
+   "en": "On November 29 at 6 p.m., the Russian House in Tunis will host the concert show \"Pierre et le Loup\", prepared by Nata Forte (Natalia Ivanchey) and her students from the Tunis Higher Music Institute.\nThis year marks the 135th anniversary of the birth of Sergei Prokofiev, one of the most famous Russian composers of the 20th century.\nHe wrote \"Pierre et le Loup\" at the request of Natalia Sats, in order to introduce children to music and instruments.\nBut the work seduces others"
   }
  }
 }

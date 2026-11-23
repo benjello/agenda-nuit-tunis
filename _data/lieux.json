@@ -1,27 +1,16 @@
 {
  "index": {
   "Lafayette Tunis": "lafayette-tunis",
-  "One Resort, Monastir": "one-resort-monastir",
   "Habibi Downtown (av. de Paris, Tunis)": "habibi-downtown-av-de-paris-tunis",
   "AINA": "aina",
-  "Quechlet El Attarine": "quechlet-el-attarine",
   "Complexe La Tour Blanche – Gammarth": "complexe-la-tour-blanche-gammarth",
   "Rock'n'Rolla, La Goulette": "rock-n-rolla-la-goulette",
   "TBA - studio 52": "tba-studio-52",
   "Hôtel Belvédère Fourati": "hotel-belvedere-fourati",
   "Carthage Thalasso Resort": "carthage-thalasso-resort",
-  "B7L9 Art Centre": "b7l9-art-centre"
+  "Russian House": "russian-house"
  },
  "carte": [
-  {
-   "slug": "rock-n-rolla-la-goulette",
-   "nom": "Rock'n'Rolla, La Goulette",
-   "type": "club",
-   "ville": "tunis",
-   "lat": 36.81597,
-   "lon": 10.30597,
-   "n": 3
-  },
   {
    "slug": "lafayette-tunis",
    "nom": "Lafayette Tunis",
@@ -32,13 +21,13 @@
    "n": 2
   },
   {
-   "slug": "one-resort-monastir",
-   "nom": "One Resort, Monastir",
+   "slug": "rock-n-rolla-la-goulette",
+   "nom": "Rock'n'Rolla, La Goulette",
    "type": "club",
-   "ville": "monastir",
-   "lat": 35.76372,
-   "lon": 10.7399,
-   "n": 1
+   "ville": "tunis",
+   "lat": 36.81597,
+   "lon": 10.30597,
+   "n": 2
   },
   {
    "slug": "hotel-belvedere-fourati",
@@ -56,15 +45,6 @@
    "ville": "tunis",
    "lat": 36.9252,
    "lon": 10.27716,
-   "n": 1
-  },
-  {
-   "slug": "b7l9-art-centre",
-   "nom": "B7L9 Art Centre",
-   "type": "centre_art",
-   "ville": "tunis",
-   "lat": 36.889,
-   "lon": 10.307,
    "n": 1
   }
  ]

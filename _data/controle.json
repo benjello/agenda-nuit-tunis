@@ -1,17 +1,7 @@
 {
- "date": "2026-11-22",
+ "date": "2026-11-23",
  "corriges": 0,
  "a_verifier": [
-  {
-   "fichier": "ig-habibi-downtown/2026-11-22-playing-some-experimental-hypnotic-ambient-this-sunday-for-c.md",
-   "source": "ig-habibi-downtown",
-   "titre": "Playing some Experimental Hypnotic Ambient this Sunday for closing event, alongside my man",
-   "date": "2026-11-22",
-   "lien": "https://www.instagram.com/p/Df7YHlfCA4m/",
-   "problemes": [
-    "titre trop long (début d'une légende ?)"
-   ]
-  },
   {
    "fichier": "ig-nf-event/2026-11-28-walid-salhi-debarque-au-jetset-pour-une-soiree-pleine-de-ryt.md",
    "source": "ig-nf-event",
@@ -32,13 +22,6 @@
     "defauts": [],
     "manques": []
    },
-   "ig-fabrika": {
-    "n": 1,
-    "precis": 1,
-    "pourcent": 100,
-    "defauts": [],
-    "manques": []
-   },
    "ig-habibi-downtown": {
     "n": 1,
     "precis": 1,
@@ -53,19 +36,6 @@
     "defauts": [],
     "manques": []
    },
-   "ig-jaou-tunis": {
-    "n": 1,
-    "precis": 1,
-    "pourcent": 100,
-    "defauts": [],
-    "manques": [
-     {
-      "code": "sans_heure",
-      "texte": "heure",
-      "n": 1
-     }
-    ]
-   },
    "ig-nf-event": {
     "n": 1,
     "precis": 1,
@@ -78,13 +48,6 @@
       "n": 1
      }
     ]
-   },
-   "ig-rock-n-rolla": {
-    "n": 1,
-    "precis": 1,
-    "pourcent": 100,
-    "defauts": [],
-    "manques": []
    },
    "ig-tn-techno-community": {
     "n": 1,
@@ -154,7 +117,7 @@
      {
       "code": "sans_notice",
       "texte": "notice",
-      "n": 1
+      "n": 2
      }
     ]
    },
@@ -202,9 +165,9 @@
     "manques": []
    },
    "instagram": {
-    "n": 9,
-    "precis": 8,
-    "pourcent": 89,
+    "n": 6,
+    "precis": 5,
+    "pourcent": 83,
     "defauts": [
      {
       "code": "lieu_vague",
@@ -217,7 +180,7 @@
      {
       "code": "sans_heure",
       "texte": "heure",
-      "n": 3
+      "n": 2
      }
     ]
    },
@@ -235,7 +198,7 @@
      {
       "code": "sans_notice",
       "texte": "notice",
-      "n": 1
+      "n": 2
      }
     ]
    },

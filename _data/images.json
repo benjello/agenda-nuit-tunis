@@ -3,81 +3,66 @@
   "autre fiche": 0,
   "cassees": 0,
   "categorie": 0,
-  "copiees": 0,
-  "date": "2026-11-22T18:10:23",
-  "images": 11,
+  "copiees": 3,
+  "date": "2026-11-23T16:13:03",
+  "images": 8,
   "lien": 0,
   "lieu": 0
- },
- "assets/images/842559d791c6.png": {
-  "detail": "",
-  "echecs": 0,
-  "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
- },
- "assets/images/b0f14f7736b2.jpg": {
-  "detail": "",
-  "echecs": 0,
-  "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
- },
- "assets/images/f438a6405157.png": {
-  "detail": "",
-  "echecs": 0,
-  "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
  },
  "assets/programmes/ig-eddisco/6f6443516fdb.jpg": {
   "detail": "",
   "echecs": 0,
   "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
+  "verifiee": "2026-11-23T16:13:03"
  },
- "assets/programmes/ig-fabrika/83a72d252f68.jpg": {
+ "assets/programmes/ig-habibi-downtown/b642438ccf70.jpg": {
   "detail": "",
   "echecs": 0,
   "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
- },
- "assets/programmes/ig-habibi-downtown/58512aef0062.jpg": {
-  "detail": "",
-  "echecs": 0,
-  "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
+  "verifiee": "2026-11-23T16:13:03"
  },
  "assets/programmes/ig-hamdi-ryder/a60907fcccb8.jpg": {
   "detail": "",
   "echecs": 0,
   "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
- },
- "assets/programmes/ig-jaou-tunis/3e35a067e73f.jpg": {
-  "detail": "",
-  "echecs": 0,
-  "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
+  "verifiee": "2026-11-23T16:13:03"
  },
  "assets/programmes/ig-nf-event/3975a4d50067.jpg": {
   "detail": "",
   "echecs": 0,
   "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
- },
- "assets/programmes/ig-rock-n-rolla/ae3dbf981cbc.jpg": {
-  "detail": "",
-  "echecs": 0,
-  "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
+  "verifiee": "2026-11-23T16:13:03"
  },
  "assets/programmes/ig-tn-techno-community/3ace3b0dcffe.jpg": {
   "detail": "",
   "echecs": 0,
   "etat": "ok",
-  "verifiee": "2026-11-22T18:10:23"
+  "verifiee": "2026-11-23T16:13:03"
  },
  "copie:https://tunis.events/og/event/30l2e3/fr.png": "assets/images/946673c6a880.png",
  "copie:https://tunis.events/og/event/klvgE3/fr.png": "assets/images/f438a6405157.png",
  "copie:https://tunis.events/og/event/mE2Ov3/fr.png": "assets/images/86836cb9615b.png",
+ "https://api.tunis.events/storage/b3a9d709b51e1106f63385ecaa6f8a152.jpg": {
+  "copie": "assets/images/e9a6a34d8428.jpg",
+  "detail": "",
+  "echecs": 0,
+  "etat": "ok",
+  "verifiee": "2026-11-23T16:13:03"
+ },
+ "https://images.ra.co/0f6c17b04753100d599d3a5c11c3c5cdb20d85dd.jpg": {
+  "copie": "assets/images/b0f14f7736b2.jpg",
+  "detail": "",
+  "echecs": 0,
+  "etat": "ok",
+  "verifiee": "2026-11-23T16:13:03"
+ },
+ "https://images.ra.co/5e85db421bf17f5279edd9f272af554c622d6ff6.png": {
+  "copie": "assets/images/842559d791c6.png",
+  "detail": "",
+  "echecs": 0,
+  "etat": "ok",
+  "verifiee": "2026-11-23T16:13:03"
+ },
  "lien:https://tunis.events/events/30l2e3/connivences-211126-aina": "assets/images/946673c6a880.png",
  "lien:https://tunis.events/events/klvgE3/hyperculte-b7l9-art-centre": "assets/images/f438a6405157.png",
  "lien:https://tunis.events/events/mE2Ov3/chichbich-au-sous-sol-21-novembre-la-verriere-le-sous-sol-cafe-resto": "assets/images/86836cb9615b.png"

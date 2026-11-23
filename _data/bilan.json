@@ -141,5 +141,52 @@
    "recurrentes": 1,
    "tunis-events": 1
   }
+ },
+ {
+  "semaine": "2026-S48",
+  "date": "2026-11-23",
+  "a_venir": 13,
+  "sept_jours": 10,
+  "sources_actives": 21,
+  "sources_avec_evenements": 8,
+  "sources_muettes": [
+   "fb-61595612945174",
+   "fb-recherche-soirees",
+   "ig-calypso-hammamet",
+   "ig-downtown-vibes",
+   "ig-echos-electrik",
+   "ig-eddisco",
+   "ig-fabrika",
+   "ig-jaou-tunis",
+   "ig-kadhem",
+   "ig-osiris-djerba",
+   "ig-rock-n-rolla",
+   "ig-techno-tunisia",
+   "ig-tunisia-comedy-festival"
+  ],
+  "par_ville": {
+   "tunis": 10
+  },
+  "par_categorie": {
+   "club": 4,
+   "concert": 3,
+   "festival": 2,
+   "cabaret": 1
+  },
+  "par_genre": {
+   "agenda": 6,
+   "collectif": 3,
+   "lieu": 1
+  },
+  "par_source": {
+   "resident-advisor": 2,
+   "teskerti": 2,
+   "ig-habibi-downtown": 1,
+   "ig-hamdi-ryder": 1,
+   "ig-nf-event": 1,
+   "ig-tn-techno-community": 1,
+   "recurrentes": 1,
+   "tunis-events": 1
+  }
  }
 ]

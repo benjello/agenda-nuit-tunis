@@ -11,11 +11,6 @@
    "texte": "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.",
    "url": "https://teskerti.tn/"
   },
-  "tn-agenda-du-jour": {
-   "source": "site officiel",
-   "texte": "Suivez l'actualité en Tunisie en direct . Tunisie Numérique couvre toute l'info politique, économique, sociale et sportive en temps réel.",
-   "url": "https://www.tunisienumerique.com"
-  },
   "tunis-events": {
    "source": "site officiel",
    "texte": "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA",
@@ -30,7 +25,7 @@
   "https://teskerti.tn/evenement/chicos-live-band": {
    "texte": "",
    "verifie": "2026-11-22",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "https://teskerti.tn/evenement/generation-90-ora-club-1911": {
    "texte": "",
@@ -40,7 +35,7 @@
   "https://teskerti.tn/evenement/hope-festival-invites-tif": {
    "texte": "HOPE Festival returns on 28 November 2026 at Carthage Thalasso, Gammarth, for a new edition.\nAlongside the live music, guests can explore a photography exhibition showcasing selected tunisian photographers’ perspectives, as well as an exhibition space featuring independent brands.",
    "verifie": "2026-11-19",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   }
  },
  "recherches": {
@@ -66,7 +61,7 @@
   },
   "artistes:asechs": {
    "verifie": "2026-11-17",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:atef": {
    "verifie": "2026-11-08",
@@ -122,7 +117,7 @@
   },
   "artistes:emine-2": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:fares-a": {
    "verifie": "2026-11-08",
@@ -146,7 +141,7 @@
   },
   "artistes:harrison-guyett": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:hearthug": {
    "verifie": "2026-11-08",
@@ -190,7 +185,7 @@
   },
   "artistes:kian-ok": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:krol": {
    "verifie": "2026-11-08",
@@ -258,7 +253,7 @@
   },
   "artistes:omar-fayyad": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:omar-uy": {
    "verifie": "2026-11-08",
@@ -266,11 +261,11 @@
   },
   "artistes:pan-j": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:picasso": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "artistes:prichindel": {
    "verifie": "2026-11-08",
@@ -322,92 +317,92 @@
   },
   "collectifs:calypso-club-hammamet": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:downtown-vibes": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:echos-electrik": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:eddisco-records": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:evenements-facebook": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:fabrika-festival": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:habibi-downtown": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:hamdi-ryder": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:jaou-tunis": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:kadhem": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:nf-event": {
    "verifie": "2026-11-09",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:osiris-club-djerba": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:rock-n-rolla-la-goulette": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:soirees-de-chaque-semaine": {
    "source": "site officiel",
    "texte": "ToNight Tunis : l'agenda de la nuit. Contribute to benjello/agenda-nuit-tunis development by creating an account on GitHub.",
    "url": "https://github.com/benjello/agenda-nuit-tunis/blob/main/_data/recurrentes.yml",
    "verifie": "2026-11-18",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:steppers-sound-system": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:techno-tunisia": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:teskerti": {
    "source": "site officiel",
    "texte": "Concerts, Festivals, Expositions, Sport ▻ Réservez vos places sur Teskerti ! Le n°1 du E-ticket en Tunisie - Paiement 100% sécurisé.",
    "url": "https://teskerti.tn/",
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:tunis-events": {
    "source": "site officiel",
    "texte": "IT'S FRIDAY THE 13TH IDO 7AGUI KROLIK ORLOK SHAKIRA YASMIN SUN NOV 13 10PM - 4AM STEPS SOUSSE TICKETS LINK IN BIO ARTWORK NXOITXA",
    "url": "https://tunis.events/nightlife",
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:tunisia-comedy-festival": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:tunisian-techno-community": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "collectifs:tunisie-numerique": {
    "source": "site officiel",
@@ -418,7 +413,7 @@
   },
   "lieux:aina": {
    "verifie": "2026-11-17",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:american-legion-michael-steiner-post-411": {
    "verifie": "2026-11-08",
@@ -434,7 +429,7 @@
   },
   "lieux:carthage-thalasso-resort": {
    "verifie": "2026-11-19",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:cite-de-la-culture": {
    "langue": "fr",
@@ -446,7 +441,7 @@
   },
   "lieux:complexe-la-tour-blanche-gammarth": {
    "verifie": "2026-11-11",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:complexe-le-relais": {
    "verifie": "2026-11-19",
@@ -458,7 +453,7 @@
   },
   "lieux:habibi-downtown": {
    "verifie": "2026-11-08",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:habibidowntown": {
    "verifie": "2026-11-11",
@@ -466,7 +461,7 @@
   },
   "lieux:hotel-belvedere-fourati": {
    "verifie": "2026-11-22",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:insat": {
    "langue": "fr",
@@ -482,7 +477,7 @@
   },
   "lieux:lafayette-tunis": {
    "verifie": "2026-11-20",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:montreal": {
    "verifie": "2026-11-08",
@@ -502,11 +497,15 @@
   },
   "lieux:rock-n-rolla": {
    "verifie": "2026-11-19",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
+  },
+  "lieux:russian-house": {
+   "verifie": "2026-11-23",
+   "vu": "2026-11-23"
   },
   "lieux:tba-studio-52": {
    "verifie": "2026-11-17",
-   "vu": "2026-11-22"
+   "vu": "2026-11-23"
   },
   "lieux:utica-union-tun-the-ind-trade-art": {
    "verifie": "2026-11-08",
