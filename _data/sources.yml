@@ -84,7 +84,7 @@
   genre: presse
   scraper: agenda_du_jour
   categorie: autre
-  actif: true
+  actif: false  # agenda national : jamais de soirée trouvée (décision du 23 novembre 2026, #10)
   note: 'Article quotidien des rendez-vous en Tunisie : on n''en garde que les soirées (concerts, cabarets, festivals,
     stand-up).'
   options:
