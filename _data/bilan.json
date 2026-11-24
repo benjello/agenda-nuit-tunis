@@ -144,11 +144,11 @@
  },
  {
   "semaine": "2026-S48",
-  "date": "2026-11-23",
-  "a_venir": 13,
-  "sept_jours": 10,
+  "date": "2026-11-24",
+  "a_venir": 12,
+  "sept_jours": 9,
   "sources_actives": 21,
-  "sources_avec_evenements": 8,
+  "sources_avec_evenements": 7,
   "sources_muettes": [
    "fb-61595612945174",
    "fb-recherche-soirees",
@@ -157,6 +157,7 @@
    "ig-echos-electrik",
    "ig-eddisco",
    "ig-fabrika",
+   "ig-habibi-downtown",
    "ig-jaou-tunis",
    "ig-kadhem",
    "ig-osiris-djerba",
@@ -165,23 +166,21 @@
    "ig-tunisia-comedy-festival"
   ],
   "par_ville": {
-   "tunis": 10
+   "tunis": 9
   },
   "par_categorie": {
-   "club": 4,
+   "club": 3,
    "concert": 3,
    "festival": 2,
    "cabaret": 1
   },
   "par_genre": {
    "agenda": 6,
-   "collectif": 3,
-   "lieu": 1
+   "collectif": 3
   },
   "par_source": {
    "resident-advisor": 2,
    "teskerti": 2,
-   "ig-habibi-downtown": 1,
    "ig-hamdi-ryder": 1,
    "ig-nf-event": 1,
    "ig-tn-techno-community": 1,

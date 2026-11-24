@@ -1659,15 +1659,15 @@
   "ar": "شطائر، شطائر",
   "en": "burgers, sandwiches"
  },
- "crepe, breakfast, French": {
+ "crêpes, breakfast, French": {
   "de": "fr",
-  "ar": "الكرب، الإفطار، الفرنسية",
-  "en": "crepe, breakfast, French"
+  "ar": "الفطائر، الفطور، الفرنسية",
+  "en": "pancakes, breakfast, French"
  },
- "crepe, breakfast, française": {
+ "crêpes, petit-déjeuner, française": {
   "de": "fr",
-  "ar": "الكرب، الإفطار، الفرنسية",
-  "en": "crepe, breakfast, french"
+  "ar": "الفطائر، الفطور، الفرنسية",
+  "en": "pancakes, breakfast, french"
  },
  "européenne, tunisienne": {
   "de": "fr",

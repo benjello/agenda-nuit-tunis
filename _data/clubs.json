@@ -1,5 +1,5 @@
 {
- "lu_le": "2026-11-17",
+ "lu_le": "2026-11-24",
  "version": 3,
  "source": "OpenStreetMap (ODbL) et _data/clubs.yml",
  "lieux": [
@@ -1847,8 +1847,8 @@
    "lon": 10.3325817,
    "osm": "https://www.openstreetmap.org/node/6188174086",
    "ferme": "22h",
-   "cuisine": "crepe, breakfast, française",
-   "cuisine_en": "crepe, breakfast, French"
+   "cuisine": "crêpes, petit-déjeuner, française",
+   "cuisine_en": "crêpes, breakfast, French"
   },
   {
    "nom": "BURGER STOP - Tunis",
