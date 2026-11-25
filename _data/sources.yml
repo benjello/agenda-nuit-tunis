@@ -125,7 +125,7 @@
   genre: collectif
   scraper: instagram
   categorie: club
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: downtown.vibes.world
@@ -185,7 +185,7 @@
   genre: collectif
   scraper: instagram
   categorie: club
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: kadhemusic
@@ -232,7 +232,7 @@
   genre: collectif
   scraper: facebook_programmes
   categorie: soundsystem
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     page: https://www.facebook.com/profile.php?id=61595612945174
@@ -249,7 +249,7 @@
   genre: collectif
   scraper: instagram
   categorie: festival
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: echos.electrik
@@ -294,7 +294,7 @@
   genre: agenda
   scraper: facebook
   categorie: autre
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 2
   options:
     recherche:
@@ -318,7 +318,7 @@
   genre: lieu
   scraper: instagram
   categorie: discotheque
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: calypsotunisiaofficial
@@ -349,7 +349,7 @@
   genre: lieu
   scraper: instagram
   categorie: club
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: osirisclubdjerba
@@ -379,7 +379,7 @@
   genre: collectif
   scraper: instagram
   categorie: club
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: technotunisia
@@ -394,7 +394,7 @@
   genre: festival
   scraper: instagram
   categorie: humour
-  actif: true
+  actif: false  # pause crédit Apify jusqu'au 1er décembre 2026 (décision du 25 novembre, #12) : remettre à true
   tous_les_jours: 3
   options:
     compte: tunisia_comedy_festival
