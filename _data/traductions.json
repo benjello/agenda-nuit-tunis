@@ -4,9 +4,17 @@
    "ar": "BOUNCY CLUB - Third Edition",
    "en": "BOUNCY CLUB - Third Edition"
   },
+  "ChichBich Au Sous-Sol 28 Novembre": {
+   "ar": "تشيش بيخ في سوب سول تشرين الثاني/نوفمبر",
+   "en": "ChichBich In Sub-Sol November 28"
+  },
   "Chicos live Band": {
    "fr": "Chicos live Band",
    "ar": "تشيكو يعيش باند"
+  },
+  "For our next Live Experiment session, we welcome , a Tunisian artist and multi-instrumenta": {
+   "fr": "Pour notre prochaine session Live Experiment, nous accueillons , artiste tunisien et multi-instruments",
+   "ar": "في جلستنا المقبلة للعرض على الحياة، نرحب، فنان تونسي وفنان متعدد التخصصات(أ)"
   },
   "HOPE FESTIVAL INVITES TIF": {
    "fr": "FESTIVAL DE L'HOPE INVITE TIF",
@@ -28,6 +36,10 @@
    "ar": "(بيتر) و(الذئب) Prokofiev",
    "en": "Peter and the Wolf (S. Prokofiev)"
   },
+  "RAÏ IS NOT DEAD CHEB REZGUI EDITION": {
+   "ar": "(راي) ليس (تشابي)",
+   "en": "RAI IS NOT DEAD CHEB REZGUI EDITION"
+  },
   "Rywa Live Band": {
    "fr": "Rywa Bande en direct",
    "ar": "Rywa Live Band"
@@ -39,13 +51,14 @@
   "You’ve been waiting for it. We’re back !": {
    "fr": "Vous l'attendiez. Nous sommes de retour !",
    "ar": "وقد كنت تنتظر ذلك. لقد عدنا!"
-  },
-  "Zanzana Revival, lundi 23 novembre au Habibi Downtown, Tunis": {
-   "ar": "زانزانا ريفيفال، الاثنين، 23 تشرين الثاني/نوفمبر في حابي داونتاون، تونس",
-   "en": "Zanzana Revival, Monday, November 23 at Habibi Downtown, Tunis"
   }
  },
  "notices": {
+  "_events/auto/ig-eddisco/2026-11-26-for-our-next-live-experiment-session-we-welcome-a-tunisian-a.md": {
+   "cle": "cbce653b61f1",
+   "fr": "Pour notre prochaine session Live Experiment, nous accueillons @donpac_50 , artiste tunisien et multi-instrumentiste qui a participé à de nombreux projets musicaux en direct au cours des dernières années.\nCette fois-ci, il reprendra le MPC pour une performance live spéciale, explorant rythmes, textures et idées musicales spontanées.",
+   "ar": "وبالنسبة لدورتنا المقبلة للعرض على الحياة، نرحب ب &quot; donpac_50 &quot; ، وهو فنان تونسي وأخصائي متعدد التخصصات شارك في العديد من مشاريع الموسيقى الحية على مدى السنوات الماضية.\nوفي هذه المرة، سيتولي مسؤولية لجنة البرنامج والتنسيق عن أداء مباشر خاص، ويستكشف الإيقاعات والمنسوجات والأفكار الموسيقية العفوية."
+  },
   "_events/auto/ig-eddisco/2026-12-05-opening-act-kicks-off-tunis-is-a-frequency-with-a-live-modul.md": {
    "cle": "4bb8c56f7a80",
    "fr": "L'acte d'ouverture : @blitz.40s lance Tunis est une fréquence avec un ensemble modulaire en direct !\nCurated by @eddisco_records - Hôted by @lecurie.tn\nLiens de billets dans la bio\nSamedi 5 décembre 2026\nUn billet.\nUne nuit.\nCinq lieux.\nUne fréquence.\n* *\nLafayette Tunis\nTunis est une fréquence !\nUn festival multi-places par Tunis Nouveau Club.\n\\#TunisIsAFrequency #TnNvClb #Tunis #ElectronicMusic #TunisianScene",
@@ -56,10 +69,10 @@
    "fr": "L'acte d'ouverture : @blitz.40s lance Tunis est une fréquence avec un ensemble modulaire en direct !\nCurated by @eddisco_records - Hôted by @lecurie.tn\nLiens de billets dans la bio\nSamedi 5 décembre 2026\nUn billet.\nUne nuit.\nCinq lieux.\nUne fréquence.\n* *\nLafayette Tunis\nTunis est une fréquence !\nUn festival multi-places par Tunis Nouveau Club.\n\\#TunisIsAFrequency #TnNvClb #Tunis #ElectronicMusic #TunisianScene",
    "ar": "القانون الافتتاحي: @blitz.40s يركل من تونس هو تواتر مع مجموعة نموذجية حية!\nمن إعداد @eddisco_records - Hosted by @lecurie.tn\n<unk> Tickets link in the bio <unk>\nالسبت 5 ديسمبر 2026\nتذكرة واحدة\nليلة واحدة\nخمسة أماكن\nتردد واحد\n?\n<unk> Lafayette Tunis\n\"تونس\" هي التردد!\nA Festival multi-venues by Tunis Nouveau Club.\n#TunisIsAFrequency #TnvClb #Tunis #ElectronicMusic #TunisianScene"
   },
-  "_events/auto/ig-habibi-downtown/2026-11-23-zanzana-revival-lundi-23-novembre-au-habibi-downtown-tunis.md": {
-   "cle": "07be0909a7a2",
-   "ar": "زانزانا ريفيفال، الاثنين، 23 تشرين الثاني/نوفمبر في حابي داونتاون، تونس\nومن عام 2000 إلى عام 2010، ومن عام 2015 إلى عام 2020، كان زانزانا هو برنامج إذاعة الصخور والمعادن.\nالإثنين، أنا أُعيدُها خلف اللوحاتِ.\nOn the programme: Led Zeppelin and Hendrix, the Tunisian and Arab scene with Myrath, Carthagods, Hemlyn and Znous, the anthems of Maiden, AC/DC and Metallica, a rap metal sequence, an indus trial sequence with Rammstein, and a final to sing",
-   "en": "Zanzana Revival, Monday, November 23 at Habibi Downtown, Tunis\nFrom 2000 to 2010, then from 2015 to 2020, ZanZanA was the rock and metal radio show.\nMonday, I'm reviving her behind the plates.\nOn the programme: Led Zeppelin and Hendrix, the Tunisian and Arab scene with Myrath, Carthagods, Hemlyn and Znous, the anthems of Maiden, AC/DC and Metallica, a rap metal sequence, an indus trial sequence with Rammstein, and a final to sing"
+  "_events/auto/ig-habibi-downtown/2026-11-29-rai-is-not-dead-cheb-rezgui-edition.md": {
+   "cle": "540a5888279f",
+   "fr": "L'ÉDITION DE LA CHEB REZGUI\nDe Casablanca au cœur des amoureux de Raï, Cheb Rezgui a marqué une génération.\nLa voix derrière Ana Al Ghaltan, un catalogue de succès intemporels, d'émotions brutes et de mélodies qui continuent de vivre.\nCe dimanche, nous revisitons son héritage à travers des classiques, des joyaux cachés et des découvertes.\n- Oui, oui.\n29 novembre à partir de 17h\nLa ville de Tunis, c'est la ville.\nEntrée libre\nCouvert par @alymrabet\nRaï hier, aujourd'hui et demain.\nRaï n'est pas mort !\nC'est vrai.",
+   "ar": "<unk> RA ليست ديدة - ChEB REZGUI EDITION <unk>\nمن الدار البيضاء إلى قلوب عشاق راي، ترك تشيب رزغي علامته على جيل.\nالصوت الذي خلف (آنا الغالتان) فهرس من الضربات التي لا تتوقّف، العواطف الخام والمليارات التي ما زالت تعيش\nهذا الأحد، نعيد النظر في إرثه من خلال الكلاسيكيات، المجوهرات الخفية والاكتشافات.\n?\n<unk> November 29 <unk> from 5 PM\n<unk> @habibidowntown_ Tunis\n<unk> Free entry\n<unk> Curated by @alymrabet\nراي أمس، اليوم وغدا.\n(راي) ليس ميتاً!\n?"
   },
   "_events/auto/ig-hamdi-ryder/2026-11-26-its-time-to-erupt.md": {
    "cle": "291238b02195",
@@ -76,12 +89,12 @@
    "fr": "Vous l'attendiez.\nNous sommes de retour !\nBOUNCY CLUB - Troisième édition\nSamedi 28 novembre 2026\nSTUDIO 52 - Hôtel Les Ambassadeurs, Tunis\nUn nouveau chapitre, la même énergie.\nPréparez-vous pour une autre nuit de pur rebond -\nLigne:\n\\-ASECHS\n\\-EMOU\n\\-IDO\n\\-UKIYO\nOn se voit sur le dancefloor.\n- Oui.\n- Oui.\n- Oui.\n- Oui.\n- Oui.\n- Oui.\n- Oui.\n- Oui.\nTTC",
    "ar": "وقد كنت تنتظر ذلك.\nلقد عدنا!\nBOUNCY CLUB - Third Edition\nالسبت، 28-11-2026\nSTUDIO 52 - Hôtel Les Ambassadeurs, Tunis\nفصل جديد، نفس الطاقة\nإستعدْ لليلة أخرى مِنْ القفزةِ النقيةِ\nخط:\nASECHS\nEMOU\nIIDO\nأوكييو\nأراك في قاعة الرقص.\n.\n.\n.\n.\n.\n.\n.\n.\nTTC"
   },
-  "_events/auto/recurrentes/2026-11-25-rywa-live-band.md": {
+  "_events/auto/recurrentes/2026-12-02-rywa-live-band.md": {
    "cle": "58a3b23bf707",
    "ar": "الفرقة الحية كل يوم أربعاء في روكين رولا ساعة سعيدة على البيرة حتى الساعة التاسعة مساء التحفظ الموصى به",
    "en": "Live band every Wednesday at Rock'n'Rolla, happy hour on beers until 9:00 p.m. Reservation recommended."
   },
-  "_events/auto/recurrentes/2026-12-02-rywa-live-band.md": {
+  "_events/auto/recurrentes/2026-12-09-rywa-live-band.md": {
    "cle": "58a3b23bf707",
    "ar": "الفرقة الحية كل يوم أربعاء في روكين رولا ساعة سعيدة على البيرة حتى الساعة التاسعة مساء التحفظ الموصى به",
    "en": "Live band every Wednesday at Rock'n'Rolla, happy hour on beers until 9:00 p.m. Reservation recommended."
@@ -100,6 +113,11 @@
    "cle": "85c8c146a181",
    "fr": "HOPE Festival revient le 28 novembre 2026 à Carthage Thalasso, Gammarth, pour une nouvelle édition.\nEn plus de la musique live, vous pourrez découvrir une exposition de photographie présentant des perspectives tunisiennes sélectionnées, ainsi qu'un espace d'exposition avec des marques indépendantes.",
    "ar": "HOPE Festival returns on 28 November 2026 at Carthage Thalasso, Gammarth, for a new edition.\nوإلى جانب الموسيقى الحية، يمكن للضيوف أن يستكشفوا معرضا للصور الفوتوغرافية يعرض مناظير مصورين تونيزيين مختارة، فضلا عن فضاء للمعارضة يشمل علامات تجارية مستقلة."
+  },
+  "_events/auto/tunis-events/2026-11-28-chichbich-au-sous-sol-28-novembre.md": {
+   "cle": "bade28034ac2",
+   "ar": "سيّدي، نحن ذاهبون إلى (سباسول)!\nفرقة (تشيتش بيك) الحية تصل لمساء مليء بالموسيقى، مزاج جيد ومشاركة!\nيوم السبت 28 تشرين الثاني/نوفمبر من الساعة 00/8 إلى الساعة 00/11 لا فيريري - منضه 7 بييس\nبالنسبة للتحفظات على شخصين، يمكنك أن تتشارك طاولة مع زوجين آخرين.\nThe Sub-Sol encourages meetings and sharing in a friendly atmosphere.\nLOS\nو دائماً في روح الـ (سوبر سول) أمسية إحتفالية ودودة",
+   "en": "SAY, WE'RE GOING BACK TO SUBSOL!\nChichBich Live Band arrives for an evening full of music, good mood and sharing!\nLive Band Saturday, November 28 From 8pm to 11pm La Verrière – Menzah 7 Bis\nNB: For reservations of 2 people, you may share your table with another couple.\nThe Sub-Sol encourages meetings and sharing in a friendly atmosphere.\n的\nAnd always in the spirit of the Sub-Sol: a festive, friendly evening"
   },
   "_events/auto/tunis-events/2026-11-29-pierre-et-le-loup-s-prokofiev.md": {
    "cle": "34195303151a",

@@ -1,7 +1,17 @@
 {
- "date": "2026-11-25",
+ "date": "2026-11-26",
  "corriges": 0,
  "a_verifier": [
+  {
+   "fichier": "ig-eddisco/2026-11-26-for-our-next-live-experiment-session-we-welcome-a-tunisian-a.md",
+   "source": "ig-eddisco",
+   "titre": "For our next Live Experiment session, we welcome , a Tunisian artist and multi-instrumenta",
+   "date": "2026-11-26",
+   "lien": "https://www.instagram.com/p/DgIBDcKDWLi/",
+   "problemes": [
+    "titre trop long (début d'une légende ?)"
+   ]
+  },
   {
    "fichier": "ig-nf-event/2026-11-28-walid-salhi-debarque-au-jetset-pour-une-soiree-pleine-de-ryt.md",
    "source": "ig-nf-event",
@@ -16,10 +26,17 @@
  "granularite": {
   "sources": {
    "ig-eddisco": {
-    "n": 2,
+    "n": 3,
     "precis": 2,
-    "pourcent": 100,
-    "defauts": [],
+    "pourcent": 67,
+    "defauts": [
+     {
+      "code": "lieu_vague",
+      "texte": "lieu à préciser",
+      "n": 1,
+      "exemple": "For our next Live Experiment session, we welcome , a Tunisian artist a"
+     }
+    ],
     "manques": []
    },
    "ig-habibi-downtown": {
@@ -117,13 +134,13 @@
      {
       "code": "sans_notice",
       "texte": "notice",
-      "n": 1
+      "n": 2
      }
     ]
    },
    "tunis-events": {
-    "n": 1,
-    "precis": 1,
+    "n": 2,
+    "precis": 2,
     "pourcent": 100,
     "defauts": [],
     "manques": []
@@ -165,15 +182,15 @@
     "manques": []
    },
    "instagram": {
-    "n": 6,
+    "n": 7,
     "precis": 5,
-    "pourcent": 83,
+    "pourcent": 71,
     "defauts": [
      {
       "code": "lieu_vague",
       "texte": "lieu à préciser",
-      "n": 1,
-      "exemple": "You’ve been waiting for it. We’re back !"
+      "n": 2,
+      "exemple": "For our next Live Experiment session, we welcome , a Tunisian artist a"
      }
     ],
     "manques": [
@@ -198,13 +215,13 @@
      {
       "code": "sans_notice",
       "texte": "notice",
-      "n": 1
+      "n": 2
      }
     ]
    },
    "tunis_events": {
-    "n": 1,
-    "precis": 1,
+    "n": 2,
+    "precis": 2,
     "pourcent": 100,
     "defauts": [],
     "manques": []

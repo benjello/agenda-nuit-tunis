@@ -104,6 +104,11 @@
   "ar": "جداول الأعمال والتذاكر",
   "en": "Agendas and ticketing"
  },
+ "Ariana": {
+  "de": "fr",
+  "ar": "Ariana",
+  "en": "Ariana"
+ },
  "Autre soirée": {
   "de": "fr",
   "ar": "مساء آخر",
@@ -359,6 +364,11 @@
   "ar": "عند (زاك)",
   "en": "At Zak's"
  },
+ "ChichBich Au Sous-Sol 28 Novembre": {
+  "de": "fr",
+  "ar": "تشيش بيخ في سوب سول تشرين الثاني/نوفمبر",
+  "en": "ChichBich In Sub-Sol November 28"
+ },
  "Chicos live Band": {
   "de": "en",
   "fr": "Chicos live Band",
@@ -599,6 +609,11 @@
   "ar": "العودة إلى الوراء",
   "en": "Flash Back"
  },
+ "For our next Live Experiment session, we welcome , a Tunisian artist and multi-instrumenta": {
+  "de": "en",
+  "fr": "Pour notre prochaine session Live Experiment, nous accueillons , artiste tunisien et multi-instruments",
+  "ar": "في جلستنا المقبلة للعرض على الحياة، نرحب، فنان تونسي وفنان متعدد التخصصات(أ)"
+ },
  "French, Italian, Tunisian": {
   "de": "fr",
   "ar": "الفرنسية والإيطالية وتونسية",
@@ -678,16 +693,6 @@
   "de": "fr",
   "ar": "Habi Downtown, Instagram",
   "en": "Habibi Downtown, Instagram"
- },
- "Habibi Downtown (av. de Paris": {
-  "de": "fr",
-  "ar": "(هابي داون تاون) of Paris",
-  "en": "Habibi Downtown (av. of Paris"
- },
- "Habibi Downtown (av. de Paris, Tunis)": {
-  "de": "fr",
-  "ar": "(هابي داون تاون) باريس، تونس",
-  "en": "Habibi Downtown (av. Paris, Tunis)"
  },
  "Hamdi RydEr (Instagram)": {
   "de": "fr",
@@ -848,6 +853,11 @@
   "de": "fr",
   "ar": "The Farfalle Suite",
   "en": "The Farfalle Suite"
+ },
+ "La Verrière (Le sous-sol)- Café Resto": {
+  "de": "fr",
+  "ar": "La Verrière (The basement) - Café Resto",
+  "en": "La Verrière (The basement) - Café Resto"
  },
  "La Villa Beach": {
   "de": "fr",
@@ -1214,6 +1224,11 @@
   "ar": "قناديل رمضان",
   "en": "Qanadil Ramadan"
  },
+ "RAÏ IS NOT DEAD CHEB REZGUI EDITION": {
+  "de": "fr",
+  "ar": "(راي) ليس (تشابي)",
+  "en": "RAI IS NOT DEAD CHEB REZGUI EDITION"
+ },
  "Ramadan du Beït ech-chaâr": {
   "de": "fr",
   "ar": "Ramadan of the Beitech-chaar",
@@ -1554,6 +1569,11 @@
   "fr": "Unidos Club par El Pacha",
   "ar": "نادي (إل باشا)"
  },
+ "V532+42X, Ariana, Ariana": {
+  "de": "fr",
+  "ar": "V532+42X, Ariana, Ariana",
+  "en": "V532+42X, Ariana, Ariana"
+ },
  "Vape - Store": {
   "de": "fr",
   "ar": "Vape - Store",
@@ -1588,11 +1608,6 @@
   "de": "fr",
   "ar": "يوكا تونس",
   "en": "Yüka Tunis"
- },
- "Zanzana Revival, lundi 23 novembre au Habibi Downtown, Tunis": {
-  "de": "fr",
-  "ar": "زانزانا ريفيفال، الاثنين، 23 تشرين الثاني/نوفمبر في حابي داونتاون، تونس",
-  "en": "Zanzana Revival, Monday, November 23 at Habibi Downtown, Tunis"
  },
  "burgers, chicken, fish, Italian, italian pizza, kebab, Mediterranean": {
   "de": "fr",
@@ -1658,6 +1673,11 @@
   "de": "fr",
   "ar": "البنزين، الفرنسية",
   "en": "gastronomic, French"
+ },
+ "habibidowntown_ Tunis": {
+  "de": "fr",
+  "ar": "habibidowntown_ Tunis",
+  "en": "habibidowntown_ Tunis"
  },
  "harrison guyett": {
   "de": "fr",
