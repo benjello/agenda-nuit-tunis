@@ -144,37 +144,37 @@
  },
  {
   "semaine": "2026-S48",
-  "date": "2026-11-26",
-  "a_venir": 15,
-  "sept_jours": 12,
+  "date": "2026-11-27",
+  "a_venir": 13,
+  "sept_jours": 10,
   "sources_actives": 12,
-  "sources_avec_evenements": 9,
+  "sources_avec_evenements": 7,
   "sources_muettes": [
+   "ig-eddisco",
    "ig-fabrika",
+   "ig-hamdi-ryder",
    "ig-jaou-tunis",
    "ig-rock-n-rolla"
   ],
   "par_ville": {
-   "tunis": 12
+   "tunis": 10
   },
   "par_categorie": {
-   "concert": 5,
-   "club": 4,
+   "concert": 4,
+   "club": 3,
    "festival": 2,
    "cabaret": 1
   },
   "par_genre": {
    "agenda": 7,
-   "collectif": 4,
+   "collectif": 2,
    "lieu": 1
   },
   "par_source": {
    "resident-advisor": 2,
    "teskerti": 2,
    "tunis-events": 2,
-   "ig-eddisco": 1,
    "ig-habibi-downtown": 1,
-   "ig-hamdi-ryder": 1,
    "ig-nf-event": 1,
    "ig-tn-techno-community": 1,
    "recurrentes": 1
