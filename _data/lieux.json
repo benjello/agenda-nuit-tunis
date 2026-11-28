@@ -6,7 +6,6 @@
   "Complexe La Tour Blanche – Gammarth": "complexe-la-tour-blanche-gammarth",
   "Rock'n'Rolla, La Goulette": "rock-n-rolla-la-goulette",
   "TBA - studio 52": "tba-studio-52",
-  "Hôtel Belvédère Fourati": "hotel-belvedere-fourati",
   "Carthage Thalasso Resort": "carthage-thalasso-resort",
   "La Verrière (Le sous-sol)- Café Resto": "la-verriere-le-sous-sol-cafe-resto",
   "Russian House": "russian-house"
@@ -29,15 +28,6 @@
    "lat": 36.81597,
    "lon": 10.30597,
    "n": 2
-  },
-  {
-   "slug": "hotel-belvedere-fourati",
-   "nom": "Hôtel Belvédère Fourati",
-   "type": "autre",
-   "ville": "tunis",
-   "lat": 36.81563,
-   "lon": 10.17782,
-   "n": 1
   },
   {
    "slug": "carthage-thalasso-resort",

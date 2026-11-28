@@ -1,5 +1,5 @@
 {
- "date": "2026-11-27",
+ "date": "2026-11-28",
  "corriges": 0,
  "a_verifier": [
   {
@@ -121,15 +121,15 @@
     "manques": []
    },
    "teskerti": {
-    "n": 2,
-    "precis": 2,
+    "n": 1,
+    "precis": 1,
     "pourcent": 100,
     "defauts": [],
     "manques": [
      {
       "code": "sans_image",
       "texte": "image",
-      "n": 2
+      "n": 1
      },
      {
       "code": "sans_notice",
@@ -201,16 +201,23 @@
      }
     ]
    },
-   "teskerti": {
+   "tunis_events": {
     "n": 2,
     "precis": 2,
+    "pourcent": 100,
+    "defauts": [],
+    "manques": []
+   },
+   "teskerti": {
+    "n": 1,
+    "precis": 1,
     "pourcent": 100,
     "defauts": [],
     "manques": [
      {
       "code": "sans_image",
       "texte": "image",
-      "n": 2
+      "n": 1
      },
      {
       "code": "sans_notice",
@@ -218,13 +225,6 @@
       "n": 1
      }
     ]
-   },
-   "tunis_events": {
-    "n": 2,
-    "precis": 2,
-    "pourcent": 100,
-    "defauts": [],
-    "manques": []
    }
   }
  }

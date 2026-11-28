@@ -144,13 +144,12 @@
  },
  {
   "semaine": "2026-S48",
-  "date": "2026-11-27",
-  "a_venir": 13,
+  "date": "2026-11-28",
+  "a_venir": 12,
   "sept_jours": 10,
   "sources_actives": 12,
-  "sources_avec_evenements": 7,
+  "sources_avec_evenements": 8,
   "sources_muettes": [
-   "ig-eddisco",
    "ig-fabrika",
    "ig-hamdi-ryder",
    "ig-jaou-tunis",
@@ -166,18 +165,19 @@
    "cabaret": 1
   },
   "par_genre": {
-   "agenda": 7,
-   "collectif": 2,
+   "agenda": 6,
+   "collectif": 3,
    "lieu": 1
   },
   "par_source": {
    "resident-advisor": 2,
-   "teskerti": 2,
    "tunis-events": 2,
+   "ig-eddisco": 1,
    "ig-habibi-downtown": 1,
    "ig-nf-event": 1,
    "ig-tn-techno-community": 1,
-   "recurrentes": 1
+   "recurrentes": 1,
+   "teskerti": 1
   }
  }
 ]
